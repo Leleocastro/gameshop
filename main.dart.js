@@ -63334,7 +63334,7 @@ Q.mK.prototype={
 mZ:function(){var s=0,r=P.a6(t.H),q,p=this,o,n
 var $async$mZ=P.a2(function(a,b){if(a===1)return P.a3(b,r)
 while(true)switch(s){case 0:s=3
-return P.a8(G.avp(P.aa7("http","catalogo-jogos.azurewebsites.net","/api/V1/Jogos",null)),$async$mZ)
+return P.a8(G.avp(P.aa7("https","catalogo-jogos.azurewebsites.net","/api/V1/Jogos",null)),$async$mZ)
 case 3:o=b
 n=C.aT.dg(0,B.avi(U.at5(o.e).c.a.h(0,"charset")).dg(0,o.x))
 if(n!=null){p.c=J.rv(n,new Q.Y_(),t.gO).eW(0)
