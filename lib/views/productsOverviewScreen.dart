@@ -100,13 +100,9 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: Consumer<Cart>(
-              child: GestureDetector(
-                child: SvgPicture.asset(
-                  'assets/icons/cart-icon.svg',
-                  alignment: Alignment.centerLeft,
-                  height: 20,
-                ),
-                onTap: () {
+              child: IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
                   Navigator.of(context).pushNamed(AppRoutes.CART);
                 },
               ),

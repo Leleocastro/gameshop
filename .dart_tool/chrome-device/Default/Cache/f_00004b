@@ -1,16 +1,52 @@
-define(['dart_sdk'], (function load__packages__flutter__src__painting__border_radius_dart(dart_sdk) {
+define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/painting/debug.dart', 'packages/flutter/src/scheduler/binding.dart'], (function load__packages__flutter__src__painting__decoration_image_dart(dart_sdk, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__painting__debug$46dart, packages__flutter__src__scheduler__binding$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
-  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
+  const collection = dart_sdk.collection;
+  const _engine = dart_sdk._engine;
+  const developer = dart_sdk.developer;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  var border_radius = Object.create(dart.library);
-  var $toStringAsFixed = dartx.toStringAsFixed;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
+  const debug = packages__flutter__src__painting__debug$46dart.src__painting__debug;
+  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
+  var decoration_image = Object.create(dart.library);
   var $runtimeType = dartx.runtimeType;
+  var $add = dartx.add;
+  var $join = dartx.join;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $toDouble = dartx.toDouble;
+  var $truncate = dartx.truncate;
+  var $toInt = dartx.toInt;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $values = dartx.values;
+  var $toSet = dartx.toSet;
+  var $isEmpty = dartx.isEmpty;
+  var $floor = dartx.floor;
+  var $ceil = dartx.ceil;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _: () => T
+    ImageRepeatL: () => (T.ImageRepeatL = dart.constFn(dart.legacy(decoration_image.ImageRepeat)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    DiagnosticsPropertyOfDecorationImage: () => (T.DiagnosticsPropertyOfDecorationImage = dart.constFn(diagnostics.DiagnosticsProperty$(decoration_image.DecorationImage)))(),
+    DiagnosticsPropertyOfImageConfiguration: () => (T.DiagnosticsPropertyOfImageConfiguration = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.ImageConfiguration)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    LinkedHashSetOfImageSizeInfo: () => (T.LinkedHashSetOfImageSizeInfo = dart.constFn(collection.LinkedHashSet$(debug.ImageSizeInfo)))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
+    IdentityMapOfString$ImageSizeInfo: () => (T.IdentityMapOfString$ImageSizeInfo = dart.constFn(_js_helper.IdentityMap$(core.String, debug.ImageSizeInfo)))(),
+    DurationTovoid: () => (T.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))(),
+    SyncIterableOfRect: () => (T.SyncIterableOfRect = dart.constFn(_js_helper.SyncIterable$(ui.Rect)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -27,692 +63,535 @@ define(['dart_sdk'], (function load__packages__flutter__src__painting__border_ra
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: ui.Radius.prototype,
-        [Radius_y]: 0,
-        [Radius_x]: 0
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.repeat",
+        index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: border_radius.BorderRadius.prototype,
-        [bottomRight$]: C[0] || CT.C0,
-        [bottomLeft$]: C[0] || CT.C0,
-        [topRight$]: C[0] || CT.C0,
-        [topLeft$]: C[0] || CT.C0
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.repeatX",
+        index: 1
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name]: "TextDirection.rtl",
-        index: 0
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.repeatY",
+        index: 2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name]: "TextDirection.ltr",
-        index: 1
+        __proto__: decoration_image.ImageRepeat.prototype,
+        [_name$]: "ImageRepeat.noRepeat",
+        index: 3
       });
     },
     get C4() {
-      return C[4] = dart.const({
-        __proto__: border_radius.BorderRadiusDirectional.prototype,
-        [bottomEnd$]: C[0] || CT.C0,
-        [bottomStart$]: C[0] || CT.C0,
-        [topEnd$]: C[0] || CT.C0,
-        [topStart$]: C[0] || CT.C0
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], T.ImageRepeatL());
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.FilterQuality.prototype,
+        [_name]: "FilterQuality.low",
+        index: 1
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([-1, 0, 0, 0, 255, 0, -1, 0, 0, 255, 0, 0, -1, 0, 255, 0, 0, 0, 1, 0], T.doubleL());
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: _engine._CkMatrixColorFilter.prototype,
+        [_CkMatrixColorFilter_matrix]: C[8] || CT.C8
       });
     }
   }, false);
-  var C = Array(5).fill(void 0);
+  var C = Array(9).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/painting/border_radius.dart",
-    "package:flutter/src/painting/border_radius.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/painting/decoration_image.dart",
+    "package:flutter/src/painting/decoration_image.dart"
   ];
-  var _topLeft = dart.privateName(border_radius, "_topLeft");
-  var _topRight = dart.privateName(border_radius, "_topRight");
-  var _bottomLeft = dart.privateName(border_radius, "_bottomLeft");
-  var _bottomRight = dart.privateName(border_radius, "_bottomRight");
-  var _topStart = dart.privateName(border_radius, "_topStart");
-  var _topEnd = dart.privateName(border_radius, "_topEnd");
-  var _bottomStart = dart.privateName(border_radius, "_bottomStart");
-  var _bottomEnd = dart.privateName(border_radius, "_bottomEnd");
-  border_radius.BorderRadiusGeometry = class BorderRadiusGeometry extends core.Object {
-    subtract(other) {
-      if (other == null) dart.nullFailed(I[0], 49, 54, "other");
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]['-'](other[_topLeft]), this[_topRight]['-'](other[_topRight]), this[_bottomLeft]['-'](other[_bottomLeft]), this[_bottomRight]['-'](other[_bottomRight]), this[_topStart]['-'](other[_topStart]), this[_topEnd]['-'](other[_topEnd]), this[_bottomStart]['-'](other[_bottomStart]), this[_bottomEnd]['-'](other[_bottomEnd]));
-    }
-    add(other) {
-      if (other == null) dart.nullFailed(I[0], 73, 49, "other");
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]['+'](other[_topLeft]), this[_topRight]['+'](other[_topRight]), this[_bottomLeft]['+'](other[_bottomLeft]), this[_bottomRight]['+'](other[_bottomRight]), this[_topStart]['+'](other[_topStart]), this[_topEnd]['+'](other[_topEnd]), this[_bottomStart]['+'](other[_bottomStart]), this[_bottomEnd]['+'](other[_bottomEnd]));
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 132, 94, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 133, 12, "t != null");
-      if (a == null && b == null) return null;
-      a == null ? a = border_radius.BorderRadius.zero : null;
-      b == null ? b = border_radius.BorderRadius.zero : null;
-      return a.add(b.subtract(a)['*'](t));
-    }
+  var _name$ = dart.privateName(decoration_image, "_name");
+  decoration_image.ImageRepeat = class ImageRepeat extends core.Object {
     toString() {
-      let visual = null;
-      let logical = null;
-      if (dart.equals(this[_topLeft], this[_topRight]) && dart.equals(this[_topRight], this[_bottomLeft]) && dart.equals(this[_bottomLeft], this[_bottomRight])) {
-        if (!dart.equals(this[_topLeft], ui.Radius.zero)) {
-          if (this[_topLeft].x == this[_topLeft].y) {
-            visual = "BorderRadius.circular(" + this[_topLeft].x[$toStringAsFixed](1) + ")";
-          } else {
-            visual = "BorderRadius.all(" + dart.str(this[_topLeft]) + ")";
-          }
-        }
-      } else {
-        let result = new core.StringBuffer.new();
-        result.write("BorderRadius.only(");
-        let comma = false;
-        if (!dart.equals(this[_topLeft], ui.Radius.zero)) {
-          result.write("topLeft: " + dart.str(this[_topLeft]));
-          comma = true;
-        }
-        if (!dart.equals(this[_topRight], ui.Radius.zero)) {
-          if (comma) result.write(", ");
-          result.write("topRight: " + dart.str(this[_topRight]));
-          comma = true;
-        }
-        if (!dart.equals(this[_bottomLeft], ui.Radius.zero)) {
-          if (comma) result.write(", ");
-          result.write("bottomLeft: " + dart.str(this[_bottomLeft]));
-          comma = true;
-        }
-        if (!dart.equals(this[_bottomRight], ui.Radius.zero)) {
-          if (comma) result.write(", ");
-          result.write("bottomRight: " + dart.str(this[_bottomRight]));
-        }
-        result.write(")");
-        visual = result.toString();
-      }
-      if (dart.equals(this[_topStart], this[_topEnd]) && dart.equals(this[_topEnd], this[_bottomEnd]) && dart.equals(this[_bottomEnd], this[_bottomStart])) {
-        if (!dart.equals(this[_topStart], ui.Radius.zero)) {
-          if (this[_topStart].x == this[_topStart].y) {
-            logical = "BorderRadiusDirectional.circular(" + this[_topStart].x[$toStringAsFixed](1) + ")";
-          } else {
-            logical = "BorderRadiusDirectional.all(" + dart.str(this[_topStart]) + ")";
-          }
-        }
-      } else {
-        let result = new core.StringBuffer.new();
-        result.write("BorderRadiusDirectional.only(");
-        let comma = false;
-        if (!dart.equals(this[_topStart], ui.Radius.zero)) {
-          result.write("topStart: " + dart.str(this[_topStart]));
-          comma = true;
-        }
-        if (!dart.equals(this[_topEnd], ui.Radius.zero)) {
-          if (comma) result.write(", ");
-          result.write("topEnd: " + dart.str(this[_topEnd]));
-          comma = true;
-        }
-        if (!dart.equals(this[_bottomStart], ui.Radius.zero)) {
-          if (comma) result.write(", ");
-          result.write("bottomStart: " + dart.str(this[_bottomStart]));
-          comma = true;
-        }
-        if (!dart.equals(this[_bottomEnd], ui.Radius.zero)) {
-          if (comma) result.write(", ");
-          result.write("bottomEnd: " + dart.str(this[_bottomEnd]));
-        }
-        result.write(")");
-        logical = result.toString();
-      }
-      if (visual != null && logical != null) return dart.str(visual) + " + " + dart.str(logical);
-      if (visual != null) return visual;
-      if (logical != null) return logical;
-      return "BorderRadius.zero";
+      return this[_name$];
+    }
+  };
+  (decoration_image.ImageRepeat.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 21, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 21, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = decoration_image.ImageRepeat.prototype;
+  dart.addTypeTests(decoration_image.ImageRepeat);
+  dart.addTypeCaches(decoration_image.ImageRepeat);
+  dart.setLibraryUri(decoration_image.ImageRepeat, I[1]);
+  dart.setFieldSignature(decoration_image.ImageRepeat, () => ({
+    __proto__: dart.getFields(decoration_image.ImageRepeat.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(decoration_image.ImageRepeat, ['toString']);
+  decoration_image.ImageRepeat.repeat = C[0] || CT.C0;
+  decoration_image.ImageRepeat.repeatX = C[1] || CT.C1;
+  decoration_image.ImageRepeat.repeatY = C[2] || CT.C2;
+  decoration_image.ImageRepeat.noRepeat = C[3] || CT.C3;
+  decoration_image.ImageRepeat.values = C[4] || CT.C4;
+  var image$ = dart.privateName(decoration_image, "DecorationImage.image");
+  var onError$ = dart.privateName(decoration_image, "DecorationImage.onError");
+  var colorFilter$ = dart.privateName(decoration_image, "DecorationImage.colorFilter");
+  var fit$ = dart.privateName(decoration_image, "DecorationImage.fit");
+  var alignment$ = dart.privateName(decoration_image, "DecorationImage.alignment");
+  var centerSlice$ = dart.privateName(decoration_image, "DecorationImage.centerSlice");
+  var repeat$ = dart.privateName(decoration_image, "DecorationImage.repeat");
+  var matchTextDirection$ = dart.privateName(decoration_image, "DecorationImage.matchTextDirection");
+  var scale$ = dart.privateName(decoration_image, "DecorationImage.scale");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  decoration_image.DecorationImage = class DecorationImage extends core.Object {
+    get image() {
+      return this[image$];
+    }
+    set image(value) {
+      super.image = value;
+    }
+    get onError() {
+      return this[onError$];
+    }
+    set onError(value) {
+      super.onError = value;
+    }
+    get colorFilter() {
+      return this[colorFilter$];
+    }
+    set colorFilter(value) {
+      super.colorFilter = value;
+    }
+    get fit() {
+      return this[fit$];
+    }
+    set fit(value) {
+      super.fit = value;
+    }
+    get alignment() {
+      return this[alignment$];
+    }
+    set alignment(value) {
+      super.alignment = value;
+    }
+    get centerSlice() {
+      return this[centerSlice$];
+    }
+    set centerSlice(value) {
+      super.centerSlice = value;
+    }
+    get repeat() {
+      return this[repeat$];
+    }
+    set repeat(value) {
+      super.repeat = value;
+    }
+    get matchTextDirection() {
+      return this[matchTextDirection$];
+    }
+    set matchTextDirection(value) {
+      super.matchTextDirection = value;
+    }
+    get scale() {
+      return this[scale$];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    createPainter(onChanged) {
+      if (onChanged == null) dart.nullFailed(I[0], 149, 53, "onChanged");
+      if (!(onChanged != null)) dart.assertFailed(null, I[0], 150, 12, "onChanged != null");
+      return new decoration_image.DecorationImagePainter.__(this, onChanged);
     }
     _equals(other) {
       if (other == null) return false;
       if (this === other) return true;
       if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return border_radius.BorderRadiusGeometry.is(other) && dart.equals(other[_topLeft], this[_topLeft]) && dart.equals(other[_topRight], this[_topRight]) && dart.equals(other[_bottomLeft], this[_bottomLeft]) && dart.equals(other[_bottomRight], this[_bottomRight]) && dart.equals(other[_topStart], this[_topStart]) && dart.equals(other[_topEnd], this[_topEnd]) && dart.equals(other[_bottomStart], this[_bottomStart]) && dart.equals(other[_bottomEnd], this[_bottomEnd]);
+      return decoration_image.DecorationImage.is(other) && dart.equals(other.image, this.image) && dart.equals(other.colorFilter, this.colorFilter) && other.fit == this.fit && dart.equals(other.alignment, this.alignment) && dart.equals(other.centerSlice, this.centerSlice) && other.repeat == this.repeat && other.matchTextDirection == this.matchTextDirection && other.scale == this.scale;
     }
     get hashCode() {
-      return ui.hashValues(this[_topLeft], this[_topRight], this[_bottomLeft], this[_bottomRight], this[_topStart], this[_topEnd], this[_bottomStart], this[_bottomEnd]);
+      return ui.hashValues(this.image, this.colorFilter, this.fit, this.alignment, this.centerSlice, this.repeat, this.matchTextDirection, this.scale);
+    }
+    toString() {
+      let properties = (() => {
+        let t0 = T.JSArrayOfString().of([dart.str(this.image)]);
+        if (this.colorFilter != null) t0[$add](dart.str(this.colorFilter));
+        if (this.fit != null && !(this.fit == box_fit.BoxFit.fill && this.centerSlice != null) && !(this.fit == box_fit.BoxFit.scaleDown && this.centerSlice == null)) t0[$add](dart.str(this.fit));
+        t0[$add](dart.str(this.alignment));
+        if (this.centerSlice != null) t0[$add]("centerSlice: " + dart.str(this.centerSlice));
+        if (this.repeat != decoration_image.ImageRepeat.noRepeat) t0[$add](dart.str(this.repeat));
+        if (dart.test(this.matchTextDirection)) t0[$add]("match text direction");
+        t0[$add]("scale: " + dart.str(this.scale));
+        return t0;
+      })();
+      return dart.str(object.objectRuntimeType(this, "DecorationImage")) + "(" + dart.str(properties[$join](", ")) + ")";
     }
   };
-  (border_radius.BorderRadiusGeometry.new = function() {
+  (decoration_image.DecorationImage.new = function(opts) {
+    let image = opts && 'image' in opts ? opts.image : null;
+    if (image == null) dart.nullFailed(I[0], 46, 19, "image");
+    let onError = opts && 'onError' in opts ? opts.onError : null;
+    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
+    let fit = opts && 'fit' in opts ? opts.fit : null;
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
+    if (alignment == null) dart.nullFailed(I[0], 50, 10, "alignment");
+    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
+    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
+    if (repeat == null) dart.nullFailed(I[0], 52, 10, "repeat");
+    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
+    if (matchTextDirection == null) dart.nullFailed(I[0], 53, 10, "matchTextDirection");
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    if (scale == null) dart.nullFailed(I[0], 54, 10, "scale");
+    this[image$] = image;
+    this[onError$] = onError;
+    this[colorFilter$] = colorFilter;
+    this[fit$] = fit;
+    this[alignment$] = alignment;
+    this[centerSlice$] = centerSlice;
+    this[repeat$] = repeat;
+    this[matchTextDirection$] = matchTextDirection;
+    this[scale$] = scale;
+    if (!(image != null)) dart.assertFailed(null, I[0], 55, 15, "image != null");
+    if (!(alignment != null)) dart.assertFailed(null, I[0], 56, 15, "alignment != null");
+    if (!(repeat != null)) dart.assertFailed(null, I[0], 57, 15, "repeat != null");
+    if (!(matchTextDirection != null)) dart.assertFailed(null, I[0], 58, 15, "matchTextDirection != null");
+    if (!(scale != null)) dart.assertFailed(null, I[0], 59, 15, "scale != null");
     ;
-  }).prototype = border_radius.BorderRadiusGeometry.prototype;
-  dart.addTypeTests(border_radius.BorderRadiusGeometry);
-  dart.addTypeCaches(border_radius.BorderRadiusGeometry);
-  dart.setMethodSignature(border_radius.BorderRadiusGeometry, () => ({
-    __proto__: dart.getMethods(border_radius.BorderRadiusGeometry.__proto__),
-    subtract: dart.fnType(border_radius.BorderRadiusGeometry, [border_radius.BorderRadiusGeometry]),
-    add: dart.fnType(border_radius.BorderRadiusGeometry, [border_radius.BorderRadiusGeometry])
+  }).prototype = decoration_image.DecorationImage.prototype;
+  dart.addTypeTests(decoration_image.DecorationImage);
+  dart.addTypeCaches(decoration_image.DecorationImage);
+  dart.setMethodSignature(decoration_image.DecorationImage, () => ({
+    __proto__: dart.getMethods(decoration_image.DecorationImage.__proto__),
+    createPainter: dart.fnType(decoration_image.DecorationImagePainter, [dart.fnType(dart.void, [])])
   }));
-  dart.setLibraryUri(border_radius.BorderRadiusGeometry, I[1]);
-  dart.defineExtensionMethods(border_radius.BorderRadiusGeometry, ['toString', '_equals']);
-  dart.defineExtensionAccessors(border_radius.BorderRadiusGeometry, ['hashCode']);
-  var topLeft$ = dart.privateName(border_radius, "BorderRadius.topLeft");
-  var topRight$ = dart.privateName(border_radius, "BorderRadius.topRight");
-  var bottomLeft$ = dart.privateName(border_radius, "BorderRadius.bottomLeft");
-  var bottomRight$ = dart.privateName(border_radius, "BorderRadius.bottomRight");
-  var Radius_y = dart.privateName(ui, "Radius.y");
-  var Radius_x = dart.privateName(ui, "Radius.x");
-  border_radius.BorderRadius = class BorderRadius extends border_radius.BorderRadiusGeometry {
-    get topLeft() {
-      return this[topLeft$];
+  dart.setLibraryUri(decoration_image.DecorationImage, I[1]);
+  dart.setFieldSignature(decoration_image.DecorationImage, () => ({
+    __proto__: dart.getFields(decoration_image.DecorationImage.__proto__),
+    image: dart.finalFieldType(image_provider.ImageProvider$(core.Object)),
+    onError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))),
+    colorFilter: dart.finalFieldType(dart.nullable(ui.ColorFilter)),
+    fit: dart.finalFieldType(dart.nullable(box_fit.BoxFit)),
+    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
+    centerSlice: dart.finalFieldType(dart.nullable(ui.Rect)),
+    repeat: dart.finalFieldType(decoration_image.ImageRepeat),
+    matchTextDirection: dart.finalFieldType(core.bool),
+    scale: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(decoration_image.DecorationImage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(decoration_image.DecorationImage, ['hashCode']);
+  var _imageStream = dart.privateName(decoration_image, "_imageStream");
+  var _image = dart.privateName(decoration_image, "_image");
+  var _details$ = dart.privateName(decoration_image, "_details");
+  var _onChanged$ = dart.privateName(decoration_image, "_onChanged");
+  var _handleImage = dart.privateName(decoration_image, "_handleImage");
+  decoration_image.DecorationImagePainter = class DecorationImagePainter extends core.Object {
+    paint(canvas, rect, clipPath, configuration) {
+      let t1, t1$;
+      if (canvas == null) dart.nullFailed(I[0], 231, 21, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 231, 34, "rect");
+      if (configuration == null) dart.nullFailed(I[0], 231, 75, "configuration");
+      if (!(canvas != null)) dart.assertFailed(null, I[0], 232, 12, "canvas != null");
+      if (!(rect != null)) dart.assertFailed(null, I[0], 233, 12, "rect != null");
+      if (!(configuration != null)) dart.assertFailed(null, I[0], 234, 12, "configuration != null");
+      let flipHorizontally = false;
+      if (dart.test(this[_details$].matchTextDirection)) {
+        if (!dart.test(dart.fn(() => {
+          if (configuration.textDirection == null) {
+            dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("DecorationImage.matchTextDirection can only be used when a TextDirection is available."), new assertions.ErrorDescription.new("When DecorationImagePainter.paint() was called, there was no text direction provided " + "in the ImageConfiguration object to match."), new (T.DiagnosticsPropertyOfDecorationImage()).new("The DecorationImage was", this[_details$], {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new (T.DiagnosticsPropertyOfImageConfiguration()).new("The ImageConfiguration was", configuration, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
+          }
+          return true;
+        }, T.VoidTobool())())) dart.assertFailed(null, I[0], 238, 14, "() {\r\n        // We check this first so that the assert will fire immediately, not just\r\n        // when the image is ready.\r\n        if (configuration.textDirection == null) {\r\n          throw FlutterError.fromParts(<DiagnosticsNode>[\r\n            ErrorSummary('DecorationImage.matchTextDirection can only be used when a TextDirection is available.'),\r\n            ErrorDescription(\r\n              'When DecorationImagePainter.paint() was called, there was no text direction provided '\r\n              'in the ImageConfiguration object to match.'\r\n            ),\r\n            DiagnosticsProperty<DecorationImage>('The DecorationImage was', _details, style: DiagnosticsTreeStyle.errorProperty),\r\n            DiagnosticsProperty<ImageConfiguration>('The ImageConfiguration was', configuration, style: DiagnosticsTreeStyle.errorProperty),\r\n          ]);\r\n        }\r\n        return true;\r\n      }()");
+        if (configuration.textDirection == ui.TextDirection.rtl) flipHorizontally = true;
+      }
+      let newImageStream = this[_details$].image.resolve(configuration);
+      if (!dart.equals(newImageStream.key, (t1 = this[_imageStream], t1 == null ? null : t1.key))) {
+        let listener = new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError});
+        t1$ = this[_imageStream];
+        t1$ == null ? null : t1$.removeListener(listener);
+        this[_imageStream] = newImageStream;
+        dart.nullCheck(this[_imageStream]).addListener(listener);
+      }
+      if (this[_image] == null) return;
+      if (clipPath != null) {
+        canvas.save();
+        canvas.clipPath(clipPath);
+      }
+      decoration_image.paintImage({canvas: canvas, rect: rect, image: dart.nullCheck(this[_image]).image, debugImageLabel: dart.nullCheck(this[_image]).debugLabel, scale: dart.notNull(this[_details$].scale) * dart.notNull(dart.nullCheck(this[_image]).scale), colorFilter: this[_details$].colorFilter, fit: this[_details$].fit, alignment: this[_details$].alignment.resolve(configuration.textDirection), centerSlice: this[_details$].centerSlice, repeat: this[_details$].repeat, flipHorizontally: flipHorizontally, filterQuality: ui.FilterQuality.low});
+      if (clipPath != null) canvas.restore();
     }
-    set topLeft(value) {
-      super.topLeft = value;
+    [_handleImage](value, synchronousCall) {
+      let t1;
+      if (value == null) dart.nullFailed(I[0], 295, 31, "value");
+      if (synchronousCall == null) dart.nullFailed(I[0], 295, 43, "synchronousCall");
+      if (dart.equals(this[_image], value)) return;
+      if (this[_image] != null && dart.test(dart.nullCheck(this[_image]).isCloneOf(value))) {
+        value.dispose();
+        return;
+      }
+      t1 = this[_image];
+      t1 == null ? null : t1.dispose();
+      this[_image] = value;
+      if (!(this[_onChanged$] != null)) dart.assertFailed(null, I[0], 304, 12, "_onChanged != null");
+      if (!dart.test(synchronousCall)) this[_onChanged$]();
     }
-    get topRight() {
-      return this[topRight$];
+    dispose() {
+      let t1, t1$;
+      t1 = this[_imageStream];
+      t1 == null ? null : t1.removeListener(new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError}));
+      t1$ = this[_image];
+      t1$ == null ? null : t1$.dispose();
+      this[_image] = null;
     }
-    set topRight(value) {
-      super.topRight = value;
-    }
-    get bottomLeft() {
-      return this[bottomLeft$];
-    }
-    set bottomLeft(value) {
-      super.bottomLeft = value;
-    }
-    get bottomRight() {
-      return this[bottomRight$];
-    }
-    set bottomRight(value) {
-      super.bottomRight = value;
-    }
-    get [_topLeft]() {
-      return this.topLeft;
-    }
-    get [_topRight]() {
-      return this.topRight;
-    }
-    get [_bottomLeft]() {
-      return this.bottomLeft;
-    }
-    get [_bottomRight]() {
-      return this.bottomRight;
-    }
-    get [_topStart]() {
-      return ui.Radius.zero;
-    }
-    get [_topEnd]() {
-      return ui.Radius.zero;
-    }
-    get [_bottomStart]() {
-      return ui.Radius.zero;
-    }
-    get [_bottomEnd]() {
-      return ui.Radius.zero;
-    }
-    toRRect(rect) {
-      if (rect == null) dart.nullFailed(I[0], 370, 22, "rect");
-      return new ui.RRect.fromRectAndCorners(rect, {topLeft: this.topLeft, topRight: this.topRight, bottomLeft: this.bottomLeft, bottomRight: this.bottomRight});
-    }
-    subtract(other) {
-      if (other == null) dart.nullFailed(I[0], 381, 54, "other");
-      if (border_radius.BorderRadius.is(other)) return this['-'](other);
-      return super.subtract(other);
-    }
-    add(other) {
-      if (other == null) dart.nullFailed(I[0], 388, 49, "other");
-      if (border_radius.BorderRadius.is(other)) return this['+'](other);
-      return super.add(other);
-    }
-    ['-'](other) {
-      if (other == null) dart.nullFailed(I[0], 395, 40, "other");
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft['-'](other.topLeft), topRight: this.topRight['-'](other.topRight), bottomLeft: this.bottomLeft['-'](other.bottomLeft), bottomRight: this.bottomRight['-'](other.bottomRight)});
-    }
-    ['+'](other) {
-      if (other == null) dart.nullFailed(I[0], 405, 40, "other");
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft['+'](other.topLeft), topRight: this.topRight['+'](other.topRight), bottomLeft: this.bottomLeft['+'](other.bottomLeft), bottomRight: this.bottomRight['+'](other.bottomRight)});
-    }
-    _negate() {
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft._negate(), topRight: this.topRight._negate(), bottomLeft: this.bottomLeft._negate(), bottomRight: this.bottomRight._negate()});
-    }
-    ['*'](other) {
-      if (other == null) dart.nullFailed(I[0], 429, 34, "other");
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft['*'](other), topRight: this.topRight['*'](other), bottomLeft: this.bottomLeft['*'](other), bottomRight: this.bottomRight['*'](other)});
-    }
-    ['/'](other) {
-      if (other == null) dart.nullFailed(I[0], 440, 34, "other");
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft['/'](other), topRight: this.topRight['/'](other), bottomLeft: this.bottomLeft['/'](other), bottomRight: this.bottomRight['/'](other)});
-    }
-    ['~/'](other) {
-      if (other == null) dart.nullFailed(I[0], 451, 35, "other");
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft['~/'](other), topRight: this.topRight['~/'](other), bottomLeft: this.bottomLeft['~/'](other), bottomRight: this.bottomRight['~/'](other)});
-    }
-    ['%'](other) {
-      if (other == null) dart.nullFailed(I[0], 462, 34, "other");
-      return new border_radius.BorderRadius.only({topLeft: this.topLeft['%'](other), topRight: this.topRight['%'](other), bottomLeft: this.bottomLeft['%'](other), bottomRight: this.bottomRight['%'](other)});
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 476, 70, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 477, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - dart.notNull(t));
-      return new border_radius.BorderRadius.only({topLeft: dart.nullCheck(ui.Radius.lerp(a.topLeft, b.topLeft, t)), topRight: dart.nullCheck(ui.Radius.lerp(a.topRight, b.topRight, t)), bottomLeft: dart.nullCheck(ui.Radius.lerp(a.bottomLeft, b.bottomLeft, t)), bottomRight: dart.nullCheck(ui.Radius.lerp(a.bottomRight, b.bottomRight, t))});
-    }
-    resolve(direction) {
-      return this;
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "DecorationImagePainter")) + "(stream: " + dart.str(this[_imageStream]) + ", image: " + dart.str(this[_image]) + ") for " + dart.str(this[_details$]);
     }
   };
-  (border_radius.BorderRadius.all = function(radius) {
-    if (radius == null) dart.nullFailed(I[0], 285, 33, "radius");
-    border_radius.BorderRadius.only.call(this, {topLeft: radius, topRight: radius, bottomLeft: radius, bottomRight: radius});
-  }).prototype = border_radius.BorderRadius.prototype;
-  (border_radius.BorderRadius.circular = function(radius) {
-    if (radius == null) dart.nullFailed(I[0], 293, 32, "radius");
-    border_radius.BorderRadius.all.call(this, new ui.Radius.circular(radius));
-  }).prototype = border_radius.BorderRadius.prototype;
-  (border_radius.BorderRadius.vertical = function(opts) {
-    let top = opts && 'top' in opts ? opts.top : C[0] || CT.C0;
-    if (top == null) dart.nullFailed(I[0], 300, 12, "top");
-    let bottom = opts && 'bottom' in opts ? opts.bottom : C[0] || CT.C0;
-    if (bottom == null) dart.nullFailed(I[0], 301, 12, "bottom");
-    border_radius.BorderRadius.only.call(this, {topLeft: top, topRight: top, bottomLeft: bottom, bottomRight: bottom});
-  }).prototype = border_radius.BorderRadius.prototype;
-  (border_radius.BorderRadius.horizontal = function(opts) {
-    let left = opts && 'left' in opts ? opts.left : C[0] || CT.C0;
-    if (left == null) dart.nullFailed(I[0], 312, 12, "left");
-    let right = opts && 'right' in opts ? opts.right : C[0] || CT.C0;
-    if (right == null) dart.nullFailed(I[0], 313, 12, "right");
-    border_radius.BorderRadius.only.call(this, {topLeft: left, topRight: right, bottomLeft: left, bottomRight: right});
-  }).prototype = border_radius.BorderRadius.prototype;
-  (border_radius.BorderRadius.only = function(opts) {
-    let topLeft = opts && 'topLeft' in opts ? opts.topLeft : C[0] || CT.C0;
-    if (topLeft == null) dart.nullFailed(I[0], 324, 10, "topLeft");
-    let topRight = opts && 'topRight' in opts ? opts.topRight : C[0] || CT.C0;
-    if (topRight == null) dart.nullFailed(I[0], 325, 10, "topRight");
-    let bottomLeft = opts && 'bottomLeft' in opts ? opts.bottomLeft : C[0] || CT.C0;
-    if (bottomLeft == null) dart.nullFailed(I[0], 326, 10, "bottomLeft");
-    let bottomRight = opts && 'bottomRight' in opts ? opts.bottomRight : C[0] || CT.C0;
-    if (bottomRight == null) dart.nullFailed(I[0], 327, 10, "bottomRight");
-    this[topLeft$] = topLeft;
-    this[topRight$] = topRight;
-    this[bottomLeft$] = bottomLeft;
-    this[bottomRight$] = bottomRight;
-    border_radius.BorderRadius.__proto__.new.call(this);
+  (decoration_image.DecorationImagePainter.__ = function(_details, _onChanged) {
+    if (_details == null) dart.nullFailed(I[0], 209, 33, "_details");
+    if (_onChanged == null) dart.nullFailed(I[0], 209, 48, "_onChanged");
+    this[_imageStream] = null;
+    this[_image] = null;
+    this[_details$] = _details;
+    this[_onChanged$] = _onChanged;
+    if (!(_details != null)) dart.assertFailed(null, I[0], 209, 69, "_details != null");
     ;
-  }).prototype = border_radius.BorderRadius.prototype;
-  dart.addTypeTests(border_radius.BorderRadius);
-  dart.addTypeCaches(border_radius.BorderRadius);
-  dart.setMethodSignature(border_radius.BorderRadius, () => ({
-    __proto__: dart.getMethods(border_radius.BorderRadius.__proto__),
-    toRRect: dart.fnType(ui.RRect, [ui.Rect]),
-    '-': dart.fnType(border_radius.BorderRadius, [border_radius.BorderRadius]),
-    '+': dart.fnType(border_radius.BorderRadius, [border_radius.BorderRadius]),
-    _negate: dart.fnType(border_radius.BorderRadius, []),
-    '*': dart.fnType(border_radius.BorderRadius, [core.double]),
-    '/': dart.fnType(border_radius.BorderRadius, [core.double]),
-    '~/': dart.fnType(border_radius.BorderRadius, [core.double]),
-    '%': dart.fnType(border_radius.BorderRadius, [core.double]),
-    resolve: dart.fnType(border_radius.BorderRadius, [dart.nullable(ui.TextDirection)])
+  }).prototype = decoration_image.DecorationImagePainter.prototype;
+  dart.addTypeTests(decoration_image.DecorationImagePainter);
+  dart.addTypeCaches(decoration_image.DecorationImagePainter);
+  dart.setMethodSignature(decoration_image.DecorationImagePainter, () => ({
+    __proto__: dart.getMethods(decoration_image.DecorationImagePainter.__proto__),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect, dart.nullable(ui.Path), image_provider.ImageConfiguration]),
+    [_handleImage]: dart.fnType(dart.void, [image_stream.ImageInfo, core.bool]),
+    dispose: dart.fnType(dart.void, [])
   }));
-  dart.setGetterSignature(border_radius.BorderRadius, () => ({
-    __proto__: dart.getGetters(border_radius.BorderRadius.__proto__),
-    [_topLeft]: ui.Radius,
-    [_topRight]: ui.Radius,
-    [_bottomLeft]: ui.Radius,
-    [_bottomRight]: ui.Radius,
-    [_topStart]: ui.Radius,
-    [_topEnd]: ui.Radius,
-    [_bottomStart]: ui.Radius,
-    [_bottomEnd]: ui.Radius
+  dart.setLibraryUri(decoration_image.DecorationImagePainter, I[1]);
+  dart.setFieldSignature(decoration_image.DecorationImagePainter, () => ({
+    __proto__: dart.getFields(decoration_image.DecorationImagePainter.__proto__),
+    [_details$]: dart.finalFieldType(decoration_image.DecorationImage),
+    [_onChanged$]: dart.finalFieldType(dart.fnType(dart.void, [])),
+    [_imageStream]: dart.fieldType(dart.nullable(image_stream.ImageStream)),
+    [_image]: dart.fieldType(dart.nullable(image_stream.ImageInfo))
   }));
-  dart.setLibraryUri(border_radius.BorderRadius, I[1]);
-  dart.setFieldSignature(border_radius.BorderRadius, () => ({
-    __proto__: dart.getFields(border_radius.BorderRadius.__proto__),
-    topLeft: dart.finalFieldType(ui.Radius),
-    topRight: dart.finalFieldType(ui.Radius),
-    bottomLeft: dart.finalFieldType(ui.Radius),
-    bottomRight: dart.finalFieldType(ui.Radius)
-  }));
-  dart.defineLazy(border_radius.BorderRadius, {
-    /*border_radius.BorderRadius.zero*/get zero() {
-      return C[1] || CT.C1;
-    }
-  }, false);
-  var topStart$ = dart.privateName(border_radius, "BorderRadiusDirectional.topStart");
-  var topEnd$ = dart.privateName(border_radius, "BorderRadiusDirectional.topEnd");
-  var bottomStart$ = dart.privateName(border_radius, "BorderRadiusDirectional.bottomStart");
-  var bottomEnd$ = dart.privateName(border_radius, "BorderRadiusDirectional.bottomEnd");
+  dart.defineExtensionMethods(decoration_image.DecorationImagePainter, ['toString']);
   var _name = dart.privateName(ui, "_name");
-  border_radius.BorderRadiusDirectional = class BorderRadiusDirectional extends border_radius.BorderRadiusGeometry {
-    get topStart() {
-      return this[topStart$];
+  var _CkMatrixColorFilter_matrix = dart.privateName(_engine, "_CkMatrixColorFilter.matrix");
+  decoration_image.debugFlushLastFrameImageSizeInfo = function debugFlushLastFrameImageSizeInfo() {
+    if (!dart.test(dart.fn(() => {
+      decoration_image._lastFrameImageSizeInfo = T.LinkedHashSetOfImageSizeInfo().new();
+      return true;
+    }, T.VoidTobool())())) dart.assertFailed(null, I[0], 343, 10, "() {\r\n    _lastFrameImageSizeInfo = <ImageSizeInfo>{};\r\n    return true;\r\n  }()");
+  };
+  decoration_image.paintImage = function paintImage(opts) {
+    let t1, t1$, t1$0, t1$1;
+    let canvas = opts && 'canvas' in opts ? opts.canvas : null;
+    if (canvas == null) dart.nullFailed(I[0], 418, 19, "canvas");
+    let rect = opts && 'rect' in opts ? opts.rect : null;
+    if (rect == null) dart.nullFailed(I[0], 419, 17, "rect");
+    let image = opts && 'image' in opts ? opts.image : null;
+    if (image == null) dart.nullFailed(I[0], 420, 21, "image");
+    let debugImageLabel = opts && 'debugImageLabel' in opts ? opts.debugImageLabel : null;
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    if (scale == null) dart.nullFailed(I[0], 422, 10, "scale");
+    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
+    let fit = opts && 'fit' in opts ? opts.fit : null;
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
+    if (alignment == null) dart.nullFailed(I[0], 425, 13, "alignment");
+    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
+    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
+    if (repeat == null) dart.nullFailed(I[0], 427, 15, "repeat");
+    let flipHorizontally = opts && 'flipHorizontally' in opts ? opts.flipHorizontally : false;
+    if (flipHorizontally == null) dart.nullFailed(I[0], 428, 8, "flipHorizontally");
+    let invertColors = opts && 'invertColors' in opts ? opts.invertColors : false;
+    if (invertColors == null) dart.nullFailed(I[0], 429, 8, "invertColors");
+    let filterQuality = opts && 'filterQuality' in opts ? opts.filterQuality : C[6] || CT.C6;
+    if (filterQuality == null) dart.nullFailed(I[0], 430, 17, "filterQuality");
+    let isAntiAlias = opts && 'isAntiAlias' in opts ? opts.isAntiAlias : false;
+    if (isAntiAlias == null) dart.nullFailed(I[0], 431, 8, "isAntiAlias");
+    if (!(canvas != null)) dart.assertFailed(null, I[0], 433, 10, "canvas != null");
+    if (!(image != null)) dart.assertFailed(null, I[0], 434, 10, "image != null");
+    if (!(alignment != null)) dart.assertFailed(null, I[0], 435, 10, "alignment != null");
+    if (!(repeat != null)) dart.assertFailed(null, I[0], 436, 10, "repeat != null");
+    if (!(flipHorizontally != null)) dart.assertFailed(null, I[0], 437, 10, "flipHorizontally != null");
+    if (!(isAntiAlias != null)) dart.assertFailed(null, I[0], 438, 10, "isAntiAlias != null");
+    if (!dart.test((t1$ = (t1 = image.debugGetOpenHandleStackTraces(), t1 == null ? null : t1[$isNotEmpty]), t1$ == null ? true : t1$))) dart.assertFailed("Cannot paint an image that is disposed.\n" + "The caller of paintImage is expected to wait to dispose the image until " + "after painting has completed.", I[0], 440, 5, "image.debugGetOpenHandleStackTraces()?.isNotEmpty ?? true");
+    if (dart.test(rect.isEmpty)) return;
+    let outputSize = rect.size;
+    let inputSize = new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]());
+    let sliceBorder = null;
+    if (centerSlice != null) {
+      sliceBorder = ui.Offset.as(inputSize['/'](scale)['-'](centerSlice.size));
+      outputSize = ui.Size.as(outputSize['-'](sliceBorder));
+      inputSize = ui.Size.as(inputSize['-'](sliceBorder['*'](scale)));
     }
-    set topStart(value) {
-      super.topStart = value;
+    fit == null ? fit = centerSlice == null ? box_fit.BoxFit.scaleDown : box_fit.BoxFit.fill : null;
+    if (!(centerSlice == null || fit != box_fit.BoxFit.none && fit != box_fit.BoxFit.cover)) dart.assertFailed(null, I[0], 456, 10, "centerSlice == null || (fit != BoxFit.none && fit != BoxFit.cover)");
+    let fittedSizes = box_fit.applyBoxFit(fit, inputSize['/'](scale), outputSize);
+    let sourceSize = fittedSizes.source['*'](scale);
+    let destinationSize = fittedSizes.destination;
+    if (centerSlice != null) {
+      outputSize = outputSize['+'](dart.nullCheck(sliceBorder));
+      destinationSize = destinationSize['+'](sliceBorder);
+      if (!dart.equals(sourceSize, inputSize)) dart.assertFailed("centerSlice was used with a BoxFit that does not guarantee that the image is fully visible.", I[0], 465, 12, "sourceSize == inputSize");
     }
-    get topEnd() {
-      return this[topEnd$];
+    if (repeat != decoration_image.ImageRepeat.noRepeat && dart.equals(destinationSize, outputSize)) {
+      repeat = decoration_image.ImageRepeat.noRepeat;
     }
-    set topEnd(value) {
-      super.topEnd = value;
+    let paint = (t1$0 = ui.Paint.new(), (() => {
+      t1$0.isAntiAlias = isAntiAlias;
+      return t1$0;
+    })());
+    if (colorFilter != null) paint.colorFilter = colorFilter;
+    if (!dart.equals(sourceSize, destinationSize)) {
+      paint.filterQuality = filterQuality;
     }
-    get bottomStart() {
-      return this[bottomStart$];
-    }
-    set bottomStart(value) {
-      super.bottomStart = value;
-    }
-    get bottomEnd() {
-      return this[bottomEnd$];
-    }
-    set bottomEnd(value) {
-      super.bottomEnd = value;
-    }
-    get [_topStart]() {
-      return this.topStart;
-    }
-    get [_topEnd]() {
-      return this.topEnd;
-    }
-    get [_bottomStart]() {
-      return this.bottomStart;
-    }
-    get [_bottomEnd]() {
-      return this.bottomEnd;
-    }
-    get [_topLeft]() {
-      return ui.Radius.zero;
-    }
-    get [_topRight]() {
-      return ui.Radius.zero;
-    }
-    get [_bottomLeft]() {
-      return ui.Radius.zero;
-    }
-    get [_bottomRight]() {
-      return ui.Radius.zero;
-    }
-    subtract(other) {
-      if (other == null) dart.nullFailed(I[0], 598, 54, "other");
-      if (border_radius.BorderRadiusDirectional.is(other)) return this['-'](other);
-      return super.subtract(other);
-    }
-    add(other) {
-      if (other == null) dart.nullFailed(I[0], 605, 49, "other");
-      if (border_radius.BorderRadiusDirectional.is(other)) return this['+'](other);
-      return super.add(other);
-    }
-    ['-'](other) {
-      if (other == null) dart.nullFailed(I[0], 612, 62, "other");
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart['-'](other.topStart), topEnd: this.topEnd['-'](other.topEnd), bottomStart: this.bottomStart['-'](other.bottomStart), bottomEnd: this.bottomEnd['-'](other.bottomEnd)});
-    }
-    ['+'](other) {
-      if (other == null) dart.nullFailed(I[0], 622, 62, "other");
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart['+'](other.topStart), topEnd: this.topEnd['+'](other.topEnd), bottomStart: this.bottomStart['+'](other.bottomStart), bottomEnd: this.bottomEnd['+'](other.bottomEnd)});
-    }
-    _negate() {
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart._negate(), topEnd: this.topEnd._negate(), bottomStart: this.bottomStart._negate(), bottomEnd: this.bottomEnd._negate()});
-    }
-    ['*'](other) {
-      if (other == null) dart.nullFailed(I[0], 646, 45, "other");
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart['*'](other), topEnd: this.topEnd['*'](other), bottomStart: this.bottomStart['*'](other), bottomEnd: this.bottomEnd['*'](other)});
-    }
-    ['/'](other) {
-      if (other == null) dart.nullFailed(I[0], 657, 45, "other");
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart['/'](other), topEnd: this.topEnd['/'](other), bottomStart: this.bottomStart['/'](other), bottomEnd: this.bottomEnd['/'](other)});
-    }
-    ['~/'](other) {
-      if (other == null) dart.nullFailed(I[0], 668, 46, "other");
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart['~/'](other), topEnd: this.topEnd['~/'](other), bottomStart: this.bottomStart['~/'](other), bottomEnd: this.bottomEnd['~/'](other)});
-    }
-    ['%'](other) {
-      if (other == null) dart.nullFailed(I[0], 679, 45, "other");
-      return new border_radius.BorderRadiusDirectional.only({topStart: this.topStart['%'](other), topEnd: this.topEnd['%'](other), bottomStart: this.bottomStart['%'](other), bottomEnd: this.bottomEnd['%'](other)});
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 693, 103, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 694, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - dart.notNull(t));
-      return new border_radius.BorderRadiusDirectional.only({topStart: dart.nullCheck(ui.Radius.lerp(a.topStart, b.topStart, t)), topEnd: dart.nullCheck(ui.Radius.lerp(a.topEnd, b.topEnd, t)), bottomStart: dart.nullCheck(ui.Radius.lerp(a.bottomStart, b.bottomStart, t)), bottomEnd: dart.nullCheck(ui.Radius.lerp(a.bottomEnd, b.bottomEnd, t))});
-    }
-    resolve(direction) {
-      if (!(direction != null)) dart.assertFailed(null, I[0], 711, 12, "direction != null");
-      switch (dart.nullCheck(direction)) {
-        case C[2] || CT.C2:
-        {
-          return new border_radius.BorderRadius.only({topLeft: this.topEnd, topRight: this.topStart, bottomLeft: this.bottomEnd, bottomRight: this.bottomStart});
+    paint.invertColors = invertColors;
+    let halfWidthDelta = (dart.notNull(outputSize.width) - dart.notNull(destinationSize.width)) / 2.0;
+    let halfHeightDelta = (dart.notNull(outputSize.height) - dart.notNull(destinationSize.height)) / 2.0;
+    let dx = halfWidthDelta + dart.notNull(dart.test(flipHorizontally) ? -dart.notNull(alignment.x) : alignment.x) * halfWidthDelta;
+    let dy = halfHeightDelta + dart.notNull(alignment.y) * halfHeightDelta;
+    let destinationPosition = rect.topLeft.translate(dx, dy);
+    let destinationRect = destinationPosition['&'](destinationSize);
+    let invertedCanvas = false;
+    if (!false) {
+      let sizeInfo = new debug.ImageSizeInfo.new({source: (t1$1 = debugImageLabel, t1$1 == null ? "<Unknown Image(" + dart.str(image.width) + "×" + dart.str(image.height) + ")>" : t1$1), imageSize: new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]()), displaySize: outputSize});
+      if (!dart.test(dart.fn(() => {
+        let t1;
+        if (dart.test(debug.debugInvertOversizedImages) && dart.notNull(sizeInfo.decodedSizeInBytes) > dart.notNull(sizeInfo.displaySizeInBytes) + dart.notNull(debug.debugImageOverheadAllowance)) {
+          let overheadInKilobytes = ((dart.notNull(sizeInfo.decodedSizeInBytes) - dart.notNull(sizeInfo.displaySizeInBytes)) / 1024)[$truncate]();
+          let outputWidth = outputSize.width[$toInt]();
+          let outputHeight = outputSize.height[$toInt]();
+          assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: "Image " + dart.str(debugImageLabel) + " has a display size of " + dart.str(outputWidth) + "×" + dart.str(outputHeight) + " but a decode size of " + dart.str(image.width) + "×" + dart.str(image.height) + ", which uses an additional " + dart.str(overheadInKilobytes) + "kb.\n\n" + "Consider resizing the asset ahead of time, supplying a cacheWidth " + "parameter of " + dart.str(outputWidth) + ", a cacheHeight parameter of " + dart.str(outputHeight) + ", or using a ResizeImage.", library: "painting library", context: new assertions.ErrorDescription.new("while painting an image")}));
+          canvas.saveLayer(destinationRect, (t1 = ui.Paint.new(), (() => {
+            t1.colorFilter = C[7] || CT.C7;
+            return t1;
+          })()));
+          let dy = -(dart.notNull(rect.top) + dart.notNull(rect.height) / 2.0);
+          canvas.translate(0.0, -dy);
+          canvas.scale(1.0, -1.0);
+          canvas.translate(0.0, dy);
+          invertedCanvas = true;
         }
-        case C[3] || CT.C3:
-        {
-          return new border_radius.BorderRadius.only({topLeft: this.topStart, topRight: this.topEnd, bottomLeft: this.bottomStart, bottomRight: this.bottomEnd});
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 497, 12, "() {\r\n      if (debugInvertOversizedImages &&\r\n          sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debugImageOverheadAllowance) {\r\n        final int overheadInKilobytes = (sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) ~/ 1024;\r\n        final int outputWidth = outputSize.width.toInt();\r\n        final int outputHeight = outputSize.height.toInt();\r\n        FlutterError.reportError(FlutterErrorDetails(\r\n          exception: 'Image $debugImageLabel has a display size of '\r\n            '$outputWidth×$outputHeight but a decode size of '\r\n            '${image.width}×${image.height}, which uses an additional '\r\n            '${overheadInKilobytes}kb.\\n\\n'\r\n            'Consider resizing the asset ahead of time, supplying a cacheWidth '\r\n            'parameter of $outputWidth, a cacheHeight parameter of '\r\n            '$outputHeight, or using a ResizeImage.',\r\n          library: 'painting library',\r\n          context: ErrorDescription('while painting an image'),\r\n        ));\r\n        // Invert the colors of the canvas.\r\n        canvas.saveLayer(\r\n          destinationRect,\r\n          Paint()..colorFilter = const ColorFilter.matrix(<double>[\r\n            -1,  0,  0, 0, 255,\r\n             0, -1,  0, 0, 255,\r\n             0,  0, -1, 0, 255,\r\n             0,  0,  0, 1,   0,\r\n          ]),\r\n        );\r\n        // Flip the canvas vertically.\r\n        final double dy = -(rect.top + rect.height / 2.0);\r\n        canvas.translate(0.0, -dy);\r\n        canvas.scale(1.0, -1.0);\r\n        canvas.translate(0.0, dy);\r\n        invertedCanvas = true;\r\n      }\r\n      return true;\r\n    }()");
+      if (!dart.test(decoration_image._lastFrameImageSizeInfo.contains(sizeInfo))) {
+        let existingSizeInfo = decoration_image._pendingImageSizeInfo[$_get](sizeInfo.source);
+        if (existingSizeInfo == null || dart.notNull(existingSizeInfo.displaySizeInBytes) < dart.notNull(sizeInfo.displaySizeInBytes)) {
+          decoration_image._pendingImageSizeInfo[$_set](dart.nullCheck(sizeInfo.source), sizeInfo);
         }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        if (debug.debugOnPaintImage != null) {
+          dart.nullCheck(debug.debugOnPaintImage)(sizeInfo);
         }
+        dart.nullCheck(binding.SchedulerBinding.instance).addPostFrameCallback(dart.fn(timeStamp => {
+          if (timeStamp == null) dart.nullFailed(I[0], 542, 65, "timeStamp");
+          decoration_image._lastFrameImageSizeInfo = decoration_image._pendingImageSizeInfo[$values][$toSet]();
+          if (dart.test(decoration_image._pendingImageSizeInfo[$isEmpty])) {
+            return;
+          }
+          developer.postEvent("Flutter.ImageSizesForFrame", (() => {
+            let t1 = new (T.IdentityMapOfString$Object()).new();
+            for (let imageSizeInfo of decoration_image._pendingImageSizeInfo[$values])
+              t1[$_set](dart.nullCheck(imageSizeInfo.source), imageSizeInfo.toJson());
+            return t1;
+          })());
+          decoration_image._pendingImageSizeInfo = new (T.IdentityMapOfString$ImageSizeInfo()).new();
+        }, T.DurationTovoid()));
       }
     }
-  };
-  (border_radius.BorderRadiusDirectional.all = function(radius) {
-    if (radius == null) dart.nullFailed(I[0], 510, 44, "radius");
-    border_radius.BorderRadiusDirectional.only.call(this, {topStart: radius, topEnd: radius, bottomStart: radius, bottomEnd: radius});
-  }).prototype = border_radius.BorderRadiusDirectional.prototype;
-  (border_radius.BorderRadiusDirectional.circular = function(radius) {
-    if (radius == null) dart.nullFailed(I[0], 518, 43, "radius");
-    border_radius.BorderRadiusDirectional.all.call(this, new ui.Radius.circular(radius));
-  }).prototype = border_radius.BorderRadiusDirectional.prototype;
-  (border_radius.BorderRadiusDirectional.vertical = function(opts) {
-    let top = opts && 'top' in opts ? opts.top : C[0] || CT.C0;
-    if (top == null) dart.nullFailed(I[0], 525, 12, "top");
-    let bottom = opts && 'bottom' in opts ? opts.bottom : C[0] || CT.C0;
-    if (bottom == null) dart.nullFailed(I[0], 526, 12, "bottom");
-    border_radius.BorderRadiusDirectional.only.call(this, {topStart: top, topEnd: top, bottomStart: bottom, bottomEnd: bottom});
-  }).prototype = border_radius.BorderRadiusDirectional.prototype;
-  (border_radius.BorderRadiusDirectional.horizontal = function(opts) {
-    let start = opts && 'start' in opts ? opts.start : C[0] || CT.C0;
-    if (start == null) dart.nullFailed(I[0], 537, 12, "start");
-    let end = opts && 'end' in opts ? opts.end : C[0] || CT.C0;
-    if (end == null) dart.nullFailed(I[0], 538, 12, "end");
-    border_radius.BorderRadiusDirectional.only.call(this, {topStart: start, topEnd: end, bottomStart: start, bottomEnd: end});
-  }).prototype = border_radius.BorderRadiusDirectional.prototype;
-  (border_radius.BorderRadiusDirectional.only = function(opts) {
-    let topStart = opts && 'topStart' in opts ? opts.topStart : C[0] || CT.C0;
-    if (topStart == null) dart.nullFailed(I[0], 549, 10, "topStart");
-    let topEnd = opts && 'topEnd' in opts ? opts.topEnd : C[0] || CT.C0;
-    if (topEnd == null) dart.nullFailed(I[0], 550, 10, "topEnd");
-    let bottomStart = opts && 'bottomStart' in opts ? opts.bottomStart : C[0] || CT.C0;
-    if (bottomStart == null) dart.nullFailed(I[0], 551, 10, "bottomStart");
-    let bottomEnd = opts && 'bottomEnd' in opts ? opts.bottomEnd : C[0] || CT.C0;
-    if (bottomEnd == null) dart.nullFailed(I[0], 552, 10, "bottomEnd");
-    this[topStart$] = topStart;
-    this[topEnd$] = topEnd;
-    this[bottomStart$] = bottomStart;
-    this[bottomEnd$] = bottomEnd;
-    border_radius.BorderRadiusDirectional.__proto__.new.call(this);
-    ;
-  }).prototype = border_radius.BorderRadiusDirectional.prototype;
-  dart.addTypeTests(border_radius.BorderRadiusDirectional);
-  dart.addTypeCaches(border_radius.BorderRadiusDirectional);
-  dart.setMethodSignature(border_radius.BorderRadiusDirectional, () => ({
-    __proto__: dart.getMethods(border_radius.BorderRadiusDirectional.__proto__),
-    '-': dart.fnType(border_radius.BorderRadiusDirectional, [border_radius.BorderRadiusDirectional]),
-    '+': dart.fnType(border_radius.BorderRadiusDirectional, [border_radius.BorderRadiusDirectional]),
-    _negate: dart.fnType(border_radius.BorderRadiusDirectional, []),
-    '*': dart.fnType(border_radius.BorderRadiusDirectional, [core.double]),
-    '/': dart.fnType(border_radius.BorderRadiusDirectional, [core.double]),
-    '~/': dart.fnType(border_radius.BorderRadiusDirectional, [core.double]),
-    '%': dart.fnType(border_radius.BorderRadiusDirectional, [core.double]),
-    resolve: dart.fnType(border_radius.BorderRadius, [dart.nullable(ui.TextDirection)])
-  }));
-  dart.setGetterSignature(border_radius.BorderRadiusDirectional, () => ({
-    __proto__: dart.getGetters(border_radius.BorderRadiusDirectional.__proto__),
-    [_topStart]: ui.Radius,
-    [_topEnd]: ui.Radius,
-    [_bottomStart]: ui.Radius,
-    [_bottomEnd]: ui.Radius,
-    [_topLeft]: ui.Radius,
-    [_topRight]: ui.Radius,
-    [_bottomLeft]: ui.Radius,
-    [_bottomRight]: ui.Radius
-  }));
-  dart.setLibraryUri(border_radius.BorderRadiusDirectional, I[1]);
-  dart.setFieldSignature(border_radius.BorderRadiusDirectional, () => ({
-    __proto__: dart.getFields(border_radius.BorderRadiusDirectional.__proto__),
-    topStart: dart.finalFieldType(ui.Radius),
-    topEnd: dart.finalFieldType(ui.Radius),
-    bottomStart: dart.finalFieldType(ui.Radius),
-    bottomEnd: dart.finalFieldType(ui.Radius)
-  }));
-  dart.defineLazy(border_radius.BorderRadiusDirectional, {
-    /*border_radius.BorderRadiusDirectional.zero*/get zero() {
-      return C[4] || CT.C4;
+    let needSave = centerSlice != null || repeat != decoration_image.ImageRepeat.noRepeat || dart.test(flipHorizontally);
+    if (needSave) canvas.save();
+    if (repeat != decoration_image.ImageRepeat.noRepeat) canvas.clipRect(rect);
+    if (dart.test(flipHorizontally)) {
+      let dx = -(dart.notNull(rect.left) + dart.notNull(rect.width) / 2.0);
+      canvas.translate(-dx, 0.0);
+      canvas.scale(-1.0, 1.0);
+      canvas.translate(dx, 0.0);
     }
+    if (centerSlice == null) {
+      let sourceRect = alignment.inscribe(sourceSize, ui.Offset.zero['&'](inputSize));
+      if (repeat == decoration_image.ImageRepeat.noRepeat) {
+        canvas.drawImageRect(image, sourceRect, destinationRect, paint);
+      } else {
+        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
+          canvas.drawImageRect(image, sourceRect, tileRect, paint);
+      }
+    } else {
+      canvas.scale(1 / dart.notNull(scale));
+      if (repeat == decoration_image.ImageRepeat.noRepeat) {
+        canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(destinationRect, scale), paint);
+      } else {
+        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
+          canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(tileRect, scale), paint);
+      }
+    }
+    if (needSave) canvas.restore();
+    if (invertedCanvas) {
+      canvas.restore();
+    }
+  };
+  decoration_image._generateImageTileRects = function _generateImageTileRects(outputRect, fundamentalRect, repeat) {
+    if (outputRect == null) dart.nullFailed(I[0], 597, 45, "outputRect");
+    if (fundamentalRect == null) dart.nullFailed(I[0], 597, 62, "fundamentalRect");
+    if (repeat == null) dart.nullFailed(I[0], 597, 91, "repeat");
+    return new (T.SyncIterableOfRect()).new(function* _generateImageTileRects() {
+      let startX = 0;
+      let startY = 0;
+      let stopX = 0;
+      let stopY = 0;
+      let strideX = fundamentalRect.width;
+      let strideY = fundamentalRect.height;
+      if (repeat == decoration_image.ImageRepeat.repeat || repeat == decoration_image.ImageRepeat.repeatX) {
+        startX = ((dart.notNull(outputRect.left) - dart.notNull(fundamentalRect.left)) / dart.notNull(strideX))[$floor]();
+        stopX = ((dart.notNull(outputRect.right) - dart.notNull(fundamentalRect.right)) / dart.notNull(strideX))[$ceil]();
+      }
+      if (repeat == decoration_image.ImageRepeat.repeat || repeat == decoration_image.ImageRepeat.repeatY) {
+        startY = ((dart.notNull(outputRect.top) - dart.notNull(fundamentalRect.top)) / dart.notNull(strideY))[$floor]();
+        stopY = ((dart.notNull(outputRect.bottom) - dart.notNull(fundamentalRect.bottom)) / dart.notNull(strideY))[$ceil]();
+      }
+      for (let i = startX; i <= stopX; i = i + 1) {
+        for (let j = startY; j <= stopY; j = j + 1)
+          yield fundamentalRect.shift(new ui.Offset.new(i * dart.notNull(strideX), j * dart.notNull(strideY)));
+      }
+    });
+  };
+  decoration_image._scaleRect = function _scaleRect(rect, scale) {
+    if (rect == null) dart.nullFailed(I[0], 621, 22, "rect");
+    if (scale == null) dart.nullFailed(I[0], 621, 35, "scale");
+    return new ui.Rect.fromLTRB(dart.notNull(rect.left) * dart.notNull(scale), dart.notNull(rect.top) * dart.notNull(scale), dart.notNull(rect.right) * dart.notNull(scale), dart.notNull(rect.bottom) * dart.notNull(scale));
+  };
+  dart.defineLazy(decoration_image, {
+    /*decoration_image._pendingImageSizeInfo*/get _pendingImageSizeInfo() {
+      return new (T.IdentityMapOfString$ImageSizeInfo()).new();
+    },
+    set _pendingImageSizeInfo(_) {},
+    /*decoration_image._lastFrameImageSizeInfo*/get _lastFrameImageSizeInfo() {
+      return T.LinkedHashSetOfImageSizeInfo().new();
+    },
+    set _lastFrameImageSizeInfo(_) {}
   }, false);
-  var _topLeft$ = dart.privateName(border_radius, "_MixedBorderRadius._topLeft");
-  var _topRight$ = dart.privateName(border_radius, "_MixedBorderRadius._topRight");
-  var _bottomLeft$ = dart.privateName(border_radius, "_MixedBorderRadius._bottomLeft");
-  var _bottomRight$ = dart.privateName(border_radius, "_MixedBorderRadius._bottomRight");
-  var _topStart$ = dart.privateName(border_radius, "_MixedBorderRadius._topStart");
-  var _topEnd$ = dart.privateName(border_radius, "_MixedBorderRadius._topEnd");
-  var _bottomStart$ = dart.privateName(border_radius, "_MixedBorderRadius._bottomStart");
-  var _bottomEnd$ = dart.privateName(border_radius, "_MixedBorderRadius._bottomEnd");
-  border_radius._MixedBorderRadius = class _MixedBorderRadius extends border_radius.BorderRadiusGeometry {
-    get [_topLeft]() {
-      return this[_topLeft$];
-    }
-    set [_topLeft](value) {
-      super[_topLeft] = value;
-    }
-    get [_topRight]() {
-      return this[_topRight$];
-    }
-    set [_topRight](value) {
-      super[_topRight] = value;
-    }
-    get [_bottomLeft]() {
-      return this[_bottomLeft$];
-    }
-    set [_bottomLeft](value) {
-      super[_bottomLeft] = value;
-    }
-    get [_bottomRight]() {
-      return this[_bottomRight$];
-    }
-    set [_bottomRight](value) {
-      super[_bottomRight] = value;
-    }
-    get [_topStart]() {
-      return this[_topStart$];
-    }
-    set [_topStart](value) {
-      super[_topStart] = value;
-    }
-    get [_topEnd]() {
-      return this[_topEnd$];
-    }
-    set [_topEnd](value) {
-      super[_topEnd] = value;
-    }
-    get [_bottomStart]() {
-      return this[_bottomStart$];
-    }
-    set [_bottomStart](value) {
-      super[_bottomStart] = value;
-    }
-    get [_bottomEnd]() {
-      return this[_bottomEnd$];
-    }
-    set [_bottomEnd](value) {
-      super[_bottomEnd] = value;
-    }
-    _negate() {
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]._negate(), this[_topRight]._negate(), this[_bottomLeft]._negate(), this[_bottomRight]._negate(), this[_topStart]._negate(), this[_topEnd]._negate(), this[_bottomStart]._negate(), this[_bottomEnd]._negate());
-    }
-    ['*'](other) {
-      if (other == null) dart.nullFailed(I[0], 783, 40, "other");
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]['*'](other), this[_topRight]['*'](other), this[_bottomLeft]['*'](other), this[_bottomRight]['*'](other), this[_topStart]['*'](other), this[_topEnd]['*'](other), this[_bottomStart]['*'](other), this[_bottomEnd]['*'](other));
-    }
-    ['/'](other) {
-      if (other == null) dart.nullFailed(I[0], 797, 40, "other");
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]['/'](other), this[_topRight]['/'](other), this[_bottomLeft]['/'](other), this[_bottomRight]['/'](other), this[_topStart]['/'](other), this[_topEnd]['/'](other), this[_bottomStart]['/'](other), this[_bottomEnd]['/'](other));
-    }
-    ['~/'](other) {
-      if (other == null) dart.nullFailed(I[0], 811, 41, "other");
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]['~/'](other), this[_topRight]['~/'](other), this[_bottomLeft]['~/'](other), this[_bottomRight]['~/'](other), this[_topStart]['~/'](other), this[_topEnd]['~/'](other), this[_bottomStart]['~/'](other), this[_bottomEnd]['~/'](other));
-    }
-    ['%'](other) {
-      if (other == null) dart.nullFailed(I[0], 825, 40, "other");
-      return new border_radius._MixedBorderRadius.new(this[_topLeft]['%'](other), this[_topRight]['%'](other), this[_bottomLeft]['%'](other), this[_bottomRight]['%'](other), this[_topStart]['%'](other), this[_topEnd]['%'](other), this[_bottomStart]['%'](other), this[_bottomEnd]['%'](other));
-    }
-    resolve(direction) {
-      if (!(direction != null)) dart.assertFailed(null, I[0], 840, 12, "direction != null");
-      switch (dart.nullCheck(direction)) {
-        case C[2] || CT.C2:
-        {
-          return new border_radius.BorderRadius.only({topLeft: this[_topLeft]['+'](this[_topEnd]), topRight: this[_topRight]['+'](this[_topStart]), bottomLeft: this[_bottomLeft]['+'](this[_bottomEnd]), bottomRight: this[_bottomRight]['+'](this[_bottomStart])});
-        }
-        case C[3] || CT.C3:
-        {
-          return new border_radius.BorderRadius.only({topLeft: this[_topLeft]['+'](this[_topStart]), topRight: this[_topRight]['+'](this[_topEnd]), bottomLeft: this[_bottomLeft]['+'](this[_bottomStart]), bottomRight: this[_bottomRight]['+'](this[_bottomEnd])});
-        }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-        }
-      }
-    }
-  };
-  (border_radius._MixedBorderRadius.new = function(_topLeft, _topRight, _bottomLeft, _bottomRight, _topStart, _topEnd, _bottomStart, _bottomEnd) {
-    if (_topLeft == null) dart.nullFailed(I[0], 733, 10, "_topLeft");
-    if (_topRight == null) dart.nullFailed(I[0], 734, 10, "_topRight");
-    if (_bottomLeft == null) dart.nullFailed(I[0], 735, 10, "_bottomLeft");
-    if (_bottomRight == null) dart.nullFailed(I[0], 736, 10, "_bottomRight");
-    if (_topStart == null) dart.nullFailed(I[0], 737, 10, "_topStart");
-    if (_topEnd == null) dart.nullFailed(I[0], 738, 10, "_topEnd");
-    if (_bottomStart == null) dart.nullFailed(I[0], 739, 10, "_bottomStart");
-    if (_bottomEnd == null) dart.nullFailed(I[0], 740, 10, "_bottomEnd");
-    this[_topLeft$] = _topLeft;
-    this[_topRight$] = _topRight;
-    this[_bottomLeft$] = _bottomLeft;
-    this[_bottomRight$] = _bottomRight;
-    this[_topStart$] = _topStart;
-    this[_topEnd$] = _topEnd;
-    this[_bottomStart$] = _bottomStart;
-    this[_bottomEnd$] = _bottomEnd;
-    border_radius._MixedBorderRadius.__proto__.new.call(this);
-    ;
-  }).prototype = border_radius._MixedBorderRadius.prototype;
-  dart.addTypeTests(border_radius._MixedBorderRadius);
-  dart.addTypeCaches(border_radius._MixedBorderRadius);
-  dart.setMethodSignature(border_radius._MixedBorderRadius, () => ({
-    __proto__: dart.getMethods(border_radius._MixedBorderRadius.__proto__),
-    _negate: dart.fnType(border_radius._MixedBorderRadius, []),
-    '*': dart.fnType(border_radius._MixedBorderRadius, [core.double]),
-    '/': dart.fnType(border_radius._MixedBorderRadius, [core.double]),
-    '~/': dart.fnType(border_radius._MixedBorderRadius, [core.double]),
-    '%': dart.fnType(border_radius._MixedBorderRadius, [core.double]),
-    resolve: dart.fnType(border_radius.BorderRadius, [dart.nullable(ui.TextDirection)])
-  }));
-  dart.setLibraryUri(border_radius._MixedBorderRadius, I[1]);
-  dart.setFieldSignature(border_radius._MixedBorderRadius, () => ({
-    __proto__: dart.getFields(border_radius._MixedBorderRadius.__proto__),
-    [_topLeft]: dart.finalFieldType(ui.Radius),
-    [_topRight]: dart.finalFieldType(ui.Radius),
-    [_bottomLeft]: dart.finalFieldType(ui.Radius),
-    [_bottomRight]: dart.finalFieldType(ui.Radius),
-    [_topStart]: dart.finalFieldType(ui.Radius),
-    [_topEnd]: dart.finalFieldType(ui.Radius),
-    [_bottomStart]: dart.finalFieldType(ui.Radius),
-    [_bottomEnd]: dart.finalFieldType(ui.Radius)
-  }));
-  dart.trackLibraries("packages/flutter/src/painting/border_radius.dart", {
-    "package:flutter/src/painting/border_radius.dart": border_radius
+  dart.trackLibraries("packages/flutter/src/painting/decoration_image.dart", {
+    "package:flutter/src/painting/decoration_image.dart": decoration_image
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["border_radius.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/border_radius.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["decoration_image.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/decoration_image.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__border_radius: border_radius
+    src__painting__decoration_image: decoration_image
   };
 }));
 
-//# sourceMappingURL=border_radius.dart.lib.js.map
+//# sourceMappingURL=decoration_image.dart.lib.js.map

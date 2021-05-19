@@ -1,15 +1,20 @@
-define(['dart_sdk'], (function load__packages__collection__src__comparators_dart(dart_sdk) {
+define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__safe_area_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  var comparators = Object.create(dart.library);
-  var $codeUnitAt = dartx.codeUnitAt;
-  var $rightShift = dartx['>>'];
-  var $sign = dartx.sign;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var safe_area = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _: () => T
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -23,295 +28,468 @@ define(['dart_sdk'], (function load__packages__collection__src__comparators_dart
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
-  var I = ["file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib/src/comparators.dart"];
-  comparators.equalsIgnoreAsciiCase = function equalsIgnoreAsciiCase(a, b) {
-    if (a == null) dart.nullFailed(I[0], 27, 35, "a");
-    if (b == null) dart.nullFailed(I[0], 27, 45, "b");
-    if (a.length !== b.length) return false;
-    for (let i = 0; i < a.length; i = i + 1) {
-      let aChar = a[$codeUnitAt](i);
-      let bChar = b[$codeUnitAt](i);
-      if (aChar === bChar) continue;
-      if ((aChar ^ bChar) >>> 0 !== 32) return false;
-      let aCharLowerCase = (aChar | 32) >>> 0;
-      if (97 <= aCharLowerCase && aCharLowerCase <= 122) {
-        continue;
-      }
-      return false;
-    }
-    return true;
-  };
-  comparators.hashIgnoreAsciiCase = function hashIgnoreAsciiCase(string) {
-    if (string == null) dart.nullFailed(I[0], 50, 32, "string");
-    let hash = 0;
-    for (let i = 0; i < string.length; i = i + 1) {
-      let char = string[$codeUnitAt](i);
-      if (97 <= char && char <= 122) char = char - 32;
-      hash = 536870911 & hash + char;
-      hash = 536870911 & hash + ((524287 & hash) << 10);
-      hash = hash[$rightShift](6);
-    }
-    hash = 536870911 & hash + ((67108863 & hash) << 3);
-    hash = hash[$rightShift](11);
-    return 536870911 & hash + ((16383 & hash) << 15);
-  };
-  comparators.compareAsciiUpperCase = function compareAsciiUpperCase(a, b) {
-    if (a == null) dart.nullFailed(I[0], 85, 34, "a");
-    if (b == null) dart.nullFailed(I[0], 85, 44, "b");
-    let defaultResult = 0;
-    for (let i = 0; i < a.length; i = i + 1) {
-      if (i >= b.length) return 1;
-      let aChar = a[$codeUnitAt](i);
-      let bChar = b[$codeUnitAt](i);
-      if (aChar === bChar) continue;
-      let aUpperCase = aChar;
-      let bUpperCase = bChar;
-      if (97 <= aChar && aChar <= 122) {
-        aUpperCase = aUpperCase - 32;
-      }
-      if (97 <= bChar && bChar <= 122) {
-        bUpperCase = bUpperCase - 32;
-      }
-      if (aUpperCase !== bUpperCase) return (aUpperCase - bUpperCase)[$sign];
-      if (defaultResult === 0) defaultResult = aChar - bChar;
-    }
-    if (b.length > a.length) return -1;
-    return defaultResult[$sign];
-  };
-  comparators.compareAsciiLowerCase = function compareAsciiLowerCase(a, b) {
-    if (a == null) dart.nullFailed(I[0], 122, 34, "a");
-    if (b == null) dart.nullFailed(I[0], 122, 44, "b");
-    let defaultResult = 0;
-    for (let i = 0; i < a.length; i = i + 1) {
-      if (i >= b.length) return 1;
-      let aChar = a[$codeUnitAt](i);
-      let bChar = b[$codeUnitAt](i);
-      if (aChar === bChar) continue;
-      let aLowerCase = aChar;
-      let bLowerCase = bChar;
-      if (65 <= bChar && bChar <= 90) {
-        bLowerCase = bLowerCase + 32;
-      }
-      if (65 <= aChar && aChar <= 90) {
-        aLowerCase = aLowerCase + 32;
-      }
-      if (aLowerCase !== bLowerCase) return (aLowerCase - bLowerCase)[$sign];
-      if (defaultResult === 0) defaultResult = aChar - bChar;
-    }
-    if (b.length > a.length) return -1;
-    return defaultResult[$sign];
-  };
-  comparators.compareNatural = function compareNatural(a, b) {
-    if (a == null) dart.nullFailed(I[0], 161, 27, "a");
-    if (b == null) dart.nullFailed(I[0], 161, 37, "b");
-    for (let i = 0; i < a.length; i = i + 1) {
-      if (i >= b.length) return 1;
-      let aChar = a[$codeUnitAt](i);
-      let bChar = b[$codeUnitAt](i);
-      if (aChar !== bChar) {
-        return comparators._compareNaturally(a, b, i, aChar, bChar);
-      }
-    }
-    if (b.length > a.length) return -1;
-    return 0;
-  };
-  comparators.compareAsciiLowerCaseNatural = function compareAsciiLowerCaseNatural(a, b) {
-    if (a == null) dart.nullFailed(I[0], 187, 41, "a");
-    if (b == null) dart.nullFailed(I[0], 187, 51, "b");
-    let defaultResult = 0;
-    for (let i = 0; i < a.length; i = i + 1) {
-      if (i >= b.length) return 1;
-      let aChar = a[$codeUnitAt](i);
-      let bChar = b[$codeUnitAt](i);
-      if (aChar === bChar) continue;
-      let aLowerCase = aChar;
-      let bLowerCase = bChar;
-      if (65 <= aChar && aChar <= 90) {
-        aLowerCase = aLowerCase + 32;
-      }
-      if (65 <= bChar && bChar <= 90) {
-        bLowerCase = bLowerCase + 32;
-      }
-      if (aLowerCase !== bLowerCase) {
-        return comparators._compareNaturally(a, b, i, aLowerCase, bLowerCase);
-      }
-      if (defaultResult === 0) defaultResult = aChar - bChar;
-    }
-    if (b.length > a.length) return -1;
-    return defaultResult[$sign];
-  };
-  comparators.compareAsciiUpperCaseNatural = function compareAsciiUpperCaseNatural(a, b) {
-    if (a == null) dart.nullFailed(I[0], 224, 41, "a");
-    if (b == null) dart.nullFailed(I[0], 224, 51, "b");
-    let defaultResult = 0;
-    for (let i = 0; i < a.length; i = i + 1) {
-      if (i >= b.length) return 1;
-      let aChar = a[$codeUnitAt](i);
-      let bChar = b[$codeUnitAt](i);
-      if (aChar === bChar) continue;
-      let aUpperCase = aChar;
-      let bUpperCase = bChar;
-      if (97 <= aChar && aChar <= 122) {
-        aUpperCase = aUpperCase - 32;
-      }
-      if (97 <= bChar && bChar <= 122) {
-        bUpperCase = bUpperCase - 32;
-      }
-      if (aUpperCase !== bUpperCase) {
-        return comparators._compareNaturally(a, b, i, aUpperCase, bUpperCase);
-      }
-      if (defaultResult === 0) defaultResult = aChar - bChar;
-    }
-    if (b.length > a.length) return -1;
-    return defaultResult[$sign];
-  };
-  comparators._compareNaturally = function _compareNaturally(a, b, index, aChar, bChar) {
-    if (a == null) dart.nullFailed(I[0], 258, 30, "a");
-    if (b == null) dart.nullFailed(I[0], 258, 40, "b");
-    if (index == null) dart.nullFailed(I[0], 258, 47, "index");
-    if (aChar == null) dart.nullFailed(I[0], 258, 58, "aChar");
-    if (bChar == null) dart.nullFailed(I[0], 258, 69, "bChar");
-    if (!(aChar != bChar)) dart.assertFailed(null, I[0], 259, 10, "aChar != bChar");
-    let aIsDigit = comparators._isDigit(aChar);
-    let bIsDigit = comparators._isDigit(bChar);
-    if (dart.test(aIsDigit)) {
-      if (dart.test(bIsDigit)) {
-        return comparators._compareNumerically(a, b, aChar, bChar, index);
-      } else if (dart.notNull(index) > 0 && dart.test(comparators._isDigit(a[$codeUnitAt](dart.notNull(index) - 1)))) {
-        return 1;
-      }
-    } else if (dart.test(bIsDigit) && dart.notNull(index) > 0 && dart.test(comparators._isDigit(b[$codeUnitAt](dart.notNull(index) - 1)))) {
-      return -1;
-    }
-    return (dart.notNull(aChar) - dart.notNull(bChar))[$sign];
-  };
-  comparators._compareNumerically = function _compareNumerically(a, b, aChar, bChar, index) {
-    if (a == null) dart.nullFailed(I[0], 283, 32, "a");
-    if (b == null) dart.nullFailed(I[0], 283, 42, "b");
-    if (aChar == null) dart.nullFailed(I[0], 283, 49, "aChar");
-    if (bChar == null) dart.nullFailed(I[0], 283, 60, "bChar");
-    if (index == null) dart.nullFailed(I[0], 283, 71, "index");
-    if (dart.test(comparators._isNonZeroNumberSuffix(a, index))) {
-      let result = comparators._compareDigitCount(a, b, index, index);
-      if (result !== 0) return result;
-      return (dart.notNull(aChar) - dart.notNull(bChar))[$sign];
-    }
-    let aIndex = index;
-    let bIndex = index;
-    if (aChar === 48) {
-      do {
-        aIndex = dart.notNull(aIndex) + 1;
-        if (aIndex === a.length) return -1;
-        aChar = a[$codeUnitAt](aIndex);
-      } while (aChar === 48);
-      if (!dart.test(comparators._isDigit(aChar))) return -1;
-    } else if (bChar === 48) {
-      do {
-        bIndex = dart.notNull(bIndex) + 1;
-        if (bIndex === b.length) return 1;
-        bChar = b[$codeUnitAt](bIndex);
-      } while (bChar === 48);
-      if (!dart.test(comparators._isDigit(bChar))) return 1;
-    }
-    if (aChar != bChar) {
-      let result = comparators._compareDigitCount(a, b, aIndex, bIndex);
-      if (result !== 0) return result;
-      return (dart.notNull(aChar) - dart.notNull(bChar))[$sign];
-    }
-    while (true) {
-      let aIsDigit = false;
-      let bIsDigit = false;
-      aChar = 0;
-      bChar = 0;
-      if ((aIndex = dart.notNull(aIndex) + 1) < a.length) {
-        aChar = a[$codeUnitAt](aIndex);
-        aIsDigit = comparators._isDigit(aChar);
-      }
-      if ((bIndex = dart.notNull(bIndex) + 1) < b.length) {
-        bChar = b[$codeUnitAt](bIndex);
-        bIsDigit = comparators._isDigit(bChar);
-      }
-      if (dart.test(aIsDigit)) {
-        if (dart.test(bIsDigit)) {
-          if (aChar == bChar) continue;
-          break;
-        }
-        return 1;
-      } else if (dart.test(bIsDigit)) {
-        return -1;
-      } else {
-        return (dart.notNull(aIndex) - dart.notNull(bIndex))[$sign];
-      }
-    }
-    let result = comparators._compareDigitCount(a, b, aIndex, bIndex);
-    if (result !== 0) return result;
-    return (dart.notNull(aChar) - dart.notNull(bChar))[$sign];
-  };
-  comparators._compareDigitCount = function _compareDigitCount(a, b, i, j) {
-    if (a == null) dart.nullFailed(I[0], 360, 31, "a");
-    if (b == null) dart.nullFailed(I[0], 360, 41, "b");
-    if (i == null) dart.nullFailed(I[0], 360, 48, "i");
-    if (j == null) dart.nullFailed(I[0], 360, 55, "j");
-    while ((i = dart.notNull(i) + 1) < a.length) {
-      let aIsDigit = comparators._isDigit(a[$codeUnitAt](i));
-      if ((j = dart.notNull(j) + 1) === b.length) return dart.test(aIsDigit) ? 1 : 0;
-      let bIsDigit = comparators._isDigit(b[$codeUnitAt](j));
-      if (dart.test(aIsDigit)) {
-        if (dart.test(bIsDigit)) continue;
-        return 1;
-      } else if (dart.test(bIsDigit)) {
-        return -1;
-      } else {
-        return 0;
-      }
-    }
-    if ((j = dart.notNull(j) + 1) < b.length && dart.test(comparators._isDigit(b[$codeUnitAt](j)))) {
-      return -1;
-    }
-    return 0;
-  };
-  comparators._isDigit = function _isDigit(charCode) {
-    if (charCode == null) dart.nullFailed(I[0], 380, 19, "charCode");
-    return (dart.notNull(charCode) ^ 48) >>> 0 <= 9;
-  };
-  comparators._isNonZeroNumberSuffix = function _isNonZeroNumberSuffix(string, index) {
-    if (string == null) dart.nullFailed(I[0], 387, 36, "string");
-    if (index == null) dart.nullFailed(I[0], 387, 48, "index");
-    while ((index = dart.notNull(index) - 1) >= 0) {
-      let char = string[$codeUnitAt](index);
-      if (char !== 48) return comparators._isDigit(char);
-    }
-    return false;
-  };
-  dart.defineLazy(comparators, {
-    /*comparators._zero*/get _zero() {
-      return 48;
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
     },
-    /*comparators._upperCaseA*/get _upperCaseA() {
-      return 65;
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "context",
+        [_Location_column]: 9,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
     },
-    /*comparators._upperCaseZ*/get _upperCaseZ() {
-      return 90;
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeLeft",
+        [_Location_column]: 9,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
     },
-    /*comparators._lowerCaseA*/get _lowerCaseA() {
-      return 97;
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeTop",
+        [_Location_column]: 9,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
     },
-    /*comparators._lowerCaseZ*/get _lowerCaseZ() {
-      return 122;
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeRight",
+        [_Location_column]: 9,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
     },
-    /*comparators._asciiCaseBit*/get _asciiCaseBit() {
-      return 32;
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeBottom",
+        [_Location_column]: 9,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 104,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "context",
+        [_Location_column]: 9,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeLeft",
+        [_Location_column]: 9,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeTop",
+        [_Location_column]: 9,
+        [_Location_line]: 208,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeRight",
+        [_Location_column]: 9,
+        [_Location_line]: 209,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeBottom",
+        [_Location_column]: 9,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 211,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 205,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 199,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "sliver",
+        [_Location_column]: 7,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 198,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+      });
     }
   }, false);
-  dart.trackLibraries("packages/collection/src/comparators.dart", {
-    "package:collection/src/comparators.dart": comparators
+  var C = Array(25).fill(void 0);
+  var I = [
+    "file:///C:/src/flutter/packages/flutter/lib/src/widgets/safe_area.dart",
+    "package:flutter/src/widgets/safe_area.dart"
+  ];
+  var left$ = dart.privateName(safe_area, "SafeArea.left");
+  var top$ = dart.privateName(safe_area, "SafeArea.top");
+  var right$ = dart.privateName(safe_area, "SafeArea.right");
+  var bottom$ = dart.privateName(safe_area, "SafeArea.bottom");
+  var minimum$ = dart.privateName(safe_area, "SafeArea.minimum");
+  var maintainBottomViewPadding$ = dart.privateName(safe_area, "SafeArea.maintainBottomViewPadding");
+  var child$ = dart.privateName(safe_area, "SafeArea.child");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  safe_area.SafeArea = class SafeArea extends framework.StatelessWidget {
+    get left() {
+      return this[left$];
+    }
+    set left(value) {
+      super.left = value;
+    }
+    get top() {
+      return this[top$];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get right() {
+      return this[right$];
+    }
+    set right(value) {
+      super.right = value;
+    }
+    get bottom() {
+      return this[bottom$];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    get minimum() {
+      return this[minimum$];
+    }
+    set minimum(value) {
+      super.minimum = value;
+    }
+    get maintainBottomViewPadding() {
+      return this[maintainBottomViewPadding$];
+    }
+    set maintainBottomViewPadding(value) {
+      super.maintainBottomViewPadding = value;
+    }
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 96, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 97, 12, "debugCheckHasMediaQuery(context)");
+      let data = media_query.MediaQuery.of(context);
+      let padding = data.padding;
+      if (data.padding.bottom === 0.0 && data.viewInsets.bottom !== 0.0 && dart.test(this.maintainBottomViewPadding)) padding = padding.copyWith({bottom: data.viewPadding.bottom});
+      return new basic.Padding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, dart.test(this.left) ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, dart.test(this.top) ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, dart.test(this.right) ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, dart.test(this.bottom) ? padding.bottom : 0.0, this.minimum.bottom)}), child: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.child, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 123, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
+      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
+      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
+      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
+    }
+  };
+  (safe_area.SafeArea.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let left = opts && 'left' in opts ? opts.left : true;
+    if (left == null) dart.nullFailed(I[0], 43, 10, "left");
+    let top = opts && 'top' in opts ? opts.top : true;
+    if (top == null) dart.nullFailed(I[0], 44, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : true;
+    if (right == null) dart.nullFailed(I[0], 45, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
+    if (bottom == null) dart.nullFailed(I[0], 46, 10, "bottom");
+    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
+    if (minimum == null) dart.nullFailed(I[0], 47, 10, "minimum");
+    let maintainBottomViewPadding = opts && 'maintainBottomViewPadding' in opts ? opts.maintainBottomViewPadding : false;
+    if (maintainBottomViewPadding == null) dart.nullFailed(I[0], 48, 10, "maintainBottomViewPadding");
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 49, 19, "child");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[left$] = left;
+    this[top$] = top;
+    this[right$] = right;
+    this[bottom$] = bottom;
+    this[minimum$] = minimum;
+    this[maintainBottomViewPadding$] = maintainBottomViewPadding;
+    this[child$] = child;
+    if (!(left != null)) dart.assertFailed(null, I[0], 50, 15, "left != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 51, 15, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 52, 15, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 53, 15, "bottom != null");
+    safe_area.SafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = safe_area.SafeArea.prototype;
+  dart.addTypeTests(safe_area.SafeArea);
+  dart.addTypeCaches(safe_area.SafeArea);
+  dart.setMethodSignature(safe_area.SafeArea, () => ({
+    __proto__: dart.getMethods(safe_area.SafeArea.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(safe_area.SafeArea, I[1]);
+  dart.setFieldSignature(safe_area.SafeArea, () => ({
+    __proto__: dart.getFields(safe_area.SafeArea.__proto__),
+    left: dart.finalFieldType(core.bool),
+    top: dart.finalFieldType(core.bool),
+    right: dart.finalFieldType(core.bool),
+    bottom: dart.finalFieldType(core.bool),
+    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
+    maintainBottomViewPadding: dart.finalFieldType(core.bool),
+    child: dart.finalFieldType(framework.Widget)
+  }));
+  var left$0 = dart.privateName(safe_area, "SliverSafeArea.left");
+  var top$0 = dart.privateName(safe_area, "SliverSafeArea.top");
+  var right$0 = dart.privateName(safe_area, "SliverSafeArea.right");
+  var bottom$0 = dart.privateName(safe_area, "SliverSafeArea.bottom");
+  var minimum$0 = dart.privateName(safe_area, "SliverSafeArea.minimum");
+  var sliver$ = dart.privateName(safe_area, "SliverSafeArea.sliver");
+  safe_area.SliverSafeArea = class SliverSafeArea extends framework.StatelessWidget {
+    get left() {
+      return this[left$0];
+    }
+    set left(value) {
+      super.left = value;
+    }
+    get top() {
+      return this[top$0];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get right() {
+      return this[right$0];
+    }
+    set right(value) {
+      super.right = value;
+    }
+    get bottom() {
+      return this[bottom$0];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    get minimum() {
+      return this[minimum$0];
+    }
+    set minimum(value) {
+      super.minimum = value;
+    }
+    get sliver() {
+      return this[sliver$];
+    }
+    set sliver(value) {
+      super.sliver = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 195, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 196, 12, "debugCheckHasMediaQuery(context)");
+      let padding = media_query.MediaQuery.of(context).padding;
+      return new basic.SliverPadding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, dart.test(this.left) ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, dart.test(this.top) ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, dart.test(this.right) ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, dart.test(this.bottom) ? padding.bottom : 0.0, this.minimum.bottom)}), sliver: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.sliver, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 217, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
+      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
+      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
+      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
+    }
+  };
+  (safe_area.SliverSafeArea.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let left = opts && 'left' in opts ? opts.left : true;
+    if (left == null) dart.nullFailed(I[0], 158, 10, "left");
+    let top = opts && 'top' in opts ? opts.top : true;
+    if (top == null) dart.nullFailed(I[0], 159, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : true;
+    if (right == null) dart.nullFailed(I[0], 160, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
+    if (bottom == null) dart.nullFailed(I[0], 161, 10, "bottom");
+    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
+    if (minimum == null) dart.nullFailed(I[0], 162, 10, "minimum");
+    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
+    if (sliver == null) dart.nullFailed(I[0], 163, 19, "sliver");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[left$0] = left;
+    this[top$0] = top;
+    this[right$0] = right;
+    this[bottom$0] = bottom;
+    this[minimum$0] = minimum;
+    this[sliver$] = sliver;
+    if (!(left != null)) dart.assertFailed(null, I[0], 164, 15, "left != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 165, 15, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 166, 15, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 167, 15, "bottom != null");
+    safe_area.SliverSafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = safe_area.SliverSafeArea.prototype;
+  dart.addTypeTests(safe_area.SliverSafeArea);
+  dart.addTypeCaches(safe_area.SliverSafeArea);
+  dart.setMethodSignature(safe_area.SliverSafeArea, () => ({
+    __proto__: dart.getMethods(safe_area.SliverSafeArea.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(safe_area.SliverSafeArea, I[1]);
+  dart.setFieldSignature(safe_area.SliverSafeArea, () => ({
+    __proto__: dart.getFields(safe_area.SliverSafeArea.__proto__),
+    left: dart.finalFieldType(core.bool),
+    top: dart.finalFieldType(core.bool),
+    right: dart.finalFieldType(core.bool),
+    bottom: dart.finalFieldType(core.bool),
+    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
+    sliver: dart.finalFieldType(framework.Widget)
+  }));
+  dart.trackLibraries("packages/flutter/src/widgets/safe_area.dart", {
+    "package:flutter/src/widgets/safe_area.dart": safe_area
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["comparators.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/collection/src/comparators.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["safe_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwDa;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAaN;;;;;;IAQE;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACjB,iBAAkB,0BAAG,OAAO;AACtC,oBAAU,AAAK,IAAD;AAEzB,UAAI,AAAK,AAAQ,AAAO,IAAhB,oBAAmB,OAAO,AAAK,AAAW,AAAO,IAAnB,uBAAsB,iBAAO,iCACjE,AAA2D,UAAjD,AAAQ,OAAD,mBAAkB,AAAK,AAAY,IAAb;AAEzC,YAAO,iCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,+BAExC,+CACP,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAvFO;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IANT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;IAqHT;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAMJ;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACrB,oBAAqB,AAAY,0BAAT,OAAO;AAChD,YAAO,uCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,gCAEvC,+CACR,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAlEO;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IALT;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,4DAAW,GAAG;;EAAC","file":"../../../../../../../packages/flutter/src/widgets/safe_area.dart.lib.js"}');
   // Exports:
   return {
-    src__comparators: comparators
+    src__widgets__safe_area: safe_area
   };
 }));
 
-//# sourceMappingURL=comparators.dart.lib.js.map
+//# sourceMappingURL=safe_area.dart.lib.js.map

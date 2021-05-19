@@ -1,45 +1,22 @@
-define(['dart_sdk', 'packages/flutter_svg/src/picture_stream.dart', 'packages/flutter_svg/src/svg/xml_parsers.dart', 'packages/flutter_svg/parser.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter_svg/src/picture_provider.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter_svg/src/render_picture.dart', 'packages/flutter_svg/src/unbounded_color_filtered.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter_svg__svg_dart(dart_sdk, packages__flutter_svg__src__picture_stream$46dart, packages__flutter_svg__src__svg__xml_parsers$46dart, packages__flutter_svg__parser$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter_svg__src__picture_provider$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter_svg__src__render_picture$46dart, packages__flutter_svg__src__unbounded_color_filtered$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/circle_border.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__painting__stadium_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__circle_border$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__foundation__object$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
-  const convert = dart_sdk.convert;
-  const typed_data = dart_sdk.typed_data;
   const ui = dart_sdk.ui;
-  const _engine = dart_sdk._engine;
   const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const picture_stream = packages__flutter_svg__src__picture_stream$46dart.src__picture_stream;
-  const vector_drawable = packages__flutter_svg__src__svg__xml_parsers$46dart.src__vector_drawable;
-  const parser$ = packages__flutter_svg__parser$46dart.parser;
-  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
-  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
-  const picture_provider = packages__flutter_svg__src__picture_provider$46dart.src__picture_provider;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
-  const render_picture = packages__flutter_svg__src__render_picture$46dart.src__render_picture;
-  const unbounded_color_filtered = packages__flutter_svg__src__unbounded_color_filtered$46dart.src__unbounded_color_filtered;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
-  var svg = Object.create(dart.library);
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const circle_border = packages__flutter__src__painting__circle_border$46dart.src__painting__circle_border;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  var stadium_border = Object.create(dart.library);
+  var $runtimeType = dartx.runtimeType;
+  var $toStringAsFixed = dartx.toStringAsFixed;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    BuildContextToLimitedBox: () => (T.BuildContextToLimitedBox = dart.constFn(dart.fnType(basic.LimitedBox, [framework.BuildContext])))(),
-    FutureOfPictureInfo: () => (T.FutureOfPictureInfo = dart.constFn(async.Future$(picture_stream.PictureInfo)))(),
-    ColorFilterN: () => (T.ColorFilterN = dart.constFn(dart.nullable(ui.ColorFilter)))(),
-    Uint8ListAndColorFilterNAndStringToFutureOfPictureInfo: () => (T.Uint8ListAndColorFilterNAndStringToFutureOfPictureInfo = dart.constFn(dart.fnType(T.FutureOfPictureInfo(), [typed_data.Uint8List, T.ColorFilterN(), core.String])))(),
-    StringAndColorFilterNAndStringToFutureOfPictureInfo: () => (T.StringAndColorFilterNAndStringToFutureOfPictureInfo = dart.constFn(dart.fnType(T.FutureOfPictureInfo(), [core.String, T.ColorFilterN(), core.String])))(),
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    VoidToWidget: () => (T.VoidToWidget = dart.constFn(dart.fnType(framework.Widget, [])))(),
-    WidgetTodynamic: () => (T.WidgetTodynamic = dart.constFn(dart.fnType(dart.dynamic, [framework.Widget])))(),
-    DiagnosticsPropertyOfPictureStream: () => (T.DiagnosticsPropertyOfPictureStream = dart.constFn(diagnostics.DiagnosticsProperty$(picture_stream.PictureStream)))(),
-    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
-    PictureInfoN: () => (T.PictureInfoN = dart.constFn(dart.nullable(picture_stream.PictureInfo)))(),
-    PictureInfoNAndboolTovoid: () => (T.PictureInfoNAndboolTovoid = dart.constFn(dart.fnType(dart.void, [T.PictureInfoN(), core.bool])))(),
-    ObjectAndStackTraceTovoid: () => (T.ObjectAndStackTraceTovoid = dart.constFn(dart.fnType(dart.void, [core.Object, core.StackTrace])))()
+    _: () => T
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -54,1043 +31,518 @@ define(['dart_sdk', 'packages/flutter_svg/src/picture_stream.dart', 'packages/fl
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: box_fit.BoxFit.prototype,
-        [_name]: "BoxFit.contain",
-        index: 1
-      });
-    },
     get C1() {
       return C[1] = dart.const({
-        __proto__: alignment.Alignment.prototype,
-        [Alignment_y]: 0,
-        [Alignment_x]: 0
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: ui.Clip.prototype,
-        [_name$]: "Clip.hardEdge",
-        index: 1
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[1] || CT.C1,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[2] || CT.C2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: ui.BlendMode.prototype,
-        [_name$]: "BlendMode.srcIn",
-        index: 5
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.solid",
+        index: 1
       });
-    },
-    get C6() {
-      return C[6] = dart.constList([], T._LocationL());
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[6] || CT.C6,
-        [_Location_name]: null,
-        [_Location_column]: 35,
-        [_Location_line]: 558,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 0,
+        [Radius_x]: 0
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: basic.LimitedBox.prototype,
-        [Widget__location]: C[5] || CT.C5,
-        [Widget_key]: null,
-        [SingleChildRenderObjectWidget_child]: null,
-        [LimitedBox_maxHeight]: 1 / 0,
-        [LimitedBox_maxWidth]: 1 / 0
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "picture",
-        [_Location_column]: 15,
-        [_Location_line]: 782,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "matchTextDirection",
-        [_Location_column]: 15,
-        [_Location_line]: 783,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "allowDrawingOutsideViewBox",
-        [_Location_column]: 15,
-        [_Location_line]: 784,
-        [_Location_file]: null
-      });
-    },
-    get C8() {
-      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11], T._LocationL());
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[8] || CT.C8,
-        [_Location_name]: null,
-        [_Location_column]: 20,
-        [_Location_line]: 781,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
-      });
-    },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "size",
-        [_Location_column]: 13,
-        [_Location_line]: 780,
-        [_Location_file]: null
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 13,
-        [_Location_line]: 781,
-        [_Location_file]: null
-      });
-    },
-    get C13() {
-      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], T._LocationL());
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[13] || CT.C13,
-        [_Location_name]: null,
-        [_Location_column]: 27,
-        [_Location_line]: 779,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "fit",
-        [_Location_column]: 11,
-        [_Location_line]: 776,
-        [_Location_file]: null
-      });
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "alignment",
-        [_Location_column]: 11,
-        [_Location_line]: 777,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "clipBehavior",
-        [_Location_column]: 11,
-        [_Location_line]: 778,
-        [_Location_file]: null
-      });
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 11,
-        [_Location_line]: 779,
-        [_Location_file]: null
-      });
-    },
-    get C17() {
-      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21], T._LocationL());
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[17] || CT.C17,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 775,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
-      });
-    },
-    get C24() {
-      return C[24] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
-        [_Location_column]: 9,
-        [_Location_line]: 773,
-        [_Location_file]: null
-      });
-    },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "height",
-        [_Location_column]: 9,
-        [_Location_line]: 774,
-        [_Location_file]: null
-      });
-    },
-    get C26() {
-      return C[26] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 775,
-        [_Location_file]: null
-      });
-    },
-    get C23() {
-      return C[23] = dart.constList([C[24] || CT.C24, C[25] || CT.C25, C[26] || CT.C26], T._LocationL());
-    },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[23] || CT.C23,
-        [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 772,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
-      });
-    },
-    get C29() {
-      return C[29] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "colorFilter",
-        [_Location_column]: 11,
-        [_Location_line]: 793,
-        [_Location_file]: null
-      });
-    },
-    get C30() {
-      return C[30] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 11,
-        [_Location_line]: 794,
-        [_Location_file]: null
-      });
-    },
-    get C28() {
-      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
-    },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[28] || CT.C28,
-        [_Location_name]: null,
-        [_Location_column]: 17,
-        [_Location_line]: 792,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
-      });
-    },
-    get C33() {
-      return C[33] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "container",
-        [_Location_column]: 9,
-        [_Location_line]: 804,
-        [_Location_file]: null
-      });
-    },
-    get C34() {
-      return C[34] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "image",
-        [_Location_column]: 9,
-        [_Location_line]: 805,
-        [_Location_file]: null
-      });
-    },
-    get C35() {
-      return C[35] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "label",
-        [_Location_column]: 9,
-        [_Location_line]: 806,
-        [_Location_file]: null
-      });
-    },
-    get C36() {
-      return C[36] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 807,
-        [_Location_file]: null
-      });
-    },
-    get C32() {
-      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36], T._LocationL());
-    },
-    get C31() {
-      return C[31] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[32] || CT.C32,
-        [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 803,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
-      });
-    },
-    get C39() {
-      return C[39] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "width",
-        [_Location_column]: 23,
-        [_Location_line]: 816,
-        [_Location_file]: null
-      });
-    },
-    get C40() {
-      return C[40] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "height",
-        [_Location_column]: 37,
-        [_Location_line]: 816,
-        [_Location_file]: null
-      });
-    },
-    get C38() {
-      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], T._LocationL());
-    },
-    get C37() {
-      return C[37] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[38] || CT.C38,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 816,
-        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart"
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[5] || CT.C5,
+        [BorderRadius_bottomLeft]: C[5] || CT.C5,
+        [BorderRadius_topRight]: C[5] || CT.C5,
+        [BorderRadius_topLeft]: C[5] || CT.C5
       });
     }
   }, false);
-  var C = Array(41).fill(void 0);
+  var C = Array(6).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/svg.dart",
-    "package:flutter_svg/svg.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/painting/stadium_border.dart",
+    "package:flutter/src/painting/stadium_border.dart"
   ];
-  var cacheColorFilterOverride = dart.privateName(svg, "Svg.cacheColorFilterOverride");
-  svg.Svg = class Svg extends core.Object {
-    get cacheColorFilterOverride() {
-      return this[cacheColorFilterOverride];
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  stadium_border.StadiumBorder = class StadiumBorder extends borders.OutlinedBorder {
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.side.width);
     }
-    set cacheColorFilterOverride(value) {
-      this[cacheColorFilterOverride] = value;
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 40, 28, "t");
+      return new stadium_border.StadiumBorder.new({side: this.side.scale(t)});
     }
-    svgPictureDecoder(raw, allowDrawingOutsideOfViewBox, colorFilter, key) {
-      if (raw == null) dart.nullFailed(I[0], 48, 15, "raw");
-      if (allowDrawingOutsideOfViewBox == null) dart.nullFailed(I[0], 49, 10, "allowDrawingOutsideOfViewBox");
-      if (key == null) dart.nullFailed(I[0], 51, 12, "key");
-      return async.async(picture_stream.PictureInfo, (function* svgPictureDecoder() {
-        let svgRoot = (yield this.fromSvgBytes(raw, key));
-        let pic = svgRoot.toPicture({clipToViewBox: allowDrawingOutsideOfViewBox === true ? false : true, colorFilter: colorFilter});
-        return new picture_stream.PictureInfo.new({picture: pic, viewport: svgRoot.viewport.viewBoxRect, size: svgRoot.viewport.size});
-      }).bind(this));
-    }
-    svgPictureStringDecoder(raw, allowDrawingOutsideOfViewBox, colorFilter, key) {
-      if (raw == null) dart.nullFailed(I[0], 76, 14, "raw");
-      if (allowDrawingOutsideOfViewBox == null) dart.nullFailed(I[0], 77, 12, "allowDrawingOutsideOfViewBox");
-      if (key == null) dart.nullFailed(I[0], 79, 14, "key");
-      return async.async(picture_stream.PictureInfo, (function* svgPictureStringDecoder() {
-        let svg = (yield this.fromSvgString(raw, key));
-        return new picture_stream.PictureInfo.new({picture: svg.toPicture({clipToViewBox: allowDrawingOutsideOfViewBox === true ? false : true, colorFilter: colorFilter, size: svg.viewport.viewBox}), viewport: svg.viewport.viewBoxRect, size: svg.viewport.size});
-      }).bind(this));
-    }
-    fromSvgBytes(raw, key) {
-      if (raw == null) dart.nullFailed(I[0], 96, 47, "raw");
-      if (key == null) dart.nullFailed(I[0], 96, 59, "key");
-      return async.async(vector_drawable.DrawableRoot, (function* fromSvgBytes() {
-        return this.fromSvgString(convert.utf8.decode(raw), key);
-      }).bind(this));
-    }
-    fromSvgString(rawSvg, key) {
-      if (rawSvg == null) dart.nullFailed(I[0], 117, 45, "rawSvg");
-      if (key == null) dart.nullFailed(I[0], 117, 60, "key");
-      return async.async(vector_drawable.DrawableRoot, function* fromSvgString() {
-        let parser = new parser$.SvgParser.new();
-        return yield parser.parse(rawSvg, {key: key});
-      });
-    }
-  };
-  (svg.Svg.__ = function() {
-    this[cacheColorFilterOverride] = null;
-    ;
-  }).prototype = svg.Svg.prototype;
-  dart.addTypeTests(svg.Svg);
-  dart.addTypeCaches(svg.Svg);
-  dart.setMethodSignature(svg.Svg, () => ({
-    __proto__: dart.getMethods(svg.Svg.__proto__),
-    svgPictureDecoder: dart.fnType(async.Future$(picture_stream.PictureInfo), [typed_data.Uint8List, core.bool, dart.nullable(ui.ColorFilter), core.String]),
-    svgPictureStringDecoder: dart.fnType(async.Future$(picture_stream.PictureInfo), [core.String, core.bool, dart.nullable(ui.ColorFilter), core.String]),
-    fromSvgBytes: dart.fnType(async.Future$(vector_drawable.DrawableRoot), [typed_data.Uint8List, core.String]),
-    fromSvgString: dart.fnType(async.Future$(vector_drawable.DrawableRoot), [core.String, core.String])
-  }));
-  dart.setLibraryUri(svg.Svg, I[1]);
-  dart.setFieldSignature(svg.Svg, () => ({
-    __proto__: dart.getFields(svg.Svg.__proto__),
-    cacheColorFilterOverride: dart.fieldType(dart.nullable(core.bool))
-  }));
-  var width$ = dart.privateName(svg, "SvgPicture.width");
-  var height$ = dart.privateName(svg, "SvgPicture.height");
-  var fit$ = dart.privateName(svg, "SvgPicture.fit");
-  var alignment$ = dart.privateName(svg, "SvgPicture.alignment");
-  var pictureProvider$ = dart.privateName(svg, "SvgPicture.pictureProvider");
-  var placeholderBuilder$ = dart.privateName(svg, "SvgPicture.placeholderBuilder");
-  var matchTextDirection$ = dart.privateName(svg, "SvgPicture.matchTextDirection");
-  var allowDrawingOutsideViewBox$ = dart.privateName(svg, "SvgPicture.allowDrawingOutsideViewBox");
-  var semanticsLabel$ = dart.privateName(svg, "SvgPicture.semanticsLabel");
-  var excludeFromSemantics$ = dart.privateName(svg, "SvgPicture.excludeFromSemantics");
-  var clipBehavior$ = dart.privateName(svg, "SvgPicture.clipBehavior");
-  var colorFilter$ = dart.privateName(svg, "SvgPicture.colorFilter");
-  var cacheColorFilter$ = dart.privateName(svg, "SvgPicture.cacheColorFilter");
-  var _name = dart.privateName(box_fit, "_name");
-  var Alignment_y = dart.privateName(alignment, "Alignment.y");
-  var Alignment_x = dart.privateName(alignment, "Alignment.x");
-  var _name$ = dart.privateName(ui, "_name");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  var Widget__location = dart.privateName(framework, "Widget._location");
-  var Widget_key = dart.privateName(framework, "Widget.key");
-  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
-  var LimitedBox_maxHeight = dart.privateName(basic, "LimitedBox.maxHeight");
-  var LimitedBox_maxWidth = dart.privateName(basic, "LimitedBox.maxWidth");
-  svg.SvgPicture = class SvgPicture extends framework.StatefulWidget {
-    get width() {
-      return this[width$];
-    }
-    set width(value) {
-      super.width = value;
-    }
-    get height() {
-      return this[height$];
-    }
-    set height(value) {
-      super.height = value;
-    }
-    get fit() {
-      return this[fit$];
-    }
-    set fit(value) {
-      super.fit = value;
-    }
-    get alignment() {
-      return this[alignment$];
-    }
-    set alignment(value) {
-      super.alignment = value;
-    }
-    get pictureProvider() {
-      return this[pictureProvider$];
-    }
-    set pictureProvider(value) {
-      super.pictureProvider = value;
-    }
-    get placeholderBuilder() {
-      return this[placeholderBuilder$];
-    }
-    set placeholderBuilder(value) {
-      super.placeholderBuilder = value;
-    }
-    get matchTextDirection() {
-      return this[matchTextDirection$];
-    }
-    set matchTextDirection(value) {
-      super.matchTextDirection = value;
-    }
-    get allowDrawingOutsideViewBox() {
-      return this[allowDrawingOutsideViewBox$];
-    }
-    set allowDrawingOutsideViewBox(value) {
-      super.allowDrawingOutsideViewBox = value;
-    }
-    get semanticsLabel() {
-      return this[semanticsLabel$];
-    }
-    set semanticsLabel(value) {
-      super.semanticsLabel = value;
-    }
-    get excludeFromSemantics() {
-      return this[excludeFromSemantics$];
-    }
-    set excludeFromSemantics(value) {
-      super.excludeFromSemantics = value;
-    }
-    get clipBehavior() {
-      return this[clipBehavior$];
-    }
-    set clipBehavior(value) {
-      super.clipBehavior = value;
-    }
-    get colorFilter() {
-      return this[colorFilter$];
-    }
-    set colorFilter(value) {
-      super.colorFilter = value;
-    }
-    get cacheColorFilter() {
-      return this[cacheColorFilter$];
-    }
-    set cacheColorFilter(value) {
-      super.cacheColorFilter = value;
-    }
-    static _getColorFilter(color, colorBlendMode) {
-      if (colorBlendMode == null) dart.nullFailed(I[0], 560, 63, "colorBlendMode");
-      return color == null ? null : new _engine._CkBlendModeColorFilter.new(color, colorBlendMode);
-    }
-    createState() {
-      return new svg._SvgPictureState.new();
-    }
-  };
-  (svg.SvgPicture.new = function(pictureProvider, opts) {
-    if (pictureProvider == null) dart.nullFailed(I[0], 212, 10, "pictureProvider");
-    let key = opts && 'key' in opts ? opts.key : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[0] || CT.C0;
-    if (fit == null) dart.nullFailed(I[0], 216, 10, "fit");
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[1] || CT.C1;
-    if (alignment == null) dart.nullFailed(I[0], 217, 10, "alignment");
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 218, 10, "matchTextDirection");
-    let allowDrawingOutsideViewBox = opts && 'allowDrawingOutsideViewBox' in opts ? opts.allowDrawingOutsideViewBox : false;
-    if (allowDrawingOutsideViewBox == null) dart.nullFailed(I[0], 219, 10, "allowDrawingOutsideViewBox");
-    let placeholderBuilder = opts && 'placeholderBuilder' in opts ? opts.placeholderBuilder : null;
-    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
-    let excludeFromSemantics = opts && 'excludeFromSemantics' in opts ? opts.excludeFromSemantics : false;
-    if (excludeFromSemantics == null) dart.nullFailed(I[0], 222, 10, "excludeFromSemantics");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[2] || CT.C2;
-    if (clipBehavior == null) dart.nullFailed(I[0], 223, 10, "clipBehavior");
-    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
-    let cacheColorFilter = opts && 'cacheColorFilter' in opts ? opts.cacheColorFilter : false;
-    if (cacheColorFilter == null) dart.nullFailed(I[0], 225, 10, "cacheColorFilter");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[pictureProvider$] = pictureProvider;
-    this[width$] = width;
-    this[height$] = height;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[matchTextDirection$] = matchTextDirection;
-    this[allowDrawingOutsideViewBox$] = allowDrawingOutsideViewBox;
-    this[placeholderBuilder$] = placeholderBuilder;
-    this[semanticsLabel$] = semanticsLabel;
-    this[excludeFromSemantics$] = excludeFromSemantics;
-    this[clipBehavior$] = clipBehavior;
-    this[colorFilter$] = colorFilter;
-    this[cacheColorFilter$] = cacheColorFilter;
-    svg.SvgPicture.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = svg.SvgPicture.prototype;
-  (svg.SvgPicture.asset = function(assetName, opts) {
-    let t0;
-    if (assetName == null) dart.nullFailed(I[0], 306, 12, "assetName");
-    let key = opts && 'key' in opts ? opts.key : null;
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 308, 10, "matchTextDirection");
-    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
-    let $package = opts && 'package' in opts ? opts.package : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[0] || CT.C0;
-    if (fit == null) dart.nullFailed(I[0], 313, 10, "fit");
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[1] || CT.C1;
-    if (alignment == null) dart.nullFailed(I[0], 314, 10, "alignment");
-    let allowDrawingOutsideViewBox = opts && 'allowDrawingOutsideViewBox' in opts ? opts.allowDrawingOutsideViewBox : false;
-    if (allowDrawingOutsideViewBox == null) dart.nullFailed(I[0], 315, 10, "allowDrawingOutsideViewBox");
-    let placeholderBuilder = opts && 'placeholderBuilder' in opts ? opts.placeholderBuilder : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : C[3] || CT.C3;
-    if (colorBlendMode == null) dart.nullFailed(I[0], 318, 15, "colorBlendMode");
-    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
-    let excludeFromSemantics = opts && 'excludeFromSemantics' in opts ? opts.excludeFromSemantics : false;
-    if (excludeFromSemantics == null) dart.nullFailed(I[0], 320, 10, "excludeFromSemantics");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[2] || CT.C2;
-    if (clipBehavior == null) dart.nullFailed(I[0], 321, 10, "clipBehavior");
-    let cacheColorFilter = opts && 'cacheColorFilter' in opts ? opts.cacheColorFilter : false;
-    if (cacheColorFilter == null) dart.nullFailed(I[0], 322, 10, "cacheColorFilter");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[matchTextDirection$] = matchTextDirection;
-    this[width$] = width;
-    this[height$] = height;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[allowDrawingOutsideViewBox$] = allowDrawingOutsideViewBox;
-    this[placeholderBuilder$] = placeholderBuilder;
-    this[semanticsLabel$] = semanticsLabel;
-    this[excludeFromSemantics$] = excludeFromSemantics;
-    this[clipBehavior$] = clipBehavior;
-    this[cacheColorFilter$] = cacheColorFilter;
-    this[pictureProvider$] = new picture_provider.ExactAssetPicture.new(allowDrawingOutsideViewBox === true ? svg.SvgPicture.svgStringDecoderOutsideViewBox : svg.SvgPicture.svgStringDecoder, assetName, {bundle: bundle, package: $package, colorFilter: dart.test((t0 = svg.svg.cacheColorFilterOverride, t0 == null ? cacheColorFilter : t0)) ? svg.SvgPicture._getColorFilter(color, colorBlendMode) : null});
-    this[colorFilter$] = svg.SvgPicture._getColorFilter(color, colorBlendMode);
-    svg.SvgPicture.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = svg.SvgPicture.prototype;
-  (svg.SvgPicture.network = function(url, opts) {
-    let t0;
-    if (url == null) dart.nullFailed(I[0], 367, 12, "url");
-    let key = opts && 'key' in opts ? opts.key : null;
-    let headers = opts && 'headers' in opts ? opts.headers : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[0] || CT.C0;
-    if (fit == null) dart.nullFailed(I[0], 372, 10, "fit");
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[1] || CT.C1;
-    if (alignment == null) dart.nullFailed(I[0], 373, 10, "alignment");
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 374, 10, "matchTextDirection");
-    let allowDrawingOutsideViewBox = opts && 'allowDrawingOutsideViewBox' in opts ? opts.allowDrawingOutsideViewBox : false;
-    if (allowDrawingOutsideViewBox == null) dart.nullFailed(I[0], 375, 10, "allowDrawingOutsideViewBox");
-    let placeholderBuilder = opts && 'placeholderBuilder' in opts ? opts.placeholderBuilder : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : C[3] || CT.C3;
-    if (colorBlendMode == null) dart.nullFailed(I[0], 378, 15, "colorBlendMode");
-    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
-    let excludeFromSemantics = opts && 'excludeFromSemantics' in opts ? opts.excludeFromSemantics : false;
-    if (excludeFromSemantics == null) dart.nullFailed(I[0], 380, 10, "excludeFromSemantics");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[2] || CT.C2;
-    if (clipBehavior == null) dart.nullFailed(I[0], 381, 10, "clipBehavior");
-    let cacheColorFilter = opts && 'cacheColorFilter' in opts ? opts.cacheColorFilter : false;
-    if (cacheColorFilter == null) dart.nullFailed(I[0], 382, 10, "cacheColorFilter");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[width$] = width;
-    this[height$] = height;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[matchTextDirection$] = matchTextDirection;
-    this[allowDrawingOutsideViewBox$] = allowDrawingOutsideViewBox;
-    this[placeholderBuilder$] = placeholderBuilder;
-    this[semanticsLabel$] = semanticsLabel;
-    this[excludeFromSemantics$] = excludeFromSemantics;
-    this[clipBehavior$] = clipBehavior;
-    this[cacheColorFilter$] = cacheColorFilter;
-    this[pictureProvider$] = new picture_provider.NetworkPicture.new(allowDrawingOutsideViewBox === true ? svg.SvgPicture.svgByteDecoderOutsideViewBox : svg.SvgPicture.svgByteDecoder, url, {headers: headers, colorFilter: dart.test((t0 = svg.svg.cacheColorFilterOverride, t0 == null ? cacheColorFilter : t0)) ? svg.SvgPicture._getColorFilter(color, colorBlendMode) : null});
-    this[colorFilter$] = svg.SvgPicture._getColorFilter(color, colorBlendMode);
-    svg.SvgPicture.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = svg.SvgPicture.prototype;
-  (svg.SvgPicture.file = function(file, opts) {
-    let t0;
-    if (file == null) dart.nullFailed(I[0], 424, 10, "file");
-    let key = opts && 'key' in opts ? opts.key : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[0] || CT.C0;
-    if (fit == null) dart.nullFailed(I[0], 428, 10, "fit");
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[1] || CT.C1;
-    if (alignment == null) dart.nullFailed(I[0], 429, 10, "alignment");
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 430, 10, "matchTextDirection");
-    let allowDrawingOutsideViewBox = opts && 'allowDrawingOutsideViewBox' in opts ? opts.allowDrawingOutsideViewBox : false;
-    if (allowDrawingOutsideViewBox == null) dart.nullFailed(I[0], 431, 10, "allowDrawingOutsideViewBox");
-    let placeholderBuilder = opts && 'placeholderBuilder' in opts ? opts.placeholderBuilder : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : C[3] || CT.C3;
-    if (colorBlendMode == null) dart.nullFailed(I[0], 434, 15, "colorBlendMode");
-    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
-    let excludeFromSemantics = opts && 'excludeFromSemantics' in opts ? opts.excludeFromSemantics : false;
-    if (excludeFromSemantics == null) dart.nullFailed(I[0], 436, 10, "excludeFromSemantics");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[2] || CT.C2;
-    if (clipBehavior == null) dart.nullFailed(I[0], 437, 10, "clipBehavior");
-    let cacheColorFilter = opts && 'cacheColorFilter' in opts ? opts.cacheColorFilter : false;
-    if (cacheColorFilter == null) dart.nullFailed(I[0], 438, 10, "cacheColorFilter");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[width$] = width;
-    this[height$] = height;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[matchTextDirection$] = matchTextDirection;
-    this[allowDrawingOutsideViewBox$] = allowDrawingOutsideViewBox;
-    this[placeholderBuilder$] = placeholderBuilder;
-    this[semanticsLabel$] = semanticsLabel;
-    this[excludeFromSemantics$] = excludeFromSemantics;
-    this[clipBehavior$] = clipBehavior;
-    this[cacheColorFilter$] = cacheColorFilter;
-    this[pictureProvider$] = new picture_provider.FilePicture.new(allowDrawingOutsideViewBox === true ? svg.SvgPicture.svgByteDecoderOutsideViewBox : svg.SvgPicture.svgByteDecoder, file, {colorFilter: dart.test((t0 = svg.svg.cacheColorFilterOverride, t0 == null ? cacheColorFilter : t0)) ? svg.SvgPicture._getColorFilter(color, colorBlendMode) : null});
-    this[colorFilter$] = svg.SvgPicture._getColorFilter(color, colorBlendMode);
-    svg.SvgPicture.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = svg.SvgPicture.prototype;
-  (svg.SvgPicture.memory = function(bytes, opts) {
-    let t0;
-    if (bytes == null) dart.nullFailed(I[0], 476, 15, "bytes");
-    let key = opts && 'key' in opts ? opts.key : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[0] || CT.C0;
-    if (fit == null) dart.nullFailed(I[0], 480, 10, "fit");
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[1] || CT.C1;
-    if (alignment == null) dart.nullFailed(I[0], 481, 10, "alignment");
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 482, 10, "matchTextDirection");
-    let allowDrawingOutsideViewBox = opts && 'allowDrawingOutsideViewBox' in opts ? opts.allowDrawingOutsideViewBox : false;
-    if (allowDrawingOutsideViewBox == null) dart.nullFailed(I[0], 483, 10, "allowDrawingOutsideViewBox");
-    let placeholderBuilder = opts && 'placeholderBuilder' in opts ? opts.placeholderBuilder : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : C[3] || CT.C3;
-    if (colorBlendMode == null) dart.nullFailed(I[0], 486, 15, "colorBlendMode");
-    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
-    let excludeFromSemantics = opts && 'excludeFromSemantics' in opts ? opts.excludeFromSemantics : false;
-    if (excludeFromSemantics == null) dart.nullFailed(I[0], 488, 10, "excludeFromSemantics");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[2] || CT.C2;
-    if (clipBehavior == null) dart.nullFailed(I[0], 489, 10, "clipBehavior");
-    let cacheColorFilter = opts && 'cacheColorFilter' in opts ? opts.cacheColorFilter : false;
-    if (cacheColorFilter == null) dart.nullFailed(I[0], 490, 10, "cacheColorFilter");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[width$] = width;
-    this[height$] = height;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[matchTextDirection$] = matchTextDirection;
-    this[allowDrawingOutsideViewBox$] = allowDrawingOutsideViewBox;
-    this[placeholderBuilder$] = placeholderBuilder;
-    this[semanticsLabel$] = semanticsLabel;
-    this[excludeFromSemantics$] = excludeFromSemantics;
-    this[clipBehavior$] = clipBehavior;
-    this[cacheColorFilter$] = cacheColorFilter;
-    this[pictureProvider$] = new picture_provider.MemoryPicture.new(allowDrawingOutsideViewBox === true ? svg.SvgPicture.svgByteDecoderOutsideViewBox : svg.SvgPicture.svgByteDecoder, bytes, {colorFilter: dart.test((t0 = svg.svg.cacheColorFilterOverride, t0 == null ? cacheColorFilter : t0)) ? svg.SvgPicture._getColorFilter(color, colorBlendMode) : null});
-    this[colorFilter$] = svg.SvgPicture._getColorFilter(color, colorBlendMode);
-    svg.SvgPicture.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = svg.SvgPicture.prototype;
-  (svg.SvgPicture.string = function(bytes, opts) {
-    let t0;
-    if (bytes == null) dart.nullFailed(I[0], 528, 12, "bytes");
-    let key = opts && 'key' in opts ? opts.key : null;
-    let width = opts && 'width' in opts ? opts.width : null;
-    let height = opts && 'height' in opts ? opts.height : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[0] || CT.C0;
-    if (fit == null) dart.nullFailed(I[0], 532, 10, "fit");
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[1] || CT.C1;
-    if (alignment == null) dart.nullFailed(I[0], 533, 10, "alignment");
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    if (matchTextDirection == null) dart.nullFailed(I[0], 534, 10, "matchTextDirection");
-    let allowDrawingOutsideViewBox = opts && 'allowDrawingOutsideViewBox' in opts ? opts.allowDrawingOutsideViewBox : false;
-    if (allowDrawingOutsideViewBox == null) dart.nullFailed(I[0], 535, 10, "allowDrawingOutsideViewBox");
-    let placeholderBuilder = opts && 'placeholderBuilder' in opts ? opts.placeholderBuilder : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : C[3] || CT.C3;
-    if (colorBlendMode == null) dart.nullFailed(I[0], 538, 15, "colorBlendMode");
-    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
-    let excludeFromSemantics = opts && 'excludeFromSemantics' in opts ? opts.excludeFromSemantics : false;
-    if (excludeFromSemantics == null) dart.nullFailed(I[0], 540, 10, "excludeFromSemantics");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[2] || CT.C2;
-    if (clipBehavior == null) dart.nullFailed(I[0], 541, 10, "clipBehavior");
-    let cacheColorFilter = opts && 'cacheColorFilter' in opts ? opts.cacheColorFilter : false;
-    if (cacheColorFilter == null) dart.nullFailed(I[0], 542, 10, "cacheColorFilter");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[width$] = width;
-    this[height$] = height;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[matchTextDirection$] = matchTextDirection;
-    this[allowDrawingOutsideViewBox$] = allowDrawingOutsideViewBox;
-    this[placeholderBuilder$] = placeholderBuilder;
-    this[semanticsLabel$] = semanticsLabel;
-    this[excludeFromSemantics$] = excludeFromSemantics;
-    this[clipBehavior$] = clipBehavior;
-    this[cacheColorFilter$] = cacheColorFilter;
-    this[pictureProvider$] = new picture_provider.StringPicture.new(allowDrawingOutsideViewBox === true ? svg.SvgPicture.svgStringDecoderOutsideViewBox : svg.SvgPicture.svgStringDecoder, bytes, {colorFilter: dart.test((t0 = svg.svg.cacheColorFilterOverride, t0 == null ? cacheColorFilter : t0)) ? svg.SvgPicture._getColorFilter(color, colorBlendMode) : null});
-    this[colorFilter$] = svg.SvgPicture._getColorFilter(color, colorBlendMode);
-    svg.SvgPicture.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = svg.SvgPicture.prototype;
-  dart.addTypeTests(svg.SvgPicture);
-  dart.addTypeCaches(svg.SvgPicture);
-  dart.setMethodSignature(svg.SvgPicture, () => ({
-    __proto__: dart.getMethods(svg.SvgPicture.__proto__),
-    createState: dart.fnType(framework.State$(svg.SvgPicture), [])
-  }));
-  dart.setLibraryUri(svg.SvgPicture, I[1]);
-  dart.setFieldSignature(svg.SvgPicture, () => ({
-    __proto__: dart.getFields(svg.SvgPicture.__proto__),
-    width: dart.finalFieldType(dart.nullable(core.double)),
-    height: dart.finalFieldType(dart.nullable(core.double)),
-    fit: dart.finalFieldType(box_fit.BoxFit),
-    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
-    pictureProvider: dart.finalFieldType(picture_provider.PictureProvider),
-    placeholderBuilder: dart.finalFieldType(dart.nullable(dart.fnType(framework.Widget, [framework.BuildContext]))),
-    matchTextDirection: dart.finalFieldType(core.bool),
-    allowDrawingOutsideViewBox: dart.finalFieldType(core.bool),
-    semanticsLabel: dart.finalFieldType(dart.nullable(core.String)),
-    excludeFromSemantics: dart.finalFieldType(core.bool),
-    clipBehavior: dart.finalFieldType(ui.Clip),
-    colorFilter: dart.finalFieldType(dart.nullable(ui.ColorFilter)),
-    cacheColorFilter: dart.finalFieldType(core.bool)
-  }));
-  dart.defineLazy(svg.SvgPicture, {
-    /*svg.SvgPicture.defaultPlaceholderBuilder*/get defaultPlaceholderBuilder() {
-      return dart.fn(ctx => {
-        if (ctx == null) dart.nullFailed(I[0], 558, 21, "ctx");
-        return C[4] || CT.C4;
-      }, T.BuildContextToLimitedBox());
-    },
-    set defaultPlaceholderBuilder(_) {},
-    /*svg.SvgPicture.svgByteDecoder*/get svgByteDecoder() {
-      return dart.fn((bytes, colorFilter, key) => {
-        if (bytes == null) dart.nullFailed(I[0], 565, 18, "bytes");
-        if (key == null) dart.nullFailed(I[0], 565, 58, "key");
-        return svg.svg.svgPictureDecoder(bytes, false, colorFilter, key);
-      }, T.Uint8ListAndColorFilterNAndStringToFutureOfPictureInfo());
-    },
-    /*svg.SvgPicture.svgStringDecoder*/get svgStringDecoder() {
-      return dart.fn((data, colorFilter, key) => {
-        if (data == null) dart.nullFailed(I[0], 570, 15, "data");
-        if (key == null) dart.nullFailed(I[0], 570, 54, "key");
-        return svg.svg.svgPictureStringDecoder(data, false, colorFilter, key);
-      }, T.StringAndColorFilterNAndStringToFutureOfPictureInfo());
-    },
-    /*svg.SvgPicture.svgByteDecoderOutsideViewBox*/get svgByteDecoderOutsideViewBox() {
-      return dart.fn((bytes, colorFilter, key) => {
-        if (bytes == null) dart.nullFailed(I[0], 575, 18, "bytes");
-        if (key == null) dart.nullFailed(I[0], 575, 58, "key");
-        return svg.svg.svgPictureDecoder(bytes, true, colorFilter, key);
-      }, T.Uint8ListAndColorFilterNAndStringToFutureOfPictureInfo());
-    },
-    /*svg.SvgPicture.svgStringDecoderOutsideViewBox*/get svgStringDecoderOutsideViewBox() {
-      return dart.fn((data, colorFilter, key) => {
-        if (data == null) dart.nullFailed(I[0], 580, 15, "data");
-        if (key == null) dart.nullFailed(I[0], 580, 54, "key");
-        return svg.svg.svgPictureStringDecoder(data, true, colorFilter, key);
-      }, T.StringAndColorFilterNAndStringToFutureOfPictureInfo());
-    }
-  }, false);
-  var _picture = dart.privateName(svg, "_picture");
-  var _pictureStream = dart.privateName(svg, "_pictureStream");
-  var _isListeningToStream = dart.privateName(svg, "_isListeningToStream");
-  var _resolveImage = dart.privateName(svg, "_resolveImage");
-  var _listenToStream = dart.privateName(svg, "_listenToStream");
-  var _stopListeningToStream = dart.privateName(svg, "_stopListeningToStream");
-  var _updateSourceStream = dart.privateName(svg, "_updateSourceStream");
-  var _handleImageChanged = dart.privateName(svg, "_handleImageChanged");
-  var _getDefaultPlaceholder = dart.privateName(svg, "_getDefaultPlaceholder");
-  svg._SvgPictureState = class _SvgPictureState extends framework.State$(svg.SvgPicture) {
-    didChangeDependencies() {
-      this[_resolveImage]();
-      if (dart.test(ticker_provider.TickerMode.of(this.context))) {
-        this[_listenToStream]();
-      } else {
-        this[_stopListeningToStream]();
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 43, 48, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 44, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(a)) return new stadium_border.StadiumBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t)});
+      if (circle_border.CircleBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: 1.0 - dart.notNull(t)});
       }
-      super.didChangeDependencies();
-    }
-    didUpdateWidget(oldWidget) {
-      svg.SvgPicture.as(oldWidget);
-      if (oldWidget == null) dart.nullFailed(I[0], 689, 35, "oldWidget");
-      super.didUpdateWidget(oldWidget);
-      if (!dart.equals(this.widget.pictureProvider, oldWidget.pictureProvider)) {
-        this[_resolveImage]();
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: border_radius.BorderRadius.as(a.borderRadius), rectness: 1.0 - dart.notNull(t)});
       }
+      return super.lerpFrom(a, t);
     }
-    reassemble() {
-      this[_resolveImage]();
-      super.reassemble();
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 64, 46, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 65, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(b)) return new stadium_border.StadiumBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t)});
+      if (circle_border.CircleBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: t});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: border_radius.BorderRadius.as(b.borderRadius), rectness: t});
+      }
+      return super.lerpTo(b, t);
     }
-    [_resolveImage]() {
-      let newStream = this.widget.pictureProvider.resolve(picture_provider.createLocalPictureConfiguration(this.context));
-      if (!(newStream != null)) dart.assertFailed(null, I[0], 705, 12, "newStream != null");
-      this[_updateSourceStream](newStream);
-    }
-    [_handleImageChanged](imageInfo, synchronousCall) {
-      if (synchronousCall == null) dart.nullFailed(I[0], 709, 57, "synchronousCall");
-      this.setState(dart.fn(() => {
-        this[_picture] = imageInfo;
-      }, T.VoidTovoid()));
-    }
-    [_updateSourceStream](newStream) {
+    copyWith(opts) {
       let t0;
-      if (newStream == null) dart.nullFailed(I[0], 718, 42, "newStream");
-      if (dart.equals((t0 = this[_pictureStream], t0 == null ? null : t0.key), newStream.key)) {
-        return;
-      }
-      if (dart.test(this[_isListeningToStream])) dart.nullCheck(this[_pictureStream]).removeListener(dart.bind(this, _handleImageChanged));
-      this[_pictureStream] = newStream;
-      if (dart.test(this[_isListeningToStream])) {
-        dart.nullCheck(this[_pictureStream]).addListener(dart.bind(this, _handleImageChanged));
-      }
+      let side = opts && 'side' in opts ? opts.side : null;
+      return new stadium_border.StadiumBorder.new({side: (t0 = side, t0 == null ? this.side : t0)});
     }
-    [_listenToStream]() {
-      if (dart.test(this[_isListeningToStream])) {
-        return;
-      }
-      dart.nullCheck(this[_pictureStream]).addListener(dart.bind(this, _handleImageChanged));
-      this[_isListeningToStream] = true;
+    getInnerPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 90, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      let radius = new ui.Radius.circular(dart.notNull(rect.shortestSide) / 2.0);
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(new ui.RRect.fromRectAndRadius(rect, radius).deflate(this.side.width));
+        return t0;
+      })();
     }
-    [_stopListeningToStream]() {
-      if (!dart.test(this[_isListeningToStream])) {
-        return;
-      }
-      dart.nullCheck(this[_pictureStream]).removeListener(dart.bind(this, _handleImageChanged));
-      this[_isListeningToStream] = false;
+    getOuterPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 97, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      let radius = new ui.Radius.circular(dart.notNull(rect.shortestSide) / 2.0);
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(new ui.RRect.fromRectAndRadius(rect, radius));
+        return t0;
+      })();
     }
-    dispose() {
-      if (!(this[_pictureStream] != null)) dart.assertFailed(null, I[0], 750, 12, "_pictureStream != null");
-      this[_stopListeningToStream]();
-      super.dispose();
-    }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 756, 29, "context");
-      let child = null;
-      let child$35isSet = false;
-      function child$35get() {
-        return child$35isSet ? child : dart.throw(new _internal.LateError.localNI("child"));
-      }
-      dart.fn(child$35get, T.VoidToWidget());
-      function child$35set(t3) {
-        if (t3 == null) dart.nullFailed(I[0], 757, 17, "null");
-        child$35isSet = true;
-        return child = t3;
-      }
-      dart.fn(child$35set, T.WidgetTodynamic());
-      if (this[_picture] != null) {
-        let viewport = ui.Offset.zero['&'](dart.nullCheck(this[_picture]).viewport.size);
-        let width = this.widget.width;
-        let height = this.widget.height;
-        if (width == null && height == null) {
-          width = viewport.width;
-          height = viewport.height;
-        } else if (height != null) {
-          width = dart.notNull(height) / dart.notNull(viewport.height) * dart.notNull(viewport.width);
-        } else if (width != null) {
-          height = dart.notNull(width) / dart.notNull(viewport.width) * dart.notNull(viewport.height);
+    paint(canvas, rect, opts) {
+      if (canvas == null) dart.nullFailed(I[0], 104, 21, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 104, 34, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      switch (this.side.style) {
+        case C[1] || CT.C1:
+        {
+          break;
         }
-        child$35set(new basic.SizedBox.new({width: width, height: height, child: new basic.FittedBox.new({fit: this.widget.fit, alignment: this.widget.alignment, clipBehavior: this.widget.clipBehavior, child: new basic.SizedBox.fromSize({size: viewport.size, child: new render_picture.RawPicture.new(this[_picture], {matchTextDirection: this.widget.matchTextDirection, allowDrawingOutsideViewBox: this.widget.allowDrawingOutsideViewBox, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), $creationLocationd_0dea112b090073317d4: C[22] || CT.C22}));
-        if (this.widget.pictureProvider.colorFilter == null && this.widget.colorFilter != null) {
-          child$35set(new unbounded_color_filtered.UnboundedColorFiltered.new({colorFilter: this.widget.colorFilter, child: child$35get(), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27}));
+        case C[3] || CT.C3:
+        {
+          let radius = new ui.Radius.circular(dart.notNull(rect.shortestSide) / 2.0);
+          canvas.drawRRect(new ui.RRect.fromRectAndRadius(rect, radius).deflate(dart.notNull(this.side.width) / 2.0), this.side.toPaint());
+          break;
         }
-      } else {
-        child$35set(this.widget.placeholderBuilder == null ? this[_getDefaultPlaceholder](context, this.widget.width, this.widget.height) : dart.nullCheck(this.widget.placeholderBuilder)(context));
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
       }
-      if (!dart.test(this.widget.excludeFromSemantics)) {
-        child$35set(new basic.Semantics.new({container: this.widget.semanticsLabel != null, image: true, label: this.widget.semanticsLabel == null ? "" : this.widget.semanticsLabel, child: child$35get(), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}));
-      }
-      return child$35get();
     }
-    [_getDefaultPlaceholder](context, width, height) {
-      if (context == null) dart.nullFailed(I[0], 814, 20, "context");
-      if (width != null || height != null) {
-        return new basic.SizedBox.new({width: width, height: height, $creationLocationd_0dea112b090073317d4: C[37] || CT.C37});
-      }
-      return svg.SvgPicture.defaultPlaceholderBuilder(context);
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return stadium_border.StadiumBorder.is(other) && dart.equals(other.side, this.side);
     }
-    debugFillProperties(description) {
-      if (description == null) dart.nullFailed(I[0], 823, 56, "description");
-      super.debugFillProperties(description);
-      description.add(new (T.DiagnosticsPropertyOfPictureStream()).new("stream", this[_pictureStream]));
+    get hashCode() {
+      return dart.hashCode(this.side);
+    }
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "StadiumBorder")) + "(" + dart.str(this.side) + ")";
     }
   };
-  (svg._SvgPictureState.new = function() {
-    this[_picture] = null;
-    this[_pictureStream] = null;
-    this[_isListeningToStream] = false;
-    svg._SvgPictureState.__proto__.new.call(this);
+  (stadium_border.StadiumBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[0] || CT.C0;
+    if (side == null) dart.nullFailed(I[0], 32, 36, "side");
+    if (!(side != null)) dart.assertFailed(null, I[0], 32, 71, "side != null");
+    stadium_border.StadiumBorder.__proto__.new.call(this, {side: side});
     ;
-  }).prototype = svg._SvgPictureState.prototype;
-  dart.addTypeTests(svg._SvgPictureState);
-  dart.addTypeCaches(svg._SvgPictureState);
-  dart.setMethodSignature(svg._SvgPictureState, () => ({
-    __proto__: dart.getMethods(svg._SvgPictureState.__proto__),
-    [_resolveImage]: dart.fnType(dart.void, []),
-    [_handleImageChanged]: dart.fnType(dart.void, [dart.nullable(picture_stream.PictureInfo), core.bool]),
-    [_updateSourceStream]: dart.fnType(dart.void, [picture_stream.PictureStream]),
-    [_listenToStream]: dart.fnType(dart.void, []),
-    [_stopListeningToStream]: dart.fnType(dart.void, []),
-    build: dart.fnType(framework.Widget, [framework.BuildContext]),
-    [_getDefaultPlaceholder]: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(core.double), dart.nullable(core.double)])
+  }).prototype = stadium_border.StadiumBorder.prototype;
+  dart.addTypeTests(stadium_border.StadiumBorder);
+  dart.addTypeCaches(stadium_border.StadiumBorder);
+  dart.setMethodSignature(stadium_border.StadiumBorder, () => ({
+    __proto__: dart.getMethods(stadium_border.StadiumBorder.__proto__),
+    scale: dart.fnType(borders.ShapeBorder, [core.double]),
+    copyWith: dart.fnType(stadium_border.StadiumBorder, [], {side: dart.nullable(borders.BorderSide)}, {}),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
   }));
-  dart.setLibraryUri(svg._SvgPictureState, I[1]);
-  dart.setFieldSignature(svg._SvgPictureState, () => ({
-    __proto__: dart.getFields(svg._SvgPictureState.__proto__),
-    [_picture]: dart.fieldType(dart.nullable(picture_stream.PictureInfo)),
-    [_pictureStream]: dart.fieldType(dart.nullable(picture_stream.PictureStream)),
-    [_isListeningToStream]: dart.fieldType(core.bool)
+  dart.setGetterSignature(stadium_border.StadiumBorder, () => ({
+    __proto__: dart.getGetters(stadium_border.StadiumBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
   }));
-  svg.precachePicture = function precachePicture(provider, context, opts) {
-    let t5;
-    if (provider == null) dart.nullFailed(I[0], 139, 19, "provider");
-    let viewBox = opts && 'viewBox' in opts ? opts.viewBox : null;
-    let colorFilterOverride = opts && 'colorFilterOverride' in opts ? opts.colorFilterOverride : null;
-    let color = opts && 'color' in opts ? opts.color : null;
-    let colorBlendMode = opts && 'colorBlendMode' in opts ? opts.colorBlendMode : null;
-    let onError = opts && 'onError' in opts ? opts.onError : null;
-    let config = picture_provider.createLocalPictureConfiguration(context, {viewBox: viewBox, colorFilterOverride: colorFilterOverride, color: color, colorBlendMode: colorBlendMode});
-    let completer = T.CompleterOfvoid().new();
-    let stream = null;
-    function listener(picture, synchronous) {
-      let t5;
-      if (synchronous == null) dart.nullFailed(I[0], 157, 44, "synchronous");
-      completer.complete();
-      t5 = stream;
-      t5 == null ? null : t5.removeListener(listener);
+  dart.setLibraryUri(stadium_border.StadiumBorder, I[1]);
+  dart.defineExtensionMethods(stadium_border.StadiumBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stadium_border.StadiumBorder, ['hashCode']);
+  var circleness$ = dart.privateName(stadium_border, "_StadiumToCircleBorder.circleness");
+  var _adjustRect = dart.privateName(stadium_border, "_adjustRect");
+  var _adjustBorderRadius = dart.privateName(stadium_border, "_adjustBorderRadius");
+  stadium_border._StadiumToCircleBorder = class _StadiumToCircleBorder extends borders.OutlinedBorder {
+    get circleness() {
+      return this[circleness$];
     }
-    dart.fn(listener, T.PictureInfoNAndboolTovoid());
-    function errorListener(exception, stackTrace) {
-      let t5;
-      if (exception == null) dart.nullFailed(I[0], 162, 29, "exception");
-      if (stackTrace == null) dart.nullFailed(I[0], 162, 51, "stackTrace");
-      if (onError != null) {
-        onError(exception, stackTrace);
-      } else {
-        assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({context: new assertions.ErrorDescription.new("picture failed to precache"), library: "SVG", exception: exception, stack: stackTrace, silent: true}));
+    set circleness(value) {
+      super.circleness = value;
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.side.width);
+    }
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 151, 28, "t");
+      return new stadium_border._StadiumToCircleBorder.new({side: this.side.scale(t), circleness: t});
+    }
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 159, 48, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 160, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: dart.notNull(this.circleness) * dart.notNull(t)});
       }
-      completer.complete();
-      t5 = stream;
-      t5 == null ? null : t5.removeListener(listener);
+      if (circle_border.CircleBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: dart.notNull(this.circleness) + (1.0 - dart.notNull(this.circleness)) * (1.0 - dart.notNull(t))});
+      }
+      if (stadium_border._StadiumToCircleBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: dart.nullCheck(ui.lerpDouble(a.circleness, this.circleness, t))});
+      }
+      return super.lerpFrom(a, t);
     }
-    dart.fn(errorListener, T.ObjectAndStackTraceTovoid());
-    stream = (t5 = provider.resolve(config, {onError: errorListener}), (() => {
-      t5.addListener(listener, {onError: errorListener});
-      return t5;
-    })());
-    return completer.future;
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 183, 46, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 184, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: dart.notNull(this.circleness) * (1.0 - dart.notNull(t))});
+      }
+      if (circle_border.CircleBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: dart.notNull(this.circleness) + (1.0 - dart.notNull(this.circleness)) * dart.notNull(t)});
+      }
+      if (stadium_border._StadiumToCircleBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: dart.nullCheck(ui.lerpDouble(this.circleness, b.circleness, t))});
+      }
+      return super.lerpTo(b, t);
+    }
+    [_adjustRect](rect) {
+      if (rect == null) dart.nullFailed(I[0], 206, 25, "rect");
+      if (this.circleness === 0.0 || rect.width == rect.height) return rect;
+      if (dart.notNull(rect.width) < dart.notNull(rect.height)) {
+        let delta = dart.notNull(this.circleness) * (dart.notNull(rect.height) - dart.notNull(rect.width)) / 2.0;
+        return new ui.Rect.fromLTRB(rect.left, dart.notNull(rect.top) + delta, rect.right, dart.notNull(rect.bottom) - delta);
+      } else {
+        let delta = dart.notNull(this.circleness) * (dart.notNull(rect.width) - dart.notNull(rect.height)) / 2.0;
+        return new ui.Rect.fromLTRB(dart.notNull(rect.left) + delta, rect.top, dart.notNull(rect.right) - delta, rect.bottom);
+      }
+    }
+    [_adjustBorderRadius](rect) {
+      if (rect == null) dart.nullFailed(I[0], 228, 41, "rect");
+      return new border_radius.BorderRadius.circular(dart.notNull(rect.shortestSide) / 2.0);
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 233, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect)).deflate(this.side.width));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 239, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect)));
+        return t0;
+      })();
+    }
+    copyWith(opts) {
+      let t0, t0$;
+      let side = opts && 'side' in opts ? opts.side : null;
+      let circleness = opts && 'circleness' in opts ? opts.circleness : null;
+      return new stadium_border._StadiumToCircleBorder.new({side: (t0 = side, t0 == null ? this.side : t0), circleness: (t0$ = circleness, t0$ == null ? this.circleness : t0$)});
+    }
+    paint(canvas, rect, opts) {
+      let t0;
+      if (canvas == null) dart.nullFailed(I[0], 253, 21, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 253, 34, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      switch (this.side.style) {
+        case C[1] || CT.C1:
+        {
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          let width = this.side.width;
+          if (width === 0.0) {
+            canvas.drawRRect(this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect)), this.side.toPaint());
+          } else {
+            let outer = this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect));
+            let inner = outer.deflate(width);
+            let paint = (t0 = ui.Paint.new(), (() => {
+              t0.color = this.side.color;
+              return t0;
+            })());
+            canvas.drawDRRect(outer, inner, paint);
+          }
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return stadium_border._StadiumToCircleBorder.is(other) && dart.equals(other.side, this.side) && other.circleness == this.circleness;
+    }
+    get hashCode() {
+      return ui.hashValues(this.side, this.circleness);
+    }
+    toString() {
+      return "StadiumBorder(" + dart.str(this.side) + ", " + (dart.notNull(this.circleness) * 100)[$toStringAsFixed](1) + "% " + "of the way to being a CircleBorder)";
+    }
   };
-  dart.defineLazy(svg, {
-    /*svg.svg*/get svg() {
-      return new svg.Svg.__();
+  (stadium_border._StadiumToCircleBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[0] || CT.C0;
+    if (side == null) dart.nullFailed(I[0], 137, 16, "side");
+    let circleness = opts && 'circleness' in opts ? opts.circleness : 0;
+    if (circleness == null) dart.nullFailed(I[0], 138, 10, "circleness");
+    this[circleness$] = circleness;
+    if (!(side != null)) dart.assertFailed(null, I[0], 139, 15, "side != null");
+    if (!(circleness != null)) dart.assertFailed(null, I[0], 140, 15, "circleness != null");
+    stadium_border._StadiumToCircleBorder.__proto__.new.call(this, {side: side});
+    ;
+  }).prototype = stadium_border._StadiumToCircleBorder.prototype;
+  dart.addTypeTests(stadium_border._StadiumToCircleBorder);
+  dart.addTypeCaches(stadium_border._StadiumToCircleBorder);
+  dart.setMethodSignature(stadium_border._StadiumToCircleBorder, () => ({
+    __proto__: dart.getMethods(stadium_border._StadiumToCircleBorder.__proto__),
+    scale: dart.fnType(borders.ShapeBorder, [core.double]),
+    [_adjustRect]: dart.fnType(ui.Rect, [ui.Rect]),
+    [_adjustBorderRadius]: dart.fnType(border_radius.BorderRadius, [ui.Rect]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    copyWith: dart.fnType(stadium_border._StadiumToCircleBorder, [], {circleness: dart.nullable(core.double), side: dart.nullable(borders.BorderSide)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(stadium_border._StadiumToCircleBorder, () => ({
+    __proto__: dart.getGetters(stadium_border._StadiumToCircleBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(stadium_border._StadiumToCircleBorder, I[1]);
+  dart.setFieldSignature(stadium_border._StadiumToCircleBorder, () => ({
+    __proto__: dart.getFields(stadium_border._StadiumToCircleBorder.__proto__),
+    circleness: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(stadium_border._StadiumToCircleBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stadium_border._StadiumToCircleBorder, ['hashCode']);
+  var borderRadius$ = dart.privateName(stadium_border, "_StadiumToRoundedRectangleBorder.borderRadius");
+  var rectness$ = dart.privateName(stadium_border, "_StadiumToRoundedRectangleBorder.rectness");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  stadium_border._StadiumToRoundedRectangleBorder = class _StadiumToRoundedRectangleBorder extends borders.OutlinedBorder {
+    get borderRadius() {
+      return this[borderRadius$];
     }
-  }, false);
-  dart.trackLibraries("packages/flutter_svg/svg.dart", {
-    "package:flutter_svg/svg.dart": svg
+    set borderRadius(value) {
+      super.borderRadius = value;
+    }
+    get rectness() {
+      return this[rectness$];
+    }
+    set rectness(value) {
+      super.rectness = value;
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.side.width);
+    }
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 311, 28, "t");
+      return new stadium_border._StadiumToRoundedRectangleBorder.new({side: this.side.scale(t), borderRadius: this.borderRadius['*'](t), rectness: t});
+    }
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 320, 48, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 321, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: this.borderRadius, rectness: dart.notNull(this.rectness) * dart.notNull(t)});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: this.borderRadius, rectness: dart.notNull(this.rectness) + (1.0 - dart.notNull(this.rectness)) * (1.0 - dart.notNull(t))});
+      }
+      if (stadium_border._StadiumToRoundedRectangleBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(a.borderRadius, this.borderRadius, t)), rectness: dart.nullCheck(ui.lerpDouble(a.rectness, this.rectness, t))});
+      }
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 347, 46, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 348, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: this.borderRadius, rectness: dart.notNull(this.rectness) * (1.0 - dart.notNull(t))});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: this.borderRadius, rectness: dart.notNull(this.rectness) + (1.0 - dart.notNull(this.rectness)) * dart.notNull(t)});
+      }
+      if (stadium_border._StadiumToRoundedRectangleBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, b.borderRadius, t)), rectness: dart.nullCheck(ui.lerpDouble(this.rectness, b.rectness, t))});
+      }
+      return super.lerpTo(b, t);
+    }
+    [_adjustBorderRadius](rect) {
+      if (rect == null) dart.nullFailed(I[0], 373, 41, "rect");
+      return dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, new border_radius.BorderRadius.all(new ui.Radius.circular(dart.notNull(rect.shortestSide) / 2.0)), 1.0 - dart.notNull(this.rectness)));
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 382, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(rect).deflate(this.side.width));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 388, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(rect));
+        return t0;
+      })();
+    }
+    copyWith(opts) {
+      let t0, t0$, t0$0;
+      let side = opts && 'side' in opts ? opts.side : null;
+      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
+      let rectness = opts && 'rectness' in opts ? opts.rectness : null;
+      return new stadium_border._StadiumToRoundedRectangleBorder.new({side: (t0 = side, t0 == null ? this.side : t0), borderRadius: (t0$ = borderRadius, t0$ == null ? this.borderRadius : t0$), rectness: (t0$0 = rectness, t0$0 == null ? this.rectness : t0$0)});
+    }
+    paint(canvas, rect, opts) {
+      let t0;
+      if (canvas == null) dart.nullFailed(I[0], 403, 21, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 403, 34, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      switch (this.side.style) {
+        case C[1] || CT.C1:
+        {
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          let width = this.side.width;
+          if (width === 0.0) {
+            canvas.drawRRect(this[_adjustBorderRadius](rect).toRRect(rect), this.side.toPaint());
+          } else {
+            let outer = this[_adjustBorderRadius](rect).toRRect(rect);
+            let inner = outer.deflate(width);
+            let paint = (t0 = ui.Paint.new(), (() => {
+              t0.color = this.side.color;
+              return t0;
+            })());
+            canvas.drawDRRect(outer, inner, paint);
+          }
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return stadium_border._StadiumToRoundedRectangleBorder.is(other) && dart.equals(other.side, this.side) && dart.equals(other.borderRadius, this.borderRadius) && other.rectness == this.rectness;
+    }
+    get hashCode() {
+      return ui.hashValues(this.side, this.borderRadius, this.rectness);
+    }
+    toString() {
+      return "StadiumBorder(" + dart.str(this.side) + ", " + dart.str(this.borderRadius) + ", " + (dart.notNull(this.rectness) * 100)[$toStringAsFixed](1) + "% of the way to being a " + "RoundedRectangleBorder)";
+    }
+  };
+  (stadium_border._StadiumToRoundedRectangleBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[0] || CT.C0;
+    if (side == null) dart.nullFailed(I[0], 293, 16, "side");
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[4] || CT.C4;
+    if (borderRadius == null) dart.nullFailed(I[0], 294, 10, "borderRadius");
+    let rectness = opts && 'rectness' in opts ? opts.rectness : 0;
+    if (rectness == null) dart.nullFailed(I[0], 295, 10, "rectness");
+    this[borderRadius$] = borderRadius;
+    this[rectness$] = rectness;
+    if (!(side != null)) dart.assertFailed(null, I[0], 296, 15, "side != null");
+    if (!(borderRadius != null)) dart.assertFailed(null, I[0], 297, 15, "borderRadius != null");
+    if (!(rectness != null)) dart.assertFailed(null, I[0], 298, 15, "rectness != null");
+    stadium_border._StadiumToRoundedRectangleBorder.__proto__.new.call(this, {side: side});
+    ;
+  }).prototype = stadium_border._StadiumToRoundedRectangleBorder.prototype;
+  dart.addTypeTests(stadium_border._StadiumToRoundedRectangleBorder);
+  dart.addTypeCaches(stadium_border._StadiumToRoundedRectangleBorder);
+  dart.setMethodSignature(stadium_border._StadiumToRoundedRectangleBorder, () => ({
+    __proto__: dart.getMethods(stadium_border._StadiumToRoundedRectangleBorder.__proto__),
+    scale: dart.fnType(borders.ShapeBorder, [core.double]),
+    [_adjustBorderRadius]: dart.fnType(border_radius.BorderRadius, [ui.Rect]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    copyWith: dart.fnType(stadium_border._StadiumToRoundedRectangleBorder, [], {borderRadius: dart.nullable(border_radius.BorderRadius), rectness: dart.nullable(core.double), side: dart.nullable(borders.BorderSide)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(stadium_border._StadiumToRoundedRectangleBorder, () => ({
+    __proto__: dart.getGetters(stadium_border._StadiumToRoundedRectangleBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(stadium_border._StadiumToRoundedRectangleBorder, I[1]);
+  dart.setFieldSignature(stadium_border._StadiumToRoundedRectangleBorder, () => ({
+    __proto__: dart.getFields(stadium_border._StadiumToRoundedRectangleBorder.__proto__),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadius),
+    rectness: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(stadium_border._StadiumToRoundedRectangleBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stadium_border._StadiumToRoundedRectangleBorder, ['hashCode']);
+  dart.trackLibraries("packages/flutter/src/painting/stadium_border.dart", {
+    "package:flutter/src/painting/stadium_border.dart": stadium_border
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["svg.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkCQ;;;;;;sBAaM,KACL,8BACQ,aACN;UAHG;UACL;UAEE;AAJ4B;AAMhB,uBAAU,MAAM,kBAAa,GAAG,EAAE,GAAG;AAC1C,kBAAM,AAAQ,OAAD,2BACV,AAA6B,4BAAD,KAAI,OAAO,QAAQ,mBACjD,WAAW;AAE1B,cAAO,8CACI,GAAG,YACF,AAAQ,AAAS,OAAV,6BACX,AAAQ,AAAS,OAAV;MAEjB;;4BAaW,KACF,8BACQ,aACN;UAHA;UACF;UAEE;AAJgC;AAKtB,mBAAM,MAAM,mBAAc,GAAG,EAAE,GAAG;AACrD,cAAO,8CACI,AAAI,GAAD,2BACK,AAA6B,4BAAD,KAAI,OAAO,QAAQ,mBACjD,WAAW,QAClB,AAAI,AAAS,GAAV,+BAED,AAAI,AAAS,GAAV,6BACP,AAAI,AAAS,GAAV;MAEb;;iBAM4C,KAAY;UAAZ;UAAY;AAAvB;AAM/B,cAAO,oBAAc,AAAK,oBAAO,GAAG,GAAG,GAAG;MAM5C;;kBAS0C,QAAe;UAAf;UAAe;AAAvB;AAChB,qBAAS;AACzB,cAAO,OAAM,AAAO,MAAD,OAAO,MAAM,QAAO,GAAG;MAC5C;;;;IArFM;;EANC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA4iBO;;;;;;IAIA;;;;;;IAID;;;;;;IAwBW;;;;;;IAGF;;;;;;IAGD;;;;;;IAGV;;;;;;IAIA;;;;;;IAMG;;;;;;IAMH;;;;;;IAQA;;;;;;IAGQ;;;;;;IAYR;;;;;;2BAzGgC;UAAiB;AACxD,YAAA,AAAM,MAAD,WAAW,OAAmB,wCAAK,KAAK,EAAE,cAAc;IAAC;;AA2G/B;IAAkB;;;QAxc9C;QACA;QACA;QACA;QACA;;QACA;;QACA;;QACA;;QACA;QACA;QACA;;QACA;;QACA;QACA;;;IAbA;IAEA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;AACF,kDAAW,GAAG;;EAAC;mCAgFX;;;QACF;QACA;;QACQ;QACL;QACH;QACA;QACA;;QACA;;QACA;;QACA;QACE;QACG;;QACL;QACA;;QACA;;QACA;;;IAdA;IAGA;IACA;IACA;IACA;IACA;IACA;IAGA;IACA;IACA;IACA;IACe,yBAAE,2CAChB,AAA2B,0BAAD,KAAI,OACxB,gDACA,iCACN,SAAS,WACD,MAAM,WACL,kCACiC,KAA7B,AAAI,kCAAA,aAA4B,gBAAgB,UACvD,+BAAgB,KAAK,EAAE,cAAc,IACrC;IAEI,qBAAE,+BAAgB,KAAK,EAAE,cAAc;AACnD,kDAAW,GAAG;;EAAC;qCAgCZ;;;QACF;QACgB;QAChB;QACA;QACA;;QACA;;QACA;;QACA;;QACA;QACE;QACG;;QACL;QACA;;QACA;;QACA;;;IAZA;IACA;IACA;IACA;IACA;IACA;IACA;IAGA;IACA;IACA;IACA;IACe,yBAAE,wCAChB,AAA2B,0BAAD,KAAI,OACxB,8CACA,+BACN,GAAG,YACM,OAAO,0BAC0B,KAA7B,AAAI,kCAAA,aAA4B,gBAAgB,UACvD,+BAAgB,KAAK,EAAE,cAAc,IACrC;IAEI,qBAAE,+BAAgB,KAAK,EAAE,cAAc;AACnD,kDAAW,GAAG;;EAAC;kCA8Bd;;;QACA;QACA;QACA;QACA;;QACA;;QACA;;QACA;;QACA;QACE;QACG;;QACL;QACA;;QACA;;QACA;;;IAZA;IACA;IACA;IACA;IACA;IACA;IACA;IAGA;IACA;IACA;IACA;IACe,yBAAE,qCAChB,AAA2B,0BAAD,KAAI,OACxB,8CACA,+BACN,IAAI,2BACsC,KAA7B,AAAI,kCAAA,aAA4B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","file":"../../../../../../../packages/flutter_svg/svg.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["stadium_border.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/stadium_border.dart.lib.js"}');
   // Exports:
   return {
-    svg: svg
+    src__painting__stadium_border: stadium_border
   };
 }));
 
-//# sourceMappingURL=svg.dart.lib.js.map
+//# sourceMappingURL=stadium_border.dart.lib.js.map

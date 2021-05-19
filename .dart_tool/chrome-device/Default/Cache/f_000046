@@ -1,20 +1,27 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/rendering/sliver_multi_box_adaptor.dart'], (function load__packages__flutter__src__rendering__sliver_fixed_extent_list_dart(dart_sdk, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__rendering__sliver_multi_box_adaptor$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/flutter/src/rendering/custom_paint.dart', 'packages/flutter/src/animation/listener_helpers.dart'], (function load__packages__flutter__src__cupertino__activity_indicator_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__cupertino__text_theme$46dart, packages__flutter__src__rendering__custom_paint$46dart, packages__flutter__src__animation__listener_helpers$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const math = dart_sdk.math;
+  const _internal = dart_sdk._internal;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
-  const sliver_multi_box_adaptor = packages__flutter__src__rendering__sliver_multi_box_adaptor$46dart.src__rendering__sliver_multi_box_adaptor;
-  var sliver_fixed_extent_list = Object.create(dart.library);
-  var $round = dartx.round;
-  var $abs = dartx.abs;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const colors = packages__flutter__src__cupertino__text_theme$46dart.src__cupertino__colors;
+  const custom_paint = packages__flutter__src__rendering__custom_paint$46dart.src__rendering__custom_paint;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  var activity_indicator = Object.create(dart.library);
+  var $length = dartx.length;
   var $floor = dartx.floor;
-  var $ceil = dartx.ceil;
-  var $isFinite = dartx.isFinite;
+  var $modulo = dartx['%'];
+  var $_get = dartx._get;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _: () => T
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -28,234 +35,361 @@ define(['dart_sdk', 'packages/flutter/src/rendering/sliver.dart', 'packages/flut
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1000000
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "painter",
+        [_Location_column]: 9,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3], T._LocationL());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 118,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/activity_indicator.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 7,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 118,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 115,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/activity_indicator.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293651445.0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282137668.0
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: colors.CupertinoDynamicColor.prototype,
+        [Color_value]: 0,
+        [CupertinoDynamicColor_darkHighContrastElevatedColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_highContrastElevatedColor]: C[11] || CT.C11,
+        [CupertinoDynamicColor_darkElevatedColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_elevatedColor]: C[11] || CT.C11,
+        [CupertinoDynamicColor_darkHighContrastColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_highContrastColor]: C[11] || CT.C11,
+        [CupertinoDynamicColor_darkColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_color]: C[11] || CT.C11,
+        [CupertinoDynamicColor__debugResolveContext]: null,
+        [CupertinoDynamicColor__debugLabel]: null,
+        [CupertinoDynamicColor__effectiveColor]: C[11] || CT.C11
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([47, 47, 47, 47, 72, 97, 122, 147], T.intL());
+    }
+  }, false);
+  var C = Array(13).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/rendering/sliver_fixed_extent_list.dart",
-    "package:flutter/src/rendering/sliver_fixed_extent_list.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/activity_indicator.dart",
+    "package:flutter/src/cupertino/activity_indicator.dart"
   ];
-  var _calculateLeadingGarbage = dart.privateName(sliver_fixed_extent_list, "_calculateLeadingGarbage");
-  var _calculateTrailingGarbage = dart.privateName(sliver_fixed_extent_list, "_calculateTrailingGarbage");
-  sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor = class RenderSliverFixedExtentBoxAdaptor extends sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor {
-    indexToLayoutOffset(itemExtent, index) {
-      if (itemExtent == null) dart.nullFailed(I[0], 57, 37, "itemExtent");
-      if (index == null) dart.nullFailed(I[0], 57, 53, "index");
-      return dart.notNull(itemExtent) * dart.notNull(index);
+  var animating$ = dart.privateName(activity_indicator, "CupertinoActivityIndicator.animating");
+  var radius$ = dart.privateName(activity_indicator, "CupertinoActivityIndicator.radius");
+  var progress$ = dart.privateName(activity_indicator, "CupertinoActivityIndicator.progress");
+  activity_indicator.CupertinoActivityIndicator = class CupertinoActivityIndicator extends framework.StatefulWidget {
+    get animating() {
+      return this[animating$];
     }
-    getMinChildIndexForScrollOffset(scrollOffset, itemExtent) {
-      if (scrollOffset == null) dart.nullFailed(I[0], 67, 46, "scrollOffset");
-      if (itemExtent == null) dart.nullFailed(I[0], 67, 67, "itemExtent");
-      if (dart.notNull(itemExtent) > 0.0) {
-        let actual = dart.notNull(scrollOffset) / dart.notNull(itemExtent);
-        let round = actual[$round]();
-        if ((actual - round)[$abs]() < 1e-10) {
-          return round;
-        }
-        return actual[$floor]();
-      }
-      return 0;
+    set animating(value) {
+      super.animating = value;
     }
-    getMaxChildIndexForScrollOffset(scrollOffset, itemExtent) {
-      if (scrollOffset == null) dart.nullFailed(I[0], 87, 46, "scrollOffset");
-      if (itemExtent == null) dart.nullFailed(I[0], 87, 67, "itemExtent");
-      if (dart.notNull(itemExtent) > 0.0) {
-        let actual = dart.notNull(scrollOffset) / dart.notNull(itemExtent) - 1;
-        let round = actual[$round]();
-        if (dart.test(sliver_fixed_extent_list._isWithinPrecisionErrorTolerance(actual, round))) {
-          return math.max(core.int, 0, round);
-        }
-        return math.max(core.int, 0, actual[$ceil]());
-      }
-      return 0;
+    get radius() {
+      return this[radius$];
     }
-    estimateMaxScrollOffset(constraints, opts) {
-      if (constraints == null) dart.nullFailed(I[0], 113, 23, "constraints");
-      let firstIndex = opts && 'firstIndex' in opts ? opts.firstIndex : null;
-      let lastIndex = opts && 'lastIndex' in opts ? opts.lastIndex : null;
-      let leadingScrollOffset = opts && 'leadingScrollOffset' in opts ? opts.leadingScrollOffset : null;
-      let trailingScrollOffset = opts && 'trailingScrollOffset' in opts ? opts.trailingScrollOffset : null;
-      return this.childManager.estimateMaxScrollOffset(constraints, {firstIndex: firstIndex, lastIndex: lastIndex, leadingScrollOffset: leadingScrollOffset, trailingScrollOffset: trailingScrollOffset});
+    set radius(value) {
+      super.radius = value;
     }
-    computeMaxScrollOffset(constraints, itemExtent) {
-      if (constraints == null) dart.nullFailed(I[0], 149, 51, "constraints");
-      if (itemExtent == null) dart.nullFailed(I[0], 149, 71, "itemExtent");
-      return dart.notNull(this.childManager.childCount) * dart.notNull(itemExtent);
+    get progress() {
+      return this[progress$];
     }
-    [_calculateLeadingGarbage](firstIndex) {
-      if (firstIndex == null) dart.nullFailed(I[0], 153, 36, "firstIndex");
-      let walker = this.firstChild;
-      let leadingGarbage = 0;
-      while (walker != null && dart.notNull(this.indexOf(walker)) < dart.notNull(firstIndex)) {
-        leadingGarbage = leadingGarbage + 1;
-        walker = this.childAfter(walker);
-      }
-      return leadingGarbage;
+    set progress(value) {
+      super.progress = value;
     }
-    [_calculateTrailingGarbage](targetLastIndex) {
-      if (targetLastIndex == null) dart.nullFailed(I[0], 163, 37, "targetLastIndex");
-      let walker = this.lastChild;
-      let trailingGarbage = 0;
-      while (walker != null && dart.notNull(this.indexOf(walker)) > dart.notNull(targetLastIndex)) {
-        trailingGarbage = trailingGarbage + 1;
-        walker = this.childBefore(walker);
-      }
-      return trailingGarbage;
-    }
-    performLayout() {
-      let constraints = this.constraints;
-      this.childManager.didStartLayout();
-      this.childManager.setDidUnderflow(false);
-      let itemExtent = this.itemExtent;
-      let scrollOffset = dart.notNull(constraints.scrollOffset) + dart.notNull(constraints.cacheOrigin);
-      if (!(scrollOffset >= 0.0)) dart.assertFailed(null, I[0], 182, 12, "scrollOffset >= 0.0");
-      let remainingExtent = constraints.remainingCacheExtent;
-      if (!(dart.notNull(remainingExtent) >= 0.0)) dart.assertFailed(null, I[0], 184, 12, "remainingExtent >= 0.0");
-      let targetEndScrollOffset = scrollOffset + dart.notNull(remainingExtent);
-      let childConstraints = constraints.asBoxConstraints({minExtent: itemExtent, maxExtent: itemExtent});
-      let firstIndex = this.getMinChildIndexForScrollOffset(scrollOffset, itemExtent);
-      let targetLastIndex = targetEndScrollOffset[$isFinite] ? this.getMaxChildIndexForScrollOffset(targetEndScrollOffset, itemExtent) : null;
-      if (this.firstChild != null) {
-        let leadingGarbage = this[_calculateLeadingGarbage](firstIndex);
-        let trailingGarbage = targetLastIndex != null ? this[_calculateTrailingGarbage](targetLastIndex) : 0;
-        this.collectGarbage(leadingGarbage, trailingGarbage);
-      } else {
-        this.collectGarbage(0, 0);
-      }
-      if (this.firstChild == null) {
-        if (!dart.test(this.addInitialChild({index: firstIndex, layoutOffset: this.indexToLayoutOffset(itemExtent, firstIndex)}))) {
-          let max = null;
-          if (dart.notNull(firstIndex) <= 0) {
-            max = 0.0;
-          } else {
-            max = this.computeMaxScrollOffset(constraints, itemExtent);
-          }
-          this.geometry = new sliver.SliverGeometry.new({scrollExtent: max, maxPaintExtent: max});
-          this.childManager.didFinishLayout();
-          return;
-        }
-      }
-      let trailingChildWithLayout = null;
-      for (let index = dart.notNull(this.indexOf(dart.nullCheck(this.firstChild))) - 1; index >= dart.notNull(firstIndex); index = index - 1) {
-        let child = this.insertAndLayoutLeadingChild(childConstraints);
-        if (child == null) {
-          this.geometry = new sliver.SliverGeometry.new({scrollOffsetCorrection: index * dart.notNull(itemExtent)});
-          return;
-        }
-        let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-        childParentData.layoutOffset = this.indexToLayoutOffset(itemExtent, index);
-        if (!(childParentData.index === index)) dart.assertFailed(null, I[0], 235, 14, "childParentData.index == index");
-        trailingChildWithLayout == null ? trailingChildWithLayout = child : null;
-      }
-      if (trailingChildWithLayout == null) {
-        dart.nullCheck(this.firstChild).layout(childConstraints);
-        let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(dart.nullCheck(this.firstChild).parentData));
-        childParentData.layoutOffset = this.indexToLayoutOffset(itemExtent, firstIndex);
-        trailingChildWithLayout = this.firstChild;
-      }
-      let estimatedMaxScrollOffset = 1 / 0;
-      for (let index = dart.notNull(this.indexOf(dart.nullCheck(trailingChildWithLayout))) + 1; targetLastIndex == null || index <= dart.notNull(targetLastIndex); index = index + 1) {
-        let child = this.childAfter(dart.nullCheck(trailingChildWithLayout));
-        if (child == null || this.indexOf(child) !== index) {
-          child = this.insertAndLayoutChild(childConstraints, {after: trailingChildWithLayout});
-          if (child == null) {
-            estimatedMaxScrollOffset = index * dart.notNull(itemExtent);
-            break;
-          }
-        } else {
-          child.layout(childConstraints);
-        }
-        trailingChildWithLayout = child;
-        if (!(child != null)) dart.assertFailed(null, I[0], 260, 14, "child != null");
-        let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-        if (!(childParentData.index === index)) dart.assertFailed(null, I[0], 262, 14, "childParentData.index == index");
-        childParentData.layoutOffset = this.indexToLayoutOffset(itemExtent, dart.nullCheck(childParentData.index));
-      }
-      let lastIndex = this.indexOf(dart.nullCheck(this.lastChild));
-      let leadingScrollOffset = this.indexToLayoutOffset(itemExtent, firstIndex);
-      let trailingScrollOffset = this.indexToLayoutOffset(itemExtent, dart.notNull(lastIndex) + 1);
-      if (!(firstIndex === 0 || dart.nullCheck(this.childScrollOffset(dart.nullCheck(this.firstChild))) - scrollOffset <= 1e-10)) dart.assertFailed(null, I[0], 270, 12, "firstIndex == 0 || childScrollOffset(firstChild!)! - scrollOffset <= precisionErrorTolerance");
-      if (!dart.test(this.debugAssertChildListIsNonEmptyAndContiguous())) dart.assertFailed(null, I[0], 271, 12, "debugAssertChildListIsNonEmptyAndContiguous()");
-      if (!(this.indexOf(dart.nullCheck(this.firstChild)) == firstIndex)) dart.assertFailed(null, I[0], 272, 12, "indexOf(firstChild!) == firstIndex");
-      if (!(targetLastIndex == null || dart.notNull(lastIndex) <= dart.notNull(targetLastIndex))) dart.assertFailed(null, I[0], 273, 12, "targetLastIndex == null || lastIndex <= targetLastIndex");
-      estimatedMaxScrollOffset = math.min(core.double, estimatedMaxScrollOffset, this.estimateMaxScrollOffset(constraints, {firstIndex: firstIndex, lastIndex: lastIndex, leadingScrollOffset: leadingScrollOffset, trailingScrollOffset: trailingScrollOffset}));
-      let paintExtent = this.calculatePaintOffset(constraints, {from: leadingScrollOffset, to: trailingScrollOffset});
-      let cacheExtent = this.calculateCacheOffset(constraints, {from: leadingScrollOffset, to: trailingScrollOffset});
-      let targetEndScrollOffsetForPaint = dart.notNull(constraints.scrollOffset) + dart.notNull(constraints.remainingPaintExtent);
-      let targetLastIndexForPaint = targetEndScrollOffsetForPaint[$isFinite] ? this.getMaxChildIndexForScrollOffset(targetEndScrollOffsetForPaint, itemExtent) : null;
-      this.geometry = new sliver.SliverGeometry.new({scrollExtent: estimatedMaxScrollOffset, paintExtent: paintExtent, cacheExtent: cacheExtent, maxPaintExtent: estimatedMaxScrollOffset, hasVisualOverflow: targetLastIndexForPaint != null && dart.notNull(lastIndex) >= dart.notNull(targetLastIndexForPaint) || dart.notNull(constraints.scrollOffset) > 0.0});
-      if (estimatedMaxScrollOffset === trailingScrollOffset) this.childManager.setDidUnderflow(true);
-      this.childManager.didFinishLayout();
+    createState() {
+      return new activity_indicator._CupertinoActivityIndicatorState.new();
     }
   };
-  (sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor.new = function(opts) {
-    let childManager = opts && 'childManager' in opts ? opts.childManager : null;
-    if (childManager == null) dart.nullFailed(I[0], 43, 42, "childManager");
-    sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor.__proto__.new.call(this, {childManager: childManager});
+  (activity_indicator.CupertinoActivityIndicator.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let animating = opts && 'animating' in opts ? opts.animating : true;
+    if (animating == null) dart.nullFailed(I[0], 30, 10, "animating");
+    let radius = opts && 'radius' in opts ? opts.radius : 10;
+    if (radius == null) dart.nullFailed(I[0], 31, 10, "radius");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[animating$] = animating;
+    this[radius$] = radius;
+    if (!(animating != null)) dart.assertFailed(null, I[0], 32, 16, "animating != null");
+    if (!(radius != null)) dart.assertFailed(null, I[0], 33, 16, "radius != null");
+    if (!(dart.notNull(radius) > 0.0)) dart.assertFailed(null, I[0], 34, 16, "radius > 0.0");
+    this[progress$] = 1.0;
+    activity_indicator.CupertinoActivityIndicator.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor.prototype;
-  dart.addTypeTests(sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor);
-  dart.addTypeCaches(sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor);
-  dart.setMethodSignature(sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor, () => ({
-    __proto__: dart.getMethods(sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor.__proto__),
-    indexToLayoutOffset: dart.fnType(core.double, [core.double, core.int]),
-    getMinChildIndexForScrollOffset: dart.fnType(core.int, [core.double, core.double]),
-    getMaxChildIndexForScrollOffset: dart.fnType(core.int, [core.double, core.double]),
-    estimateMaxScrollOffset: dart.fnType(core.double, [sliver.SliverConstraints], {firstIndex: dart.nullable(core.int), lastIndex: dart.nullable(core.int), leadingScrollOffset: dart.nullable(core.double), trailingScrollOffset: dart.nullable(core.double)}, {}),
-    computeMaxScrollOffset: dart.fnType(core.double, [sliver.SliverConstraints, core.double]),
-    [_calculateLeadingGarbage]: dart.fnType(core.int, [core.int]),
-    [_calculateTrailingGarbage]: dart.fnType(core.int, [core.int]),
-    performLayout: dart.fnType(dart.void, [])
-  }));
-  dart.setLibraryUri(sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor, I[1]);
-  var _itemExtent = dart.privateName(sliver_fixed_extent_list, "_itemExtent");
-  sliver_fixed_extent_list.RenderSliverFixedExtentList = class RenderSliverFixedExtentList extends sliver_fixed_extent_list.RenderSliverFixedExtentBoxAdaptor {
-    get itemExtent() {
-      return this[_itemExtent];
-    }
-    set itemExtent(value) {
-      if (value == null) dart.nullFailed(I[0], 353, 25, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 354, 12, "value != null");
-      if (this[_itemExtent] == value) return;
-      this[_itemExtent] = value;
-      this.markNeedsLayout();
-    }
-  };
-  (sliver_fixed_extent_list.RenderSliverFixedExtentList.new = function(opts) {
-    let childManager = opts && 'childManager' in opts ? opts.childManager : null;
-    if (childManager == null) dart.nullFailed(I[0], 345, 42, "childManager");
-    let itemExtent = opts && 'itemExtent' in opts ? opts.itemExtent : null;
-    if (itemExtent == null) dart.nullFailed(I[0], 346, 21, "itemExtent");
-    this[_itemExtent] = itemExtent;
-    sliver_fixed_extent_list.RenderSliverFixedExtentList.__proto__.new.call(this, {childManager: childManager});
+  }).prototype = activity_indicator.CupertinoActivityIndicator.prototype;
+  (activity_indicator.CupertinoActivityIndicator.partiallyRevealed = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let radius = opts && 'radius' in opts ? opts.radius : 10;
+    if (radius == null) dart.nullFailed(I[0], 46, 10, "radius");
+    let progress = opts && 'progress' in opts ? opts.progress : 1;
+    if (progress == null) dart.nullFailed(I[0], 47, 10, "progress");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[radius$] = radius;
+    this[progress$] = progress;
+    if (!(radius != null)) dart.assertFailed(null, I[0], 48, 16, "radius != null");
+    if (!(dart.notNull(radius) > 0.0)) dart.assertFailed(null, I[0], 49, 16, "radius > 0.0");
+    if (!(progress != null)) dart.assertFailed(null, I[0], 50, 16, "progress != null");
+    if (!(dart.notNull(progress) >= 0.0)) dart.assertFailed(null, I[0], 51, 16, "progress >= 0.0");
+    if (!(dart.notNull(progress) <= 1.0)) dart.assertFailed(null, I[0], 52, 16, "progress <= 1.0");
+    this[animating$] = false;
+    activity_indicator.CupertinoActivityIndicator.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = sliver_fixed_extent_list.RenderSliverFixedExtentList.prototype;
-  dart.addTypeTests(sliver_fixed_extent_list.RenderSliverFixedExtentList);
-  dart.addTypeCaches(sliver_fixed_extent_list.RenderSliverFixedExtentList);
-  dart.setGetterSignature(sliver_fixed_extent_list.RenderSliverFixedExtentList, () => ({
-    __proto__: dart.getGetters(sliver_fixed_extent_list.RenderSliverFixedExtentList.__proto__),
-    itemExtent: core.double
+  }).prototype = activity_indicator.CupertinoActivityIndicator.prototype;
+  dart.addTypeTests(activity_indicator.CupertinoActivityIndicator);
+  dart.addTypeCaches(activity_indicator.CupertinoActivityIndicator);
+  dart.setMethodSignature(activity_indicator.CupertinoActivityIndicator, () => ({
+    __proto__: dart.getMethods(activity_indicator.CupertinoActivityIndicator.__proto__),
+    createState: dart.fnType(activity_indicator._CupertinoActivityIndicatorState, [])
   }));
-  dart.setSetterSignature(sliver_fixed_extent_list.RenderSliverFixedExtentList, () => ({
-    __proto__: dart.getSetters(sliver_fixed_extent_list.RenderSliverFixedExtentList.__proto__),
-    itemExtent: core.double
+  dart.setLibraryUri(activity_indicator.CupertinoActivityIndicator, I[1]);
+  dart.setFieldSignature(activity_indicator.CupertinoActivityIndicator, () => ({
+    __proto__: dart.getFields(activity_indicator.CupertinoActivityIndicator.__proto__),
+    animating: dart.finalFieldType(core.bool),
+    radius: dart.finalFieldType(core.double),
+    progress: dart.finalFieldType(core.double)
   }));
-  dart.setLibraryUri(sliver_fixed_extent_list.RenderSliverFixedExtentList, I[1]);
-  dart.setFieldSignature(sliver_fixed_extent_list.RenderSliverFixedExtentList, () => ({
-    __proto__: dart.getFields(sliver_fixed_extent_list.RenderSliverFixedExtentList.__proto__),
-    [_itemExtent]: dart.fieldType(core.double)
-  }));
-  sliver_fixed_extent_list._isWithinPrecisionErrorTolerance = function _isWithinPrecisionErrorTolerance(actual, round) {
-    if (actual == null) dart.nullFailed(I[0], 362, 46, "actual");
-    if (round == null) dart.nullFailed(I[0], 362, 58, "round");
-    return (dart.notNull(actual) - dart.notNull(round))[$abs]() < 1e-10;
+  var ___CupertinoActivityIndicatorState__controller = dart.privateName(activity_indicator, "_#_CupertinoActivityIndicatorState#_controller");
+  var ___CupertinoActivityIndicatorState__controller_isSet = dart.privateName(activity_indicator, "_#_CupertinoActivityIndicatorState#_controller#isSet");
+  var _controller = dart.privateName(activity_indicator, "_controller");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(activity_indicator.CupertinoActivityIndicator) {};
+  (State_SingleTickerProviderStateMixin$36.new = function() {
+    ticker_provider.SingleTickerProviderStateMixin$(activity_indicator.CupertinoActivityIndicator)[dart.mixinNew].call(this);
+    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(activity_indicator.CupertinoActivityIndicator));
+  activity_indicator._CupertinoActivityIndicatorState = class _CupertinoActivityIndicatorState extends State_SingleTickerProviderStateMixin$36 {
+    get [_controller]() {
+      let t0;
+      return dart.test(this[___CupertinoActivityIndicatorState__controller_isSet]) ? (t0 = this[___CupertinoActivityIndicatorState__controller], t0) : dart.throw(new _internal.LateError.fieldNI("_controller"));
+    }
+    set [_controller](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 81, 28, "null");
+      this[___CupertinoActivityIndicatorState__controller_isSet] = true;
+      this[___CupertinoActivityIndicatorState__controller] = t0;
+    }
+    initState() {
+      super.initState();
+      this[_controller] = new animation_controller.AnimationController.new({duration: C[0] || CT.C0, vsync: this});
+      if (dart.test(this.widget.animating)) {
+        this[_controller].repeat();
+      }
+    }
+    didUpdateWidget(oldWidget) {
+      activity_indicator.CupertinoActivityIndicator.as(oldWidget);
+      if (oldWidget == null) dart.nullFailed(I[0], 97, 51, "oldWidget");
+      super.didUpdateWidget(oldWidget);
+      if (this.widget.animating != oldWidget.animating) {
+        if (dart.test(this.widget.animating))
+          this[_controller].repeat();
+        else
+          this[_controller].stop();
+      }
+    }
+    dispose() {
+      this[_controller].dispose();
+      super.dispose();
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 114, 29, "context");
+      return new basic.SizedBox.new({height: dart.notNull(this.widget.radius) * 2, width: dart.notNull(this.widget.radius) * 2, child: new basic.CustomPaint.new({painter: new activity_indicator._CupertinoActivityIndicatorPainter.new({position: this[_controller], activeColor: colors.CupertinoDynamicColor.resolve(activity_indicator._kActiveTickColor, context), radius: this.widget.radius, progress: this.widget.progress}), $creationLocationd_0dea112b090073317d4: C[1] || CT.C1}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+    }
   };
-  dart.trackLibraries("packages/flutter/src/rendering/sliver_fixed_extent_list.dart", {
-    "package:flutter/src/rendering/sliver_fixed_extent_list.dart": sliver_fixed_extent_list
+  (activity_indicator._CupertinoActivityIndicatorState.new = function() {
+    this[___CupertinoActivityIndicatorState__controller] = null;
+    this[___CupertinoActivityIndicatorState__controller_isSet] = false;
+    activity_indicator._CupertinoActivityIndicatorState.__proto__.new.call(this);
+    ;
+  }).prototype = activity_indicator._CupertinoActivityIndicatorState.prototype;
+  dart.addTypeTests(activity_indicator._CupertinoActivityIndicatorState);
+  dart.addTypeCaches(activity_indicator._CupertinoActivityIndicatorState);
+  dart.setMethodSignature(activity_indicator._CupertinoActivityIndicatorState, () => ({
+    __proto__: dart.getMethods(activity_indicator._CupertinoActivityIndicatorState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(activity_indicator._CupertinoActivityIndicatorState, () => ({
+    __proto__: dart.getGetters(activity_indicator._CupertinoActivityIndicatorState.__proto__),
+    [_controller]: animation_controller.AnimationController
+  }));
+  dart.setSetterSignature(activity_indicator._CupertinoActivityIndicatorState, () => ({
+    __proto__: dart.getSetters(activity_indicator._CupertinoActivityIndicatorState.__proto__),
+    [_controller]: animation_controller.AnimationController
+  }));
+  dart.setLibraryUri(activity_indicator._CupertinoActivityIndicatorState, I[1]);
+  dart.setFieldSignature(activity_indicator._CupertinoActivityIndicatorState, () => ({
+    __proto__: dart.getFields(activity_indicator._CupertinoActivityIndicatorState.__proto__),
+    [___CupertinoActivityIndicatorState__controller]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [___CupertinoActivityIndicatorState__controller_isSet]: dart.fieldType(core.bool)
+  }));
+  activity_indicator._CupertinoActivityIndicatorPainter = class _CupertinoActivityIndicatorPainter extends custom_paint.CustomPainter {
+    paint(canvas, size) {
+      if (canvas == null) dart.nullFailed(I[0], 173, 21, "canvas");
+      if (size == null) dart.nullFailed(I[0], 173, 34, "size");
+      let paint = ui.Paint.new();
+      let tickCount = activity_indicator._kAlphaValues[$length];
+      canvas.save();
+      canvas.translate(dart.notNull(size.width) / 2.0, dart.notNull(size.height) / 2.0);
+      let activeTick = (dart.notNull(tickCount) * dart.notNull(this.position.value))[$floor]();
+      for (let i = 0; i < dart.notNull(tickCount) * dart.notNull(this.progress); i = i + 1) {
+        let t = (i - activeTick)[$modulo](tickCount);
+        paint.color = this.activeColor.withAlpha(dart.notNull(this.progress) < 1 ? 147 : activity_indicator._kAlphaValues[$_get](t));
+        canvas.drawRRect(this.tickFundamentalRRect, paint);
+        canvas.rotate(6.283185307179586 / dart.notNull(tickCount));
+      }
+      canvas.restore();
+    }
+    shouldRepaint(oldPainter) {
+      activity_indicator._CupertinoActivityIndicatorPainter.as(oldPainter);
+      if (oldPainter == null) dart.nullFailed(I[0], 194, 57, "oldPainter");
+      return !dart.equals(oldPainter.position, this.position) || !dart.equals(oldPainter.activeColor, this.activeColor) || oldPainter.progress != this.progress;
+    }
+  };
+  (activity_indicator._CupertinoActivityIndicatorPainter.new = function(opts) {
+    let position = opts && 'position' in opts ? opts.position : null;
+    if (position == null) dart.nullFailed(I[0], 151, 19, "position");
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
+    if (activeColor == null) dart.nullFailed(I[0], 152, 19, "activeColor");
+    let radius = opts && 'radius' in opts ? opts.radius : null;
+    if (radius == null) dart.nullFailed(I[0], 153, 19, "radius");
+    let progress = opts && 'progress' in opts ? opts.progress : null;
+    if (progress == null) dart.nullFailed(I[0], 154, 19, "progress");
+    this.position = position;
+    this.activeColor = activeColor;
+    this.radius = radius;
+    this.progress = progress;
+    this.tickFundamentalRRect = new ui.RRect.fromLTRBXY(-dart.notNull(radius) / 10, -dart.notNull(radius) / 3.0, dart.notNull(radius) / 10, -dart.notNull(radius), dart.notNull(radius) / 10, dart.notNull(radius) / 10);
+    activity_indicator._CupertinoActivityIndicatorPainter.__proto__.new.call(this, {repaint: position});
+    ;
+  }).prototype = activity_indicator._CupertinoActivityIndicatorPainter.prototype;
+  dart.addTypeTests(activity_indicator._CupertinoActivityIndicatorPainter);
+  dart.addTypeCaches(activity_indicator._CupertinoActivityIndicatorPainter);
+  dart.setMethodSignature(activity_indicator._CupertinoActivityIndicatorPainter, () => ({
+    __proto__: dart.getMethods(activity_indicator._CupertinoActivityIndicatorPainter.__proto__),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Size]),
+    shouldRepaint: dart.fnType(core.bool, [dart.nullable(core.Object)])
+  }));
+  dart.setLibraryUri(activity_indicator._CupertinoActivityIndicatorPainter, I[1]);
+  dart.setFieldSignature(activity_indicator._CupertinoActivityIndicatorPainter, () => ({
+    __proto__: dart.getFields(activity_indicator._CupertinoActivityIndicatorPainter.__proto__),
+    position: dart.finalFieldType(animation.Animation$(core.double)),
+    activeColor: dart.finalFieldType(ui.Color),
+    radius: dart.finalFieldType(core.double),
+    progress: dart.finalFieldType(core.double),
+    tickFundamentalRRect: dart.finalFieldType(ui.RRect)
+  }));
+  var Color_value = dart.privateName(ui, "Color.value");
+  var CupertinoDynamicColor_darkHighContrastElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.darkHighContrastElevatedColor");
+  var CupertinoDynamicColor_highContrastElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.highContrastElevatedColor");
+  var CupertinoDynamicColor_darkElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.darkElevatedColor");
+  var CupertinoDynamicColor_elevatedColor = dart.privateName(colors, "CupertinoDynamicColor.elevatedColor");
+  var CupertinoDynamicColor_darkHighContrastColor = dart.privateName(colors, "CupertinoDynamicColor.darkHighContrastColor");
+  var CupertinoDynamicColor_highContrastColor = dart.privateName(colors, "CupertinoDynamicColor.highContrastColor");
+  var CupertinoDynamicColor_darkColor = dart.privateName(colors, "CupertinoDynamicColor.darkColor");
+  var CupertinoDynamicColor_color = dart.privateName(colors, "CupertinoDynamicColor.color");
+  var CupertinoDynamicColor__debugResolveContext = dart.privateName(colors, "CupertinoDynamicColor._debugResolveContext");
+  var CupertinoDynamicColor__debugLabel = dart.privateName(colors, "CupertinoDynamicColor._debugLabel");
+  var CupertinoDynamicColor__effectiveColor = dart.privateName(colors, "CupertinoDynamicColor._effectiveColor");
+  dart.defineLazy(activity_indicator, {
+    /*activity_indicator._kDefaultIndicatorRadius*/get _kDefaultIndicatorRadius() {
+      return 10;
+    },
+    /*activity_indicator._kActiveTickColor*/get _kActiveTickColor() {
+      return C[9] || CT.C9;
+    },
+    /*activity_indicator._kTwoPI*/get _kTwoPI() {
+      return 6.283185307179586;
+    },
+    /*activity_indicator._kAlphaValues*/get _kAlphaValues() {
+      return C[12] || CT.C12;
+    },
+    /*activity_indicator._partiallyRevealedAlpha*/get _partiallyRevealedAlpha() {
+      return 147;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/cupertino/activity_indicator.dart", {
+    "package:flutter/src/cupertino/activity_indicator.dart": activity_indicator
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["sliver_fixed_extent_list.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/sliver_fixed_extent_list.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["activity_indicator.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA0Da;;;;;;IAKE;;;;;;IAQA;;;;;;;AAIT;IAAkC;;;QA/C/B;QACA;;QACA;;;IADA;IACA;UACM,AAAU,SAAD;UACT,AAAO,MAAD;UACC,aAAP,MAAM,IAAG;IACP,kBAAE;AACX,iFAAW,GAAG;;EAAC;;QASd;QACA;;QACA;;;IADA;IACA;UACM,AAAO,MAAD;UACC,aAAP,MAAM,IAAG;UACT,AAAS,QAAD;UACC,aAAT,QAAQ,KAAI;UACH,aAAT,QAAQ,KAAI;IACT,mBAAE;AACZ,iFAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2BI;IAAW;;;AAAX;;IAAW;;AAIjB,MAAX;AAIL,MAHD,oBAAc,kFAEL;AAGT,oBAAI,AAAO;AACW,QAApB,AAAY;;IAEhB;;uDAGgD;;AACd,MAA1B,sBAAgB,SAAS;AAC/B,UAAI,AAAO,AAAU,yBAAG,AAAU,SAAD;AAC/B,sBAAI,AAAO;AACW,UAApB,AAAY;;AAEM,UAAlB,AAAY;;IAElB;;AAIuB,MAArB,AAAY;AACG,MAAT;IACR;;UAG0B;AACxB,YAAO,iCACiB,aAAd,AAAO,sBAAS,UACH,aAAd,AAAO,sBAAS,UAChB,oCACI,yEACG,gCAEgB,qCAAQ,sCAAmB,OAAO,WACpD,AAAO,8BACL,AAAO;IAIzB;;;2DA/CyB;;;;EAgD3B;;;;;;;;;;;;;;;;;;;;;;UA4CoB,QAAa;UAAb;UAAa;AACjB,kBAAQ;AACV,sBAAY,AAAc;AAEvB,MAAb,AAAO,MAAD;AAC+C,MAArD,AAAO,MAAD,WAAsB,aAAX,AAAK,IAAD,UAAS,KAAiB,aAAZ,AAAK,IAAD,WAAU;AAEvC,uBAA0C,CAAlB,aAAV,SAAS,iBAAG,AAAS;AAE7C,eAAS,IAAI,GAAG,AAAE,CAAD,GAAa,aAAV,SAAS,iBAAG,gBAAY,IAAF,AAAE,CAAC,GAAH;AAC9B,gBAAqB,CAAhB,AAAE,CAAD,GAAG,UAAU,WAAI,SAAS;AAE+B,QADzE,AAAM,KAAD,SAAS,AACT,2BAAmB,aAAT,iBAAW,UAA8B,AAAa,wCAAC,CAAC;AAC1B,QAA7C,AAAO,MAAD,WAAW,2BAAsB,KAAK;AACV,QAAlC,AAAO,MAAD,QAAgB,iCAAE,SAAS;;AAGnB,MAAhB,AAAO,MAAD;IACR;;+DAGsD;;AACpD,YAA2B,AACe,cADnC,AAAW,UAAD,WAAa,kBACH,aAAvB,AAAW,UAAD,cAAgB,qBAC1B,AAAW,AAAS,UAAV,aAAa;IAC7B;;;QA/CgB;;QACA;;QACA;;QACA;;IAHA;IACA;IACA;IACA;IACW,4BAAQ,wBAC3B,AAAQ,cAAP,MAAM,QACP,AAAQ,cAAP,MAAM,IAAG,KACH,aAAP,MAAM,QACN,cAAC,MAAM,GACA,aAAP,MAAM,QACC,aAAP,MAAM;AAER,6FAAe,QAAQ;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAxJnB,2CAAwB;;;MAGzB,oCAAiB;;;MAqHhB,0BAAO;;;MAIJ,gCAAa;;;MAYnB,0CAAuB","file":"../../../../../../../packages/flutter/src/cupertino/activity_indicator.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__sliver_fixed_extent_list: sliver_fixed_extent_list
+    src__cupertino__activity_indicator: activity_indicator
   };
 }));
 
-//# sourceMappingURL=sliver_fixed_extent_list.dart.lib.js.map
+//# sourceMappingURL=activity_indicator.dart.lib.js.map

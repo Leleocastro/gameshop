@@ -1,25 +1,23 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/custom_layout.dart'], (function load__packages__flutter__src__widgets__navigation_toolbar_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__custom_layout$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/edge_insets.dart'], (function load__packages__flutter__src__rendering__sliver_padding_dart(dart_sdk, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__edge_insets$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _interceptors = dart_sdk._interceptors;
-  const ui = dart_sdk.ui;
   const _internal = dart_sdk._internal;
   const math = dart_sdk.math;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
-  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const custom_layout = packages__flutter__src__rendering__custom_layout$46dart.src__rendering__custom_layout;
-  var navigation_toolbar = Object.create(dart.library);
-  var $add = dartx.add;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const debug = packages__flutter__src__rendering__layer$46dart.src__rendering__debug;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  var sliver_padding = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    _ToolbarSlotL: () => (T._ToolbarSlotL = dart.constFn(dart.legacy(navigation_toolbar._ToolbarSlot)))()
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    DiagnosticsPropertyOfEdgeInsetsGeometry: () => (T.DiagnosticsPropertyOfEdgeInsetsGeometry = dart.constFn(diagnostics.DiagnosticsProperty$(edge_insets.EdgeInsetsGeometry)))(),
+    EnumPropertyOfTextDirection: () => (T.EnumPropertyOfTextDirection = dart.constFn(diagnostics.EnumProperty$(ui.TextDirection)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -34,430 +32,416 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.up",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.right",
+        index: 1
+      });
+    },
     get C2() {
       return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "id",
-        [_Location_column]: 39,
-        [_Location_line]: 70,
-        [_Location_file]: null
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.down",
+        index: 2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 65,
-        [_Location_line]: 70,
-        [_Location_file]: null
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.left",
+        index: 3
       });
-    },
-    get C1() {
-      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
-    },
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[1] || CT.C1,
-        [_Location_name]: null,
-        [_Location_column]: 30,
-        [_Location_line]: 70,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/navigation_toolbar.dart"
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "id",
-        [_Location_column]: 38,
-        [_Location_line]: 71,
-        [_Location_file]: null
-      });
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 63,
-        [_Location_line]: 71,
-        [_Location_file]: null
-      });
-    },
-    get C5() {
-      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[5] || CT.C5,
-        [_Location_name]: null,
-        [_Location_column]: 29,
-        [_Location_line]: 71,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/navigation_toolbar.dart"
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "id",
-        [_Location_column]: 40,
-        [_Location_line]: 72,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 67,
-        [_Location_line]: 72,
-        [_Location_file]: null
-      });
-    },
-    get C9() {
-      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], T._LocationL());
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[9] || CT.C9,
-        [_Location_name]: null,
-        [_Location_column]: 31,
-        [_Location_line]: 72,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/navigation_toolbar.dart"
-      });
-    },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "delegate",
-        [_Location_column]: 7,
-        [_Location_line]: 64,
-        [_Location_file]: null
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "children",
-        [_Location_column]: 7,
-        [_Location_line]: 69,
-        [_Location_file]: null
-      });
-    },
-    get C13() {
-      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], T._LocationL());
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[13] || CT.C13,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 63,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/navigation_toolbar.dart"
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: navigation_toolbar._ToolbarSlot.prototype,
-        [_name$]: "_ToolbarSlot.leading",
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.horizontal",
         index: 0
       });
     },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: navigation_toolbar._ToolbarSlot.prototype,
-        [_name$]: "_ToolbarSlot.middle",
-        index: 1
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: navigation_toolbar._ToolbarSlot.prototype,
-        [_name$]: "_ToolbarSlot.trailing",
-        index: 2
-      });
-    },
-    get C19() {
-      return C[19] = dart.constList([C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18], T._ToolbarSlotL());
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name]: "TextDirection.rtl",
-        index: 0
-      });
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name]: "TextDirection.ltr",
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.vertical",
         index: 1
       });
     }
   }, false);
-  var C = Array(22).fill(void 0);
+  var C = Array(6).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/widgets/navigation_toolbar.dart",
-    "package:flutter/src/widgets/navigation_toolbar.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/rendering/sliver_padding.dart",
+    "package:flutter/src/rendering/sliver_padding.dart"
   ];
-  var leading$ = dart.privateName(navigation_toolbar, "NavigationToolbar.leading");
-  var middle$ = dart.privateName(navigation_toolbar, "NavigationToolbar.middle");
-  var trailing$ = dart.privateName(navigation_toolbar, "NavigationToolbar.trailing");
-  var centerMiddle$ = dart.privateName(navigation_toolbar, "NavigationToolbar.centerMiddle");
-  var middleSpacing$ = dart.privateName(navigation_toolbar, "NavigationToolbar.middleSpacing");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  navigation_toolbar.NavigationToolbar = class NavigationToolbar extends framework.StatelessWidget {
-    get leading() {
-      return this[leading$];
+  var _name = dart.privateName(basic_types, "_name");
+  const RenderSliver_RenderObjectWithChildMixin$36 = class RenderSliver_RenderObjectWithChildMixin extends sliver.RenderSliver {};
+  (RenderSliver_RenderObjectWithChildMixin$36.new = function() {
+    object.RenderObjectWithChildMixin$(sliver.RenderSliver)[dart.mixinNew].call(this);
+    RenderSliver_RenderObjectWithChildMixin$36.__proto__.new.call(this);
+  }).prototype = RenderSliver_RenderObjectWithChildMixin$36.prototype;
+  dart.applyMixin(RenderSliver_RenderObjectWithChildMixin$36, object.RenderObjectWithChildMixin$(sliver.RenderSliver));
+  sliver_padding.RenderSliverEdgeInsetsPadding = class RenderSliverEdgeInsetsPadding extends RenderSliver_RenderObjectWithChildMixin$36 {
+    get beforePadding() {
+      if (!(this.constraints != null)) dart.assertFailed(null, I[0], 38, 12, "constraints != null");
+      if (!(this.constraints.axisDirection != null)) dart.assertFailed(null, I[0], 39, 12, "constraints.axisDirection != null");
+      if (!(this.constraints.growthDirection != null)) dart.assertFailed(null, I[0], 40, 12, "constraints.growthDirection != null");
+      if (!(this.resolvedPadding != null)) dart.assertFailed(null, I[0], 41, 12, "resolvedPadding != null");
+      switch (sliver.applyGrowthDirectionToAxisDirection(this.constraints.axisDirection, this.constraints.growthDirection)) {
+        case C[0] || CT.C0:
+        {
+          return dart.nullCheck(this.resolvedPadding).bottom;
+        }
+        case C[1] || CT.C1:
+        {
+          return dart.nullCheck(this.resolvedPadding).left;
+        }
+        case C[2] || CT.C2:
+        {
+          return dart.nullCheck(this.resolvedPadding).top;
+        }
+        case C[3] || CT.C3:
+        {
+          return dart.nullCheck(this.resolvedPadding).right;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
     }
-    set leading(value) {
-      super.leading = value;
+    get afterPadding() {
+      if (!(this.constraints != null)) dart.assertFailed(null, I[0], 59, 12, "constraints != null");
+      if (!(this.constraints.axisDirection != null)) dart.assertFailed(null, I[0], 60, 12, "constraints.axisDirection != null");
+      if (!(this.constraints.growthDirection != null)) dart.assertFailed(null, I[0], 61, 12, "constraints.growthDirection != null");
+      if (!(this.resolvedPadding != null)) dart.assertFailed(null, I[0], 62, 12, "resolvedPadding != null");
+      switch (sliver.applyGrowthDirectionToAxisDirection(this.constraints.axisDirection, this.constraints.growthDirection)) {
+        case C[0] || CT.C0:
+        {
+          return dart.nullCheck(this.resolvedPadding).top;
+        }
+        case C[1] || CT.C1:
+        {
+          return dart.nullCheck(this.resolvedPadding).right;
+        }
+        case C[2] || CT.C2:
+        {
+          return dart.nullCheck(this.resolvedPadding).bottom;
+        }
+        case C[3] || CT.C3:
+        {
+          return dart.nullCheck(this.resolvedPadding).left;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
     }
-    get middle() {
-      return this[middle$];
+    get mainAxisPadding() {
+      if (!(this.constraints != null)) dart.assertFailed(null, I[0], 82, 12, "constraints != null");
+      if (!(this.constraints.axis != null)) dart.assertFailed(null, I[0], 83, 12, "constraints.axis != null");
+      if (!(this.resolvedPadding != null)) dart.assertFailed(null, I[0], 84, 12, "resolvedPadding != null");
+      return dart.nullCheck(this.resolvedPadding).along(this.constraints.axis);
     }
-    set middle(value) {
-      super.middle = value;
+    get crossAxisPadding() {
+      if (!(this.constraints != null)) dart.assertFailed(null, I[0], 95, 12, "constraints != null");
+      if (!(this.constraints.axis != null)) dart.assertFailed(null, I[0], 96, 12, "constraints.axis != null");
+      if (!(this.resolvedPadding != null)) dart.assertFailed(null, I[0], 97, 12, "resolvedPadding != null");
+      switch (this.constraints.axis) {
+        case C[4] || CT.C4:
+        {
+          return dart.nullCheck(this.resolvedPadding).vertical;
+        }
+        case C[5] || CT.C5:
+        {
+          return dart.nullCheck(this.resolvedPadding).horizontal;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
     }
-    get trailing() {
-      return this[trailing$];
+    setupParentData(child) {
+      object.RenderObject.as(child);
+      if (child == null) dart.nullFailed(I[0], 107, 37, "child");
+      if (!sliver.SliverPhysicalParentData.is(child.parentData)) child.parentData = new sliver.SliverPhysicalParentData.new();
     }
-    set trailing(value) {
-      super.trailing = value;
+    performLayout() {
+      let constraints = this.constraints;
+      if (!(this.resolvedPadding != null)) dart.assertFailed(null, I[0], 115, 12, "resolvedPadding != null");
+      let beforePadding = this.beforePadding;
+      let afterPadding = this.afterPadding;
+      let mainAxisPadding = this.mainAxisPadding;
+      let crossAxisPadding = this.crossAxisPadding;
+      if (this.child == null) {
+        this.geometry = new sliver.SliverGeometry.new({scrollExtent: mainAxisPadding, paintExtent: math.min(core.double, mainAxisPadding, constraints.remainingPaintExtent), maxPaintExtent: mainAxisPadding});
+        return;
+      }
+      let beforePaddingPaintExtent = this.calculatePaintOffset(constraints, {from: 0.0, to: beforePadding});
+      let overlap = constraints.overlap;
+      if (dart.notNull(overlap) > 0) {
+        overlap = math.max(core.double, 0.0, dart.notNull(constraints.overlap) - dart.notNull(beforePaddingPaintExtent));
+      }
+      dart.nullCheck(this.child).layout(constraints.copyWith({scrollOffset: math.max(core.double, 0.0, dart.notNull(constraints.scrollOffset) - dart.notNull(beforePadding)), cacheOrigin: math.min(core.double, 0.0, dart.notNull(constraints.cacheOrigin) + dart.notNull(beforePadding)), overlap: overlap, remainingPaintExtent: dart.notNull(constraints.remainingPaintExtent) - dart.notNull(this.calculatePaintOffset(constraints, {from: 0.0, to: beforePadding})), remainingCacheExtent: dart.notNull(constraints.remainingCacheExtent) - dart.notNull(this.calculateCacheOffset(constraints, {from: 0.0, to: beforePadding})), crossAxisExtent: math.max(core.double, 0.0, dart.notNull(constraints.crossAxisExtent) - dart.notNull(crossAxisPadding)), precedingScrollExtent: dart.notNull(beforePadding) + dart.notNull(constraints.precedingScrollExtent)}), {parentUsesSize: true});
+      let childLayoutGeometry = dart.nullCheck(dart.nullCheck(this.child).geometry);
+      if (childLayoutGeometry.scrollOffsetCorrection != null) {
+        this.geometry = new sliver.SliverGeometry.new({scrollOffsetCorrection: childLayoutGeometry.scrollOffsetCorrection});
+        return;
+      }
+      let afterPaddingPaintExtent = this.calculatePaintOffset(constraints, {from: dart.notNull(beforePadding) + dart.notNull(childLayoutGeometry.scrollExtent), to: dart.notNull(mainAxisPadding) + dart.notNull(childLayoutGeometry.scrollExtent)});
+      let mainAxisPaddingPaintExtent = dart.notNull(beforePaddingPaintExtent) + dart.notNull(afterPaddingPaintExtent);
+      let beforePaddingCacheExtent = this.calculateCacheOffset(constraints, {from: 0.0, to: beforePadding});
+      let afterPaddingCacheExtent = this.calculateCacheOffset(constraints, {from: dart.notNull(beforePadding) + dart.notNull(childLayoutGeometry.scrollExtent), to: dart.notNull(mainAxisPadding) + dart.notNull(childLayoutGeometry.scrollExtent)});
+      let mainAxisPaddingCacheExtent = dart.notNull(afterPaddingCacheExtent) + dart.notNull(beforePaddingCacheExtent);
+      let paintExtent = math.min(core.double, dart.notNull(beforePaddingPaintExtent) + math.max(core.num, childLayoutGeometry.paintExtent, dart.notNull(childLayoutGeometry.layoutExtent) + dart.notNull(afterPaddingPaintExtent)), constraints.remainingPaintExtent);
+      this.geometry = new sliver.SliverGeometry.new({paintOrigin: childLayoutGeometry.paintOrigin, scrollExtent: dart.notNull(mainAxisPadding) + dart.notNull(childLayoutGeometry.scrollExtent), paintExtent: paintExtent, layoutExtent: math.min(core.double, mainAxisPaddingPaintExtent + dart.notNull(childLayoutGeometry.layoutExtent), paintExtent), cacheExtent: math.min(core.double, mainAxisPaddingCacheExtent + dart.notNull(childLayoutGeometry.cacheExtent), constraints.remainingCacheExtent), maxPaintExtent: dart.notNull(mainAxisPadding) + dart.notNull(childLayoutGeometry.maxPaintExtent), hitTestExtent: math.max(core.double, mainAxisPaddingPaintExtent + dart.notNull(childLayoutGeometry.paintExtent), dart.notNull(beforePaddingPaintExtent) + dart.notNull(childLayoutGeometry.hitTestExtent)), hasVisualOverflow: childLayoutGeometry.hasVisualOverflow});
+      let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(dart.nullCheck(this.child).parentData));
+      if (!(constraints.axisDirection != null)) dart.assertFailed(null, I[0], 192, 12, "constraints.axisDirection != null");
+      if (!(constraints.growthDirection != null)) dart.assertFailed(null, I[0], 193, 12, "constraints.growthDirection != null");
+      switch (sliver.applyGrowthDirectionToAxisDirection(constraints.axisDirection, constraints.growthDirection)) {
+        case C[0] || CT.C0:
+        {
+          childParentData.paintOffset = new ui.Offset.new(dart.nullCheck(this.resolvedPadding).left, this.calculatePaintOffset(constraints, {from: dart.notNull(dart.nullCheck(this.resolvedPadding).bottom) + dart.notNull(childLayoutGeometry.scrollExtent), to: dart.notNull(dart.nullCheck(this.resolvedPadding).bottom) + dart.notNull(childLayoutGeometry.scrollExtent) + dart.notNull(dart.nullCheck(this.resolvedPadding).top)}));
+          break;
+        }
+        case C[1] || CT.C1:
+        {
+          childParentData.paintOffset = new ui.Offset.new(this.calculatePaintOffset(constraints, {from: 0.0, to: dart.nullCheck(this.resolvedPadding).left}), dart.nullCheck(this.resolvedPadding).top);
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          childParentData.paintOffset = new ui.Offset.new(dart.nullCheck(this.resolvedPadding).left, this.calculatePaintOffset(constraints, {from: 0.0, to: dart.nullCheck(this.resolvedPadding).top}));
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          childParentData.paintOffset = new ui.Offset.new(this.calculatePaintOffset(constraints, {from: dart.notNull(dart.nullCheck(this.resolvedPadding).right) + dart.notNull(childLayoutGeometry.scrollExtent), to: dart.notNull(dart.nullCheck(this.resolvedPadding).right) + dart.notNull(childLayoutGeometry.scrollExtent) + dart.notNull(dart.nullCheck(this.resolvedPadding).left)}), dart.nullCheck(this.resolvedPadding).top);
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
+      if (!(childParentData.paintOffset != null)) dart.assertFailed(null, I[0], 208, 12, "childParentData.paintOffset != null");
+      if (!(beforePadding == this.beforePadding)) dart.assertFailed(null, I[0], 209, 12, "beforePadding == this.beforePadding");
+      if (!(afterPadding == this.afterPadding)) dart.assertFailed(null, I[0], 210, 12, "afterPadding == this.afterPadding");
+      if (!(mainAxisPadding == this.mainAxisPadding)) dart.assertFailed(null, I[0], 211, 12, "mainAxisPadding == this.mainAxisPadding");
+      if (!(crossAxisPadding == this.crossAxisPadding)) dart.assertFailed(null, I[0], 212, 12, "crossAxisPadding == this.crossAxisPadding");
     }
-    get centerMiddle() {
-      return this[centerMiddle$];
+    hitTestChildren(result, opts) {
+      if (result == null) dart.nullFailed(I[0], 216, 44, "result");
+      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
+      if (mainAxisPosition == null) dart.nullFailed(I[0], 216, 70, "mainAxisPosition");
+      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
+      if (crossAxisPosition == null) dart.nullFailed(I[0], 216, 104, "crossAxisPosition");
+      if (this.child != null && dart.notNull(dart.nullCheck(dart.nullCheck(this.child).geometry).hitTestExtent) > 0.0) {
+        let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(dart.nullCheck(this.child).parentData));
+        result.addWithAxisOffset({mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition, mainAxisOffset: this.childMainAxisPosition(dart.nullCheck(this.child)), crossAxisOffset: this.childCrossAxisPosition(dart.nullCheck(this.child)), paintOffset: childParentData.paintOffset, hitTest: dart.bind(dart.nullCheck(this.child), 'hitTest')});
+      }
+      return false;
     }
-    set centerMiddle(value) {
-      super.centerMiddle = value;
+    childMainAxisPosition(child) {
+      sliver.RenderSliver.as(child);
+      if (child == null) dart.nullFailed(I[0], 232, 45, "child");
+      if (!(child != null)) dart.assertFailed(null, I[0], 233, 12, "child != null");
+      if (!dart.equals(child, this.child)) dart.assertFailed(null, I[0], 234, 12, "child == this.child");
+      return this.calculatePaintOffset(this.constraints, {from: 0.0, to: this.beforePadding});
     }
-    get middleSpacing() {
-      return this[middleSpacing$];
+    childCrossAxisPosition(child) {
+      sliver.RenderSliver.as(child);
+      if (child == null) dart.nullFailed(I[0], 239, 46, "child");
+      if (!(child != null)) dart.assertFailed(null, I[0], 240, 12, "child != null");
+      if (!dart.equals(child, this.child)) dart.assertFailed(null, I[0], 241, 12, "child == this.child");
+      if (!(this.constraints != null)) dart.assertFailed(null, I[0], 242, 12, "constraints != null");
+      if (!(this.constraints.axisDirection != null)) dart.assertFailed(null, I[0], 243, 12, "constraints.axisDirection != null");
+      if (!(this.constraints.growthDirection != null)) dart.assertFailed(null, I[0], 244, 12, "constraints.growthDirection != null");
+      if (!(this.resolvedPadding != null)) dart.assertFailed(null, I[0], 245, 12, "resolvedPadding != null");
+      switch (sliver.applyGrowthDirectionToAxisDirection(this.constraints.axisDirection, this.constraints.growthDirection)) {
+        case C[0] || CT.C0:
+        case C[2] || CT.C2:
+        {
+          return dart.nullCheck(this.resolvedPadding).left;
+        }
+        case C[3] || CT.C3:
+        case C[1] || CT.C1:
+        {
+          return dart.nullCheck(this.resolvedPadding).top;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
     }
-    set middleSpacing(value) {
-      super.middleSpacing = value;
+    childScrollOffset(child) {
+      object.RenderObject.as(child);
+      if (child == null) dart.nullFailed(I[0], 257, 42, "child");
+      if (!dart.equals(child.parent, this)) dart.assertFailed(null, I[0], 258, 12, "child.parent == this");
+      return this.beforePadding;
     }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 60, 29, "context");
-      if (!dart.test(debug.debugCheckHasDirectionality(context))) dart.assertFailed(null, I[0], 61, 12, "debugCheckHasDirectionality(context)");
-      let textDirection = basic.Directionality.of(context);
-      return new basic.CustomMultiChildLayout.new({delegate: new navigation_toolbar._ToolbarLayout.new({centerMiddle: this.centerMiddle, middleSpacing: this.middleSpacing, textDirection: textDirection}), children: (() => {
-          let t0 = T.JSArrayOfWidget().of([]);
-          if (this.leading != null) t0[$add](new basic.LayoutId.new({id: navigation_toolbar._ToolbarSlot.leading, child: dart.nullCheck(this.leading), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}));
-          if (this.middle != null) t0[$add](new basic.LayoutId.new({id: navigation_toolbar._ToolbarSlot.middle, child: dart.nullCheck(this.middle), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}));
-          if (this.trailing != null) t0[$add](new basic.LayoutId.new({id: navigation_toolbar._ToolbarSlot.trailing, child: dart.nullCheck(this.trailing), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}));
-          return t0;
-        })(), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12});
+    applyPaintTransform(child, transform) {
+      object.RenderObject.as(child);
+      if (child == null) dart.nullFailed(I[0], 263, 41, "child");
+      if (transform == null) dart.nullFailed(I[0], 263, 56, "transform");
+      if (!(child != null)) dart.assertFailed(null, I[0], 264, 12, "child != null");
+      if (!dart.equals(child, this.child)) dart.assertFailed(null, I[0], 265, 12, "child == this.child");
+      let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(child.parentData));
+      childParentData.applyPaintTransform(transform);
+    }
+    paint(context, offset) {
+      if (context == null) dart.nullFailed(I[0], 271, 30, "context");
+      if (offset == null) dart.nullFailed(I[0], 271, 46, "offset");
+      if (this.child != null && dart.test(dart.nullCheck(dart.nullCheck(this.child).geometry).visible)) {
+        let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(dart.nullCheck(this.child).parentData));
+        context.paintChild(dart.nullCheck(this.child), offset['+'](childParentData.paintOffset));
+      }
+    }
+    debugPaint(context, offset) {
+      if (context == null) dart.nullFailed(I[0], 279, 35, "context");
+      if (offset == null) dart.nullFailed(I[0], 279, 51, "offset");
+      super.debugPaint(context, offset);
+      if (!dart.test(dart.fn(() => {
+        if (dart.test(debug.debugPaintSizeEnabled)) {
+          let parentSize = this.getAbsoluteSize();
+          let outerRect = offset['&'](parentSize);
+          let innerRect = null;
+          if (this.child != null) {
+            let childSize = dart.nullCheck(this.child).getAbsoluteSize();
+            let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(dart.nullCheck(this.child).parentData));
+            innerRect = offset['+'](childParentData.paintOffset)['&'](childSize);
+            if (!(dart.notNull(innerRect.top) >= dart.notNull(outerRect.top))) dart.assertFailed(null, I[0], 290, 18, "innerRect.top >= outerRect.top");
+            if (!(dart.notNull(innerRect.left) >= dart.notNull(outerRect.left))) dart.assertFailed(null, I[0], 291, 18, "innerRect.left >= outerRect.left");
+            if (!(dart.notNull(innerRect.right) <= dart.notNull(outerRect.right))) dart.assertFailed(null, I[0], 292, 18, "innerRect.right <= outerRect.right");
+            if (!(dart.notNull(innerRect.bottom) <= dart.notNull(outerRect.bottom))) dart.assertFailed(null, I[0], 293, 18, "innerRect.bottom <= outerRect.bottom");
+          }
+          debug.debugPaintPadding(context.canvas, outerRect, innerRect);
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 281, 12, "() {\r\n      if (debugPaintSizeEnabled) {\r\n        final Size parentSize = getAbsoluteSize();\r\n        final Rect outerRect = offset & parentSize;\r\n        Rect? innerRect;\r\n        if (child != null) {\r\n          final Size childSize = child!.getAbsoluteSize();\r\n          final SliverPhysicalParentData childParentData = child!.parentData! as SliverPhysicalParentData;\r\n          innerRect = (offset + childParentData.paintOffset) & childSize;\r\n          assert(innerRect.top >= outerRect.top);\r\n          assert(innerRect.left >= outerRect.left);\r\n          assert(innerRect.right <= outerRect.right);\r\n          assert(innerRect.bottom <= outerRect.bottom);\r\n        }\r\n        debugPaintPadding(context.canvas, outerRect, innerRect);\r\n      }\r\n      return true;\r\n    }()");
     }
   };
-  (navigation_toolbar.NavigationToolbar.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let leading = opts && 'leading' in opts ? opts.leading : null;
-    let middle = opts && 'middle' in opts ? opts.middle : null;
-    let trailing = opts && 'trailing' in opts ? opts.trailing : null;
-    let centerMiddle = opts && 'centerMiddle' in opts ? opts.centerMiddle : true;
-    if (centerMiddle == null) dart.nullFailed(I[0], 31, 10, "centerMiddle");
-    let middleSpacing = opts && 'middleSpacing' in opts ? opts.middleSpacing : 16;
-    if (middleSpacing == null) dart.nullFailed(I[0], 32, 10, "middleSpacing");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[leading$] = leading;
-    this[middle$] = middle;
-    this[trailing$] = trailing;
-    this[centerMiddle$] = centerMiddle;
-    this[middleSpacing$] = middleSpacing;
-    if (!(centerMiddle != null)) dart.assertFailed(null, I[0], 33, 15, "centerMiddle != null");
-    if (!(middleSpacing != null)) dart.assertFailed(null, I[0], 34, 15, "middleSpacing != null");
-    navigation_toolbar.NavigationToolbar.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (sliver_padding.RenderSliverEdgeInsetsPadding.new = function() {
+    sliver_padding.RenderSliverEdgeInsetsPadding.__proto__.new.call(this);
     ;
-  }).prototype = navigation_toolbar.NavigationToolbar.prototype;
-  dart.addTypeTests(navigation_toolbar.NavigationToolbar);
-  dart.addTypeCaches(navigation_toolbar.NavigationToolbar);
-  dart.setMethodSignature(navigation_toolbar.NavigationToolbar, () => ({
-    __proto__: dart.getMethods(navigation_toolbar.NavigationToolbar.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = sliver_padding.RenderSliverEdgeInsetsPadding.prototype;
+  dart.addTypeTests(sliver_padding.RenderSliverEdgeInsetsPadding);
+  dart.addTypeCaches(sliver_padding.RenderSliverEdgeInsetsPadding);
+  dart.setMethodSignature(sliver_padding.RenderSliverEdgeInsetsPadding, () => ({
+    __proto__: dart.getMethods(sliver_padding.RenderSliverEdgeInsetsPadding.__proto__),
+    performLayout: dart.fnType(dart.void, [])
   }));
-  dart.setLibraryUri(navigation_toolbar.NavigationToolbar, I[1]);
-  dart.setFieldSignature(navigation_toolbar.NavigationToolbar, () => ({
-    __proto__: dart.getFields(navigation_toolbar.NavigationToolbar.__proto__),
-    leading: dart.finalFieldType(dart.nullable(framework.Widget)),
-    middle: dart.finalFieldType(dart.nullable(framework.Widget)),
-    trailing: dart.finalFieldType(dart.nullable(framework.Widget)),
-    centerMiddle: dart.finalFieldType(core.bool),
-    middleSpacing: dart.finalFieldType(core.double)
+  dart.setGetterSignature(sliver_padding.RenderSliverEdgeInsetsPadding, () => ({
+    __proto__: dart.getGetters(sliver_padding.RenderSliverEdgeInsetsPadding.__proto__),
+    beforePadding: core.double,
+    afterPadding: core.double,
+    mainAxisPadding: core.double,
+    crossAxisPadding: core.double
   }));
-  dart.defineLazy(navigation_toolbar.NavigationToolbar, {
-    /*navigation_toolbar.NavigationToolbar.kMiddleSpacing*/get kMiddleSpacing() {
-      return 16;
+  dart.setLibraryUri(sliver_padding.RenderSliverEdgeInsetsPadding, I[1]);
+  var _resolvedPadding = dart.privateName(sliver_padding, "_resolvedPadding");
+  var _padding = dart.privateName(sliver_padding, "_padding");
+  var _textDirection = dart.privateName(sliver_padding, "_textDirection");
+  var _resolve = dart.privateName(sliver_padding, "_resolve");
+  var _markNeedsResolution = dart.privateName(sliver_padding, "_markNeedsResolution");
+  sliver_padding.RenderSliverPadding = class RenderSliverPadding extends sliver_padding.RenderSliverEdgeInsetsPadding {
+    get resolvedPadding() {
+      return this[_resolvedPadding];
     }
-  }, false);
-  var _name$ = dart.privateName(navigation_toolbar, "_name");
-  navigation_toolbar._ToolbarSlot = class _ToolbarSlot extends core.Object {
-    toString() {
-      return this[_name$];
+    [_resolve]() {
+      if (this.resolvedPadding != null) return;
+      this[_resolvedPadding] = this.padding.resolve(this.textDirection);
+      if (!dart.test(dart.nullCheck(this.resolvedPadding).isNonNegative)) dart.assertFailed(null, I[0], 332, 12, "resolvedPadding!.isNonNegative");
+    }
+    [_markNeedsResolution]() {
+      this[_resolvedPadding] = null;
+      this.markNeedsLayout();
+    }
+    get padding() {
+      return this[_padding];
+    }
+    set padding(value) {
+      if (value == null) dart.nullFailed(I[0], 346, 34, "value");
+      if (!(value != null)) dart.assertFailed(null, I[0], 347, 12, "value != null");
+      if (!dart.test(this.padding.isNonNegative)) dart.assertFailed(null, I[0], 348, 12, "padding.isNonNegative");
+      if (dart.equals(this[_padding], value)) return;
+      this[_padding] = value;
+      this[_markNeedsResolution]();
+    }
+    get textDirection() {
+      return this[_textDirection];
+    }
+    set textDirection(value) {
+      if (this[_textDirection] == value) return;
+      this[_textDirection] = value;
+      this[_markNeedsResolution]();
+    }
+    performLayout() {
+      this[_resolve]();
+      super.performLayout();
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 375, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new (T.DiagnosticsPropertyOfEdgeInsetsGeometry()).new("padding", this.padding));
+      properties.add(new (T.EnumPropertyOfTextDirection()).new("textDirection", this.textDirection, {defaultValue: null}));
     }
   };
-  (navigation_toolbar._ToolbarSlot.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 78, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 78, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = navigation_toolbar._ToolbarSlot.prototype;
-  dart.addTypeTests(navigation_toolbar._ToolbarSlot);
-  dart.addTypeCaches(navigation_toolbar._ToolbarSlot);
-  dart.setLibraryUri(navigation_toolbar._ToolbarSlot, I[1]);
-  dart.setFieldSignature(navigation_toolbar._ToolbarSlot, () => ({
-    __proto__: dart.getFields(navigation_toolbar._ToolbarSlot.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(navigation_toolbar._ToolbarSlot, ['toString']);
-  navigation_toolbar._ToolbarSlot.leading = C[16] || CT.C16;
-  navigation_toolbar._ToolbarSlot.middle = C[17] || CT.C17;
-  navigation_toolbar._ToolbarSlot.trailing = C[18] || CT.C18;
-  navigation_toolbar._ToolbarSlot.values = C[19] || CT.C19;
-  var _name = dart.privateName(ui, "_name");
-  navigation_toolbar._ToolbarLayout = class _ToolbarLayout extends custom_layout.MultiChildLayoutDelegate {
-    performLayout(size) {
-      if (size == null) dart.nullFailed(I[0], 104, 27, "size");
-      let leadingWidth = 0.0;
-      let trailingWidth = 0.0;
-      if (dart.test(this.hasChild(navigation_toolbar._ToolbarSlot.leading))) {
-        let constraints = new box.BoxConstraints.new({minWidth: 0.0, maxWidth: dart.notNull(size.width) / 3.0, minHeight: size.height, maxHeight: size.height});
-        leadingWidth = this.layoutChild(navigation_toolbar._ToolbarSlot.leading, constraints).width;
-        let leadingX = null;
-        switch (this.textDirection) {
-          case C[20] || CT.C20:
-          {
-            leadingX = dart.notNull(size.width) - dart.notNull(leadingWidth);
-            break;
-          }
-          case C[21] || CT.C21:
-          {
-            leadingX = 0.0;
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-        this.positionChild(navigation_toolbar._ToolbarSlot.leading, new ui.Offset.new(leadingX, 0.0));
-      }
-      if (dart.test(this.hasChild(navigation_toolbar._ToolbarSlot.trailing))) {
-        let constraints = new box.BoxConstraints.loose(size);
-        let trailingSize = this.layoutChild(navigation_toolbar._ToolbarSlot.trailing, constraints);
-        let trailingX = null;
-        switch (this.textDirection) {
-          case C[20] || CT.C20:
-          {
-            trailingX = 0.0;
-            break;
-          }
-          case C[21] || CT.C21:
-          {
-            trailingX = dart.notNull(size.width) - dart.notNull(trailingSize.width);
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-        let trailingY = (dart.notNull(size.height) - dart.notNull(trailingSize.height)) / 2.0;
-        trailingWidth = trailingSize.width;
-        this.positionChild(navigation_toolbar._ToolbarSlot.trailing, new ui.Offset.new(trailingX, trailingY));
-      }
-      if (dart.test(this.hasChild(navigation_toolbar._ToolbarSlot.middle))) {
-        let maxWidth = math.max(core.double, dart.notNull(size.width) - dart.notNull(leadingWidth) - dart.notNull(trailingWidth) - dart.notNull(this.middleSpacing) * 2.0, 0.0);
-        let constraints = new box.BoxConstraints.loose(size).copyWith({maxWidth: maxWidth});
-        let middleSize = this.layoutChild(navigation_toolbar._ToolbarSlot.middle, constraints);
-        let middleStartMargin = dart.notNull(leadingWidth) + dart.notNull(this.middleSpacing);
-        let middleStart = middleStartMargin;
-        let middleY = (dart.notNull(size.height) - dart.notNull(middleSize.height)) / 2.0;
-        if (dart.test(this.centerMiddle)) {
-          middleStart = (dart.notNull(size.width) - dart.notNull(middleSize.width)) / 2.0;
-          if (middleStart + dart.notNull(middleSize.width) > dart.notNull(size.width) - dart.notNull(trailingWidth))
-            middleStart = dart.notNull(size.width) - dart.notNull(trailingWidth) - dart.notNull(middleSize.width);
-          else if (middleStart < middleStartMargin) middleStart = middleStartMargin;
-        }
-        let middleX = null;
-        switch (this.textDirection) {
-          case C[20] || CT.C20:
-          {
-            middleX = dart.notNull(size.width) - dart.notNull(middleSize.width) - middleStart;
-            break;
-          }
-          case C[21] || CT.C21:
-          {
-            middleX = middleStart;
-            break;
-          }
-          default:
-          {
-            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-          }
-        }
-        this.positionChild(navigation_toolbar._ToolbarSlot.middle, new ui.Offset.new(middleX, middleY));
-      }
-    }
-    shouldRelayout(oldDelegate) {
-      navigation_toolbar._ToolbarLayout.as(oldDelegate);
-      if (oldDelegate == null) dart.nullFailed(I[0], 178, 38, "oldDelegate");
-      return oldDelegate.centerMiddle != this.centerMiddle || oldDelegate.middleSpacing != this.middleSpacing || oldDelegate.textDirection != this.textDirection;
-    }
-  };
-  (navigation_toolbar._ToolbarLayout.new = function(opts) {
-    let centerMiddle = opts && 'centerMiddle' in opts ? opts.centerMiddle : null;
-    if (centerMiddle == null) dart.nullFailed(I[0], 86, 19, "centerMiddle");
-    let middleSpacing = opts && 'middleSpacing' in opts ? opts.middleSpacing : null;
-    if (middleSpacing == null) dart.nullFailed(I[0], 87, 19, "middleSpacing");
+  (sliver_padding.RenderSliverPadding.new = function(opts) {
+    let padding = opts && 'padding' in opts ? opts.padding : null;
+    if (padding == null) dart.nullFailed(I[0], 314, 33, "padding");
     let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    if (textDirection == null) dart.nullFailed(I[0], 88, 19, "textDirection");
-    this.centerMiddle = centerMiddle;
-    this.middleSpacing = middleSpacing;
-    this.textDirection = textDirection;
-    if (!(middleSpacing != null)) dart.assertFailed(null, I[0], 89, 15, "middleSpacing != null");
-    if (!(textDirection != null)) dart.assertFailed(null, I[0], 90, 15, "textDirection != null");
-    navigation_toolbar._ToolbarLayout.__proto__.new.call(this);
-    ;
-  }).prototype = navigation_toolbar._ToolbarLayout.prototype;
-  dart.addTypeTests(navigation_toolbar._ToolbarLayout);
-  dart.addTypeCaches(navigation_toolbar._ToolbarLayout);
-  dart.setMethodSignature(navigation_toolbar._ToolbarLayout, () => ({
-    __proto__: dart.getMethods(navigation_toolbar._ToolbarLayout.__proto__),
-    performLayout: dart.fnType(dart.void, [ui.Size]),
-    shouldRelayout: dart.fnType(core.bool, [dart.nullable(core.Object)])
+    let child = opts && 'child' in opts ? opts.child : null;
+    this[_resolvedPadding] = null;
+    if (!(padding != null)) dart.assertFailed(null, I[0], 317, 15, "padding != null");
+    if (!dart.test(padding.isNonNegative)) dart.assertFailed(null, I[0], 318, 15, "padding.isNonNegative");
+    this[_padding] = padding;
+    this[_textDirection] = textDirection;
+    sliver_padding.RenderSliverPadding.__proto__.new.call(this);
+    this.child = child;
+  }).prototype = sliver_padding.RenderSliverPadding.prototype;
+  dart.addTypeTests(sliver_padding.RenderSliverPadding);
+  dart.addTypeCaches(sliver_padding.RenderSliverPadding);
+  dart.setMethodSignature(sliver_padding.RenderSliverPadding, () => ({
+    __proto__: dart.getMethods(sliver_padding.RenderSliverPadding.__proto__),
+    [_resolve]: dart.fnType(dart.void, []),
+    [_markNeedsResolution]: dart.fnType(dart.void, [])
   }));
-  dart.setLibraryUri(navigation_toolbar._ToolbarLayout, I[1]);
-  dart.setFieldSignature(navigation_toolbar._ToolbarLayout, () => ({
-    __proto__: dart.getFields(navigation_toolbar._ToolbarLayout.__proto__),
-    centerMiddle: dart.finalFieldType(core.bool),
-    middleSpacing: dart.finalFieldType(core.double),
-    textDirection: dart.finalFieldType(ui.TextDirection)
+  dart.setGetterSignature(sliver_padding.RenderSliverPadding, () => ({
+    __proto__: dart.getGetters(sliver_padding.RenderSliverPadding.__proto__),
+    resolvedPadding: dart.nullable(edge_insets.EdgeInsets),
+    padding: edge_insets.EdgeInsetsGeometry,
+    textDirection: dart.nullable(ui.TextDirection)
   }));
-  dart.trackLibraries("packages/flutter/src/widgets/navigation_toolbar.dart", {
-    "package:flutter/src/widgets/navigation_toolbar.dart": navigation_toolbar
+  dart.setSetterSignature(sliver_padding.RenderSliverPadding, () => ({
+    __proto__: dart.getSetters(sliver_padding.RenderSliverPadding.__proto__),
+    padding: edge_insets.EdgeInsetsGeometry,
+    textDirection: dart.nullable(ui.TextDirection)
+  }));
+  dart.setLibraryUri(sliver_padding.RenderSliverPadding, I[1]);
+  dart.setFieldSignature(sliver_padding.RenderSliverPadding, () => ({
+    __proto__: dart.getFields(sliver_padding.RenderSliverPadding.__proto__),
+    [_resolvedPadding]: dart.fieldType(dart.nullable(edge_insets.EdgeInsets)),
+    [_padding]: dart.fieldType(edge_insets.EdgeInsetsGeometry),
+    [_textDirection]: dart.fieldType(dart.nullable(ui.TextDirection))
+  }));
+  dart.trackLibraries("packages/flutter/src/rendering/sliver_padding.dart", {
+    "package:flutter/src/rendering/sliver_padding.dart": sliver_padding
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["navigation_toolbar.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/navigation_toolbar.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["sliver_padding.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/sliver_padding.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__navigation_toolbar: navigation_toolbar
+    src__rendering__sliver_padding: sliver_padding
   };
 }));
 
-//# sourceMappingURL=navigation_toolbar.dart.lib.js.map
+//# sourceMappingURL=sliver_padding.dart.lib.js.map

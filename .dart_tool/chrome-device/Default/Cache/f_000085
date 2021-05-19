@@ -1,29 +1,27 @@
-define(['dart_sdk', 'packages/string_scanner/src/utils.dart', 'packages/string_scanner/src/line_scanner.dart', 'packages/source_span/src/location_mixin.dart'], (function load__packages__string_scanner__src__relative_span_scanner_dart(dart_sdk, packages__string_scanner__src__utils$46dart, packages__string_scanner__src__line_scanner$46dart, packages__source_span__src__location_mixin$46dart) {
+define(['dart_sdk', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/rendering/sliver_persistent_header.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/layer.dart'], (function load__packages__flutter__src__widgets__sliver_persistent_header_dart(dart_sdk, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__rendering__sliver_persistent_header$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__layer$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const utils = packages__string_scanner__src__utils$46dart.src__utils;
-  const exception = packages__string_scanner__src__utils$46dart.src__exception;
-  const string_scanner = packages__string_scanner__src__utils$46dart.src__string_scanner;
-  const line_scanner = packages__string_scanner__src__line_scanner$46dart.src__line_scanner;
-  const file = packages__source_span__src__location_mixin$46dart.src__file;
-  var relative_span_scanner = Object.create(dart.library);
-  var eager_span_scanner = Object.create(dart.library);
-  var span_scanner = Object.create(dart.library);
-  var $noSuchMethod = dartx.noSuchMethod;
-  var $substring = dartx.substring;
-  var $length = dartx.length;
+  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
+  const sliver_persistent_header = packages__flutter__src__rendering__sliver_persistent_header$46dart.src__rendering__sliver_persistent_header;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  var sliver_persistent_header$ = Object.create(dart.library);
+  var $add = dartx.add;
   var $isEmpty = dartx.isEmpty;
-  var $last = dartx.last;
-  var $removeLast = dartx.removeLast;
-  var $lastIndexOf = dartx.lastIndexOf;
-  var $toList = dartx.toList;
+  var $runtimeType = dartx.runtimeType;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    ListOfMatch: () => (T.ListOfMatch = dart.constFn(core.List$(core.Match)))(),
-    FileSpanN: () => (T.FileSpanN = dart.constFn(dart.nullable(file.FileSpan)))()
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    DiagnosticsPropertyOfSliverPersistentHeaderDelegate: () => (T.DiagnosticsPropertyOfSliverPersistentHeaderDelegate = dart.constFn(diagnostics.DiagnosticsProperty$(sliver_persistent_header$.SliverPersistentHeaderDelegate)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    IterablePropertyOfString: () => (T.IterablePropertyOfString = dart.constFn(diagnostics.IterableProperty$(core.String)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -38,629 +36,560 @@ define(['dart_sdk', 'packages/string_scanner/src/utils.dart', 'packages/string_s
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const(new _js_helper.PrivateSymbol.new('_column', _column));
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 52,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
     },
     get C1() {
-      return C[1] = dart.const(new _js_helper.PrivateSymbol.new('_sourceFile', _sourceFile$));
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
     },
-    get C2() {
-      return C[2] = dart.const(new _js_helper.PrivateSymbol.new('_adjustLineAndColumn', _adjustLineAndColumn));
-    },
-    get C3() {
-      return C[3] = dart.const(new _js_helper.PrivateSymbol.new('_line', _line));
-    },
-    get C4() {
-      return C[4] = dart.const(new _js_helper.PrivateSymbol.new('_betweenCRLF', _betweenCRLF));
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 161,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
+      });
     },
     get C5() {
-      return C[5] = dart.const(new _js_helper.PrivateSymbol.new('_newlinesIn', _newlinesIn));
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 44,
+        [_Location_line]: 163,
+        [_Location_file]: null
+      });
     },
-    get C6() {
-      return C[6] = dart.const(new _js_helper.PrivateSymbol.new('_lastSpan', _lastSpan$));
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
     },
-    get C7() {
-      return C[7] = dart.const(new _js_helper.PrivateSymbol.new('_column=', _column_));
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 163,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
+      });
     },
     get C8() {
-      return C[8] = dart.const(new _js_helper.PrivateSymbol.new('_line=', _line_));
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 46,
+        [_Location_line]: 165,
+        [_Location_file]: null
+      });
     },
-    get C9() {
-      return C[9] = dart.const(new _js_helper.PrivateSymbol.new('_lastSpan=', _lastSpan_));
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], T._LocationL());
     },
-    get C10() {
-      return C[10] = dart.const(new _js_helper.PrivateSymbol.new('_scanner', _scanner));
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 165,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
+      });
     },
     get C11() {
-      return C[11] = dart.const(new _js_helper.PrivateSymbol.new('_column', _column$1));
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 45,
+        [_Location_line]: 166,
+        [_Location_file]: null
+      });
     },
-    get C12() {
-      return C[12] = dart.const(new _js_helper.PrivateSymbol.new('_adjustLineAndColumn', _adjustLineAndColumn$1));
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], T._LocationL());
     },
-    get C13() {
-      return C[13] = dart.const(new _js_helper.PrivateSymbol.new('_line', _line$1));
-    },
-    get C14() {
-      return C[14] = dart.const(new _js_helper.PrivateSymbol.new('_betweenCRLF', _betweenCRLF$1));
-    },
-    get C15() {
-      return C[15] = dart.const(new _js_helper.PrivateSymbol.new('_newlinesIn', _newlinesIn$1));
-    },
-    get C16() {
-      return C[16] = dart.const(new _js_helper.PrivateSymbol.new('_column=', _column_$));
-    },
-    get C17() {
-      return C[17] = dart.const(new _js_helper.PrivateSymbol.new('_line=', _line_$));
-    },
-    get C18() {
-      return C[18] = dart.const(new _js_helper.PrivateSymbol.new('_scanner', _scanner$1));
-    },
-    get C19() {
-      return C[19] = dart.const(new _js_helper.PrivateSymbol.new('_scanner', _scanner$2));
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 166,
+        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
+      });
     }
   }, false);
-  var C = Array(20).fill(void 0);
+  var C = Array(12).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/lib/src/relative_span_scanner.dart",
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/lib/src/line_scanner.dart",
-    "package:string_scanner/src/relative_span_scanner.dart",
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/lib/src/eager_span_scanner.dart",
-    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/lib/src/span_scanner.dart",
-    "package:string_scanner/src/span_scanner.dart",
-    "package:string_scanner/src/eager_span_scanner.dart"
+    "package:flutter/src/widgets/sliver_persistent_header.dart",
+    "file:///C:/src/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
   ];
-  var _sourceFile = dart.privateName(relative_span_scanner, "RelativeSpanScanner._sourceFile");
-  var _lastSpan = dart.privateName(relative_span_scanner, "RelativeSpanScanner._lastSpan");
-  var _startLocation = dart.privateName(relative_span_scanner, "_startLocation");
-  var _sourceFile$ = dart.privateName(relative_span_scanner, "_sourceFile");
-  var _lastSpan$ = dart.privateName(relative_span_scanner, "_lastSpan");
-  var _scanner = dart.privateName(relative_span_scanner, "_scanner");
-  var _column = dart.privateName(relative_span_scanner, "_column");
-  var _column$ = dart.privateName(line_scanner, "_column");
-  var _sourceFile$0 = dart.privateName(span_scanner, "_sourceFile");
-  var _adjustLineAndColumn = dart.privateName(relative_span_scanner, "_adjustLineAndColumn");
-  var _adjustLineAndColumn$ = dart.privateName(line_scanner, "_adjustLineAndColumn");
-  var _line = dart.privateName(relative_span_scanner, "_line");
-  var _line$ = dart.privateName(line_scanner, "_line");
-  var _betweenCRLF = dart.privateName(relative_span_scanner, "_betweenCRLF");
-  var _betweenCRLF$ = dart.privateName(line_scanner, "_betweenCRLF");
-  var _newlinesIn = dart.privateName(relative_span_scanner, "_newlinesIn");
-  var _newlinesIn$ = dart.privateName(line_scanner, "_newlinesIn");
-  var _lastSpan$0 = dart.privateName(span_scanner, "_lastSpan");
-  var _column_ = dart.privateName(relative_span_scanner, "_column=");
-  var _line_ = dart.privateName(relative_span_scanner, "_line=");
-  var _lastSpan_ = dart.privateName(relative_span_scanner, "_lastSpan=");
-  relative_span_scanner.RelativeSpanScanner = class RelativeSpanScanner extends string_scanner.StringScanner {
-    get [_sourceFile$]() {
-      return this[_sourceFile];
+  sliver_persistent_header$.SliverPersistentHeaderDelegate = class SliverPersistentHeaderDelegate extends core.Object {
+    get vsync() {
+      return null;
     }
-    set [_sourceFile$](value) {
-      super[_sourceFile$] = value;
+    get snapConfiguration() {
+      return null;
     }
-    get [_lastSpan$]() {
-      return this[_lastSpan];
+    get stretchConfiguration() {
+      return null;
     }
-    set [_lastSpan$](value) {
-      this[_lastSpan] = value;
-    }
-    get line() {
-      return dart.notNull(this[_sourceFile$].getLine(dart.notNull(this[_startLocation].offset) + dart.notNull(this.position))) - dart.notNull(this[_startLocation].line);
-    }
-    get column() {
-      let line = this[_sourceFile$].getLine(dart.notNull(this[_startLocation].offset) + dart.notNull(this.position));
-      let column = this[_sourceFile$].getColumn(dart.notNull(this[_startLocation].offset) + dart.notNull(this.position), {line: line});
-      return line == this[_startLocation].line ? dart.notNull(column) - dart.notNull(this[_startLocation].column) : column;
-    }
-    get state() {
-      return new relative_span_scanner._SpanScannerState.new(this, this.position);
-    }
-    set state(state) {
-      if (state == null) dart.nullFailed(I[0], 49, 30, "state");
-      if (!relative_span_scanner._SpanScannerState.is(state) || state[_scanner] !== this) {
-        dart.throw(new core.ArgumentError.new("The given LineScannerState was not returned by " + "this LineScanner."));
-      }
-      this.position = state.position;
-    }
-    get lastSpan() {
-      return this[_lastSpan$];
-    }
-    get location() {
-      return this[_sourceFile$].location(dart.notNull(this[_startLocation].offset) + dart.notNull(this.position));
-    }
-    get emptySpan() {
-      return this.location.pointSpan();
-    }
-    spanFrom(startState, endState = null) {
-      if (startState == null) dart.nullFailed(I[0], 75, 38, "startState");
-      let endPosition = endState == null ? this.position : endState.position;
-      return this[_sourceFile$].span(dart.notNull(this[_startLocation].offset) + dart.notNull(startState.position), dart.notNull(this[_startLocation].offset) + dart.notNull(endPosition));
-    }
-    matches(pattern) {
-      if (pattern == null) dart.nullFailed(I[0], 82, 24, "pattern");
-      if (!dart.test(super.matches(pattern))) {
-        this[_lastSpan$] = null;
-        return false;
-      }
-      this[_lastSpan$] = this[_sourceFile$].span(dart.notNull(this[_startLocation].offset) + dart.notNull(this.position), dart.notNull(this[_startLocation].offset) + dart.notNull(dart.nullCheck(this.lastMatch).end));
-      return true;
-    }
-    error(message, opts) {
-      if (message == null) dart.nullFailed(I[0], 94, 22, "message");
-      let match = opts && 'match' in opts ? opts.match : null;
-      let position = opts && 'position' in opts ? opts.position : null;
-      let length = opts && 'length' in opts ? opts.length : null;
-      utils.validateErrorArgs(this.string, match, position, length);
-      if (match == null && position == null && length == null) match = this.lastMatch;
-      position == null ? position = match == null ? this.position : match.start : null;
-      length == null ? length = match == null ? 1 : dart.notNull(match.end) - dart.notNull(match.start) : null;
-      let span = this[_sourceFile$].span(dart.notNull(this[_startLocation].offset) + dart.notNull(position), dart.notNull(this[_startLocation].offset) + dart.notNull(position) + dart.notNull(length));
-      dart.throw(new exception.StringScannerException.new(message, span, this.string));
-    }
-    get [_column$]() {
-      return core.int.as(this[$noSuchMethod](new core._Invocation.getter(C[0] || CT.C0)));
-    }
-    get [_sourceFile$0]() {
-      return file.SourceFile.as(this[$noSuchMethod](new core._Invocation.getter(C[1] || CT.C1)));
-    }
-    [_adjustLineAndColumn$](character) {
-      if (character == null) dart.nullFailed(I[1], 94, 8, "character");
-      return this[$noSuchMethod](new core._Invocation.method(C[2] || CT.C2, null, [character]));
-    }
-    get [_line$]() {
-      return core.int.as(this[$noSuchMethod](new core._Invocation.getter(C[3] || CT.C3)));
-    }
-    get [_betweenCRLF$]() {
-      return core.bool.as(this[$noSuchMethod](new core._Invocation.getter(C[4] || CT.C4)));
-    }
-    [_newlinesIn$](text) {
-      if (text == null) dart.nullFailed(I[1], 120, 15, "text");
-      return T.ListOfMatch().as(this[$noSuchMethod](new core._Invocation.method(C[5] || CT.C5, null, [text])));
-    }
-    get [_lastSpan$0]() {
-      return T.FileSpanN().as(this[$noSuchMethod](new core._Invocation.getter(C[6] || CT.C6)));
-    }
-    set [_column$](value) {
-      if (value == null) dart.nullFailed(I[1], 22, 7, "value");
-      return this[$noSuchMethod](new core._Invocation.setter(C[7] || CT.C7, value));
-    }
-    set [_line$](value) {
-      if (value == null) dart.nullFailed(I[1], 18, 7, "value");
-      return this[$noSuchMethod](new core._Invocation.setter(C[8] || CT.C8, value));
-    }
-    set [_lastSpan$0](value) {
-      return this[$noSuchMethod](new core._Invocation.setter(C[9] || CT.C9, value));
+    get showOnScreenConfiguration() {
+      return null;
     }
   };
-  (relative_span_scanner.RelativeSpanScanner.new = function(span) {
-    if (span == null) dart.nullFailed(I[0], 69, 32, "span");
-    this[_lastSpan] = null;
-    this[_sourceFile] = span.file;
-    this[_startLocation] = span.start;
-    relative_span_scanner.RelativeSpanScanner.__proto__.new.call(this, span.text, {sourceUrl: span.sourceUrl});
+  (sliver_persistent_header$.SliverPersistentHeaderDelegate.new = function() {
     ;
-  }).prototype = relative_span_scanner.RelativeSpanScanner.prototype;
-  dart.addTypeTests(relative_span_scanner.RelativeSpanScanner);
-  dart.addTypeCaches(relative_span_scanner.RelativeSpanScanner);
-  relative_span_scanner.RelativeSpanScanner[dart.implements] = () => [span_scanner.SpanScanner];
-  dart.setMethodSignature(relative_span_scanner.RelativeSpanScanner, () => ({
-    __proto__: dart.getMethods(relative_span_scanner.RelativeSpanScanner.__proto__),
-    spanFrom: dart.fnType(file.FileSpan, [line_scanner.LineScannerState], [dart.nullable(line_scanner.LineScannerState)]),
-    [_adjustLineAndColumn$]: dart.fnType(dart.void, [core.int]),
-    [_newlinesIn$]: dart.fnType(core.List$(core.Match), [core.String])
+  }).prototype = sliver_persistent_header$.SliverPersistentHeaderDelegate.prototype;
+  dart.addTypeTests(sliver_persistent_header$.SliverPersistentHeaderDelegate);
+  dart.addTypeCaches(sliver_persistent_header$.SliverPersistentHeaderDelegate);
+  dart.setGetterSignature(sliver_persistent_header$.SliverPersistentHeaderDelegate, () => ({
+    __proto__: dart.getGetters(sliver_persistent_header$.SliverPersistentHeaderDelegate.__proto__),
+    vsync: dart.nullable(ticker.TickerProvider),
+    snapConfiguration: dart.nullable(sliver_persistent_header.FloatingHeaderSnapConfiguration),
+    stretchConfiguration: dart.nullable(sliver_persistent_header.OverScrollHeaderStretchConfiguration),
+    showOnScreenConfiguration: dart.nullable(sliver_persistent_header.PersistentHeaderShowOnScreenConfiguration)
   }));
-  dart.setGetterSignature(relative_span_scanner.RelativeSpanScanner, () => ({
-    __proto__: dart.getGetters(relative_span_scanner.RelativeSpanScanner.__proto__),
-    line: core.int,
-    column: core.int,
-    state: line_scanner.LineScannerState,
-    lastSpan: dart.nullable(file.FileSpan),
-    location: file.FileLocation,
-    emptySpan: file.FileSpan,
-    [_column$]: core.int,
-    [_sourceFile$0]: file.SourceFile,
-    [_line$]: core.int,
-    [_betweenCRLF$]: core.bool,
-    [_lastSpan$0]: dart.nullable(file.FileSpan)
-  }));
-  dart.setSetterSignature(relative_span_scanner.RelativeSpanScanner, () => ({
-    __proto__: dart.getSetters(relative_span_scanner.RelativeSpanScanner.__proto__),
-    state: line_scanner.LineScannerState,
-    [_column$]: core.int,
-    [_line$]: core.int,
-    [_lastSpan$0]: dart.nullable(file.FileSpan)
-  }));
-  dart.setLibraryUri(relative_span_scanner.RelativeSpanScanner, I[2]);
-  dart.setFieldSignature(relative_span_scanner.RelativeSpanScanner, () => ({
-    __proto__: dart.getFields(relative_span_scanner.RelativeSpanScanner.__proto__),
-    [_sourceFile$]: dart.finalFieldType(file.SourceFile),
-    [_startLocation]: dart.finalFieldType(file.FileLocation),
-    [_lastSpan$]: dart.fieldType(dart.nullable(file.FileSpan))
-  }));
-  var _scanner$ = dart.privateName(relative_span_scanner, "_SpanScannerState._scanner");
-  var _scanner$0 = dart.privateName(line_scanner, "_scanner");
-  relative_span_scanner._SpanScannerState = class _SpanScannerState extends core.Object {
-    get [_scanner]() {
-      return this[_scanner$];
+  dart.setLibraryUri(sliver_persistent_header$.SliverPersistentHeaderDelegate, I[0]);
+  var delegate$ = dart.privateName(sliver_persistent_header$, "SliverPersistentHeader.delegate");
+  var pinned$ = dart.privateName(sliver_persistent_header$, "SliverPersistentHeader.pinned");
+  var floating$ = dart.privateName(sliver_persistent_header$, "SliverPersistentHeader.floating");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  sliver_persistent_header$.SliverPersistentHeader = class SliverPersistentHeader extends framework.StatelessWidget {
+    get delegate() {
+      return this[delegate$];
     }
-    set [_scanner](value) {
-      super[_scanner] = value;
+    set delegate(value) {
+      super.delegate = value;
     }
-    get line() {
-      return this[_scanner][_sourceFile$].getLine(this.position);
+    get pinned() {
+      return this[pinned$];
     }
-    get column() {
-      return this[_scanner][_sourceFile$].getColumn(this.position);
+    set pinned(value) {
+      super.pinned = value;
     }
-    get [_scanner$0]() {
-      return line_scanner.LineScanner.as(this[$noSuchMethod](new core._Invocation.getter(C[10] || CT.C10)));
+    get floating() {
+      return this[floating$];
+    }
+    set floating(value) {
+      super.floating = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[1], 159, 29, "context");
+      if (dart.test(this.floating) && dart.test(this.pinned)) return new sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+      if (dart.test(this.pinned)) return new sliver_persistent_header$._SliverPinnedPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+      if (dart.test(this.floating)) return new sliver_persistent_header$._SliverFloatingPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
+      return new sliver_persistent_header$._SliverScrollingPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[1], 170, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new (T.DiagnosticsPropertyOfSliverPersistentHeaderDelegate()).new("delegate", this.delegate));
+      let flags = (() => {
+        let t0 = T.JSArrayOfString().of([]);
+        if (dart.test(this.pinned)) t0[$add]("pinned");
+        if (dart.test(this.floating)) t0[$add]("floating");
+        return t0;
+      })();
+      if (dart.test(flags[$isEmpty])) flags[$add]("normal");
+      properties.add(new (T.IterablePropertyOfString()).new("mode", flags));
     }
   };
-  (relative_span_scanner._SpanScannerState.new = function(_scanner, position) {
-    if (_scanner == null) dart.nullFailed(I[0], 119, 26, "_scanner");
-    if (position == null) dart.nullFailed(I[0], 119, 41, "position");
-    this[_scanner$] = _scanner;
-    this.position = position;
+  (sliver_persistent_header$.SliverPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    if (delegate == null) dart.nullFailed(I[1], 122, 19, "delegate");
+    let pinned = opts && 'pinned' in opts ? opts.pinned : false;
+    if (pinned == null) dart.nullFailed(I[1], 123, 10, "pinned");
+    let floating = opts && 'floating' in opts ? opts.floating : false;
+    if (floating == null) dart.nullFailed(I[1], 124, 10, "floating");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[delegate$] = delegate;
+    this[pinned$] = pinned;
+    this[floating$] = floating;
+    if (!(delegate != null)) dart.assertFailed(null, I[1], 125, 15, "delegate != null");
+    if (!(pinned != null)) dart.assertFailed(null, I[1], 126, 15, "pinned != null");
+    if (!(floating != null)) dart.assertFailed(null, I[1], 127, 15, "floating != null");
+    sliver_persistent_header$.SliverPersistentHeader.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = relative_span_scanner._SpanScannerState.prototype;
-  dart.addTypeTests(relative_span_scanner._SpanScannerState);
-  dart.addTypeCaches(relative_span_scanner._SpanScannerState);
-  relative_span_scanner._SpanScannerState[dart.implements] = () => [line_scanner.LineScannerState];
-  dart.setGetterSignature(relative_span_scanner._SpanScannerState, () => ({
-    __proto__: dart.getGetters(relative_span_scanner._SpanScannerState.__proto__),
-    line: core.int,
-    column: core.int,
-    [_scanner$0]: line_scanner.LineScanner
+  }).prototype = sliver_persistent_header$.SliverPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$.SliverPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$.SliverPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$.SliverPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$.SliverPersistentHeader.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(relative_span_scanner._SpanScannerState, I[2]);
-  dart.setFieldSignature(relative_span_scanner._SpanScannerState, () => ({
-    __proto__: dart.getFields(relative_span_scanner._SpanScannerState.__proto__),
-    [_scanner]: dart.finalFieldType(relative_span_scanner.RelativeSpanScanner),
-    position: dart.finalFieldType(core.int)
+  dart.setLibraryUri(sliver_persistent_header$.SliverPersistentHeader, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$.SliverPersistentHeader, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$.SliverPersistentHeader.__proto__),
+    delegate: dart.finalFieldType(sliver_persistent_header$.SliverPersistentHeaderDelegate),
+    pinned: dart.finalFieldType(core.bool),
+    floating: dart.finalFieldType(core.bool)
   }));
-  var _line$0 = dart.privateName(eager_span_scanner, "_line");
-  var _column$0 = dart.privateName(eager_span_scanner, "_column");
-  var _betweenCRLF$0 = dart.privateName(eager_span_scanner, "_betweenCRLF");
-  var _scanner$1 = dart.privateName(eager_span_scanner, "_scanner");
-  var _newlinesIn$0 = dart.privateName(eager_span_scanner, "_newlinesIn");
-  var _adjustLineAndColumn$0 = dart.privateName(eager_span_scanner, "_adjustLineAndColumn");
-  var _scanner$2 = dart.privateName(span_scanner, "_scanner");
-  var _column$1 = dart.privateName(span_scanner, "_column");
-  var _adjustLineAndColumn$1 = dart.privateName(span_scanner, "_adjustLineAndColumn");
-  var _line$1 = dart.privateName(span_scanner, "_line");
-  var _betweenCRLF$1 = dart.privateName(span_scanner, "_betweenCRLF");
-  var _newlinesIn$1 = dart.privateName(span_scanner, "_newlinesIn");
-  var _column_$ = dart.privateName(span_scanner, "_column=");
-  var _line_$ = dart.privateName(span_scanner, "_line=");
-  span_scanner.SpanScanner = class SpanScanner extends string_scanner.StringScanner {
-    get line() {
-      return this[_sourceFile$0].getLine(this.position);
+  var _element = dart.privateName(sliver_persistent_header$, "_element");
+  var _build = dart.privateName(sliver_persistent_header$, "_build");
+  sliver_persistent_header$._SliverPersistentHeaderElement = class _SliverPersistentHeaderElement extends framework.RenderObjectElement {
+    get widget() {
+      return sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.as(super.widget);
     }
-    get column() {
-      return this[_sourceFile$0].getColumn(this.position);
+    get renderObject() {
+      return sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.as(super.renderObject);
     }
-    get state() {
-      return new span_scanner._SpanScannerState.new(this, this.position);
+    mount(parent, newSlot) {
+      super.mount(parent, newSlot);
+      this.renderObject[_element] = this;
     }
-    set state(state) {
-      if (state == null) dart.nullFailed(I[4], 31, 30, "state");
-      if (!span_scanner._SpanScannerState.is(state) || state[_scanner$2] !== this) {
-        dart.throw(new core.ArgumentError.new("The given LineScannerState was not returned by " + "this LineScanner."));
-      }
-      this.position = state.position;
+    unmount() {
+      super.unmount();
+      this.renderObject[_element] = null;
     }
-    get lastSpan() {
-      if (this.lastMatch == null) this[_lastSpan$0] = null;
-      return this[_lastSpan$0];
+    update(newWidget) {
+      sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.as(newWidget);
+      if (newWidget == null) dart.nullFailed(I[1], 210, 57, "newWidget");
+      let oldWidget = this.widget;
+      super.update(newWidget);
+      let newDelegate = newWidget.delegate;
+      let oldDelegate = oldWidget.delegate;
+      if (!dart.equals(newDelegate, oldDelegate) && (!dart.equals(dart.runtimeType(newDelegate), dart.runtimeType(oldDelegate)) || dart.test(newDelegate.shouldRebuild(oldDelegate)))) this.renderObject.triggerRebuild();
     }
-    get location() {
-      return this[_sourceFile$0].location(this.position);
+    performRebuild() {
+      super.performRebuild();
+      this.renderObject.triggerRebuild();
     }
-    get emptySpan() {
-      return this.location.pointSpan();
+    [_build](shrinkOffset, overlapsContent) {
+      if (shrinkOffset == null) dart.nullFailed(I[1], 228, 22, "shrinkOffset");
+      if (overlapsContent == null) dart.nullFailed(I[1], 228, 41, "overlapsContent");
+      dart.nullCheck(this.owner).buildScope(this, dart.fn(() => {
+        this.child = this.updateChild(this.child, this.widget.delegate.build(this, shrinkOffset, overlapsContent), null);
+      }, T.VoidTovoid()));
     }
-    spanFrom(startState, endState = null) {
-      if (startState == null) dart.nullFailed(I[4], 90, 38, "startState");
-      let endPosition = endState == null ? this.position : endState.position;
-      return this[_sourceFile$0].span(startState.position, endPosition);
+    forgetChild(child) {
+      if (child == null) dart.nullFailed(I[1], 243, 28, "child");
+      if (!dart.equals(child, this.child)) dart.assertFailed(null, I[1], 244, 12, "child == this.child");
+      this.child = null;
+      super.forgetChild(child);
     }
-    matches(pattern) {
-      if (pattern == null) dart.nullFailed(I[4], 96, 24, "pattern");
-      if (!dart.test(super.matches(pattern))) {
-        this[_lastSpan$0] = null;
-        return false;
-      }
-      this[_lastSpan$0] = this[_sourceFile$0].span(this.position, dart.nullCheck(this.lastMatch).end);
-      return true;
+    insertRenderObjectChild(child, slot) {
+      box.RenderBox.as(child);
+      if (child == null) dart.nullFailed(I[1], 250, 52, "child");
+      if (!dart.test(this.renderObject.debugValidateChild(child))) dart.assertFailed(null, I[1], 251, 12, "renderObject.debugValidateChild(child)");
+      this.renderObject.child = child;
     }
-    error(message, opts) {
-      if (message == null) dart.nullFailed(I[4], 107, 22, "message");
-      let match = opts && 'match' in opts ? opts.match : null;
-      let position = opts && 'position' in opts ? opts.position : null;
-      let length = opts && 'length' in opts ? opts.length : null;
-      utils.validateErrorArgs(this.string, match, position, length);
-      if (match == null && position == null && length == null) match = this.lastMatch;
-      position == null ? position = match == null ? this.position : match.start : null;
-      length == null ? length = match == null ? 0 : dart.notNull(match.end) - dart.notNull(match.start) : null;
-      let span = this[_sourceFile$0].span(position, dart.notNull(position) + dart.notNull(length));
-      dart.throw(new exception.StringScannerException.new(message, span, this.string));
+    moveRenderObjectChild(child, oldSlot, newSlot) {
+      object.RenderObject.as(child);
+      if (child == null) dart.nullFailed(I[1], 256, 53, "child");
+      if (!false) dart.assertFailed(null, I[1], 257, 12, "false");
     }
-    get [_column$]() {
-      return core.int.as(this[$noSuchMethod](new core._Invocation.getter(C[11] || CT.C11)));
+    removeRenderObjectChild(child, slot) {
+      object.RenderObject.as(child);
+      if (child == null) dart.nullFailed(I[1], 261, 55, "child");
+      this.renderObject.child = null;
     }
-    [_adjustLineAndColumn$](character) {
-      if (character == null) dart.nullFailed(I[1], 94, 8, "character");
-      return this[$noSuchMethod](new core._Invocation.method(C[12] || CT.C12, null, [character]));
-    }
-    get [_line$]() {
-      return core.int.as(this[$noSuchMethod](new core._Invocation.getter(C[13] || CT.C13)));
-    }
-    get [_betweenCRLF$]() {
-      return core.bool.as(this[$noSuchMethod](new core._Invocation.getter(C[14] || CT.C14)));
-    }
-    [_newlinesIn$](text) {
-      if (text == null) dart.nullFailed(I[1], 120, 15, "text");
-      return T.ListOfMatch().as(this[$noSuchMethod](new core._Invocation.method(C[15] || CT.C15, null, [text])));
-    }
-    set [_column$](value) {
-      if (value == null) dart.nullFailed(I[1], 22, 7, "value");
-      return this[$noSuchMethod](new core._Invocation.setter(C[16] || CT.C16, value));
-    }
-    set [_line$](value) {
-      if (value == null) dart.nullFailed(I[1], 18, 7, "value");
-      return this[$noSuchMethod](new core._Invocation.setter(C[17] || CT.C17, value));
+    visitChildren(visitor) {
+      if (visitor == null) dart.nullFailed(I[1], 266, 37, "visitor");
+      if (this.child != null) visitor(dart.nullCheck(this.child));
     }
   };
-  (span_scanner.SpanScanner.new = function(string, opts) {
-    if (string == null) dart.nullFailed(I[4], 62, 22, "string");
-    let sourceUrl = opts && 'sourceUrl' in opts ? opts.sourceUrl : null;
-    let position = opts && 'position' in opts ? opts.position : null;
-    this[_lastSpan$0] = null;
-    this[_sourceFile$0] = new file.SourceFile.fromString(string, {url: sourceUrl});
-    span_scanner.SpanScanner.__proto__.new.call(this, string, {sourceUrl: sourceUrl, position: position});
+  (sliver_persistent_header$._SliverPersistentHeaderElement.new = function(widget) {
+    if (widget == null) dart.nullFailed(I[1], 189, 76, "widget");
+    this.child = null;
+    sliver_persistent_header$._SliverPersistentHeaderElement.__proto__.new.call(this, widget);
     ;
-  }).prototype = span_scanner.SpanScanner.prototype;
-  dart.addTypeTests(span_scanner.SpanScanner);
-  dart.addTypeCaches(span_scanner.SpanScanner);
-  span_scanner.SpanScanner[dart.implements] = () => [line_scanner.LineScanner];
-  dart.setMethodSignature(span_scanner.SpanScanner, () => ({
-    __proto__: dart.getMethods(span_scanner.SpanScanner.__proto__),
-    spanFrom: dart.fnType(file.FileSpan, [line_scanner.LineScannerState], [dart.nullable(line_scanner.LineScannerState)]),
-    [_adjustLineAndColumn$]: dart.fnType(dart.void, [core.int]),
-    [_newlinesIn$]: dart.fnType(core.List$(core.Match), [core.String])
+  }).prototype = sliver_persistent_header$._SliverPersistentHeaderElement.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverPersistentHeaderElement);
+  dart.addTypeCaches(sliver_persistent_header$._SliverPersistentHeaderElement);
+  dart.setMethodSignature(sliver_persistent_header$._SliverPersistentHeaderElement, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverPersistentHeaderElement.__proto__),
+    [_build]: dart.fnType(dart.void, [core.double, core.bool])
   }));
-  dart.setGetterSignature(span_scanner.SpanScanner, () => ({
-    __proto__: dart.getGetters(span_scanner.SpanScanner.__proto__),
-    line: core.int,
-    column: core.int,
-    state: line_scanner.LineScannerState,
-    lastSpan: dart.nullable(file.FileSpan),
-    location: file.FileLocation,
-    emptySpan: file.FileSpan,
-    [_column$]: core.int,
-    [_line$]: core.int,
-    [_betweenCRLF$]: core.bool
+  dart.setGetterSignature(sliver_persistent_header$._SliverPersistentHeaderElement, () => ({
+    __proto__: dart.getGetters(sliver_persistent_header$._SliverPersistentHeaderElement.__proto__),
+    widget: sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget,
+    renderObject: sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin
   }));
-  dart.setSetterSignature(span_scanner.SpanScanner, () => ({
-    __proto__: dart.getSetters(span_scanner.SpanScanner.__proto__),
-    state: line_scanner.LineScannerState,
-    [_column$]: core.int,
-    [_line$]: core.int
+  dart.setLibraryUri(sliver_persistent_header$._SliverPersistentHeaderElement, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$._SliverPersistentHeaderElement, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$._SliverPersistentHeaderElement.__proto__),
+    child: dart.fieldType(dart.nullable(framework.Element))
   }));
-  dart.setLibraryUri(span_scanner.SpanScanner, I[5]);
-  dart.setFieldSignature(span_scanner.SpanScanner, () => ({
-    __proto__: dart.getFields(span_scanner.SpanScanner.__proto__),
-    [_sourceFile$0]: dart.finalFieldType(file.SourceFile),
-    [_lastSpan$0]: dart.fieldType(dart.nullable(file.FileSpan))
-  }));
-  eager_span_scanner.EagerSpanScanner = class EagerSpanScanner extends span_scanner.SpanScanner {
-    get line() {
-      return this[_line$0];
+  var delegate$0 = dart.privateName(sliver_persistent_header$, "_SliverPersistentHeaderRenderObjectWidget.delegate");
+  sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget = class _SliverPersistentHeaderRenderObjectWidget extends framework.RenderObjectWidget {
+    get delegate() {
+      return this[delegate$0];
     }
-    get column() {
-      return this[_column$0];
+    set delegate(value) {
+      super.delegate = value;
     }
-    get state() {
-      return new eager_span_scanner._EagerSpanScannerState.new(this, this.position, this.line, this.column);
+    createElement() {
+      return new sliver_persistent_header$._SliverPersistentHeaderElement.new(this);
     }
-    get [_betweenCRLF$0]() {
-      return this.peekChar(-1) === 13 && this.peekChar() === 10;
-    }
-    set state(state) {
-      if (state == null) dart.nullFailed(I[3], 33, 30, "state");
-      if (!eager_span_scanner._EagerSpanScannerState.is(state) || state[_scanner$1] !== this) {
-        dart.throw(new core.ArgumentError.new("The given LineScannerState was not returned by " + "this LineScanner."));
-      }
-      super.position = state.position;
-      this[_line$0] = state.line;
-      this[_column$0] = state.column;
-    }
-    set position(newPosition) {
-      if (newPosition == null) dart.nullFailed(I[3], 45, 20, "newPosition");
-      let oldPosition = this.position;
-      super.position = newPosition;
-      if (dart.notNull(newPosition) > dart.notNull(oldPosition)) {
-        let newlines = this[_newlinesIn$0](this.string[$substring](oldPosition, newPosition));
-        this[_line$0] = dart.notNull(this[_line$0]) + dart.notNull(newlines[$length]);
-        if (dart.test(newlines[$isEmpty])) {
-          this[_column$0] = dart.notNull(this[_column$0]) + (dart.notNull(newPosition) - dart.notNull(oldPosition));
-        } else {
-          this[_column$0] = dart.notNull(newPosition) - dart.notNull(newlines[$last].end);
-        }
-      } else {
-        let newlines = this[_newlinesIn$0](this.string[$substring](newPosition, oldPosition));
-        if (dart.test(this[_betweenCRLF$0])) newlines[$removeLast]();
-        this[_line$0] = dart.notNull(this[_line$0]) - dart.notNull(newlines[$length]);
-        if (dart.test(newlines[$isEmpty])) {
-          this[_column$0] = dart.notNull(this[_column$0]) - (dart.notNull(oldPosition) - dart.notNull(newPosition));
-        } else {
-          this[_column$0] = dart.notNull(newPosition) - this.string[$lastIndexOf](eager_span_scanner._newlineRegExp, newPosition) - 1;
-        }
-      }
-    }
-    get position() {
-      return super.position;
-    }
-    scanChar(character) {
-      if (character == null) dart.nullFailed(I[3], 75, 21, "character");
-      if (!dart.test(super.scanChar(character))) return false;
-      this[_adjustLineAndColumn$0](character);
-      return true;
-    }
-    readChar() {
-      let character = super.readChar();
-      this[_adjustLineAndColumn$0](character);
-      return character;
-    }
-    [_adjustLineAndColumn$0](character) {
-      if (character == null) dart.nullFailed(I[3], 89, 33, "character");
-      if (character === 10 || character === 13 && this.peekChar() !== 10) {
-        this[_line$0] = dart.notNull(this[_line$0]) + 1;
-        this[_column$0] = 0;
-      } else {
-        this[_column$0] = dart.notNull(this[_column$0]) + 1;
-      }
-    }
-    scan(pattern) {
-      if (pattern == null) dart.nullFailed(I[3], 99, 21, "pattern");
-      if (!dart.test(super.scan(pattern))) return false;
-      let firstMatch = dart.nullCheck(dart.nullCheck(this.lastMatch)._get(0));
-      let newlines = this[_newlinesIn$0](firstMatch);
-      this[_line$0] = dart.notNull(this[_line$0]) + dart.notNull(newlines[$length]);
-      if (dart.test(newlines[$isEmpty])) {
-        this[_column$0] = dart.notNull(this[_column$0]) + firstMatch.length;
-      } else {
-        this[_column$0] = firstMatch.length - dart.notNull(newlines[$last].end);
-      }
-      return true;
-    }
-    [_newlinesIn$0](text) {
-      if (text == null) dart.nullFailed(I[3], 116, 34, "text");
-      let newlines = eager_span_scanner._newlineRegExp.allMatches(text)[$toList]();
-      if (dart.test(this[_betweenCRLF$0])) newlines[$removeLast]();
-      return newlines;
+    debugFillProperties(description) {
+      if (description == null) dart.nullFailed(I[1], 288, 56, "description");
+      super.debugFillProperties(description);
+      description.add(new (T.DiagnosticsPropertyOfSliverPersistentHeaderDelegate()).new("delegate", this.delegate));
     }
   };
-  (eager_span_scanner.EagerSpanScanner.new = function(string, opts) {
-    if (string == null) dart.nullFailed(I[3], 71, 27, "string");
-    let sourceUrl = opts && 'sourceUrl' in opts ? opts.sourceUrl : null;
-    let position = opts && 'position' in opts ? opts.position : null;
-    this[_line$0] = 0;
-    this[_column$0] = 0;
-    eager_span_scanner.EagerSpanScanner.__proto__.new.call(this, string, {sourceUrl: sourceUrl, position: position});
+  (sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    if (delegate == null) dart.nullFailed(I[1], 275, 19, "delegate");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[delegate$0] = delegate;
+    if (!(delegate != null)) dart.assertFailed(null, I[1], 276, 15, "delegate != null");
+    sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = eager_span_scanner.EagerSpanScanner.prototype;
-  dart.addTypeTests(eager_span_scanner.EagerSpanScanner);
-  dart.addTypeCaches(eager_span_scanner.EagerSpanScanner);
-  dart.setMethodSignature(eager_span_scanner.EagerSpanScanner, () => ({
-    __proto__: dart.getMethods(eager_span_scanner.EagerSpanScanner.__proto__),
-    [_adjustLineAndColumn$0]: dart.fnType(dart.void, [core.int]),
-    [_newlinesIn$0]: dart.fnType(core.List$(core.Match), [core.String])
+  }).prototype = sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget);
+  dart.addTypeCaches(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget);
+  dart.setMethodSignature(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.__proto__),
+    createElement: dart.fnType(sliver_persistent_header$._SliverPersistentHeaderElement, [])
   }));
-  dart.setGetterSignature(eager_span_scanner.EagerSpanScanner, () => ({
-    __proto__: dart.getGetters(eager_span_scanner.EagerSpanScanner.__proto__),
-    [_betweenCRLF$0]: core.bool
+  dart.setLibraryUri(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.__proto__),
+    delegate: dart.finalFieldType(sliver_persistent_header$.SliverPersistentHeaderDelegate)
   }));
-  dart.setLibraryUri(eager_span_scanner.EagerSpanScanner, I[6]);
-  dart.setFieldSignature(eager_span_scanner.EagerSpanScanner, () => ({
-    __proto__: dart.getFields(eager_span_scanner.EagerSpanScanner.__proto__),
-    [_line$0]: dart.fieldType(core.int),
-    [_column$0]: dart.fieldType(core.int)
-  }));
-  var _scanner$3 = dart.privateName(eager_span_scanner, "_EagerSpanScannerState._scanner");
-  eager_span_scanner._EagerSpanScannerState = class _EagerSpanScannerState extends core.Object {
-    get [_scanner$1]() {
-      return this[_scanner$3];
+  var _element$ = dart.privateName(sliver_persistent_header$, "_RenderSliverPersistentHeaderForWidgetsMixin._element");
+  sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin = class _RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverPersistentHeader {};
+  sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinOn] = RenderSliverPersistentHeader => class _RenderSliverPersistentHeaderForWidgetsMixin extends RenderSliverPersistentHeader {
+    get [_element]() {
+      return this[_element$];
     }
-    set [_scanner$1](value) {
-      super[_scanner$1] = value;
+    set [_element](value) {
+      this[_element$] = value;
     }
-    get [_scanner$0]() {
-      return line_scanner.LineScanner.as(this[$noSuchMethod](new core._Invocation.getter(C[18] || CT.C18)));
+    get minExtent() {
+      return dart.nullCheck(this[_element]).widget.delegate.minExtent;
+    }
+    get maxExtent() {
+      return dart.nullCheck(this[_element]).widget.delegate.maxExtent;
+    }
+    updateChild(shrinkOffset, overlapsContent) {
+      if (shrinkOffset == null) dart.nullFailed(I[1], 309, 27, "shrinkOffset");
+      if (overlapsContent == null) dart.nullFailed(I[1], 309, 46, "overlapsContent");
+      if (!(this[_element] != null)) dart.assertFailed(null, I[1], 310, 12, "_element != null");
+      dart.nullCheck(this[_element])[_build](shrinkOffset, overlapsContent);
+    }
+    triggerRebuild() {
+      this.markNeedsLayout();
     }
   };
-  (eager_span_scanner._EagerSpanScannerState.new = function(_scanner, position, line, column) {
-    if (_scanner == null) dart.nullFailed(I[3], 133, 31, "_scanner");
-    if (position == null) dart.nullFailed(I[3], 133, 46, "position");
-    if (line == null) dart.nullFailed(I[3], 133, 61, "line");
-    if (column == null) dart.nullFailed(I[3], 133, 72, "column");
-    this[_scanner$3] = _scanner;
-    this.position = position;
-    this.line = line;
-    this.column = column;
-    ;
-  }).prototype = eager_span_scanner._EagerSpanScannerState.prototype;
-  dart.addTypeTests(eager_span_scanner._EagerSpanScannerState);
-  dart.addTypeCaches(eager_span_scanner._EagerSpanScannerState);
-  eager_span_scanner._EagerSpanScannerState[dart.implements] = () => [line_scanner.LineScannerState];
-  dart.setGetterSignature(eager_span_scanner._EagerSpanScannerState, () => ({
-    __proto__: dart.getGetters(eager_span_scanner._EagerSpanScannerState.__proto__),
-    [_scanner$0]: line_scanner.LineScanner
+  (sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew] = function() {
+    this[_element$] = null;
+  }).prototype = sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.implements] = () => [sliver_persistent_header.RenderSliverPersistentHeader];
+  dart.setMethodSignature(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.__proto__),
+    triggerRebuild: dart.fnType(dart.void, [])
   }));
-  dart.setLibraryUri(eager_span_scanner._EagerSpanScannerState, I[6]);
-  dart.setFieldSignature(eager_span_scanner._EagerSpanScannerState, () => ({
-    __proto__: dart.getFields(eager_span_scanner._EagerSpanScannerState.__proto__),
-    [_scanner$1]: dart.finalFieldType(eager_span_scanner.EagerSpanScanner),
-    position: dart.finalFieldType(core.int),
-    line: dart.finalFieldType(core.int),
-    column: dart.finalFieldType(core.int)
+  dart.setGetterSignature(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, () => ({
+    __proto__: dart.getGetters(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.__proto__),
+    minExtent: core.double,
+    maxExtent: core.double
   }));
-  dart.defineLazy(eager_span_scanner, {
-    /*eager_span_scanner._newlineRegExp*/get _newlineRegExp() {
-      return core.RegExp.new("\\r\\n?|\\n");
-    }
-  }, false);
-  var _scanner$4 = dart.privateName(span_scanner, "_SpanScannerState._scanner");
-  span_scanner._SpanScannerState = class _SpanScannerState extends core.Object {
-    get [_scanner$2]() {
-      return this[_scanner$4];
-    }
-    set [_scanner$2](value) {
-      super[_scanner$2] = value;
-    }
-    get line() {
-      return this[_scanner$2][_sourceFile$0].getLine(this.position);
-    }
-    get column() {
-      return this[_scanner$2][_sourceFile$0].getColumn(this.position);
-    }
-    get [_scanner$0]() {
-      return line_scanner.LineScanner.as(this[$noSuchMethod](new core._Invocation.getter(C[19] || CT.C19)));
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.__proto__),
+    [_element]: dart.fieldType(dart.nullable(sliver_persistent_header$._SliverPersistentHeaderElement))
+  }));
+  sliver_persistent_header$._SliverScrollingPersistentHeader = class _SliverScrollingPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      if (context == null) dart.nullFailed(I[1], 330, 80, "context");
+      return new sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.new({stretchConfiguration: this.delegate.stretchConfiguration});
     }
   };
-  (span_scanner._SpanScannerState.new = function(_scanner, position) {
-    if (_scanner == null) dart.nullFailed(I[4], 131, 26, "_scanner");
-    if (position == null) dart.nullFailed(I[4], 131, 41, "position");
-    this[_scanner$4] = _scanner;
-    this.position = position;
+  (sliver_persistent_header$._SliverScrollingPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    if (delegate == null) dart.nullFailed(I[1], 323, 45, "delegate");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverScrollingPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = span_scanner._SpanScannerState.prototype;
-  dart.addTypeTests(span_scanner._SpanScannerState);
-  dart.addTypeCaches(span_scanner._SpanScannerState);
-  span_scanner._SpanScannerState[dart.implements] = () => [line_scanner.LineScannerState];
-  dart.setGetterSignature(span_scanner._SpanScannerState, () => ({
-    __proto__: dart.getGetters(span_scanner._SpanScannerState.__proto__),
-    line: core.int,
-    column: core.int,
-    [_scanner$0]: line_scanner.LineScanner
+  }).prototype = sliver_persistent_header$._SliverScrollingPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverScrollingPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverScrollingPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverScrollingPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverScrollingPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
   }));
-  dart.setLibraryUri(span_scanner._SpanScannerState, I[5]);
-  dart.setFieldSignature(span_scanner._SpanScannerState, () => ({
-    __proto__: dart.getFields(span_scanner._SpanScannerState.__proto__),
-    [_scanner$2]: dart.finalFieldType(span_scanner.SpanScanner),
-    position: dart.finalFieldType(core.int)
+  dart.setLibraryUri(sliver_persistent_header$._SliverScrollingPersistentHeader, I[0]);
+  const RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverScrollingPersistentHeader {};
+  (RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets = class _RenderSliverScrollingPersistentHeaderForWidgets extends RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, stretchConfiguration: stretchConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets, I[0]);
+  sliver_persistent_header$._SliverPinnedPersistentHeader = class _SliverPinnedPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      if (context == null) dart.nullFailed(I[1], 358, 80, "context");
+      return new sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.new({stretchConfiguration: this.delegate.stretchConfiguration, showOnScreenConfiguration: this.delegate.showOnScreenConfiguration});
+    }
+  };
+  (sliver_persistent_header$._SliverPinnedPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    if (delegate == null) dart.nullFailed(I[1], 351, 45, "delegate");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverPinnedPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver_persistent_header$._SliverPinnedPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverPinnedPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverPinnedPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverPinnedPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverPinnedPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
   }));
-  dart.trackLibraries("packages/string_scanner/src/relative_span_scanner.dart", {
-    "package:string_scanner/src/relative_span_scanner.dart": relative_span_scanner,
-    "package:string_scanner/src/eager_span_scanner.dart": eager_span_scanner,
-    "package:string_scanner/src/span_scanner.dart": span_scanner
+  dart.setLibraryUri(sliver_persistent_header$._SliverPinnedPersistentHeader, I[0]);
+  const RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverPinnedPersistentHeader {};
+  (RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets = class _RenderSliverPinnedPersistentHeaderForWidgets extends RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    let showOnScreenConfiguration = opts && 'showOnScreenConfiguration' in opts ? opts.showOnScreenConfiguration : null;
+    sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, stretchConfiguration: stretchConfiguration, showOnScreenConfiguration: showOnScreenConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets, I[0]);
+  sliver_persistent_header$._SliverFloatingPersistentHeader = class _SliverFloatingPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      if (context == null) dart.nullFailed(I[1], 389, 80, "context");
+      return new sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.new({vsync: this.delegate.vsync, snapConfiguration: this.delegate.snapConfiguration, stretchConfiguration: this.delegate.stretchConfiguration, showOnScreenConfiguration: this.delegate.showOnScreenConfiguration});
+    }
+    updateRenderObject(context, renderObject) {
+      if (context == null) dart.nullFailed(I[1], 399, 40, "context");
+      sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.as(renderObject);
+      if (renderObject == null) dart.nullFailed(I[1], 399, 97, "renderObject");
+      renderObject.vsync = this.delegate.vsync;
+      renderObject.snapConfiguration = this.delegate.snapConfiguration;
+      renderObject.stretchConfiguration = this.delegate.stretchConfiguration;
+      renderObject.showOnScreenConfiguration = this.delegate.showOnScreenConfiguration;
+    }
+  };
+  (sliver_persistent_header$._SliverFloatingPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    if (delegate == null) dart.nullFailed(I[1], 382, 45, "delegate");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverFloatingPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver_persistent_header$._SliverFloatingPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverFloatingPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverFloatingPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverFloatingPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverFloatingPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(sliver_persistent_header$._SliverFloatingPersistentHeader, I[0]);
+  const RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverFloatingPinnedPersistentHeader {};
+  (RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets = class _RenderSliverFloatingPinnedPersistentHeaderForWidgets extends RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    let snapConfiguration = opts && 'snapConfiguration' in opts ? opts.snapConfiguration : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    let showOnScreenConfiguration = opts && 'showOnScreenConfiguration' in opts ? opts.showOnScreenConfiguration : null;
+    sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, vsync: vsync, snapConfiguration: snapConfiguration, stretchConfiguration: stretchConfiguration, showOnScreenConfiguration: showOnScreenConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets, I[0]);
+  sliver_persistent_header$._SliverFloatingPinnedPersistentHeader = class _SliverFloatingPinnedPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      if (context == null) dart.nullFailed(I[1], 434, 80, "context");
+      return new sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.new({vsync: this.delegate.vsync, snapConfiguration: this.delegate.snapConfiguration, stretchConfiguration: this.delegate.stretchConfiguration, showOnScreenConfiguration: this.delegate.showOnScreenConfiguration});
+    }
+    updateRenderObject(context, renderObject) {
+      if (context == null) dart.nullFailed(I[1], 444, 40, "context");
+      sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.as(renderObject);
+      if (renderObject == null) dart.nullFailed(I[1], 444, 103, "renderObject");
+      renderObject.vsync = this.delegate.vsync;
+      renderObject.snapConfiguration = this.delegate.snapConfiguration;
+      renderObject.stretchConfiguration = this.delegate.stretchConfiguration;
+      renderObject.showOnScreenConfiguration = this.delegate.showOnScreenConfiguration;
+    }
+  };
+  (sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    if (delegate == null) dart.nullFailed(I[1], 427, 45, "delegate");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader, I[0]);
+  const RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverFloatingPersistentHeader {};
+  (RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets = class _RenderSliverFloatingPersistentHeaderForWidgets extends RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    let snapConfiguration = opts && 'snapConfiguration' in opts ? opts.snapConfiguration : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    let showOnScreenConfiguration = opts && 'showOnScreenConfiguration' in opts ? opts.showOnScreenConfiguration : null;
+    sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, vsync: vsync, snapConfiguration: snapConfiguration, stretchConfiguration: stretchConfiguration, showOnScreenConfiguration: showOnScreenConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets, I[0]);
+  dart.trackLibraries("packages/flutter/src/widgets/sliver_persistent_header.dart", {
+    "package:flutter/src/widgets/sliver_persistent_header.dart": sliver_persistent_header$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["relative_span_scanner.dart","span_scanner.dart","eager_span_scanner.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/string_scanner/src/relative_span_scanner.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["sliver_persistent_header.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/sliver_persistent_header.dart.lib.js"}');
   // Exports:
   return {
-    src__relative_span_scanner: relative_span_scanner,
-    src__eager_span_scanner: eager_span_scanner,
-    src__span_scanner: span_scanner
+    src__widgets__sliver_persistent_header: sliver_persistent_header$
   };
 }));
 
-//# sourceMappingURL=relative_span_scanner.dart.lib.js.map
+//# sourceMappingURL=sliver_persistent_header.dart.lib.js.map
