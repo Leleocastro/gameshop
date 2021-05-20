@@ -1,18 +1,26 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/constants.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/recognizer.dart'], (function load__packages__flutter__src__gestures__long_press_dart(dart_sdk, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__constants$46dart, packages__flutter__src__gestures__arena$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__recognizer$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/lsq_solver.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__gestures__velocity_tracker_dart(dart_sdk, packages__flutter__src__gestures__lsq_solver$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
-  const constants = packages__flutter__src__gestures__constants$46dart.src__gestures__constants;
-  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
-  var long_press = Object.create(dart.library);
+  const lsq_solver = packages__flutter__src__gestures__lsq_solver$46dart.src__gestures__lsq_solver;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  var velocity_tracker = Object.create(dart.library);
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $_set = dartx._set;
+  var $_get = dartx._get;
+  var $toDouble = dartx.toDouble;
+  var $abs = dartx.abs;
+  var $add = dartx.add;
+  var $modulo = dartx['%'];
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+    _PointAtTimeN: () => (T._PointAtTimeN = dart.constFn(dart.nullable(velocity_tracker._PointAtTime)))(),
+    ListOf_PointAtTimeN: () => (T.ListOf_PointAtTimeN = dart.constFn(core.List$(T._PointAtTimeN())))(),
+    JSArrayOfdouble: () => (T.JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -27,549 +35,399 @@ define(['dart_sdk', 'packages/flutter/src/gestures/velocity_tracker.dart', 'pack
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
+    get C1() {
+      return C[1] = dart.const({
         __proto__: ui.Offset.prototype,
         [OffsetBase__dy]: 0,
         [OffsetBase__dx]: 0
       });
     },
-    get C1() {
-      return C[1] = dart.const({
+    get C0() {
+      return C[0] = dart.const({
         __proto__: velocity_tracker.Velocity.prototype,
-        [Velocity_pixelsPerSecond]: C[0] || CT.C0
+        [pixelsPerSecond$]: C[1] || CT.C1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: ui.PointerDeviceKind.prototype,
+        [_name]: "PointerDeviceKind.touch",
+        index: 0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: velocity_tracker.VelocityEstimate.prototype,
+        [offset$]: C[1] || CT.C1,
+        [duration$]: C[4] || CT.C4,
+        [confidence$]: 0,
+        [pixelsPerSecond$0]: C[1] || CT.C1
       });
     }
   }, false);
-  var C = Array(2).fill(void 0);
+  var C = Array(5).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/gestures/long_press.dart",
-    "package:flutter/src/gestures/long_press.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/gestures/velocity_tracker.dart",
+    "package:flutter/src/gestures/velocity_tracker.dart"
   ];
-  var globalPosition$ = dart.privateName(long_press, "LongPressStartDetails.globalPosition");
-  var localPosition$ = dart.privateName(long_press, "LongPressStartDetails.localPosition");
+  var pixelsPerSecond$ = dart.privateName(velocity_tracker, "Velocity.pixelsPerSecond");
   var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
   var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  long_press.LongPressStartDetails = class LongPressStartDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$];
+  velocity_tracker.Velocity = class Velocity extends core.Object {
+    get pixelsPerSecond() {
+      return this[pixelsPerSecond$];
     }
-    set globalPosition(value) {
-      super.globalPosition = value;
+    set pixelsPerSecond(value) {
+      super.pixelsPerSecond = value;
     }
-    get localPosition() {
-      return this[localPosition$];
+    _negate() {
+      return new velocity_tracker.Velocity.new({pixelsPerSecond: this.pixelsPerSecond._negate()});
     }
-    set localPosition(value) {
-      super.localPosition = value;
+    ['-'](other) {
+      if (other == null) dart.nullFailed(I[0], 33, 32, "other");
+      return new velocity_tracker.Velocity.new({pixelsPerSecond: this.pixelsPerSecond['-'](other.pixelsPerSecond)});
+    }
+    ['+'](other) {
+      if (other == null) dart.nullFailed(I[0], 39, 32, "other");
+      return new velocity_tracker.Velocity.new({pixelsPerSecond: this.pixelsPerSecond['+'](other.pixelsPerSecond)});
+    }
+    clampMagnitude(minValue, maxValue) {
+      if (minValue == null) dart.nullFailed(I[0], 54, 34, "minValue");
+      if (maxValue == null) dart.nullFailed(I[0], 54, 51, "maxValue");
+      if (!(minValue != null && dart.notNull(minValue) >= 0.0)) dart.assertFailed(null, I[0], 55, 12, "minValue != null && minValue >= 0.0");
+      if (!(maxValue != null && dart.notNull(maxValue) >= 0.0 && dart.notNull(maxValue) >= dart.notNull(minValue))) dart.assertFailed(null, I[0], 56, 12, "maxValue != null && maxValue >= 0.0 && maxValue >= minValue");
+      let valueSquared = this.pixelsPerSecond.distanceSquared;
+      if (dart.notNull(valueSquared) > dart.notNull(maxValue) * dart.notNull(maxValue)) return new velocity_tracker.Velocity.new({pixelsPerSecond: this.pixelsPerSecond['/'](this.pixelsPerSecond.distance)['*'](maxValue)});
+      if (dart.notNull(valueSquared) < dart.notNull(minValue) * dart.notNull(minValue)) return new velocity_tracker.Velocity.new({pixelsPerSecond: this.pixelsPerSecond['/'](this.pixelsPerSecond.distance)['*'](minValue)});
+      return this;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return velocity_tracker.Velocity.is(other) && dart.equals(other.pixelsPerSecond, this.pixelsPerSecond);
+    }
+    get hashCode() {
+      return dart.hashCode(this.pixelsPerSecond);
+    }
+    toString() {
+      return "Velocity(" + this.pixelsPerSecond.dx[$toStringAsFixed](1) + ", " + this.pixelsPerSecond.dy[$toStringAsFixed](1) + ")";
     }
   };
-  (long_press.LongPressStartDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    if (globalPosition == null) dart.nullFailed(I[0], 57, 10, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    this[globalPosition$] = globalPosition;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 59, 15, "globalPosition != null");
-    this[localPosition$] = (t0 = localPosition, t0 == null ? globalPosition : t0);
+  (velocity_tracker.Velocity.new = function(opts) {
+    let pixelsPerSecond = opts && 'pixelsPerSecond' in opts ? opts.pixelsPerSecond : null;
+    if (pixelsPerSecond == null) dart.nullFailed(I[0], 20, 19, "pixelsPerSecond");
+    this[pixelsPerSecond$] = pixelsPerSecond;
+    if (!(pixelsPerSecond != null)) dart.assertFailed(null, I[0], 21, 15, "pixelsPerSecond != null");
     ;
-  }).prototype = long_press.LongPressStartDetails.prototype;
-  dart.addTypeTests(long_press.LongPressStartDetails);
-  dart.addTypeCaches(long_press.LongPressStartDetails);
-  dart.setLibraryUri(long_press.LongPressStartDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressStartDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressStartDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset)
+  }).prototype = velocity_tracker.Velocity.prototype;
+  dart.addTypeTests(velocity_tracker.Velocity);
+  dart.addTypeCaches(velocity_tracker.Velocity);
+  dart.setMethodSignature(velocity_tracker.Velocity, () => ({
+    __proto__: dart.getMethods(velocity_tracker.Velocity.__proto__),
+    _negate: dart.fnType(velocity_tracker.Velocity, []),
+    '-': dart.fnType(velocity_tracker.Velocity, [velocity_tracker.Velocity]),
+    '+': dart.fnType(velocity_tracker.Velocity, [velocity_tracker.Velocity]),
+    clampMagnitude: dart.fnType(velocity_tracker.Velocity, [core.double, core.double])
   }));
-  var globalPosition$0 = dart.privateName(long_press, "LongPressMoveUpdateDetails.globalPosition");
-  var localPosition$0 = dart.privateName(long_press, "LongPressMoveUpdateDetails.localPosition");
-  var offsetFromOrigin$ = dart.privateName(long_press, "LongPressMoveUpdateDetails.offsetFromOrigin");
-  var localOffsetFromOrigin$ = dart.privateName(long_press, "LongPressMoveUpdateDetails.localOffsetFromOrigin");
-  long_press.LongPressMoveUpdateDetails = class LongPressMoveUpdateDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$0];
+  dart.setLibraryUri(velocity_tracker.Velocity, I[1]);
+  dart.setFieldSignature(velocity_tracker.Velocity, () => ({
+    __proto__: dart.getFields(velocity_tracker.Velocity.__proto__),
+    pixelsPerSecond: dart.finalFieldType(ui.Offset)
+  }));
+  dart.defineExtensionMethods(velocity_tracker.Velocity, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(velocity_tracker.Velocity, ['hashCode']);
+  dart.defineLazy(velocity_tracker.Velocity, {
+    /*velocity_tracker.Velocity.zero*/get zero() {
+      return C[0] || CT.C0;
     }
-    set globalPosition(value) {
-      super.globalPosition = value;
+  }, false);
+  var pixelsPerSecond$0 = dart.privateName(velocity_tracker, "VelocityEstimate.pixelsPerSecond");
+  var confidence$ = dart.privateName(velocity_tracker, "VelocityEstimate.confidence");
+  var duration$ = dart.privateName(velocity_tracker, "VelocityEstimate.duration");
+  var offset$ = dart.privateName(velocity_tracker, "VelocityEstimate.offset");
+  velocity_tracker.VelocityEstimate = class VelocityEstimate extends core.Object {
+    get pixelsPerSecond() {
+      return this[pixelsPerSecond$0];
     }
-    get localPosition() {
-      return this[localPosition$0];
+    set pixelsPerSecond(value) {
+      super.pixelsPerSecond = value;
     }
-    set localPosition(value) {
-      super.localPosition = value;
+    get confidence() {
+      return this[confidence$];
     }
-    get offsetFromOrigin() {
-      return this[offsetFromOrigin$];
+    set confidence(value) {
+      super.confidence = value;
     }
-    set offsetFromOrigin(value) {
-      super.offsetFromOrigin = value;
+    get duration() {
+      return this[duration$];
     }
-    get localOffsetFromOrigin() {
-      return this[localOffsetFromOrigin$];
+    set duration(value) {
+      super.duration = value;
     }
-    set localOffsetFromOrigin(value) {
-      super.localOffsetFromOrigin = value;
+    get offset() {
+      return this[offset$];
+    }
+    set offset(value) {
+      super.offset = value;
+    }
+    toString() {
+      return "VelocityEstimate(" + this.pixelsPerSecond.dx[$toStringAsFixed](1) + ", " + this.pixelsPerSecond.dy[$toStringAsFixed](1) + "; offset: " + dart.str(this.offset) + ", duration: " + dart.str(this.duration) + ", confidence: " + this.confidence[$toStringAsFixed](1) + ")";
     }
   };
-  (long_press.LongPressMoveUpdateDetails.new = function(opts) {
-    let t0, t0$;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    if (globalPosition == null) dart.nullFailed(I[0], 81, 10, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let offsetFromOrigin = opts && 'offsetFromOrigin' in opts ? opts.offsetFromOrigin : C[0] || CT.C0;
-    if (offsetFromOrigin == null) dart.nullFailed(I[0], 83, 10, "offsetFromOrigin");
-    let localOffsetFromOrigin = opts && 'localOffsetFromOrigin' in opts ? opts.localOffsetFromOrigin : null;
-    this[globalPosition$0] = globalPosition;
-    this[offsetFromOrigin$] = offsetFromOrigin;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 85, 15, "globalPosition != null");
-    if (!(offsetFromOrigin != null)) dart.assertFailed(null, I[0], 86, 15, "offsetFromOrigin != null");
-    this[localPosition$0] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    this[localOffsetFromOrigin$] = (t0$ = localOffsetFromOrigin, t0$ == null ? offsetFromOrigin : t0$);
-    ;
-  }).prototype = long_press.LongPressMoveUpdateDetails.prototype;
-  dart.addTypeTests(long_press.LongPressMoveUpdateDetails);
-  dart.addTypeCaches(long_press.LongPressMoveUpdateDetails);
-  dart.setLibraryUri(long_press.LongPressMoveUpdateDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressMoveUpdateDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressMoveUpdateDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    offsetFromOrigin: dart.finalFieldType(ui.Offset),
-    localOffsetFromOrigin: dart.finalFieldType(ui.Offset)
-  }));
-  var globalPosition$1 = dart.privateName(long_press, "LongPressEndDetails.globalPosition");
-  var localPosition$1 = dart.privateName(long_press, "LongPressEndDetails.localPosition");
-  var velocity$ = dart.privateName(long_press, "LongPressEndDetails.velocity");
-  var Velocity_pixelsPerSecond = dart.privateName(velocity_tracker, "Velocity.pixelsPerSecond");
-  long_press.LongPressEndDetails = class LongPressEndDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$1];
-    }
-    set globalPosition(value) {
-      super.globalPosition = value;
-    }
-    get localPosition() {
-      return this[localPosition$1];
-    }
-    set localPosition(value) {
-      super.localPosition = value;
-    }
-    get velocity() {
-      return this[velocity$];
-    }
-    set velocity(value) {
-      super.velocity = value;
-    }
-  };
-  (long_press.LongPressEndDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
-    if (globalPosition == null) dart.nullFailed(I[0], 119, 10, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let velocity = opts && 'velocity' in opts ? opts.velocity : C[1] || CT.C1;
-    if (velocity == null) dart.nullFailed(I[0], 121, 10, "velocity");
-    this[globalPosition$1] = globalPosition;
-    this[velocity$] = velocity;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 122, 15, "globalPosition != null");
-    this[localPosition$1] = (t0 = localPosition, t0 == null ? globalPosition : t0);
-    ;
-  }).prototype = long_press.LongPressEndDetails.prototype;
-  dart.addTypeTests(long_press.LongPressEndDetails);
-  dart.addTypeCaches(long_press.LongPressEndDetails);
-  dart.setLibraryUri(long_press.LongPressEndDetails, I[1]);
-  dart.setFieldSignature(long_press.LongPressEndDetails, () => ({
-    __proto__: dart.getFields(long_press.LongPressEndDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    velocity: dart.finalFieldType(velocity_tracker.Velocity)
-  }));
-  var onLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPress");
-  var onLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressStart");
-  var onLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressMoveUpdate");
-  var onLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressUp");
-  var onLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onLongPressEnd");
-  var onSecondaryLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPress");
-  var onSecondaryLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressStart");
-  var onSecondaryLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressMoveUpdate");
-  var onSecondaryLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressUp");
-  var onSecondaryLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onSecondaryLongPressEnd");
-  var onTertiaryLongPress = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPress");
-  var onTertiaryLongPressStart = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressStart");
-  var onTertiaryLongPressMoveUpdate = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressMoveUpdate");
-  var onTertiaryLongPressUp = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressUp");
-  var onTertiaryLongPressEnd = dart.privateName(long_press, "LongPressGestureRecognizer.onTertiaryLongPressEnd");
-  var _longPressAccepted = dart.privateName(long_press, "_longPressAccepted");
-  var _longPressOrigin = dart.privateName(long_press, "_longPressOrigin");
-  var _initialButtons = dart.privateName(long_press, "_initialButtons");
-  var _velocityTracker = dart.privateName(long_press, "_velocityTracker");
-  var _checkLongPressStart = dart.privateName(long_press, "_checkLongPressStart");
-  var _checkLongPressEnd = dart.privateName(long_press, "_checkLongPressEnd");
-  var _reset = dart.privateName(long_press, "_reset");
-  var _checkLongPressMoveUpdate = dart.privateName(long_press, "_checkLongPressMoveUpdate");
-  long_press.LongPressGestureRecognizer = class LongPressGestureRecognizer extends recognizer.PrimaryPointerGestureRecognizer {
-    get onLongPress() {
-      return this[onLongPress];
-    }
-    set onLongPress(value) {
-      this[onLongPress] = value;
-    }
-    get onLongPressStart() {
-      return this[onLongPressStart];
-    }
-    set onLongPressStart(value) {
-      this[onLongPressStart] = value;
-    }
-    get onLongPressMoveUpdate() {
-      return this[onLongPressMoveUpdate];
-    }
-    set onLongPressMoveUpdate(value) {
-      this[onLongPressMoveUpdate] = value;
-    }
-    get onLongPressUp() {
-      return this[onLongPressUp];
-    }
-    set onLongPressUp(value) {
-      this[onLongPressUp] = value;
-    }
-    get onLongPressEnd() {
-      return this[onLongPressEnd];
-    }
-    set onLongPressEnd(value) {
-      this[onLongPressEnd] = value;
-    }
-    get onSecondaryLongPress() {
-      return this[onSecondaryLongPress];
-    }
-    set onSecondaryLongPress(value) {
-      this[onSecondaryLongPress] = value;
-    }
-    get onSecondaryLongPressStart() {
-      return this[onSecondaryLongPressStart];
-    }
-    set onSecondaryLongPressStart(value) {
-      this[onSecondaryLongPressStart] = value;
-    }
-    get onSecondaryLongPressMoveUpdate() {
-      return this[onSecondaryLongPressMoveUpdate];
-    }
-    set onSecondaryLongPressMoveUpdate(value) {
-      this[onSecondaryLongPressMoveUpdate] = value;
-    }
-    get onSecondaryLongPressUp() {
-      return this[onSecondaryLongPressUp];
-    }
-    set onSecondaryLongPressUp(value) {
-      this[onSecondaryLongPressUp] = value;
-    }
-    get onSecondaryLongPressEnd() {
-      return this[onSecondaryLongPressEnd];
-    }
-    set onSecondaryLongPressEnd(value) {
-      this[onSecondaryLongPressEnd] = value;
-    }
-    get onTertiaryLongPress() {
-      return this[onTertiaryLongPress];
-    }
-    set onTertiaryLongPress(value) {
-      this[onTertiaryLongPress] = value;
-    }
-    get onTertiaryLongPressStart() {
-      return this[onTertiaryLongPressStart];
-    }
-    set onTertiaryLongPressStart(value) {
-      this[onTertiaryLongPressStart] = value;
-    }
-    get onTertiaryLongPressMoveUpdate() {
-      return this[onTertiaryLongPressMoveUpdate];
-    }
-    set onTertiaryLongPressMoveUpdate(value) {
-      this[onTertiaryLongPressMoveUpdate] = value;
-    }
-    get onTertiaryLongPressUp() {
-      return this[onTertiaryLongPressUp];
-    }
-    set onTertiaryLongPressUp(value) {
-      this[onTertiaryLongPressUp] = value;
-    }
-    get onTertiaryLongPressEnd() {
-      return this[onTertiaryLongPressEnd];
-    }
-    set onTertiaryLongPressEnd(value) {
-      this[onTertiaryLongPressEnd] = value;
-    }
-    isPointerAllowed(event) {
-      if (event == null) dart.nullFailed(I[0], 334, 42, "event");
-      switch (event.buttons) {
-        case 1:
-        {
-          if (this.onLongPressStart == null && this.onLongPress == null && this.onLongPressMoveUpdate == null && this.onLongPressEnd == null && this.onLongPressUp == null) return false;
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressStart == null && this.onSecondaryLongPress == null && this.onSecondaryLongPressMoveUpdate == null && this.onSecondaryLongPressEnd == null && this.onSecondaryLongPressUp == null) return false;
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressStart == null && this.onTertiaryLongPress == null && this.onTertiaryLongPressMoveUpdate == null && this.onTertiaryLongPressEnd == null && this.onTertiaryLongPressUp == null) return false;
-          break;
-        }
-        default:
-        {
-          return false;
-        }
-      }
-      return super.isPointerAllowed(event);
-    }
-    didExceedDeadline() {
-      this.resolve(arena.GestureDisposition.accepted);
-      this[_longPressAccepted] = true;
-      super.acceptGesture(dart.nullCheck(this.primaryPointer));
-      this[_checkLongPressStart]();
-    }
-    handlePrimaryPointer(event) {
-      if (event == null) dart.nullFailed(I[0], 376, 42, "event");
-      if (!dart.test(event.synthesized)) {
-        if (events.PointerDownEvent.is(event)) {
-          this[_velocityTracker] = new velocity_tracker.VelocityTracker.withKind(event.kind);
-          dart.nullCheck(this[_velocityTracker]).addPosition(event.timeStamp, event.localPosition);
-        }
-        if (events.PointerMoveEvent.is(event)) {
-          if (!(this[_velocityTracker] != null)) dart.assertFailed(null, I[0], 383, 16, "_velocityTracker != null");
-          dart.nullCheck(this[_velocityTracker]).addPosition(event.timeStamp, event.localPosition);
-        }
-      }
-      if (events.PointerUpEvent.is(event)) {
-        if (this[_longPressAccepted] === true) {
-          this[_checkLongPressEnd](event);
-        } else {
-          this.resolve(arena.GestureDisposition.rejected);
-        }
-        this[_reset]();
-      } else if (events.PointerCancelEvent.is(event)) {
-        this[_reset]();
-      } else if (events.PointerDownEvent.is(event)) {
-        this[_longPressOrigin] = recognizer.OffsetPair.fromEventPosition(event);
-        this[_initialButtons] = event.buttons;
-      } else if (events.PointerMoveEvent.is(event)) {
-        if (event.buttons != this[_initialButtons]) {
-          this.resolve(arena.GestureDisposition.rejected);
-          this.stopTrackingPointer(dart.nullCheck(this.primaryPointer));
-        } else if (dart.test(this[_longPressAccepted])) {
-          this[_checkLongPressMoveUpdate](event);
-        }
-      }
-    }
-    [_checkLongPressStart]() {
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onLongPressStart", dart.fn(() => dart.nullCheck(this.onLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onLongPress != null) {
-            this.invokeCallback(dart.void, "onLongPress", dart.nullCheck(this.onLongPress));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onSecondaryLongPressStart", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onSecondaryLongPress != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPress", dart.nullCheck(this.onSecondaryLongPress));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressStart != null) {
-            let details = new long_press.LongPressStartDetails.new({globalPosition: dart.nullCheck(this[_longPressOrigin]).global, localPosition: dart.nullCheck(this[_longPressOrigin]).local});
-            this.invokeCallback(dart.void, "onTertiaryLongPressStart", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressStart)(details), T.VoidTovoid()));
-          }
-          if (this.onTertiaryLongPress != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPress", dart.nullCheck(this.onTertiaryLongPress));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 453, 16, "false");
-        }
-      }
-    }
-    [_checkLongPressMoveUpdate](event) {
-      if (event == null) dart.nullFailed(I[0], 457, 47, "event");
-      let details = new long_press.LongPressMoveUpdateDetails.new({globalPosition: event.position, localPosition: event.localPosition, offsetFromOrigin: event.position['-'](dart.nullCheck(this[_longPressOrigin]).global), localOffsetFromOrigin: event.localPosition['-'](dart.nullCheck(this[_longPressOrigin]).local)});
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressMoveUpdate != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressMoveUpdate", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressMoveUpdate)(details), T.VoidTovoid()));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 484, 16, "false");
-        }
-      }
-    }
-    [_checkLongPressEnd](event) {
-      if (event == null) dart.nullFailed(I[0], 488, 40, "event");
-      let estimate = dart.nullCheck(this[_velocityTracker]).getVelocityEstimate();
-      let velocity = estimate == null ? velocity_tracker.Velocity.zero : new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond});
-      let details = new long_press.LongPressEndDetails.new({globalPosition: event.position, localPosition: event.localPosition, velocity: velocity});
-      this[_velocityTracker] = null;
-      switch (this[_initialButtons]) {
-        case 1:
-        {
-          if (this.onLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onLongPressEnd", dart.fn(() => dart.nullCheck(this.onLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onLongPressUp != null) {
-            this.invokeCallback(dart.void, "onLongPressUp", dart.nullCheck(this.onLongPressUp));
-          }
-          break;
-        }
-        case 2:
-        {
-          if (this.onSecondaryLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressEnd", dart.fn(() => dart.nullCheck(this.onSecondaryLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onSecondaryLongPressUp != null) {
-            this.invokeCallback(dart.void, "onSecondaryLongPressUp", dart.nullCheck(this.onSecondaryLongPressUp));
-          }
-          break;
-        }
-        case 4:
-        {
-          if (this.onTertiaryLongPressEnd != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressEnd", dart.fn(() => dart.nullCheck(this.onTertiaryLongPressEnd)(details), T.VoidTovoid()));
-          }
-          if (this.onTertiaryLongPressUp != null) {
-            this.invokeCallback(dart.void, "onTertiaryLongPressUp", dart.nullCheck(this.onTertiaryLongPressUp));
-          }
-          break;
-        }
-        default:
-        {
-          if (!false) dart.assertFailed("Unhandled button " + dart.str(this[_initialButtons]), I[0], 526, 16, "false");
-        }
-      }
-    }
-    [_reset]() {
-      this[_longPressAccepted] = false;
-      this[_longPressOrigin] = null;
-      this[_initialButtons] = null;
-      this[_velocityTracker] = null;
-    }
-    resolve(disposition) {
-      if (disposition == null) dart.nullFailed(I[0], 538, 35, "disposition");
-      if (dart.test(this[_longPressAccepted]) && disposition == arena.GestureDisposition.rejected) {
-        this[_reset]();
-      }
-      super.resolve(disposition);
-    }
-    acceptGesture(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 548, 26, "pointer");
-    }
-    get debugDescription() {
-      return "long press";
-    }
-  };
-  (long_press.LongPressGestureRecognizer.new = function(opts) {
-    let t0;
+  (velocity_tracker.VelocityEstimate.new = function(opts) {
+    let pixelsPerSecond = opts && 'pixelsPerSecond' in opts ? opts.pixelsPerSecond : null;
+    if (pixelsPerSecond == null) dart.nullFailed(I[0], 96, 19, "pixelsPerSecond");
+    let confidence = opts && 'confidence' in opts ? opts.confidence : null;
+    if (confidence == null) dart.nullFailed(I[0], 97, 19, "confidence");
     let duration = opts && 'duration' in opts ? opts.duration : null;
-    let postAcceptSlopTolerance = opts && 'postAcceptSlopTolerance' in opts ? opts.postAcceptSlopTolerance : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    this[_longPressAccepted] = false;
-    this[_longPressOrigin] = null;
-    this[_initialButtons] = null;
-    this[onLongPress] = null;
-    this[onLongPressStart] = null;
-    this[onLongPressMoveUpdate] = null;
-    this[onLongPressUp] = null;
-    this[onLongPressEnd] = null;
-    this[onSecondaryLongPress] = null;
-    this[onSecondaryLongPressStart] = null;
-    this[onSecondaryLongPressMoveUpdate] = null;
-    this[onSecondaryLongPressUp] = null;
-    this[onSecondaryLongPressEnd] = null;
-    this[onTertiaryLongPress] = null;
-    this[onTertiaryLongPressStart] = null;
-    this[onTertiaryLongPressMoveUpdate] = null;
-    this[onTertiaryLongPressUp] = null;
-    this[onTertiaryLongPressEnd] = null;
-    this[_velocityTracker] = null;
-    long_press.LongPressGestureRecognizer.__proto__.new.call(this, {deadline: (t0 = duration, t0 == null ? constants.kLongPressTimeout : t0), postAcceptSlopTolerance: postAcceptSlopTolerance, kind: kind, debugOwner: debugOwner});
+    if (duration == null) dart.nullFailed(I[0], 98, 19, "duration");
+    let offset = opts && 'offset' in opts ? opts.offset : null;
+    if (offset == null) dart.nullFailed(I[0], 99, 19, "offset");
+    this[pixelsPerSecond$0] = pixelsPerSecond;
+    this[confidence$] = confidence;
+    this[duration$] = duration;
+    this[offset$] = offset;
+    if (!(pixelsPerSecond != null)) dart.assertFailed(null, I[0], 100, 15, "pixelsPerSecond != null");
+    if (!(confidence != null)) dart.assertFailed(null, I[0], 101, 15, "confidence != null");
+    if (!(duration != null)) dart.assertFailed(null, I[0], 102, 15, "duration != null");
+    if (!(offset != null)) dart.assertFailed(null, I[0], 103, 15, "offset != null");
     ;
-  }).prototype = long_press.LongPressGestureRecognizer.prototype;
-  dart.addTypeTests(long_press.LongPressGestureRecognizer);
-  dart.addTypeCaches(long_press.LongPressGestureRecognizer);
-  dart.setMethodSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getMethods(long_press.LongPressGestureRecognizer.__proto__),
-    handlePrimaryPointer: dart.fnType(dart.void, [events.PointerEvent]),
-    [_checkLongPressStart]: dart.fnType(dart.void, []),
-    [_checkLongPressMoveUpdate]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_checkLongPressEnd]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_reset]: dart.fnType(dart.void, [])
+  }).prototype = velocity_tracker.VelocityEstimate.prototype;
+  dart.addTypeTests(velocity_tracker.VelocityEstimate);
+  dart.addTypeCaches(velocity_tracker.VelocityEstimate);
+  dart.setLibraryUri(velocity_tracker.VelocityEstimate, I[1]);
+  dart.setFieldSignature(velocity_tracker.VelocityEstimate, () => ({
+    __proto__: dart.getFields(velocity_tracker.VelocityEstimate.__proto__),
+    pixelsPerSecond: dart.finalFieldType(ui.Offset),
+    confidence: dart.finalFieldType(core.double),
+    duration: dart.finalFieldType(core.Duration),
+    offset: dart.finalFieldType(ui.Offset)
   }));
-  dart.setGetterSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getGetters(long_press.LongPressGestureRecognizer.__proto__),
-    debugDescription: core.String
+  dart.defineExtensionMethods(velocity_tracker.VelocityEstimate, ['toString']);
+  var time$ = dart.privateName(velocity_tracker, "_PointAtTime.time");
+  var point$ = dart.privateName(velocity_tracker, "_PointAtTime.point");
+  velocity_tracker._PointAtTime = class _PointAtTime extends core.Object {
+    get time() {
+      return this[time$];
+    }
+    set time(value) {
+      super.time = value;
+    }
+    get point() {
+      return this[point$];
+    }
+    set point(value) {
+      super.point = value;
+    }
+    toString() {
+      return "_PointAtTime(" + dart.str(this.point) + " at " + dart.str(this.time) + ")";
+    }
+  };
+  (velocity_tracker._PointAtTime.new = function(point, time) {
+    if (point == null) dart.nullFailed(I[0], 127, 27, "point");
+    if (time == null) dart.nullFailed(I[0], 127, 39, "time");
+    this[point$] = point;
+    this[time$] = time;
+    if (!(point != null)) dart.assertFailed(null, I[0], 128, 14, "point != null");
+    if (!(time != null)) dart.assertFailed(null, I[0], 129, 14, "time != null");
+    ;
+  }).prototype = velocity_tracker._PointAtTime.prototype;
+  dart.addTypeTests(velocity_tracker._PointAtTime);
+  dart.addTypeCaches(velocity_tracker._PointAtTime);
+  dart.setLibraryUri(velocity_tracker._PointAtTime, I[1]);
+  dart.setFieldSignature(velocity_tracker._PointAtTime, () => ({
+    __proto__: dart.getFields(velocity_tracker._PointAtTime.__proto__),
+    time: dart.finalFieldType(core.Duration),
+    point: dart.finalFieldType(ui.Offset)
   }));
-  dart.setLibraryUri(long_press.LongPressGestureRecognizer, I[1]);
-  dart.setFieldSignature(long_press.LongPressGestureRecognizer, () => ({
-    __proto__: dart.getFields(long_press.LongPressGestureRecognizer.__proto__),
-    [_longPressAccepted]: dart.fieldType(core.bool),
-    [_longPressOrigin]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
-    [_initialButtons]: dart.fieldType(dart.nullable(core.int)),
-    onLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    onSecondaryLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onSecondaryLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onSecondaryLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onSecondaryLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onSecondaryLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    onTertiaryLongPress: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onTertiaryLongPressStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressStartDetails]))),
-    onTertiaryLongPressMoveUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressMoveUpdateDetails]))),
-    onTertiaryLongPressUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
-    onTertiaryLongPressEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [long_press.LongPressEndDetails]))),
-    [_velocityTracker]: dart.fieldType(dart.nullable(velocity_tracker.VelocityTracker))
+  dart.defineExtensionMethods(velocity_tracker._PointAtTime, ['toString']);
+  var kind$ = dart.privateName(velocity_tracker, "VelocityTracker.kind");
+  var _name = dart.privateName(ui, "_name");
+  var _samples = dart.privateName(velocity_tracker, "_samples");
+  var _index = dart.privateName(velocity_tracker, "_index");
+  velocity_tracker.VelocityTracker = class VelocityTracker extends core.Object {
+    get kind() {
+      return this[kind$];
+    }
+    set kind(value) {
+      super.kind = value;
+    }
+    addPosition(time, position) {
+      if (time == null) dart.nullFailed(I[0], 172, 29, "time");
+      if (position == null) dart.nullFailed(I[0], 172, 42, "position");
+      this[_index] = dart.notNull(this[_index]) + 1;
+      if (this[_index] === 20) this[_index] = 0;
+      this[_samples][$_set](this[_index], new velocity_tracker._PointAtTime.new(position, time));
+    }
+    getVelocityEstimate() {
+      let x = T.JSArrayOfdouble().of([]);
+      let y = T.JSArrayOfdouble().of([]);
+      let w = T.JSArrayOfdouble().of([]);
+      let time = T.JSArrayOfdouble().of([]);
+      let sampleCount = 0;
+      let index = this[_index];
+      let newestSample = this[_samples][$_get](index);
+      if (newestSample == null) return null;
+      let previousSample = newestSample;
+      let oldestSample = newestSample;
+      do {
+        let sample = this[_samples][$_get](index);
+        if (sample == null) break;
+        let age = newestSample.time['-'](sample.time).inMicroseconds[$toDouble]() / 1000;
+        let delta = sample.time['-'](previousSample.time).inMicroseconds[$abs]()[$toDouble]() / 1000;
+        previousSample = sample;
+        if (age > 100 || delta > 40) break;
+        oldestSample = sample;
+        let position = sample.point;
+        x[$add](position.dx);
+        y[$add](position.dy);
+        w[$add](1.0);
+        time[$add](-age);
+        index = dart.notNull(index === 0 ? 20 : index) - 1;
+        sampleCount = sampleCount + 1;
+      } while (sampleCount < 20);
+      if (sampleCount >= 3) {
+        let xSolver = new lsq_solver.LeastSquaresSolver.new(time, x, w);
+        let xFit = xSolver.solve(2);
+        if (xFit != null) {
+          let ySolver = new lsq_solver.LeastSquaresSolver.new(time, y, w);
+          let yFit = ySolver.solve(2);
+          if (yFit != null) {
+            return new velocity_tracker.VelocityEstimate.new({pixelsPerSecond: new ui.Offset.new(dart.notNull(xFit.coefficients[$_get](1)) * 1000, dart.notNull(yFit.coefficients[$_get](1)) * 1000), confidence: dart.notNull(xFit.confidence) * dart.notNull(yFit.confidence), duration: newestSample.time['-'](oldestSample.time), offset: newestSample.point['-'](oldestSample.point)});
+          }
+        }
+      }
+      return new velocity_tracker.VelocityEstimate.new({pixelsPerSecond: ui.Offset.zero, confidence: 1.0, duration: newestSample.time['-'](oldestSample.time), offset: newestSample.point['-'](oldestSample.point)});
+    }
+    getVelocity() {
+      let estimate = this.getVelocityEstimate();
+      if (estimate == null || dart.equals(estimate.pixelsPerSecond, ui.Offset.zero)) return velocity_tracker.Velocity.zero;
+      return new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond});
+    }
+  };
+  (velocity_tracker.VelocityTracker.new = function(kind = C[2] || CT.C2) {
+    if (kind == null) dart.nullFailed(I[0], 154, 25, "kind");
+    this[_samples] = T.ListOf_PointAtTimeN().filled(20, null, {growable: false});
+    this[_index] = 0;
+    this[kind$] = kind;
+    ;
+  }).prototype = velocity_tracker.VelocityTracker.prototype;
+  (velocity_tracker.VelocityTracker.withKind = function(kind) {
+    if (kind == null) dart.nullFailed(I[0], 157, 33, "kind");
+    this[_samples] = T.ListOf_PointAtTimeN().filled(20, null, {growable: false});
+    this[_index] = 0;
+    this[kind$] = kind;
+    ;
+  }).prototype = velocity_tracker.VelocityTracker.prototype;
+  dart.addTypeTests(velocity_tracker.VelocityTracker);
+  dart.addTypeCaches(velocity_tracker.VelocityTracker);
+  dart.setMethodSignature(velocity_tracker.VelocityTracker, () => ({
+    __proto__: dart.getMethods(velocity_tracker.VelocityTracker.__proto__),
+    addPosition: dart.fnType(dart.void, [core.Duration, ui.Offset]),
+    getVelocityEstimate: dart.fnType(dart.nullable(velocity_tracker.VelocityEstimate), []),
+    getVelocity: dart.fnType(velocity_tracker.Velocity, [])
   }));
-  dart.trackLibraries("packages/flutter/src/gestures/long_press.dart", {
-    "package:flutter/src/gestures/long_press.dart": long_press
+  dart.setLibraryUri(velocity_tracker.VelocityTracker, I[1]);
+  dart.setFieldSignature(velocity_tracker.VelocityTracker, () => ({
+    __proto__: dart.getFields(velocity_tracker.VelocityTracker.__proto__),
+    kind: dart.finalFieldType(ui.PointerDeviceKind),
+    [_samples]: dart.finalFieldType(core.List$(dart.nullable(velocity_tracker._PointAtTime))),
+    [_index]: dart.fieldType(core.int)
+  }));
+  dart.defineLazy(velocity_tracker.VelocityTracker, {
+    /*velocity_tracker.VelocityTracker._assumePointerMoveStoppedMilliseconds*/get _assumePointerMoveStoppedMilliseconds() {
+      return 40;
+    },
+    /*velocity_tracker.VelocityTracker._historySize*/get _historySize() {
+      return 20;
+    },
+    /*velocity_tracker.VelocityTracker._horizonMilliseconds*/get _horizonMilliseconds() {
+      return 100;
+    },
+    /*velocity_tracker.VelocityTracker._minSampleSize*/get _minSampleSize() {
+      return 3;
+    }
+  }, false);
+  var _touchSamples = dart.privateName(velocity_tracker, "_touchSamples");
+  var _previousVelocityAt = dart.privateName(velocity_tracker, "_previousVelocityAt");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  velocity_tracker.IOSScrollViewFlingVelocityTracker = class IOSScrollViewFlingVelocityTracker extends velocity_tracker.VelocityTracker {
+    addPosition(time, position) {
+      if (time == null) dart.nullFailed(I[0], 300, 29, "time");
+      if (position == null) dart.nullFailed(I[0], 300, 42, "position");
+      if (!dart.test(dart.fn(() => {
+        let previousPoint = this[_touchSamples][$_get](this[_index]);
+        if (previousPoint == null || dart.test(previousPoint.time['<='](time))) return true;
+        dart.throw(assertions.FlutterError.new("The position being added (" + dart.str(position) + ") has a smaller timestamp (" + dart.str(time) + ")" + "than its predecessor: " + dart.str(previousPoint) + "."));
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 301, 12, "() {\r\n      final _PointAtTime? previousPoint = _touchSamples[_index];\r\n      if (previousPoint == null || previousPoint.time <= time)\r\n        return true;\r\n      throw FlutterError(\r\n        'The position being added ($position) has a smaller timestamp ($time)'\r\n        'than its predecessor: $previousPoint.'\r\n      );\r\n    }()");
+      this[_index] = (dart.notNull(this[_index]) + 1)[$modulo](20);
+      this[_touchSamples][$_set](this[_index], new velocity_tracker._PointAtTime.new(position, time));
+    }
+    [_previousVelocityAt](index) {
+      if (index == null) dart.nullFailed(I[0], 317, 34, "index");
+      let endIndex = (dart.notNull(this[_index]) + dart.notNull(index))[$modulo](20);
+      let startIndex = (dart.notNull(this[_index]) + dart.notNull(index) - 1)[$modulo](20);
+      let end = this[_touchSamples][$_get](endIndex);
+      let start = this[_touchSamples][$_get](startIndex);
+      if (end == null || start == null) {
+        return ui.Offset.zero;
+      }
+      let dt = end.time['-'](start.time).inMicroseconds;
+      if (!(dart.notNull(dt) >= 0)) dart.assertFailed(null, I[0], 328, 12, "dt >= 0");
+      return dart.notNull(dt) > 0 ? end.point['-'](start.point)['*'](1000.0)['/'](dt[$toDouble]() / 1000) : ui.Offset.zero;
+    }
+    getVelocityEstimate() {
+      let estimatedVelocity = this[_previousVelocityAt](-2)['*'](0.6)['+'](this[_previousVelocityAt](-1)['*'](0.35))['+'](this[_previousVelocityAt](0)['*'](0.05));
+      let newestSample = this[_touchSamples][$_get](this[_index]);
+      let oldestNonNullSample = null;
+      for (let i = 1; i <= 20; i = i + 1) {
+        oldestNonNullSample = this[_touchSamples][$_get]((dart.notNull(this[_index]) + i)[$modulo](20));
+        if (oldestNonNullSample != null) break;
+      }
+      if (oldestNonNullSample == null || newestSample == null) {
+        if (!false) dart.assertFailed("There must be at least 1 point in _touchSamples: " + dart.str(this[_touchSamples]), I[0], 358, 14, "false");
+        return C[3] || CT.C3;
+      } else {
+        return new velocity_tracker.VelocityEstimate.new({pixelsPerSecond: estimatedVelocity, confidence: 1.0, duration: newestSample.time['-'](oldestNonNullSample.time), offset: newestSample.point['-'](oldestNonNullSample.point)});
+      }
+    }
+  };
+  (velocity_tracker.IOSScrollViewFlingVelocityTracker.new = function(kind) {
+    if (kind == null) dart.nullFailed(I[0], 289, 55, "kind");
+    this[_touchSamples] = T.ListOf_PointAtTimeN().filled(20, null, {growable: false});
+    velocity_tracker.IOSScrollViewFlingVelocityTracker.__proto__.withKind.call(this, kind);
+    ;
+  }).prototype = velocity_tracker.IOSScrollViewFlingVelocityTracker.prototype;
+  dart.addTypeTests(velocity_tracker.IOSScrollViewFlingVelocityTracker);
+  dart.addTypeCaches(velocity_tracker.IOSScrollViewFlingVelocityTracker);
+  dart.setMethodSignature(velocity_tracker.IOSScrollViewFlingVelocityTracker, () => ({
+    __proto__: dart.getMethods(velocity_tracker.IOSScrollViewFlingVelocityTracker.__proto__),
+    [_previousVelocityAt]: dart.fnType(ui.Offset, [core.int]),
+    getVelocityEstimate: dart.fnType(velocity_tracker.VelocityEstimate, [])
+  }));
+  dart.setLibraryUri(velocity_tracker.IOSScrollViewFlingVelocityTracker, I[1]);
+  dart.setFieldSignature(velocity_tracker.IOSScrollViewFlingVelocityTracker, () => ({
+    __proto__: dart.getFields(velocity_tracker.IOSScrollViewFlingVelocityTracker.__proto__),
+    [_touchSamples]: dart.finalFieldType(core.List$(dart.nullable(velocity_tracker._PointAtTime)))
+  }));
+  dart.defineLazy(velocity_tracker.IOSScrollViewFlingVelocityTracker, {
+    /*velocity_tracker.IOSScrollViewFlingVelocityTracker._sampleSize*/get _sampleSize() {
+      return 20;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/gestures/velocity_tracker.dart", {
+    "package:flutter/src/gestures/velocity_tracker.dart": velocity_tracker
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["long_press.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/long_press.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["velocity_tracker.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/velocity_tracker.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__long_press: long_press
+    src__gestures__velocity_tracker: velocity_tracker
   };
 }));
 
-//# sourceMappingURL=long_press.dart.lib.js.map
+//# sourceMappingURL=velocity_tracker.dart.lib.js.map

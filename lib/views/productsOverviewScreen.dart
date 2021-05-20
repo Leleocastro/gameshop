@@ -106,12 +106,6 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                   Navigator.of(context).pushNamed(AppRoutes.CART);
                 },
               ),
-              // child: IconButton(
-              //   icon: Icon(Icons.shopping_cart),
-              //   onPressed: () {
-              //     Navigator.of(context).pushNamed(AppRoutes.CART);
-              //   },
-              // ),
               builder: (_, cart, child) => Badge(
                 value: cart.itemsCount.toString(),
                 child: child,

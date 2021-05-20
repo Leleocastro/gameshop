@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gameshop_supera/exceptions/errException.dart';
 import 'package:gameshop_supera/providers/product.dart';
+import 'package:gameshop_supera/providers/products.dart';
+import 'package:gameshop_supera/utils/appRoutes.dart';
+import 'package:provider/provider.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -22,7 +25,12 @@ class ProductItem extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.edit),
               color: Theme.of(context).primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.PRODUCTFORM,
+                  arguments: product,
+                );
+              },
             ),
             IconButton(
               icon: Icon(Icons.delete),
@@ -65,8 +73,8 @@ class ProductItem extends StatelessWidget {
                 ).then((value) async {
                   if (value) {
                     try {
-                      // await Provider.of<Products>(context, listen: false)
-                      //     .deleteProduct(product.id);
+                      await Provider.of<Products>(context, listen: false)
+                          .deleteProduct(product.id);
                     } on ErrException catch (error) {
                       print(error.toString());
                       scaffold.showSnackBar(

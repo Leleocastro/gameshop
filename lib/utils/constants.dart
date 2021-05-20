@@ -1,6 +1,6 @@
 class Constants {
-  static const BASE_API_URL = 'shop-aula-default-rtdb.firebaseio.com';
-  static const BASE_API_PRODUCTS = '/products';
+  static const BASE_API_URL = 'catalogo-jogos.azurewebsites.net';
+  static const BASE_API_JOGOS = '/api/V1/Jogos';
   static const BASE_API_ORDERS = '/orders';
   static const BASE_API_USERFAVORITE = '/userFavorites';
   static const BASE_API_AUTH = 'identitytoolkit.googleapis.com';

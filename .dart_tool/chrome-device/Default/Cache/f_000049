@@ -1,26 +1,42 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/sliver_multi_box_adaptor.dart'], (function load__packages__flutter__src__rendering__sliver_grid_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__sliver_multi_box_adaptor$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/foundation/collections.dart'], (function load__packages__flutter__src__painting__borders_dart(dart_sdk, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__foundation__collections$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
   const math = dart_sdk.math;
+  const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const sliver_multi_box_adaptor = packages__flutter__src__rendering__sliver_multi_box_adaptor$46dart.src__rendering__sliver_multi_box_adaptor;
-  var sliver_grid = Object.create(dart.library);
-  var $join = dartx.join;
-  var $truncate = dartx.truncate;
-  var $ceil = dartx.ceil;
-  var $modulo = dartx['%'];
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const collections = packages__flutter__src__foundation__collections$46dart.src__foundation__collections;
+  var borders$ = Object.create(dart.library);
   var $runtimeType = dartx.runtimeType;
-  var $isFinite = dartx.isFinite;
-  var $clamp = dartx.clamp;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $length = dartx.length;
+  var $any = dartx.any;
+  var $fold = dartx.fold;
+  var $last = dartx.last;
+  var $first = dartx.first;
+  var $_set = dartx._set;
+  var $addAll = dartx.addAll;
+  var $add = dartx.add;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $_get = dartx._get;
+  var $reversed = dartx.reversed;
+  var $join = dartx.join;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))()
+    BorderStyleL: () => (T.BorderStyleL = dart.constFn(dart.legacy(borders$.BorderStyle)))(),
+    JSArrayOfShapeBorder: () => (T.JSArrayOfShapeBorder = dart.constFn(_interceptors.JSArray$(borders$.ShapeBorder)))(),
+    ShapeBorderTobool: () => (T.ShapeBorderTobool = dart.constFn(dart.fnType(core.bool, [borders$.ShapeBorder])))(),
+    EdgeInsetsGeometryAndShapeBorderToEdgeInsetsGeometry: () => (T.EdgeInsetsGeometryAndShapeBorderToEdgeInsetsGeometry = dart.constFn(dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry, borders$.ShapeBorder])))(),
+    ListOfShapeBorder: () => (T.ListOfShapeBorder = dart.constFn(core.List$(borders$.ShapeBorder)))(),
+    ShapeBorderToShapeBorder: () => (T.ShapeBorderToShapeBorder = dart.constFn(dart.fnType(borders$.ShapeBorder, [borders$.ShapeBorder])))(),
+    ShapeBorderN: () => (T.ShapeBorderN = dart.constFn(dart.nullable(borders$.ShapeBorder)))(),
+    JSArrayOfShapeBorderN: () => (T.JSArrayOfShapeBorderN = dart.constFn(_interceptors.JSArray$(T.ShapeBorderN())))(),
+    ShapeBorderToString: () => (T.ShapeBorderToString = dart.constFn(dart.fnType(core.String, [borders$.ShapeBorder])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -34,587 +50,621 @@ define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutt
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: borders$.BorderStyle.prototype,
+        [_name$]: "BorderStyle.none",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: borders$.BorderStyle.prototype,
+        [_name$]: "BorderStyle.solid",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], T.BorderStyleL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: borders$.BorderSide.prototype,
+        [style$]: C[0] || CT.C0,
+        [width$]: 0,
+        [color$]: C[3] || CT.C3
+      });
+    }
+  }, false);
+  var C = Array(6).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/rendering/sliver_grid.dart",
-    "package:flutter/src/rendering/sliver_grid.dart"
+    "file:///C:/src/flutter/packages/flutter/lib/src/painting/borders.dart",
+    "package:flutter/src/painting/borders.dart"
   ];
-  var scrollOffset$ = dart.privateName(sliver_grid, "SliverGridGeometry.scrollOffset");
-  var crossAxisOffset$ = dart.privateName(sliver_grid, "SliverGridGeometry.crossAxisOffset");
-  var mainAxisExtent$ = dart.privateName(sliver_grid, "SliverGridGeometry.mainAxisExtent");
-  var crossAxisExtent$ = dart.privateName(sliver_grid, "SliverGridGeometry.crossAxisExtent");
-  sliver_grid.SliverGridGeometry = class SliverGridGeometry extends core.Object {
-    get scrollOffset() {
-      return this[scrollOffset$];
-    }
-    set scrollOffset(value) {
-      super.scrollOffset = value;
-    }
-    get crossAxisOffset() {
-      return this[crossAxisOffset$];
-    }
-    set crossAxisOffset(value) {
-      super.crossAxisOffset = value;
-    }
-    get mainAxisExtent() {
-      return this[mainAxisExtent$];
-    }
-    set mainAxisExtent(value) {
-      super.mainAxisExtent = value;
-    }
-    get crossAxisExtent() {
-      return this[crossAxisExtent$];
-    }
-    set crossAxisExtent(value) {
-      super.crossAxisExtent = value;
-    }
-    get trailingScrollOffset() {
-      return dart.notNull(this.scrollOffset) + dart.notNull(this.mainAxisExtent);
-    }
-    getBoxConstraints(constraints) {
-      if (constraints == null) dart.nullFailed(I[0], 64, 54, "constraints");
-      return constraints.asBoxConstraints({minExtent: this.mainAxisExtent, maxExtent: this.mainAxisExtent, crossAxisExtent: this.crossAxisExtent});
-    }
+  var _name$ = dart.privateName(borders$, "_name");
+  borders$.BorderStyle = class BorderStyle extends core.Object {
     toString() {
-      let properties = T.JSArrayOfString().of(["scrollOffset: " + dart.str(this.scrollOffset), "crossAxisOffset: " + dart.str(this.crossAxisOffset), "mainAxisExtent: " + dart.str(this.mainAxisExtent), "crossAxisExtent: " + dart.str(this.crossAxisExtent)]);
-      return "SliverGridGeometry(" + dart.str(properties[$join](", ")) + ")";
+      return this[_name$];
     }
   };
-  (sliver_grid.SliverGridGeometry.new = function(opts) {
-    let scrollOffset = opts && 'scrollOffset' in opts ? opts.scrollOffset : null;
-    if (scrollOffset == null) dart.nullFailed(I[0], 28, 19, "scrollOffset");
-    let crossAxisOffset = opts && 'crossAxisOffset' in opts ? opts.crossAxisOffset : null;
-    if (crossAxisOffset == null) dart.nullFailed(I[0], 29, 19, "crossAxisOffset");
-    let mainAxisExtent = opts && 'mainAxisExtent' in opts ? opts.mainAxisExtent : null;
-    if (mainAxisExtent == null) dart.nullFailed(I[0], 30, 19, "mainAxisExtent");
-    let crossAxisExtent = opts && 'crossAxisExtent' in opts ? opts.crossAxisExtent : null;
-    if (crossAxisExtent == null) dart.nullFailed(I[0], 31, 19, "crossAxisExtent");
-    this[scrollOffset$] = scrollOffset;
-    this[crossAxisOffset$] = crossAxisOffset;
-    this[mainAxisExtent$] = mainAxisExtent;
-    this[crossAxisExtent$] = crossAxisExtent;
+  (borders$.BorderStyle.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 14, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 14, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
     ;
-  }).prototype = sliver_grid.SliverGridGeometry.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridGeometry);
-  dart.addTypeCaches(sliver_grid.SliverGridGeometry);
-  dart.setMethodSignature(sliver_grid.SliverGridGeometry, () => ({
-    __proto__: dart.getMethods(sliver_grid.SliverGridGeometry.__proto__),
-    getBoxConstraints: dart.fnType(box.BoxConstraints, [sliver.SliverConstraints])
+  }).prototype = borders$.BorderStyle.prototype;
+  dart.addTypeTests(borders$.BorderStyle);
+  dart.addTypeCaches(borders$.BorderStyle);
+  dart.setLibraryUri(borders$.BorderStyle, I[1]);
+  dart.setFieldSignature(borders$.BorderStyle, () => ({
+    __proto__: dart.getFields(borders$.BorderStyle.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setGetterSignature(sliver_grid.SliverGridGeometry, () => ({
-    __proto__: dart.getGetters(sliver_grid.SliverGridGeometry.__proto__),
-    trailingScrollOffset: core.double
-  }));
-  dart.setLibraryUri(sliver_grid.SliverGridGeometry, I[1]);
-  dart.setFieldSignature(sliver_grid.SliverGridGeometry, () => ({
-    __proto__: dart.getFields(sliver_grid.SliverGridGeometry.__proto__),
-    scrollOffset: dart.finalFieldType(core.double),
-    crossAxisOffset: dart.finalFieldType(core.double),
-    mainAxisExtent: dart.finalFieldType(core.double),
-    crossAxisExtent: dart.finalFieldType(core.double)
-  }));
-  dart.defineExtensionMethods(sliver_grid.SliverGridGeometry, ['toString']);
-  sliver_grid.SliverGridLayout = class SliverGridLayout extends core.Object {};
-  (sliver_grid.SliverGridLayout.new = function() {
-    ;
-  }).prototype = sliver_grid.SliverGridLayout.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridLayout);
-  dart.addTypeCaches(sliver_grid.SliverGridLayout);
-  dart.setLibraryUri(sliver_grid.SliverGridLayout, I[1]);
-  var crossAxisCount$ = dart.privateName(sliver_grid, "SliverGridRegularTileLayout.crossAxisCount");
-  var mainAxisStride$ = dart.privateName(sliver_grid, "SliverGridRegularTileLayout.mainAxisStride");
-  var crossAxisStride$ = dart.privateName(sliver_grid, "SliverGridRegularTileLayout.crossAxisStride");
-  var childMainAxisExtent$ = dart.privateName(sliver_grid, "SliverGridRegularTileLayout.childMainAxisExtent");
-  var childCrossAxisExtent$ = dart.privateName(sliver_grid, "SliverGridRegularTileLayout.childCrossAxisExtent");
-  var reverseCrossAxis$ = dart.privateName(sliver_grid, "SliverGridRegularTileLayout.reverseCrossAxis");
-  var _getOffsetFromStartInCrossAxis = dart.privateName(sliver_grid, "_getOffsetFromStartInCrossAxis");
-  sliver_grid.SliverGridRegularTileLayout = class SliverGridRegularTileLayout extends sliver_grid.SliverGridLayout {
-    get crossAxisCount() {
-      return this[crossAxisCount$];
+  dart.defineExtensionMethods(borders$.BorderStyle, ['toString']);
+  borders$.BorderStyle.none = C[0] || CT.C0;
+  borders$.BorderStyle.solid = C[1] || CT.C1;
+  borders$.BorderStyle.values = C[2] || CT.C2;
+  var color$ = dart.privateName(borders$, "BorderSide.color");
+  var width$ = dart.privateName(borders$, "BorderSide.width");
+  var style$ = dart.privateName(borders$, "BorderSide.style");
+  var Color_value = dart.privateName(ui, "Color.value");
+  borders$.BorderSide = class BorderSide extends core.Object {
+    get color() {
+      return this[color$];
     }
-    set crossAxisCount(value) {
-      super.crossAxisCount = value;
+    set color(value) {
+      super.color = value;
     }
-    get mainAxisStride() {
-      return this[mainAxisStride$];
+    get width() {
+      return this[width$];
     }
-    set mainAxisStride(value) {
-      super.mainAxisStride = value;
+    set width(value) {
+      super.width = value;
     }
-    get crossAxisStride() {
-      return this[crossAxisStride$];
+    get style() {
+      return this[style$];
     }
-    set crossAxisStride(value) {
-      super.crossAxisStride = value;
+    set style(value) {
+      super.style = value;
     }
-    get childMainAxisExtent() {
-      return this[childMainAxisExtent$];
+    static merge(a, b) {
+      if (a == null) dart.nullFailed(I[0], 85, 38, "a");
+      if (b == null) dart.nullFailed(I[0], 85, 52, "b");
+      if (!(a != null)) dart.assertFailed(null, I[0], 86, 12, "a != null");
+      if (!(b != null)) dart.assertFailed(null, I[0], 87, 12, "b != null");
+      if (!dart.test(borders$.BorderSide.canMerge(a, b))) dart.assertFailed(null, I[0], 88, 12, "canMerge(a, b)");
+      let aIsNone = a.style == borders$.BorderStyle.none && a.width === 0.0;
+      let bIsNone = b.style == borders$.BorderStyle.none && b.width === 0.0;
+      if (aIsNone && bIsNone) return borders$.BorderSide.none;
+      if (aIsNone) return b;
+      if (bIsNone) return a;
+      if (!dart.equals(a.color, b.color)) dart.assertFailed(null, I[0], 97, 12, "a.color == b.color");
+      if (!(a.style == b.style)) dart.assertFailed(null, I[0], 98, 12, "a.style == b.style");
+      return new borders$.BorderSide.new({color: a.color, width: dart.notNull(a.width) + dart.notNull(b.width), style: a.style});
     }
-    set childMainAxisExtent(value) {
-      super.childMainAxisExtent = value;
+    copyWith(opts) {
+      let t0, t0$, t0$0;
+      let color = opts && 'color' in opts ? opts.color : null;
+      let width = opts && 'width' in opts ? opts.width : null;
+      let style = opts && 'style' in opts ? opts.style : null;
+      if (!(width == null || dart.notNull(width) >= 0.0)) dart.assertFailed(null, I[0], 135, 12, "width == null || width >= 0.0");
+      return new borders$.BorderSide.new({color: (t0 = color, t0 == null ? this.color : t0), width: (t0$ = width, t0$ == null ? this.width : t0$), style: (t0$0 = style, t0$0 == null ? this.style : t0$0)});
     }
-    get childCrossAxisExtent() {
-      return this[childCrossAxisExtent$];
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 159, 27, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 160, 12, "t != null");
+      return new borders$.BorderSide.new({color: this.color, width: math.max(core.double, 0.0, dart.notNull(this.width) * dart.notNull(t)), style: dart.notNull(t) <= 0.0 ? borders$.BorderStyle.none : this.style});
     }
-    set childCrossAxisExtent(value) {
-      super.childCrossAxisExtent = value;
-    }
-    get reverseCrossAxis() {
-      return this[reverseCrossAxis$];
-    }
-    set reverseCrossAxis(value) {
-      super.reverseCrossAxis = value;
-    }
-    getMinChildIndexForScrollOffset(scrollOffset) {
-      if (scrollOffset == null) dart.nullFailed(I[0], 196, 46, "scrollOffset");
-      return dart.notNull(this.mainAxisStride) > 0.0 ? dart.notNull(this.crossAxisCount) * (dart.notNull(scrollOffset) / dart.notNull(this.mainAxisStride))[$truncate]() : 0;
-    }
-    getMaxChildIndexForScrollOffset(scrollOffset) {
-      if (scrollOffset == null) dart.nullFailed(I[0], 201, 46, "scrollOffset");
-      if (dart.notNull(this.mainAxisStride) > 0.0) {
-        let mainAxisCount = (dart.notNull(scrollOffset) / dart.notNull(this.mainAxisStride))[$ceil]();
-        return math.max(core.int, 0, dart.notNull(this.crossAxisCount) * mainAxisCount - 1);
-      }
-      return 0;
-    }
-    [_getOffsetFromStartInCrossAxis](crossAxisStart) {
-      if (crossAxisStart == null) dart.nullFailed(I[0], 209, 48, "crossAxisStart");
-      if (dart.test(this.reverseCrossAxis)) return dart.notNull(this.crossAxisCount) * dart.notNull(this.crossAxisStride) - dart.notNull(crossAxisStart) - dart.notNull(this.childCrossAxisExtent) - (dart.notNull(this.crossAxisStride) - dart.notNull(this.childCrossAxisExtent));
-      return crossAxisStart;
-    }
-    getGeometryForChildIndex(index) {
-      if (index == null) dart.nullFailed(I[0], 216, 51, "index");
-      let crossAxisStart = index[$modulo](this.crossAxisCount) * dart.notNull(this.crossAxisStride);
-      return new sliver_grid.SliverGridGeometry.new({scrollOffset: (dart.notNull(index) / dart.notNull(this.crossAxisCount))[$truncate]() * dart.notNull(this.mainAxisStride), crossAxisOffset: this[_getOffsetFromStartInCrossAxis](crossAxisStart), mainAxisExtent: this.childMainAxisExtent, crossAxisExtent: this.childCrossAxisExtent});
-    }
-    computeMaxScrollOffset(childCount) {
-      if (childCount == null) dart.nullFailed(I[0], 227, 37, "childCount");
-      if (!(childCount != null)) dart.assertFailed(null, I[0], 228, 12, "childCount != null");
-      let mainAxisCount = ((dart.notNull(childCount) - 1) / dart.notNull(this.crossAxisCount))[$truncate]() + 1;
-      let mainAxisSpacing = dart.notNull(this.mainAxisStride) - dart.notNull(this.childMainAxisExtent);
-      return dart.notNull(this.mainAxisStride) * mainAxisCount - mainAxisSpacing;
-    }
-  };
-  (sliver_grid.SliverGridRegularTileLayout.new = function(opts) {
-    let crossAxisCount = opts && 'crossAxisCount' in opts ? opts.crossAxisCount : null;
-    if (crossAxisCount == null) dart.nullFailed(I[0], 152, 19, "crossAxisCount");
-    let mainAxisStride = opts && 'mainAxisStride' in opts ? opts.mainAxisStride : null;
-    if (mainAxisStride == null) dart.nullFailed(I[0], 153, 19, "mainAxisStride");
-    let crossAxisStride = opts && 'crossAxisStride' in opts ? opts.crossAxisStride : null;
-    if (crossAxisStride == null) dart.nullFailed(I[0], 154, 19, "crossAxisStride");
-    let childMainAxisExtent = opts && 'childMainAxisExtent' in opts ? opts.childMainAxisExtent : null;
-    if (childMainAxisExtent == null) dart.nullFailed(I[0], 155, 19, "childMainAxisExtent");
-    let childCrossAxisExtent = opts && 'childCrossAxisExtent' in opts ? opts.childCrossAxisExtent : null;
-    if (childCrossAxisExtent == null) dart.nullFailed(I[0], 156, 19, "childCrossAxisExtent");
-    let reverseCrossAxis = opts && 'reverseCrossAxis' in opts ? opts.reverseCrossAxis : null;
-    if (reverseCrossAxis == null) dart.nullFailed(I[0], 157, 19, "reverseCrossAxis");
-    this[crossAxisCount$] = crossAxisCount;
-    this[mainAxisStride$] = mainAxisStride;
-    this[crossAxisStride$] = crossAxisStride;
-    this[childMainAxisExtent$] = childMainAxisExtent;
-    this[childCrossAxisExtent$] = childCrossAxisExtent;
-    this[reverseCrossAxis$] = reverseCrossAxis;
-    if (!(crossAxisCount != null && dart.notNull(crossAxisCount) > 0)) dart.assertFailed(null, I[0], 158, 15, "crossAxisCount != null && crossAxisCount > 0");
-    if (!(mainAxisStride != null && dart.notNull(mainAxisStride) >= 0)) dart.assertFailed(null, I[0], 159, 15, "mainAxisStride != null && mainAxisStride >= 0");
-    if (!(crossAxisStride != null && dart.notNull(crossAxisStride) >= 0)) dart.assertFailed(null, I[0], 160, 15, "crossAxisStride != null && crossAxisStride >= 0");
-    if (!(childMainAxisExtent != null && dart.notNull(childMainAxisExtent) >= 0)) dart.assertFailed(null, I[0], 161, 15, "childMainAxisExtent != null && childMainAxisExtent >= 0");
-    if (!(childCrossAxisExtent != null && dart.notNull(childCrossAxisExtent) >= 0)) dart.assertFailed(null, I[0], 162, 15, "childCrossAxisExtent != null && childCrossAxisExtent >= 0");
-    if (!(reverseCrossAxis != null)) dart.assertFailed(null, I[0], 163, 15, "reverseCrossAxis != null");
-    sliver_grid.SliverGridRegularTileLayout.__proto__.new.call(this);
-    ;
-  }).prototype = sliver_grid.SliverGridRegularTileLayout.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridRegularTileLayout);
-  dart.addTypeCaches(sliver_grid.SliverGridRegularTileLayout);
-  dart.setMethodSignature(sliver_grid.SliverGridRegularTileLayout, () => ({
-    __proto__: dart.getMethods(sliver_grid.SliverGridRegularTileLayout.__proto__),
-    getMinChildIndexForScrollOffset: dart.fnType(core.int, [core.double]),
-    getMaxChildIndexForScrollOffset: dart.fnType(core.int, [core.double]),
-    [_getOffsetFromStartInCrossAxis]: dart.fnType(core.double, [core.double]),
-    getGeometryForChildIndex: dart.fnType(sliver_grid.SliverGridGeometry, [core.int]),
-    computeMaxScrollOffset: dart.fnType(core.double, [core.int])
-  }));
-  dart.setLibraryUri(sliver_grid.SliverGridRegularTileLayout, I[1]);
-  dart.setFieldSignature(sliver_grid.SliverGridRegularTileLayout, () => ({
-    __proto__: dart.getFields(sliver_grid.SliverGridRegularTileLayout.__proto__),
-    crossAxisCount: dart.finalFieldType(core.int),
-    mainAxisStride: dart.finalFieldType(core.double),
-    crossAxisStride: dart.finalFieldType(core.double),
-    childMainAxisExtent: dart.finalFieldType(core.double),
-    childCrossAxisExtent: dart.finalFieldType(core.double),
-    reverseCrossAxis: dart.finalFieldType(core.bool)
-  }));
-  sliver_grid.SliverGridDelegate = class SliverGridDelegate extends core.Object {};
-  (sliver_grid.SliverGridDelegate.new = function() {
-    ;
-  }).prototype = sliver_grid.SliverGridDelegate.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridDelegate);
-  dart.addTypeCaches(sliver_grid.SliverGridDelegate);
-  dart.setLibraryUri(sliver_grid.SliverGridDelegate, I[1]);
-  var crossAxisCount$0 = dart.privateName(sliver_grid, "SliverGridDelegateWithFixedCrossAxisCount.crossAxisCount");
-  var mainAxisSpacing$ = dart.privateName(sliver_grid, "SliverGridDelegateWithFixedCrossAxisCount.mainAxisSpacing");
-  var crossAxisSpacing$ = dart.privateName(sliver_grid, "SliverGridDelegateWithFixedCrossAxisCount.crossAxisSpacing");
-  var childAspectRatio$ = dart.privateName(sliver_grid, "SliverGridDelegateWithFixedCrossAxisCount.childAspectRatio");
-  var mainAxisExtent$0 = dart.privateName(sliver_grid, "SliverGridDelegateWithFixedCrossAxisCount.mainAxisExtent");
-  var _debugAssertIsValid = dart.privateName(sliver_grid, "_debugAssertIsValid");
-  sliver_grid.SliverGridDelegateWithFixedCrossAxisCount = class SliverGridDelegateWithFixedCrossAxisCount extends sliver_grid.SliverGridDelegate {
-    get crossAxisCount() {
-      return this[crossAxisCount$0];
-    }
-    set crossAxisCount(value) {
-      super.crossAxisCount = value;
-    }
-    get mainAxisSpacing() {
-      return this[mainAxisSpacing$];
-    }
-    set mainAxisSpacing(value) {
-      super.mainAxisSpacing = value;
-    }
-    get crossAxisSpacing() {
-      return this[crossAxisSpacing$];
-    }
-    set crossAxisSpacing(value) {
-      super.crossAxisSpacing = value;
-    }
-    get childAspectRatio() {
-      return this[childAspectRatio$];
-    }
-    set childAspectRatio(value) {
-      super.childAspectRatio = value;
-    }
-    get mainAxisExtent() {
-      return this[mainAxisExtent$0];
-    }
-    set mainAxisExtent(value) {
-      super.mainAxisExtent = value;
-    }
-    [_debugAssertIsValid]() {
-      if (!(dart.notNull(this.crossAxisCount) > 0)) dart.assertFailed(null, I[0], 377, 12, "crossAxisCount > 0");
-      if (!(dart.notNull(this.mainAxisSpacing) >= 0.0)) dart.assertFailed(null, I[0], 378, 12, "mainAxisSpacing >= 0.0");
-      if (!(dart.notNull(this.crossAxisSpacing) >= 0.0)) dart.assertFailed(null, I[0], 379, 12, "crossAxisSpacing >= 0.0");
-      if (!(dart.notNull(this.childAspectRatio) > 0.0)) dart.assertFailed(null, I[0], 380, 12, "childAspectRatio > 0.0");
-      return true;
-    }
-    getLayout(constraints) {
-      let t0;
-      if (constraints == null) dart.nullFailed(I[0], 385, 48, "constraints");
-      if (!dart.test(this[_debugAssertIsValid]())) dart.assertFailed(null, I[0], 386, 12, "_debugAssertIsValid()");
-      let usableCrossAxisExtent = math.max(core.double, 0.0, dart.notNull(constraints.crossAxisExtent) - dart.notNull(this.crossAxisSpacing) * (dart.notNull(this.crossAxisCount) - 1));
-      let childCrossAxisExtent = usableCrossAxisExtent / dart.notNull(this.crossAxisCount);
-      let childMainAxisExtent = (t0 = this.mainAxisExtent, t0 == null ? childCrossAxisExtent / dart.notNull(this.childAspectRatio) : t0);
-      return new sliver_grid.SliverGridRegularTileLayout.new({crossAxisCount: this.crossAxisCount, mainAxisStride: dart.notNull(childMainAxisExtent) + dart.notNull(this.mainAxisSpacing), crossAxisStride: childCrossAxisExtent + dart.notNull(this.crossAxisSpacing), childMainAxisExtent: childMainAxisExtent, childCrossAxisExtent: childCrossAxisExtent, reverseCrossAxis: basic_types.axisDirectionIsReversed(constraints.crossAxisDirection)});
-    }
-    shouldRelayout(oldDelegate) {
-      sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.as(oldDelegate);
-      if (oldDelegate == null) dart.nullFailed(I[0], 402, 65, "oldDelegate");
-      return oldDelegate.crossAxisCount != this.crossAxisCount || oldDelegate.mainAxisSpacing != this.mainAxisSpacing || oldDelegate.crossAxisSpacing != this.crossAxisSpacing || oldDelegate.childAspectRatio != this.childAspectRatio || oldDelegate.mainAxisExtent != this.mainAxisExtent;
-    }
-  };
-  (sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.new = function(opts) {
-    let crossAxisCount = opts && 'crossAxisCount' in opts ? opts.crossAxisCount : null;
-    if (crossAxisCount == null) dart.nullFailed(I[0], 348, 19, "crossAxisCount");
-    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
-    if (mainAxisSpacing == null) dart.nullFailed(I[0], 349, 10, "mainAxisSpacing");
-    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
-    if (crossAxisSpacing == null) dart.nullFailed(I[0], 350, 10, "crossAxisSpacing");
-    let childAspectRatio = opts && 'childAspectRatio' in opts ? opts.childAspectRatio : 1;
-    if (childAspectRatio == null) dart.nullFailed(I[0], 351, 10, "childAspectRatio");
-    let mainAxisExtent = opts && 'mainAxisExtent' in opts ? opts.mainAxisExtent : null;
-    this[crossAxisCount$0] = crossAxisCount;
-    this[mainAxisSpacing$] = mainAxisSpacing;
-    this[crossAxisSpacing$] = crossAxisSpacing;
-    this[childAspectRatio$] = childAspectRatio;
-    this[mainAxisExtent$0] = mainAxisExtent;
-    if (!(crossAxisCount != null && dart.notNull(crossAxisCount) > 0)) dart.assertFailed(null, I[0], 353, 15, "crossAxisCount != null && crossAxisCount > 0");
-    if (!(mainAxisSpacing != null && dart.notNull(mainAxisSpacing) >= 0)) dart.assertFailed(null, I[0], 354, 15, "mainAxisSpacing != null && mainAxisSpacing >= 0");
-    if (!(crossAxisSpacing != null && dart.notNull(crossAxisSpacing) >= 0)) dart.assertFailed(null, I[0], 355, 15, "crossAxisSpacing != null && crossAxisSpacing >= 0");
-    if (!(childAspectRatio != null && dart.notNull(childAspectRatio) > 0)) dart.assertFailed(null, I[0], 356, 15, "childAspectRatio != null && childAspectRatio > 0");
-    sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.__proto__.new.call(this);
-    ;
-  }).prototype = sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount);
-  dart.addTypeCaches(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount);
-  dart.setMethodSignature(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount, () => ({
-    __proto__: dart.getMethods(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.__proto__),
-    [_debugAssertIsValid]: dart.fnType(core.bool, []),
-    getLayout: dart.fnType(sliver_grid.SliverGridLayout, [sliver.SliverConstraints]),
-    shouldRelayout: dart.fnType(core.bool, [dart.nullable(core.Object)])
-  }));
-  dart.setLibraryUri(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount, I[1]);
-  dart.setFieldSignature(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount, () => ({
-    __proto__: dart.getFields(sliver_grid.SliverGridDelegateWithFixedCrossAxisCount.__proto__),
-    crossAxisCount: dart.finalFieldType(core.int),
-    mainAxisSpacing: dart.finalFieldType(core.double),
-    crossAxisSpacing: dart.finalFieldType(core.double),
-    childAspectRatio: dart.finalFieldType(core.double),
-    mainAxisExtent: dart.finalFieldType(dart.nullable(core.double))
-  }));
-  var maxCrossAxisExtent$ = dart.privateName(sliver_grid, "SliverGridDelegateWithMaxCrossAxisExtent.maxCrossAxisExtent");
-  var mainAxisSpacing$0 = dart.privateName(sliver_grid, "SliverGridDelegateWithMaxCrossAxisExtent.mainAxisSpacing");
-  var crossAxisSpacing$0 = dart.privateName(sliver_grid, "SliverGridDelegateWithMaxCrossAxisExtent.crossAxisSpacing");
-  var childAspectRatio$0 = dart.privateName(sliver_grid, "SliverGridDelegateWithMaxCrossAxisExtent.childAspectRatio");
-  var mainAxisExtent$1 = dart.privateName(sliver_grid, "SliverGridDelegateWithMaxCrossAxisExtent.mainAxisExtent");
-  sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent = class SliverGridDelegateWithMaxCrossAxisExtent extends sliver_grid.SliverGridDelegate {
-    get maxCrossAxisExtent() {
-      return this[maxCrossAxisExtent$];
-    }
-    set maxCrossAxisExtent(value) {
-      super.maxCrossAxisExtent = value;
-    }
-    get mainAxisSpacing() {
-      return this[mainAxisSpacing$0];
-    }
-    set mainAxisSpacing(value) {
-      super.mainAxisSpacing = value;
-    }
-    get crossAxisSpacing() {
-      return this[crossAxisSpacing$0];
-    }
-    set crossAxisSpacing(value) {
-      super.crossAxisSpacing = value;
-    }
-    get childAspectRatio() {
-      return this[childAspectRatio$0];
-    }
-    set childAspectRatio(value) {
-      super.childAspectRatio = value;
-    }
-    get mainAxisExtent() {
-      return this[mainAxisExtent$1];
-    }
-    set mainAxisExtent(value) {
-      super.mainAxisExtent = value;
-    }
-    [_debugAssertIsValid](crossAxisExtent) {
-      if (crossAxisExtent == null) dart.nullFailed(I[0], 483, 35, "crossAxisExtent");
-      if (!(dart.notNull(crossAxisExtent) > 0.0)) dart.assertFailed(null, I[0], 484, 12, "crossAxisExtent > 0.0");
-      if (!(dart.notNull(this.maxCrossAxisExtent) > 0.0)) dart.assertFailed(null, I[0], 485, 12, "maxCrossAxisExtent > 0.0");
-      if (!(dart.notNull(this.mainAxisSpacing) >= 0.0)) dart.assertFailed(null, I[0], 486, 12, "mainAxisSpacing >= 0.0");
-      if (!(dart.notNull(this.crossAxisSpacing) >= 0.0)) dart.assertFailed(null, I[0], 487, 12, "crossAxisSpacing >= 0.0");
-      if (!(dart.notNull(this.childAspectRatio) > 0.0)) dart.assertFailed(null, I[0], 488, 12, "childAspectRatio > 0.0");
-      return true;
-    }
-    getLayout(constraints) {
-      let t0;
-      if (constraints == null) dart.nullFailed(I[0], 493, 48, "constraints");
-      if (!dart.test(this[_debugAssertIsValid](constraints.crossAxisExtent))) dart.assertFailed(null, I[0], 494, 12, "_debugAssertIsValid(constraints.crossAxisExtent)");
-      let crossAxisCount = (dart.notNull(constraints.crossAxisExtent) / (dart.notNull(this.maxCrossAxisExtent) + dart.notNull(this.crossAxisSpacing)))[$ceil]();
-      let usableCrossAxisExtent = math.max(core.double, 0.0, dart.notNull(constraints.crossAxisExtent) - dart.notNull(this.crossAxisSpacing) * (crossAxisCount - 1));
-      let childCrossAxisExtent = usableCrossAxisExtent / crossAxisCount;
-      let childMainAxisExtent = (t0 = this.mainAxisExtent, t0 == null ? childCrossAxisExtent / dart.notNull(this.childAspectRatio) : t0);
-      return new sliver_grid.SliverGridRegularTileLayout.new({crossAxisCount: crossAxisCount, mainAxisStride: dart.notNull(childMainAxisExtent) + dart.notNull(this.mainAxisSpacing), crossAxisStride: childCrossAxisExtent + dart.notNull(this.crossAxisSpacing), childMainAxisExtent: childMainAxisExtent, childCrossAxisExtent: childCrossAxisExtent, reverseCrossAxis: basic_types.axisDirectionIsReversed(constraints.crossAxisDirection)});
-    }
-    shouldRelayout(oldDelegate) {
-      sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent.as(oldDelegate);
-      if (oldDelegate == null) dart.nullFailed(I[0], 511, 64, "oldDelegate");
-      return oldDelegate.maxCrossAxisExtent != this.maxCrossAxisExtent || oldDelegate.mainAxisSpacing != this.mainAxisSpacing || oldDelegate.crossAxisSpacing != this.crossAxisSpacing || oldDelegate.childAspectRatio != this.childAspectRatio || oldDelegate.mainAxisExtent != this.mainAxisExtent;
-    }
-  };
-  (sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent.new = function(opts) {
-    let maxCrossAxisExtent = opts && 'maxCrossAxisExtent' in opts ? opts.maxCrossAxisExtent : null;
-    if (maxCrossAxisExtent == null) dart.nullFailed(I[0], 445, 19, "maxCrossAxisExtent");
-    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
-    if (mainAxisSpacing == null) dart.nullFailed(I[0], 446, 10, "mainAxisSpacing");
-    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
-    if (crossAxisSpacing == null) dart.nullFailed(I[0], 447, 10, "crossAxisSpacing");
-    let childAspectRatio = opts && 'childAspectRatio' in opts ? opts.childAspectRatio : 1;
-    if (childAspectRatio == null) dart.nullFailed(I[0], 448, 10, "childAspectRatio");
-    let mainAxisExtent = opts && 'mainAxisExtent' in opts ? opts.mainAxisExtent : null;
-    this[maxCrossAxisExtent$] = maxCrossAxisExtent;
-    this[mainAxisSpacing$0] = mainAxisSpacing;
-    this[crossAxisSpacing$0] = crossAxisSpacing;
-    this[childAspectRatio$0] = childAspectRatio;
-    this[mainAxisExtent$1] = mainAxisExtent;
-    if (!(maxCrossAxisExtent != null && dart.notNull(maxCrossAxisExtent) >= 0)) dart.assertFailed(null, I[0], 450, 15, "maxCrossAxisExtent != null && maxCrossAxisExtent >= 0");
-    if (!(mainAxisSpacing != null && dart.notNull(mainAxisSpacing) >= 0)) dart.assertFailed(null, I[0], 451, 15, "mainAxisSpacing != null && mainAxisSpacing >= 0");
-    if (!(crossAxisSpacing != null && dart.notNull(crossAxisSpacing) >= 0)) dart.assertFailed(null, I[0], 452, 15, "crossAxisSpacing != null && crossAxisSpacing >= 0");
-    if (!(childAspectRatio != null && dart.notNull(childAspectRatio) > 0)) dart.assertFailed(null, I[0], 453, 15, "childAspectRatio != null && childAspectRatio > 0");
-    sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent.__proto__.new.call(this);
-    ;
-  }).prototype = sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent);
-  dart.addTypeCaches(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent);
-  dart.setMethodSignature(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent, () => ({
-    __proto__: dart.getMethods(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent.__proto__),
-    [_debugAssertIsValid]: dart.fnType(core.bool, [core.double]),
-    getLayout: dart.fnType(sliver_grid.SliverGridLayout, [sliver.SliverConstraints]),
-    shouldRelayout: dart.fnType(core.bool, [dart.nullable(core.Object)])
-  }));
-  dart.setLibraryUri(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent, I[1]);
-  dart.setFieldSignature(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent, () => ({
-    __proto__: dart.getFields(sliver_grid.SliverGridDelegateWithMaxCrossAxisExtent.__proto__),
-    maxCrossAxisExtent: dart.finalFieldType(core.double),
-    mainAxisSpacing: dart.finalFieldType(core.double),
-    crossAxisSpacing: dart.finalFieldType(core.double),
-    childAspectRatio: dart.finalFieldType(core.double),
-    mainAxisExtent: dart.finalFieldType(dart.nullable(core.double))
-  }));
-  var crossAxisOffset = dart.privateName(sliver_grid, "SliverGridParentData.crossAxisOffset");
-  sliver_grid.SliverGridParentData = class SliverGridParentData extends sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData {
-    get crossAxisOffset() {
-      return this[crossAxisOffset];
-    }
-    set crossAxisOffset(value) {
-      this[crossAxisOffset] = value;
-    }
-    toString() {
-      return "crossAxisOffset=" + dart.str(this.crossAxisOffset) + "; " + dart.str(super.toString());
-    }
-  };
-  (sliver_grid.SliverGridParentData.new = function() {
-    this[crossAxisOffset] = null;
-    sliver_grid.SliverGridParentData.__proto__.new.call(this);
-    ;
-  }).prototype = sliver_grid.SliverGridParentData.prototype;
-  dart.addTypeTests(sliver_grid.SliverGridParentData);
-  dart.addTypeCaches(sliver_grid.SliverGridParentData);
-  dart.setLibraryUri(sliver_grid.SliverGridParentData, I[1]);
-  dart.setFieldSignature(sliver_grid.SliverGridParentData, () => ({
-    __proto__: dart.getFields(sliver_grid.SliverGridParentData.__proto__),
-    crossAxisOffset: dart.fieldType(dart.nullable(core.double))
-  }));
-  dart.defineExtensionMethods(sliver_grid.SliverGridParentData, ['toString']);
-  var _gridDelegate = dart.privateName(sliver_grid, "_gridDelegate");
-  sliver_grid.RenderSliverGrid = class RenderSliverGrid extends sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor {
-    setupParentData(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[0], 559, 37, "child");
-      if (!sliver_grid.SliverGridParentData.is(child.parentData)) child.parentData = new sliver_grid.SliverGridParentData.new();
-    }
-    get gridDelegate() {
-      return this[_gridDelegate];
-    }
-    set gridDelegate(value) {
-      if (value == null) dart.nullFailed(I[0], 567, 39, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 568, 12, "value != null");
-      if (dart.equals(this[_gridDelegate], value)) return;
-      if (!dart.equals(dart.runtimeType(value), dart.runtimeType(this[_gridDelegate])) || dart.test(value.shouldRelayout(this[_gridDelegate]))) this.markNeedsLayout();
-      this[_gridDelegate] = value;
-    }
-    childCrossAxisPosition(child) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[0], 578, 43, "child");
-      let childParentData = sliver_grid.SliverGridParentData.as(dart.nullCheck(child.parentData));
-      return dart.nullCheck(childParentData.crossAxisOffset);
-    }
-    performLayout() {
-      let constraints = this.constraints;
-      this.childManager.didStartLayout();
-      this.childManager.setDidUnderflow(false);
-      let scrollOffset = dart.notNull(constraints.scrollOffset) + dart.notNull(constraints.cacheOrigin);
-      if (!(scrollOffset >= 0.0)) dart.assertFailed(null, I[0], 590, 12, "scrollOffset >= 0.0");
-      let remainingExtent = constraints.remainingCacheExtent;
-      if (!(dart.notNull(remainingExtent) >= 0.0)) dart.assertFailed(null, I[0], 592, 12, "remainingExtent >= 0.0");
-      let targetEndScrollOffset = scrollOffset + dart.notNull(remainingExtent);
-      let layout = this[_gridDelegate].getLayout(constraints);
-      let firstIndex = layout.getMinChildIndexForScrollOffset(scrollOffset);
-      let targetLastIndex = targetEndScrollOffset[$isFinite] ? layout.getMaxChildIndexForScrollOffset(targetEndScrollOffset) : null;
-      if (this.firstChild != null) {
-        let oldFirstIndex = this.indexOf(dart.nullCheck(this.firstChild));
-        let oldLastIndex = this.indexOf(dart.nullCheck(this.lastChild));
-        let leadingGarbage = (dart.notNull(firstIndex) - dart.notNull(oldFirstIndex))[$clamp](0, this.childCount);
-        let trailingGarbage = targetLastIndex == null ? 0 : (dart.notNull(oldLastIndex) - dart.notNull(targetLastIndex))[$clamp](0, this.childCount);
-        this.collectGarbage(leadingGarbage, trailingGarbage);
-      } else {
-        this.collectGarbage(0, 0);
-      }
-      let firstChildGridGeometry = layout.getGeometryForChildIndex(firstIndex);
-      let leadingScrollOffset = firstChildGridGeometry.scrollOffset;
-      let trailingScrollOffset = firstChildGridGeometry.trailingScrollOffset;
-      if (this.firstChild == null) {
-        if (!dart.test(this.addInitialChild({index: firstIndex, layoutOffset: firstChildGridGeometry.scrollOffset}))) {
-          let max = layout.computeMaxScrollOffset(this.childManager.childCount);
-          this.geometry = new sliver.SliverGeometry.new({scrollExtent: max, maxPaintExtent: max});
-          this.childManager.didFinishLayout();
-          return;
+    toPaint() {
+      let t0, t0$;
+      switch (this.style) {
+        case C[1] || CT.C1:
+        {
+          t0 = ui.Paint.new();
+          return (() => {
+            t0.color = this.color;
+            t0.strokeWidth = this.width;
+            t0.style = ui.PaintingStyle.stroke;
+            return t0;
+          })();
+        }
+        case C[0] || CT.C0:
+        {
+          t0$ = ui.Paint.new();
+          return (() => {
+            t0$.color = C[4] || CT.C4;
+            t0$.strokeWidth = 0.0;
+            t0$.style = ui.PaintingStyle.stroke;
+            return t0$;
+          })();
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
         }
       }
-      let trailingChildWithLayout = null;
-      for (let index = dart.notNull(this.indexOf(dart.nullCheck(this.firstChild))) - 1; index >= dart.notNull(firstIndex); index = index - 1) {
-        let gridGeometry = layout.getGeometryForChildIndex(index);
-        let child = dart.nullCheck(this.insertAndLayoutLeadingChild(gridGeometry.getBoxConstraints(constraints)));
-        let childParentData = sliver_grid.SliverGridParentData.as(dart.nullCheck(child.parentData));
-        childParentData.layoutOffset = gridGeometry.scrollOffset;
-        childParentData.crossAxisOffset = gridGeometry.crossAxisOffset;
-        if (!(childParentData.index === index)) dart.assertFailed(null, I[0], 640, 14, "childParentData.index == index");
-        trailingChildWithLayout == null ? trailingChildWithLayout = child : null;
-        trailingScrollOffset = math.max(core.double, trailingScrollOffset, gridGeometry.trailingScrollOffset);
+    }
+    static canMerge(a, b) {
+      if (a == null) dart.nullFailed(I[0], 196, 35, "a");
+      if (b == null) dart.nullFailed(I[0], 196, 49, "b");
+      if (!(a != null)) dart.assertFailed(null, I[0], 197, 12, "a != null");
+      if (!(b != null)) dart.assertFailed(null, I[0], 198, 12, "b != null");
+      if (a.style == borders$.BorderStyle.none && a.width === 0.0 || b.style == borders$.BorderStyle.none && b.width === 0.0) return true;
+      return a.style == b.style && dart.equals(a.color, b.color);
+    }
+    static lerp(a, b, t) {
+      if (a == null) dart.nullFailed(I[0], 211, 37, "a");
+      if (b == null) dart.nullFailed(I[0], 211, 51, "b");
+      if (t == null) dart.nullFailed(I[0], 211, 61, "t");
+      if (!(a != null)) dart.assertFailed(null, I[0], 212, 12, "a != null");
+      if (!(b != null)) dart.assertFailed(null, I[0], 213, 12, "b != null");
+      if (!(t != null)) dart.assertFailed(null, I[0], 214, 12, "t != null");
+      if (t === 0.0) return a;
+      if (t === 1.0) return b;
+      let width = dart.nullCheck(ui.lerpDouble(a.width, b.width, t));
+      if (width < 0.0) return borders$.BorderSide.none;
+      if (a.style == b.style) {
+        return new borders$.BorderSide.new({color: dart.nullCheck(ui.Color.lerp(a.color, b.color, t)), width: width, style: a.style});
       }
-      if (trailingChildWithLayout == null) {
-        dart.nullCheck(this.firstChild).layout(firstChildGridGeometry.getBoxConstraints(constraints));
-        let childParentData = sliver_grid.SliverGridParentData.as(dart.nullCheck(dart.nullCheck(this.firstChild).parentData));
-        childParentData.layoutOffset = firstChildGridGeometry.scrollOffset;
-        childParentData.crossAxisOffset = firstChildGridGeometry.crossAxisOffset;
-        trailingChildWithLayout = this.firstChild;
+      let colorA = null;
+      let colorB = null;
+      switch (a.style) {
+        case C[1] || CT.C1:
+        {
+          colorA = a.color;
+          break;
+        }
+        case C[0] || CT.C0:
+        {
+          colorA = a.color.withAlpha(0);
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
       }
-      for (let index = dart.notNull(this.indexOf(dart.nullCheck(trailingChildWithLayout))) + 1; targetLastIndex == null || index <= dart.notNull(targetLastIndex); index = index + 1) {
-        let gridGeometry = layout.getGeometryForChildIndex(index);
-        let childConstraints = gridGeometry.getBoxConstraints(constraints);
-        let child = this.childAfter(dart.nullCheck(trailingChildWithLayout));
-        if (child == null || this.indexOf(child) !== index) {
-          child = this.insertAndLayoutChild(childConstraints, {after: trailingChildWithLayout});
-          if (child == null) {
-            break;
+      switch (b.style) {
+        case C[1] || CT.C1:
+        {
+          colorB = b.color;
+          break;
+        }
+        case C[0] || CT.C0:
+        {
+          colorB = b.color.withAlpha(0);
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
+      return new borders$.BorderSide.new({color: dart.nullCheck(ui.Color.lerp(colorA, colorB, t)), width: width, style: borders$.BorderStyle.solid});
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return borders$.BorderSide.is(other) && dart.equals(other.color, this.color) && other.width == this.width && other.style == this.style;
+    }
+    get hashCode() {
+      return ui.hashValues(this.color, this.width, this.style);
+    }
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "BorderSide")) + "(" + dart.str(this.color) + ", " + this.width[$toStringAsFixed](1) + ", " + dart.str(this.style) + ")";
+    }
+  };
+  (borders$.BorderSide.new = function(opts) {
+    let color = opts && 'color' in opts ? opts.color : C[3] || CT.C3;
+    if (color == null) dart.nullFailed(I[0], 66, 10, "color");
+    let width = opts && 'width' in opts ? opts.width : 1;
+    if (width == null) dart.nullFailed(I[0], 67, 10, "width");
+    let style = opts && 'style' in opts ? opts.style : C[1] || CT.C1;
+    if (style == null) dart.nullFailed(I[0], 68, 10, "style");
+    this[color$] = color;
+    this[width$] = width;
+    this[style$] = style;
+    if (!(color != null)) dart.assertFailed(null, I[0], 69, 15, "color != null");
+    if (!(width != null)) dart.assertFailed(null, I[0], 70, 15, "width != null");
+    if (!(dart.notNull(width) >= 0.0)) dart.assertFailed(null, I[0], 71, 15, "width >= 0.0");
+    if (!(style != null)) dart.assertFailed(null, I[0], 72, 15, "style != null");
+    ;
+  }).prototype = borders$.BorderSide.prototype;
+  dart.addTypeTests(borders$.BorderSide);
+  dart.addTypeCaches(borders$.BorderSide);
+  dart.setMethodSignature(borders$.BorderSide, () => ({
+    __proto__: dart.getMethods(borders$.BorderSide.__proto__),
+    copyWith: dart.fnType(borders$.BorderSide, [], {color: dart.nullable(ui.Color), style: dart.nullable(borders$.BorderStyle), width: dart.nullable(core.double)}, {}),
+    scale: dart.fnType(borders$.BorderSide, [core.double]),
+    toPaint: dart.fnType(ui.Paint, [])
+  }));
+  dart.setLibraryUri(borders$.BorderSide, I[1]);
+  dart.setFieldSignature(borders$.BorderSide, () => ({
+    __proto__: dart.getFields(borders$.BorderSide.__proto__),
+    color: dart.finalFieldType(ui.Color),
+    width: dart.finalFieldType(core.double),
+    style: dart.finalFieldType(borders$.BorderStyle)
+  }));
+  dart.defineExtensionMethods(borders$.BorderSide, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(borders$.BorderSide, ['hashCode']);
+  dart.defineLazy(borders$.BorderSide, {
+    /*borders$.BorderSide.none*/get none() {
+      return C[5] || CT.C5;
+    }
+  }, false);
+  borders$.ShapeBorder = class ShapeBorder extends core.Object {
+    add(other, opts) {
+      if (other == null) dart.nullFailed(I[0], 319, 32, "other");
+      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
+      if (reversed == null) dart.nullFailed(I[0], 319, 46, "reversed");
+      return null;
+    }
+    ['+'](other) {
+      let t0, t0$;
+      if (other == null) dart.nullFailed(I[0], 329, 38, "other");
+      t0$ = (t0 = this.add(other), t0 == null ? other.add(this, {reversed: true}) : t0);
+      return t0$ == null ? new borders$._CompoundBorder.new(T.JSArrayOfShapeBorder().of([other, this])) : t0$;
+    }
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 382, 48, "t");
+      if (a == null) return this.scale(t);
+      return null;
+    }
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 414, 46, "t");
+      if (b == null) return this.scale(1.0 - dart.notNull(t));
+      return null;
+    }
+    static lerp(a, b, t) {
+      let t0;
+      if (t == null) dart.nullFailed(I[0], 428, 67, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 429, 12, "t != null");
+      let result = null;
+      if (b != null) result = b.lerpFrom(a, t);
+      if (result == null && a != null) result = a.lerpTo(b, t);
+      t0 = result;
+      return t0 == null ? dart.notNull(t) < 0.5 ? a : b : t0;
+    }
+    toString() {
+      return dart.str(object.objectRuntimeType(this, "ShapeBorder")) + "()";
+    }
+  };
+  (borders$.ShapeBorder.new = function() {
+    ;
+  }).prototype = borders$.ShapeBorder.prototype;
+  dart.addTypeTests(borders$.ShapeBorder);
+  dart.addTypeCaches(borders$.ShapeBorder);
+  dart.setMethodSignature(borders$.ShapeBorder, () => ({
+    __proto__: dart.getMethods(borders$.ShapeBorder.__proto__),
+    add: dart.fnType(dart.nullable(borders$.ShapeBorder), [borders$.ShapeBorder], {reversed: core.bool}, {}),
+    '+': dart.fnType(borders$.ShapeBorder, [borders$.ShapeBorder]),
+    lerpFrom: dart.fnType(dart.nullable(borders$.ShapeBorder), [dart.nullable(borders$.ShapeBorder), core.double]),
+    lerpTo: dart.fnType(dart.nullable(borders$.ShapeBorder), [dart.nullable(borders$.ShapeBorder), core.double])
+  }));
+  dart.setLibraryUri(borders$.ShapeBorder, I[1]);
+  dart.defineExtensionMethods(borders$.ShapeBorder, ['toString']);
+  var side$ = dart.privateName(borders$, "OutlinedBorder.side");
+  borders$.OutlinedBorder = class OutlinedBorder extends borders$.ShapeBorder {
+    get side() {
+      return this[side$];
+    }
+    set side(value) {
+      super.side = value;
+    }
+  };
+  (borders$.OutlinedBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[5] || CT.C5;
+    if (side == null) dart.nullFailed(I[0], 502, 31, "side");
+    this[side$] = side;
+    if (!(side != null)) dart.assertFailed(null, I[0], 502, 66, "side != null");
+    borders$.OutlinedBorder.__proto__.new.call(this);
+    ;
+  }).prototype = borders$.OutlinedBorder.prototype;
+  dart.addTypeTests(borders$.OutlinedBorder);
+  dart.addTypeCaches(borders$.OutlinedBorder);
+  dart.setLibraryUri(borders$.OutlinedBorder, I[1]);
+  dart.setFieldSignature(borders$.OutlinedBorder, () => ({
+    __proto__: dart.getFields(borders$.OutlinedBorder.__proto__),
+    side: dart.finalFieldType(borders$.BorderSide)
+  }));
+  borders$._CompoundBorder = class _CompoundBorder extends borders$.ShapeBorder {
+    get dimensions() {
+      return this.borders[$fold](edge_insets.EdgeInsetsGeometry, edge_insets.EdgeInsets.zero, dart.fn((previousValue, border) => {
+        if (previousValue == null) dart.nullFailed(I[0], 530, 27, "previousValue");
+        if (border == null) dart.nullFailed(I[0], 530, 54, "border");
+        return previousValue.add(border.dimensions);
+      }, T.EdgeInsetsGeometryAndShapeBorderToEdgeInsetsGeometry()));
+    }
+    add(other, opts) {
+      let t0;
+      if (other == null) dart.nullFailed(I[0], 537, 31, "other");
+      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
+      if (reversed == null) dart.nullFailed(I[0], 537, 45, "reversed");
+      if (!borders$._CompoundBorder.is(other)) {
+        let ours = dart.test(reversed) ? this.borders[$last] : this.borders[$first];
+        let merged = (t0 = ours.add(other, {reversed: reversed}), t0 == null ? other.add(ours, {reversed: !dart.test(reversed)}) : t0);
+        if (merged != null) {
+          let result = (() => {
+            let t0 = T.ListOfShapeBorder().of(this.borders);
+            return t0;
+          })();
+          result[$_set](dart.test(reversed) ? dart.notNull(result[$length]) - 1 : 0, merged);
+          return new borders$._CompoundBorder.new(result);
+        }
+      }
+      let mergedBorders = (() => {
+        let t1 = T.JSArrayOfShapeBorder().of([]);
+        if (dart.test(reversed)) t1[$addAll](this.borders);
+        if (borders$._CompoundBorder.is(other))
+          t1[$addAll](other.borders);
+        else
+          t1[$add](other);
+        if (!dart.test(reversed)) t1[$addAll](this.borders);
+        return t1;
+      })();
+      return new borders$._CompoundBorder.new(mergedBorders);
+    }
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 567, 28, "t");
+      return new borders$._CompoundBorder.new(this.borders[$map](borders$.ShapeBorder, dart.fn(border => {
+        if (border == null) dart.nullFailed(I[0], 569, 45, "border");
+        return border.scale(t);
+      }, T.ShapeBorderToShapeBorder()))[$toList]());
+    }
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 574, 48, "t");
+      return borders$._CompoundBorder.lerp(a, this, t);
+    }
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 579, 46, "t");
+      return borders$._CompoundBorder.lerp(this, b, t);
+    }
+    static lerp(a, b, t) {
+      let t2;
+      if (t == null) dart.nullFailed(I[0], 583, 70, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 584, 12, "t != null");
+      if (!(borders$._CompoundBorder.is(a) || borders$._CompoundBorder.is(b))) dart.assertFailed(null, I[0], 585, 12, "a is _CompoundBorder || b is _CompoundBorder");
+      let aList = borders$._CompoundBorder.is(a) ? a.borders : T.JSArrayOfShapeBorderN().of([a]);
+      let bList = borders$._CompoundBorder.is(b) ? b.borders : T.JSArrayOfShapeBorderN().of([b]);
+      let results = T.JSArrayOfShapeBorder().of([]);
+      let length = math.max(core.int, aList[$length], bList[$length]);
+      for (let index = 0; index < length; index = index + 1) {
+        let localA = index < dart.notNull(aList[$length]) ? aList[$_get](index) : null;
+        let localB = index < dart.notNull(bList[$length]) ? bList[$_get](index) : null;
+        if (localA != null && localB != null) {
+          let localResult = (t2 = localA.lerpTo(localB, t), t2 == null ? localB.lerpFrom(localA, t) : t2);
+          if (localResult != null) {
+            results[$add](localResult);
+            continue;
           }
-        } else {
-          child.layout(childConstraints);
         }
-        trailingChildWithLayout = child;
-        if (!(child != null)) dart.assertFailed(null, I[0], 667, 14, "child != null");
-        let childParentData = sliver_grid.SliverGridParentData.as(dart.nullCheck(child.parentData));
-        childParentData.layoutOffset = gridGeometry.scrollOffset;
-        childParentData.crossAxisOffset = gridGeometry.crossAxisOffset;
-        if (!(childParentData.index === index)) dart.assertFailed(null, I[0], 671, 14, "childParentData.index == index");
-        trailingScrollOffset = math.max(core.double, trailingScrollOffset, gridGeometry.trailingScrollOffset);
+        if (localB != null) results[$add](localB.scale(t));
+        if (localA != null) results[$add](localA.scale(1.0 - dart.notNull(t)));
       }
-      let lastIndex = this.indexOf(dart.nullCheck(this.lastChild));
-      if (!dart.test(this.debugAssertChildListIsNonEmptyAndContiguous())) dart.assertFailed(null, I[0], 677, 12, "debugAssertChildListIsNonEmptyAndContiguous()");
-      if (!(this.indexOf(dart.nullCheck(this.firstChild)) == firstIndex)) dart.assertFailed(null, I[0], 678, 12, "indexOf(firstChild!) == firstIndex");
-      if (!(targetLastIndex == null || dart.notNull(lastIndex) <= dart.notNull(targetLastIndex))) dart.assertFailed(null, I[0], 679, 12, "targetLastIndex == null || lastIndex <= targetLastIndex");
-      let estimatedTotalExtent = this.childManager.estimateMaxScrollOffset(constraints, {firstIndex: firstIndex, lastIndex: lastIndex, leadingScrollOffset: leadingScrollOffset, trailingScrollOffset: trailingScrollOffset});
-      let paintExtent = this.calculatePaintOffset(constraints, {from: math.min(core.double, constraints.scrollOffset, leadingScrollOffset), to: trailingScrollOffset});
-      let cacheExtent = this.calculateCacheOffset(constraints, {from: leadingScrollOffset, to: trailingScrollOffset});
-      this.geometry = new sliver.SliverGeometry.new({scrollExtent: estimatedTotalExtent, paintExtent: paintExtent, maxPaintExtent: estimatedTotalExtent, cacheExtent: cacheExtent, hasVisualOverflow: true});
-      if (estimatedTotalExtent == trailingScrollOffset) this.childManager.setDidUnderflow(true);
-      this.childManager.didFinishLayout();
+      return new borders$._CompoundBorder.new(results);
+    }
+    getInnerPath(rect, opts) {
+      if (rect == null) dart.nullFailed(I[0], 613, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      for (let index = 0; index < dart.notNull(this.borders[$length]) - 1; index = index + 1)
+        rect = this.borders[$_get](index).dimensions.resolve(textDirection).deflateRect(rect);
+      return this.borders[$last].getInnerPath(rect, {textDirection: textDirection});
+    }
+    getOuterPath(rect, opts) {
+      if (rect == null) dart.nullFailed(I[0], 620, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      return this.borders[$first].getOuterPath(rect, {textDirection: textDirection});
+    }
+    paint(canvas, rect, opts) {
+      if (canvas == null) dart.nullFailed(I[0], 625, 21, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 625, 34, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      for (let border of this.borders) {
+        border.paint(canvas, rect, {textDirection: textDirection});
+        rect = border.dimensions.resolve(textDirection).deflateRect(rect);
+      }
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return borders$._CompoundBorder.is(other) && dart.test(collections.listEquals(borders$.ShapeBorder, other.borders, this.borders));
+    }
+    get hashCode() {
+      return ui.hashList(this.borders);
+    }
+    toString() {
+      return this.borders[$reversed][$map](core.String, dart.fn(border => {
+        if (border == null) dart.nullFailed(I[0], 651, 54, "border");
+        return dart.toString(border);
+      }, T.ShapeBorderToString()))[$join](" + ");
     }
   };
-  (sliver_grid.RenderSliverGrid.new = function(opts) {
-    let childManager = opts && 'childManager' in opts ? opts.childManager : null;
-    if (childManager == null) dart.nullFailed(I[0], 552, 42, "childManager");
-    let gridDelegate = opts && 'gridDelegate' in opts ? opts.gridDelegate : null;
-    if (gridDelegate == null) dart.nullFailed(I[0], 553, 33, "gridDelegate");
-    if (!(gridDelegate != null)) dart.assertFailed(null, I[0], 554, 15, "gridDelegate != null");
-    this[_gridDelegate] = gridDelegate;
-    sliver_grid.RenderSliverGrid.__proto__.new.call(this, {childManager: childManager});
+  (borders$._CompoundBorder.new = function(borders) {
+    if (borders == null) dart.nullFailed(I[0], 519, 24, "borders");
+    this.borders = borders;
+    if (!(borders != null)) dart.assertFailed(null, I[0], 520, 14, "borders != null");
+    if (!(dart.notNull(borders[$length]) >= 2)) dart.assertFailed(null, I[0], 521, 14, "borders.length >= 2");
+    if (!!dart.test(borders[$any](dart.fn(border => {
+      if (border == null) dart.nullFailed(I[0], 522, 40, "border");
+      return borders$._CompoundBorder.is(border);
+    }, T.ShapeBorderTobool())))) dart.assertFailed(null, I[0], 522, 14, "!borders.any((ShapeBorder border) => border is _CompoundBorder)");
+    borders$._CompoundBorder.__proto__.new.call(this);
     ;
-  }).prototype = sliver_grid.RenderSliverGrid.prototype;
-  dart.addTypeTests(sliver_grid.RenderSliverGrid);
-  dart.addTypeCaches(sliver_grid.RenderSliverGrid);
-  dart.setMethodSignature(sliver_grid.RenderSliverGrid, () => ({
-    __proto__: dart.getMethods(sliver_grid.RenderSliverGrid.__proto__),
-    performLayout: dart.fnType(dart.void, [])
+  }).prototype = borders$._CompoundBorder.prototype;
+  dart.addTypeTests(borders$._CompoundBorder);
+  dart.addTypeCaches(borders$._CompoundBorder);
+  dart.setMethodSignature(borders$._CompoundBorder, () => ({
+    __proto__: dart.getMethods(borders$._CompoundBorder.__proto__),
+    add: dart.fnType(borders$.ShapeBorder, [borders$.ShapeBorder], {reversed: core.bool}, {}),
+    scale: dart.fnType(borders$.ShapeBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
   }));
-  dart.setGetterSignature(sliver_grid.RenderSliverGrid, () => ({
-    __proto__: dart.getGetters(sliver_grid.RenderSliverGrid.__proto__),
-    gridDelegate: sliver_grid.SliverGridDelegate
+  dart.setGetterSignature(borders$._CompoundBorder, () => ({
+    __proto__: dart.getGetters(borders$._CompoundBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
   }));
-  dart.setSetterSignature(sliver_grid.RenderSliverGrid, () => ({
-    __proto__: dart.getSetters(sliver_grid.RenderSliverGrid.__proto__),
-    gridDelegate: sliver_grid.SliverGridDelegate
+  dart.setLibraryUri(borders$._CompoundBorder, I[1]);
+  dart.setFieldSignature(borders$._CompoundBorder, () => ({
+    __proto__: dart.getFields(borders$._CompoundBorder.__proto__),
+    borders: dart.finalFieldType(core.List$(borders$.ShapeBorder))
   }));
-  dart.setLibraryUri(sliver_grid.RenderSliverGrid, I[1]);
-  dart.setFieldSignature(sliver_grid.RenderSliverGrid, () => ({
-    __proto__: dart.getFields(sliver_grid.RenderSliverGrid.__proto__),
-    [_gridDelegate]: dart.fieldType(sliver_grid.SliverGridDelegate)
-  }));
-  dart.trackLibraries("packages/flutter/src/rendering/sliver_grid.dart", {
-    "package:flutter/src/rendering/sliver_grid.dart": sliver_grid
+  dart.defineExtensionMethods(borders$._CompoundBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(borders$._CompoundBorder, ['hashCode']);
+  borders$.paintBorder = function paintBorder(canvas, rect, opts) {
+    let t2;
+    if (canvas == null) dart.nullFailed(I[0], 673, 10, "canvas");
+    if (rect == null) dart.nullFailed(I[0], 674, 8, "rect");
+    let top = opts && 'top' in opts ? opts.top : C[5] || CT.C5;
+    if (top == null) dart.nullFailed(I[0], 675, 14, "top");
+    let right = opts && 'right' in opts ? opts.right : C[5] || CT.C5;
+    if (right == null) dart.nullFailed(I[0], 676, 14, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : C[5] || CT.C5;
+    if (bottom == null) dart.nullFailed(I[0], 677, 14, "bottom");
+    let left = opts && 'left' in opts ? opts.left : C[5] || CT.C5;
+    if (left == null) dart.nullFailed(I[0], 678, 14, "left");
+    if (!(canvas != null)) dart.assertFailed(null, I[0], 680, 10, "canvas != null");
+    if (!(rect != null)) dart.assertFailed(null, I[0], 681, 10, "rect != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 682, 10, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 683, 10, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 684, 10, "bottom != null");
+    if (!(left != null)) dart.assertFailed(null, I[0], 685, 10, "left != null");
+    let paint = (t2 = ui.Paint.new(), (() => {
+      t2.strokeWidth = 0.0;
+      return t2;
+    })());
+    let path = ui.Path.new();
+    switch (top.style) {
+      case C[1] || CT.C1:
+      {
+        paint.color = top.color;
+        path.reset();
+        path.moveTo(rect.left, rect.top);
+        path.lineTo(rect.right, rect.top);
+        if (top.width === 0.0) {
+          paint.style = ui.PaintingStyle.stroke;
+        } else {
+          paint.style = ui.PaintingStyle.fill;
+          path.lineTo(dart.notNull(rect.right) - dart.notNull(right.width), dart.notNull(rect.top) + dart.notNull(top.width));
+          path.lineTo(dart.notNull(rect.left) + dart.notNull(left.width), dart.notNull(rect.top) + dart.notNull(top.width));
+        }
+        canvas.drawPath(path, paint);
+        break;
+      }
+      case C[0] || CT.C0:
+      {
+        break;
+      }
+      default:
+      {
+        dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+      }
+    }
+    switch (right.style) {
+      case C[1] || CT.C1:
+      {
+        paint.color = right.color;
+        path.reset();
+        path.moveTo(rect.right, rect.top);
+        path.lineTo(rect.right, rect.bottom);
+        if (right.width === 0.0) {
+          paint.style = ui.PaintingStyle.stroke;
+        } else {
+          paint.style = ui.PaintingStyle.fill;
+          path.lineTo(dart.notNull(rect.right) - dart.notNull(right.width), dart.notNull(rect.bottom) - dart.notNull(bottom.width));
+          path.lineTo(dart.notNull(rect.right) - dart.notNull(right.width), dart.notNull(rect.top) + dart.notNull(top.width));
+        }
+        canvas.drawPath(path, paint);
+        break;
+      }
+      case C[0] || CT.C0:
+      {
+        break;
+      }
+      default:
+      {
+        dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+      }
+    }
+    switch (bottom.style) {
+      case C[1] || CT.C1:
+      {
+        paint.color = bottom.color;
+        path.reset();
+        path.moveTo(rect.right, rect.bottom);
+        path.lineTo(rect.left, rect.bottom);
+        if (bottom.width === 0.0) {
+          paint.style = ui.PaintingStyle.stroke;
+        } else {
+          paint.style = ui.PaintingStyle.fill;
+          path.lineTo(dart.notNull(rect.left) + dart.notNull(left.width), dart.notNull(rect.bottom) - dart.notNull(bottom.width));
+          path.lineTo(dart.notNull(rect.right) - dart.notNull(right.width), dart.notNull(rect.bottom) - dart.notNull(bottom.width));
+        }
+        canvas.drawPath(path, paint);
+        break;
+      }
+      case C[0] || CT.C0:
+      {
+        break;
+      }
+      default:
+      {
+        dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+      }
+    }
+    switch (left.style) {
+      case C[1] || CT.C1:
+      {
+        paint.color = left.color;
+        path.reset();
+        path.moveTo(rect.left, rect.bottom);
+        path.lineTo(rect.left, rect.top);
+        if (left.width === 0.0) {
+          paint.style = ui.PaintingStyle.stroke;
+        } else {
+          paint.style = ui.PaintingStyle.fill;
+          path.lineTo(dart.notNull(rect.left) + dart.notNull(left.width), dart.notNull(rect.top) + dart.notNull(top.width));
+          path.lineTo(dart.notNull(rect.left) + dart.notNull(left.width), dart.notNull(rect.bottom) - dart.notNull(bottom.width));
+        }
+        canvas.drawPath(path, paint);
+        break;
+      }
+      case C[0] || CT.C0:
+      {
+        break;
+      }
+      default:
+      {
+        dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+      }
+    }
+  };
+  dart.trackLibraries("packages/flutter/src/painting/borders.dart", {
+    "package:flutter/src/painting/borders.dart": borders$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["sliver_grid.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/sliver_grid.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["borders.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/borders.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__sliver_grid: sliver_grid
+    src__painting__borders: borders$
   };
 }));
 
-//# sourceMappingURL=sliver_grid.dart.lib.js.map
+//# sourceMappingURL=borders.dart.lib.js.map

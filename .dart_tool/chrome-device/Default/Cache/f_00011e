@@ -1,21 +1,74 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/proxy_box.dart'], (function load__packages__flutter__src__rendering__proxy_sliver_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__proxy_box$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/form.dart', 'packages/gameshop_supera/providers/product.dart', 'packages/provider/src/provider.dart', 'packages/gameshop_supera/providers/products.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/material/text_form_field.dart', 'packages/flutter/src/services/text_input.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/box_fit.dart'], (function load__packages__gameshop_supera__views__productFormScreen_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__form$46dart, packages__gameshop_supera__providers__product$46dart, packages__provider__src__provider$46dart, packages__gameshop_supera__providers__products$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__material__text_form_field$46dart, packages__flutter__src__services__text_input$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__box_fit$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
   const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
-  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
-  var proxy_sliver = Object.create(dart.library);
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const focus_manager = packages__flutter__src__widgets__widget_span$46dart.src__widgets__focus_manager;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  const routes = packages__flutter__src__widgets__widget_span$46dart.src__widgets__routes;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const focus_scope = packages__flutter__src__widgets__widget_span$46dart.src__widgets__focus_scope;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const form = packages__flutter__src__widgets__form$46dart.src__widgets__form;
+  const product = packages__gameshop_supera__providers__product$46dart.providers__product;
+  const provider = packages__provider__src__provider$46dart.src__provider;
+  const products = packages__gameshop_supera__providers__products$46dart.providers__products;
+  const dialog = packages__flutter__src__material__icon_button$46dart.src__material__dialog;
+  const text_button = packages__flutter__src__material__icon_button$46dart.src__material__text_button;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const text_form_field = packages__flutter__src__material__text_form_field$46dart.src__material__text_form_field;
+  const text_input = packages__flutter__src__services__text_input$46dart.src__services__text_input;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  var productFormScreen = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $_set = dartx._set;
+  var $_get = dartx._get;
+  var $toLowerCase = dartx.toLowerCase;
+  var $startsWith = dartx.startsWith;
+  var $trim = dartx.trim;
+  var $toString = dartx.toString;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    OpacityLayerN: () => (T.OpacityLayerN = dart.constFn(dart.nullable(layer.OpacityLayer)))(),
-    DiagnosticsPropertyOfbool: () => (T.DiagnosticsPropertyOfbool = dart.constFn(diagnostics.DiagnosticsProperty$(core.bool)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
+    FormStateL: () => (T.FormStateL = dart.constFn(dart.legacy(form.FormState)))(),
+    GlobalKeyOfFormStateL: () => (T.GlobalKeyOfFormStateL = dart.constFn(framework.GlobalKey$(T.FormStateL())))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    LinkedMapOfStringL$ObjectL: () => (T.LinkedMapOfStringL$ObjectL = dart.constFn(_js_helper.LinkedMap$(T.StringL(), T.ObjectL())))(),
+    ProductL: () => (T.ProductL = dart.constFn(dart.legacy(product.Product)))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    ProductsL: () => (T.ProductsL = dart.constFn(dart.legacy(products.Products)))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    AlertDialogL: () => (T.AlertDialogL = dart.constFn(dart.legacy(dialog.AlertDialog)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToAlertDialogL: () => (T.BuildContextLToAlertDialogL = dart.constFn(dart.fnType(T.AlertDialogL(), [T.BuildContextL()])))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))(),
+    StringLToStringL: () => (T.StringLToStringL = dart.constFn(dart.fnType(T.StringL(), [T.StringL()])))(),
+    StringLTodoubleL: () => (T.StringLTodoubleL = dart.constFn(dart.fnType(T.doubleL(), [T.StringL()])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -29,350 +82,1098 @@ define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutt
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
-  var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/rendering/proxy_sliver.dart",
-    "package:flutter/src/rendering/proxy_sliver.dart"
-  ];
-  const RenderSliver_RenderObjectWithChildMixin$36 = class RenderSliver_RenderObjectWithChildMixin extends sliver.RenderSliver {};
-  (RenderSliver_RenderObjectWithChildMixin$36.new = function() {
-    object.RenderObjectWithChildMixin$(sliver.RenderSliver)[dart.mixinNew].call(this);
-    RenderSliver_RenderObjectWithChildMixin$36.__proto__.new.call(this);
-  }).prototype = RenderSliver_RenderObjectWithChildMixin$36.prototype;
-  dart.applyMixin(RenderSliver_RenderObjectWithChildMixin$36, object.RenderObjectWithChildMixin$(sliver.RenderSliver));
-  proxy_sliver.RenderProxySliver = class RenderProxySliver extends RenderSliver_RenderObjectWithChildMixin$36 {
-    setupParentData(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[0], 44, 37, "child");
-      if (!sliver.SliverPhysicalParentData.is(child.parentData)) child.parentData = new sliver.SliverPhysicalParentData.new();
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 87,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 18,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 89,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 24,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 96,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 15,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 92,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 11,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "content",
+        [_Location_column]: 11,
+        [_Location_line]: 88,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 11,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 86,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 123,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 13,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 13,
+        [_Location_line]: 124,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29, C[30] || CT.C30], T._LocationL());
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 122,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 9,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 119,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.constList([], T._LocationL());
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[36] || CT.C36,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 132,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39], T._LocationL());
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 131,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 10,
+        [EdgeInsets_right]: 10,
+        [EdgeInsets_top]: 10,
+        [EdgeInsets_left]: 10
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "initialValue",
+        [_Location_column]: 23,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 23,
+        [_Location_line]: 142,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textInputAction",
+        [_Location_column]: 23,
+        [_Location_line]: 143,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onFieldSubmitted",
+        [_Location_column]: 23,
+        [_Location_line]: 144,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onSaved",
+        [_Location_column]: 23,
+        [_Location_line]: 147,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 23,
+        [_Location_line]: 148,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45, C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48], T._LocationL());
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 140,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "initialValue",
+        [_Location_column]: 23,
+        [_Location_line]: 157,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 23,
+        [_Location_line]: 158,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textInputAction",
+        [_Location_column]: 23,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusNode",
+        [_Location_column]: 23,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "keyboardType",
+        [_Location_column]: 23,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onFieldSubmitted",
+        [_Location_column]: 23,
+        [_Location_line]: 163,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onSaved",
+        [_Location_column]: 23,
+        [_Location_line]: 167,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 23,
+        [_Location_line]: 169,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58], T._LocationL());
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 156,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 29,
+        [_Location_line]: 186,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "keyboardType",
+        [_Location_column]: 29,
+        [_Location_line]: 188,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textInputAction",
+        [_Location_column]: 29,
+        [_Location_line]: 189,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusNode",
+        [_Location_column]: 29,
+        [_Location_line]: 190,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 29,
+        [_Location_line]: 191,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onFieldSubmitted",
+        [_Location_column]: 29,
+        [_Location_line]: 192,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onSaved",
+        [_Location_column]: 29,
+        [_Location_line]: 195,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 29,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.constList([C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68], T._LocationL());
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[60] || CT.C60,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 185,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.constList([C[71] || CT.C71], T._LocationL());
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[70] || CT.C70,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 184,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 38,
+        [_Location_line]: 222,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74], T._LocationL());
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 222,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "src",
+        [_Location_column]: 55,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "fit",
+        [_Location_column]: 35,
+        [_Location_line]: 225,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.constList([C[77] || CT.C77, C[78] || CT.C78], T._LocationL());
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 223,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 27,
+        [_Location_line]: 208,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 27,
+        [_Location_line]: 209,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 27,
+        [_Location_line]: 210,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 27,
+        [_Location_line]: 214,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 27,
+        [_Location_line]: 220,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 221,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.constList([C[81] || CT.C81, C[82] || CT.C82, C[83] || CT.C83, C[84] || CT.C84, C[85] || CT.C85, C[86] || CT.C86], T._LocationL());
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[80] || CT.C80,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 207,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 23,
+        [_Location_line]: 182,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 23,
+        [_Location_line]: 183,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.constList([C[89] || CT.C89, C[90] || CT.C90], T._LocationL());
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[88] || CT.C88,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 181,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 19,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.constList([C[93] || CT.C93], T._LocationL());
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[92] || CT.C92,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 138,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 17,
+        [_Location_line]: 137,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 138,
+        [_Location_file]: null
+      });
+    },
+    get C95() {
+      return C[95] = dart.constList([C[96] || CT.C96, C[97] || CT.C97], T._LocationL());
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[95] || CT.C95,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 136,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 135,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 136,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100, C[101] || CT.C101], T._LocationL());
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 134,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C103() {
+      return C[103] = dart.constList([C[104] || CT.C104, C[105] || CT.C105], T._LocationL());
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[103] || CT.C103,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 118,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/views/productFormScreen.dart"
+      });
     }
-    performLayout() {
-      if (!(this.child != null)) dart.assertFailed(null, I[0], 51, 12, "child != null");
-      dart.nullCheck(this.child).layout(this.constraints, {parentUsesSize: true});
-      this.geometry = dart.nullCheck(this.child).geometry;
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 57, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 57, 46, "offset");
-      if (this.child != null) context.paintChild(dart.nullCheck(this.child), offset);
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[0], 63, 44, "result");
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      if (mainAxisPosition == null) dart.nullFailed(I[0], 63, 69, "mainAxisPosition");
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      if (crossAxisPosition == null) dart.nullFailed(I[0], 63, 103, "crossAxisPosition");
-      return this.child != null && dart.notNull(dart.nullCheck(dart.nullCheck(this.child).geometry).hitTestExtent) > 0 && dart.test(dart.nullCheck(this.child).hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition}));
-    }
-    childMainAxisPosition(child) {
-      sliver.RenderSliver.as(child);
-      if (child == null) dart.nullFailed(I[0], 74, 45, "child");
-      if (!(child != null)) dart.assertFailed(null, I[0], 75, 12, "child != null");
-      if (!dart.equals(child, this.child)) dart.assertFailed(null, I[0], 76, 12, "child == this.child");
-      return 0.0;
-    }
-    applyPaintTransform(child, transform) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[0], 81, 41, "child");
-      if (transform == null) dart.nullFailed(I[0], 81, 56, "transform");
-      if (!(child != null)) dart.assertFailed(null, I[0], 82, 12, "child != null");
-      let childParentData = sliver.SliverPhysicalParentData.as(dart.nullCheck(child.parentData));
-      childParentData.applyPaintTransform(transform);
+  }, false);
+  var C = Array(106).fill(void 0);
+  var I = ["package:gameshop_supera/views/productFormScreen.dart"];
+  productFormScreen.ProductFormScreen = class ProductFormScreen extends framework.StatefulWidget {
+    createState() {
+      return new productFormScreen._ProductFormScreenState.new();
     }
   };
-  (proxy_sliver.RenderProxySliver.new = function(child = null) {
-    proxy_sliver.RenderProxySliver.__proto__.new.call(this);
-    this.child = child;
-  }).prototype = proxy_sliver.RenderProxySliver.prototype;
-  dart.addTypeTests(proxy_sliver.RenderProxySliver);
-  dart.addTypeCaches(proxy_sliver.RenderProxySliver);
-  dart.setMethodSignature(proxy_sliver.RenderProxySliver, () => ({
-    __proto__: dart.getMethods(proxy_sliver.RenderProxySliver.__proto__),
-    performLayout: dart.fnType(dart.void, [])
+  (productFormScreen.ProductFormScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    productFormScreen.ProductFormScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = productFormScreen.ProductFormScreen.prototype;
+  dart.addTypeTests(productFormScreen.ProductFormScreen);
+  dart.addTypeCaches(productFormScreen.ProductFormScreen);
+  dart.setMethodSignature(productFormScreen.ProductFormScreen, () => ({
+    __proto__: dart.getMethods(productFormScreen.ProductFormScreen.__proto__),
+    createState: dart.fnType(dart.legacy(productFormScreen._ProductFormScreenState), [])
   }));
-  dart.setLibraryUri(proxy_sliver.RenderProxySliver, I[1]);
-  var _opacity = dart.privateName(proxy_sliver, "_opacity");
-  var _alwaysIncludeSemantics = dart.privateName(proxy_sliver, "_alwaysIncludeSemantics");
-  var _alpha = dart.privateName(proxy_sliver, "_alpha");
-  proxy_sliver.RenderSliverOpacity = class RenderSliverOpacity extends proxy_sliver.RenderProxySliver {
-    get alwaysNeedsCompositing() {
-      return this.child != null && this[_alpha] !== 0 && this[_alpha] !== 255;
+  dart.setLibraryUri(productFormScreen.ProductFormScreen, I[0]);
+  var _priceFocusNode = dart.privateName(productFormScreen, "_priceFocusNode");
+  var _descriptionFocusNode = dart.privateName(productFormScreen, "_descriptionFocusNode");
+  var _imageUrlFocusNode = dart.privateName(productFormScreen, "_imageUrlFocusNode");
+  var _imageUrlController = dart.privateName(productFormScreen, "_imageUrlController");
+  var _form = dart.privateName(productFormScreen, "_form");
+  var _formData = dart.privateName(productFormScreen, "_formData");
+  var _isLoading = dart.privateName(productFormScreen, "_isLoading");
+  var _updateImage = dart.privateName(productFormScreen, "_updateImage");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _saveForm = dart.privateName(productFormScreen, "_saveForm");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  productFormScreen._ProductFormScreenState = class _ProductFormScreenState extends framework.State$(dart.legacy(productFormScreen.ProductFormScreen)) {
+    initState() {
+      super.initState();
+      this[_imageUrlFocusNode].addListener(dart.bind(this, _updateImage));
     }
-    get opacity() {
-      return this[_opacity];
-    }
-    set opacity(value) {
-      if (value == null) dart.nullFailed(I[0], 131, 22, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 132, 12, "value != null");
-      if (!(dart.notNull(value) >= 0.0 && dart.notNull(value) <= 1.0)) dart.assertFailed(null, I[0], 133, 12, "value >= 0.0 && value <= 1.0");
-      if (this[_opacity] == value) return;
-      let didNeedCompositing = this.alwaysNeedsCompositing;
-      let wasVisible = this[_alpha] !== 0;
-      this[_opacity] = value;
-      this[_alpha] = ui.Color.getAlphaFromOpacity(this[_opacity]);
-      if (didNeedCompositing != this.alwaysNeedsCompositing) this.markNeedsCompositingBitsUpdate();
-      this.markNeedsPaint();
-      if (wasVisible !== (this[_alpha] !== 0) && !dart.test(this.alwaysIncludeSemantics)) this.markNeedsSemanticsUpdate();
-    }
-    get alwaysIncludeSemantics() {
-      return this[_alwaysIncludeSemantics];
-    }
-    set alwaysIncludeSemantics(value) {
-      if (value == null) dart.nullFailed(I[0], 154, 35, "value");
-      if (value == this[_alwaysIncludeSemantics]) return;
-      this[_alwaysIncludeSemantics] = value;
-      this.markNeedsSemanticsUpdate();
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 162, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 162, 46, "offset");
-      if (this.child != null && dart.test(dart.nullCheck(dart.nullCheck(this.child).geometry).visible)) {
-        if (this[_alpha] === 0) {
-          this.layer = null;
-          return;
+    didChangeDependencies() {
+      super.didChangeDependencies();
+      if (dart.test(this[_formData][$isEmpty])) {
+        let product = T.ProductL().as(routes.ModalRoute.of(T.ObjectL(), this.context).settings.arguments);
+        if (product != null) {
+          this[_formData][$_set]("Id", product.id);
+          this[_formData][$_set]("Preco", product.price);
+          this[_formData][$_set]("Nome", product.name);
+          this[_formData][$_set]("ImageUrl", product.image);
+          this[_imageUrlController].text = T.StringL().as(this[_formData][$_get]("ImageUrl"));
+        } else {
+          this[_formData][$_set]("Preco", "");
         }
-        if (this[_alpha] === 255) {
-          this.layer = null;
-          context.paintChild(dart.nullCheck(this.child), offset);
-          return;
-        }
-        if (!dart.test(this.needsCompositing)) dart.assertFailed(null, I[0], 175, 14, "needsCompositing");
-        this.layer = context.pushOpacity(offset, this[_alpha], dart.bind(this, 'paint', super.paint), {oldLayer: T.OpacityLayerN().as(this.layer)});
       }
     }
-    visitChildrenForSemantics(visitor) {
-      if (visitor == null) dart.nullFailed(I[0], 186, 54, "visitor");
-      if (this.child != null && (this[_alpha] !== 0 || dart.test(this.alwaysIncludeSemantics))) visitor(dart.nullCheck(this.child));
+    [_updateImage]() {
+      if (dart.test(this.isValidImageUrl(this[_imageUrlController].text))) {
+        this.setState(dart.fn(() => {
+        }, T.VoidToNull()));
+      }
     }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 192, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.DoubleProperty.new("opacity", this.opacity));
-      properties.add(new diagnostics.FlagProperty.new("alwaysIncludeSemantics", {value: this.alwaysIncludeSemantics, ifTrue: "alwaysIncludeSemantics"}));
+    isValidImageUrl(url) {
+      let isValidProtocol = url[$toLowerCase]()[$startsWith]("http");
+      return isValidProtocol;
     }
-  };
-  (proxy_sliver.RenderSliverOpacity.new = function(opts) {
-    let opacity = opts && 'opacity' in opts ? opts.opacity : 1;
-    if (opacity == null) dart.nullFailed(I[0], 103, 12, "opacity");
-    let alwaysIncludeSemantics = opts && 'alwaysIncludeSemantics' in opts ? opts.alwaysIncludeSemantics : false;
-    if (alwaysIncludeSemantics == null) dart.nullFailed(I[0], 104, 10, "alwaysIncludeSemantics");
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    if (!(opacity != null && dart.notNull(opacity) >= 0.0 && dart.notNull(opacity) <= 1.0)) dart.assertFailed(null, I[0], 106, 15, "opacity != null && opacity >= 0.0 && opacity <= 1.0");
-    if (!(alwaysIncludeSemantics != null)) dart.assertFailed(null, I[0], 107, 15, "alwaysIncludeSemantics != null");
-    this[_opacity] = opacity;
-    this[_alwaysIncludeSemantics] = alwaysIncludeSemantics;
-    this[_alpha] = ui.Color.getAlphaFromOpacity(opacity);
-    proxy_sliver.RenderSliverOpacity.__proto__.new.call(this);
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverOpacity.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverOpacity);
-  dart.addTypeCaches(proxy_sliver.RenderSliverOpacity);
-  dart.setGetterSignature(proxy_sliver.RenderSliverOpacity, () => ({
-    __proto__: dart.getGetters(proxy_sliver.RenderSliverOpacity.__proto__),
-    opacity: core.double,
-    alwaysIncludeSemantics: core.bool
-  }));
-  dart.setSetterSignature(proxy_sliver.RenderSliverOpacity, () => ({
-    __proto__: dart.getSetters(proxy_sliver.RenderSliverOpacity.__proto__),
-    opacity: core.double,
-    alwaysIncludeSemantics: core.bool
-  }));
-  dart.setLibraryUri(proxy_sliver.RenderSliverOpacity, I[1]);
-  dart.setFieldSignature(proxy_sliver.RenderSliverOpacity, () => ({
-    __proto__: dart.getFields(proxy_sliver.RenderSliverOpacity.__proto__),
-    [_alpha]: dart.fieldType(core.int),
-    [_opacity]: dart.fieldType(core.double),
-    [_alwaysIncludeSemantics]: dart.fieldType(core.bool)
-  }));
-  var _ignoring = dart.privateName(proxy_sliver, "_ignoring");
-  var _ignoringSemantics = dart.privateName(proxy_sliver, "_ignoringSemantics");
-  var _effectiveIgnoringSemantics = dart.privateName(proxy_sliver, "_effectiveIgnoringSemantics");
-  proxy_sliver.RenderSliverIgnorePointer = class RenderSliverIgnorePointer extends proxy_sliver.RenderProxySliver {
-    get ignoring() {
-      return this[_ignoring];
+    [_saveForm]() {
+      return async.async(dart.void, (function* _saveForm() {
+        let isValid = this[_form].currentState.validate();
+        if (!dart.test(isValid)) {
+          return;
+        }
+        this[_form].currentState.save();
+        let newProduct = new product.Product.new({id: T.StringL().as(this[_formData][$_get]("Id")), name: T.StringL().as(this[_formData][$_get]("Nome")), price: T.doubleL().as(this[_formData][$_get]("Preco")), image: T.StringL().as(this[_formData][$_get]("ImageUrl"))});
+        this.setState(dart.fn(() => {
+          this[_isLoading] = true;
+        }, T.VoidToNull()));
+        let products = provider.Provider.of(T.ProductsL(), this.context, {listen: false});
+        try {
+          if (this[_formData][$_get]("Id") == null) {
+            yield products.addProduct(newProduct);
+          } else {
+            yield products.updateProduct(newProduct);
+          }
+          navigator.Navigator.of(this.context).pop(T.ObjectL());
+        } catch (e) {
+          let error = dart.getThrown(e);
+          yield dialog.showDialog(core.Null, {context: this.context, builder: dart.fn(ctx => new dialog.AlertDialog.new({title: new text.Text.new("Ocorreu um erro!", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), content: new basic.Row.new({children: T.JSArrayOfWidgetL().of([new text.Text.new("Erro inesperado!", {$creationLocationd_0dea112b090073317d4: C[3] || CT.C3})]), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), actions: T.JSArrayOfWidgetL().of([new text_button.TextButton.new({onPressed: dart.fn(() => {
+                    navigator.Navigator.of(this.context).pop(T.ObjectL());
+                  }, T.VoidToNull()), child: new text.Text.new("OK", {$creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12})]), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), T.BuildContextLToAlertDialogL())});
+        } finally {
+          this.setState(dart.fn(() => {
+            this[_isLoading] = false;
+          }, T.VoidToNull()));
+        }
+      }).bind(this));
     }
-    set ignoring(value) {
-      if (value == null) dart.nullFailed(I[0], 230, 21, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 231, 12, "value != null");
-      if (value == this[_ignoring]) return;
-      this[_ignoring] = value;
-      if (this[_ignoringSemantics] == null || !dart.nullCheck(this[_ignoringSemantics])) this.markNeedsSemanticsUpdate();
+    dispose() {
+      super.dispose();
+      this[_priceFocusNode].dispose();
+      this[_descriptionFocusNode].dispose();
+      this[_imageUrlFocusNode].dispose();
     }
-    get ignoringSemantics() {
-      return this[_ignoringSemantics];
-    }
-    set ignoringSemantics(value) {
-      if (value == this[_ignoringSemantics]) return;
-      let oldEffectiveValue = this[_effectiveIgnoringSemantics];
-      this[_ignoringSemantics] = value;
-      if (oldEffectiveValue != this[_effectiveIgnoringSemantics]) this.markNeedsSemanticsUpdate();
-    }
-    get [_effectiveIgnoringSemantics]() {
-      let t0;
-      t0 = this.ignoringSemantics;
-      return t0 == null ? this.ignoring : t0;
-    }
-    hitTest(result, opts) {
-      if (result == null) dart.nullFailed(I[0], 259, 36, "result");
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      if (mainAxisPosition == null) dart.nullFailed(I[0], 259, 61, "mainAxisPosition");
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      if (crossAxisPosition == null) dart.nullFailed(I[0], 259, 95, "crossAxisPosition");
-      return !dart.test(this.ignoring) && dart.test(super.hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition}));
-    }
-    visitChildrenForSemantics(visitor) {
-      if (visitor == null) dart.nullFailed(I[0], 269, 54, "visitor");
-      if (this.child != null && !dart.test(this[_effectiveIgnoringSemantics])) visitor(dart.nullCheck(this.child));
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 275, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("ignoring", this.ignoring));
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("ignoringSemantics", this[_effectiveIgnoringSemantics], {description: this.ignoringSemantics == null ? "implicitly " + dart.str(this[_effectiveIgnoringSemantics]) : null}));
-    }
-  };
-  (proxy_sliver.RenderSliverIgnorePointer.new = function(opts) {
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    let ignoring = opts && 'ignoring' in opts ? opts.ignoring : true;
-    if (ignoring == null) dart.nullFailed(I[0], 216, 10, "ignoring");
-    let ignoringSemantics = opts && 'ignoringSemantics' in opts ? opts.ignoringSemantics : null;
-    if (!(ignoring != null)) dart.assertFailed(null, I[0], 218, 15, "ignoring != null");
-    this[_ignoring] = ignoring;
-    this[_ignoringSemantics] = ignoringSemantics;
-    proxy_sliver.RenderSliverIgnorePointer.__proto__.new.call(this);
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverIgnorePointer.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverIgnorePointer);
-  dart.addTypeCaches(proxy_sliver.RenderSliverIgnorePointer);
-  dart.setGetterSignature(proxy_sliver.RenderSliverIgnorePointer, () => ({
-    __proto__: dart.getGetters(proxy_sliver.RenderSliverIgnorePointer.__proto__),
-    ignoring: core.bool,
-    ignoringSemantics: dart.nullable(core.bool),
-    [_effectiveIgnoringSemantics]: core.bool
-  }));
-  dart.setSetterSignature(proxy_sliver.RenderSliverIgnorePointer, () => ({
-    __proto__: dart.getSetters(proxy_sliver.RenderSliverIgnorePointer.__proto__),
-    ignoring: core.bool,
-    ignoringSemantics: dart.nullable(core.bool)
-  }));
-  dart.setLibraryUri(proxy_sliver.RenderSliverIgnorePointer, I[1]);
-  dart.setFieldSignature(proxy_sliver.RenderSliverIgnorePointer, () => ({
-    __proto__: dart.getFields(proxy_sliver.RenderSliverIgnorePointer.__proto__),
-    [_ignoring]: dart.fieldType(core.bool),
-    [_ignoringSemantics]: dart.fieldType(dart.nullable(core.bool))
-  }));
-  var _offstage = dart.privateName(proxy_sliver, "_offstage");
-  proxy_sliver.RenderSliverOffstage = class RenderSliverOffstage extends proxy_sliver.RenderProxySliver {
-    get offstage() {
-      return this[_offstage];
-    }
-    set offstage(value) {
-      if (value == null) dart.nullFailed(I[0], 305, 21, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 306, 12, "value != null");
-      if (value == this[_offstage]) return;
-      this[_offstage] = value;
-      this.markNeedsLayoutForSizedByParentChange();
-    }
-    performLayout() {
-      if (!(this.child != null)) dart.assertFailed(null, I[0], 315, 12, "child != null");
-      dart.nullCheck(this.child).layout(this.constraints, {parentUsesSize: true});
-      if (!dart.test(this.offstage))
-        this.geometry = dart.nullCheck(this.child).geometry;
-      else
-        this.geometry = sliver.SliverGeometry.zero;
-    }
-    hitTest(result, opts) {
-      if (result == null) dart.nullFailed(I[0], 324, 36, "result");
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      if (mainAxisPosition == null) dart.nullFailed(I[0], 324, 61, "mainAxisPosition");
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      if (crossAxisPosition == null) dart.nullFailed(I[0], 324, 95, "crossAxisPosition");
-      return !dart.test(this.offstage) && dart.test(super.hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition}));
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[0], 333, 44, "result");
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      if (mainAxisPosition == null) dart.nullFailed(I[0], 333, 69, "mainAxisPosition");
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      if (crossAxisPosition == null) dart.nullFailed(I[0], 333, 103, "crossAxisPosition");
-      return !dart.test(this.offstage) && this.child != null && dart.notNull(dart.nullCheck(dart.nullCheck(this.child).geometry).hitTestExtent) > 0 && dart.test(dart.nullCheck(this.child).hitTest(result, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition}));
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 345, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 345, 46, "offset");
-      if (dart.test(this.offstage)) return;
-      context.paintChild(dart.nullCheck(this.child), offset);
-    }
-    visitChildrenForSemantics(visitor) {
-      if (visitor == null) dart.nullFailed(I[0], 352, 54, "visitor");
-      if (dart.test(this.offstage)) return;
-      super.visitChildrenForSemantics(visitor);
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 359, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfbool()).new("offstage", this.offstage));
-    }
-    debugDescribeChildren() {
-      if (this.child == null) return T.JSArrayOfDiagnosticsNode().of([]);
-      return T.JSArrayOfDiagnosticsNode().of([dart.nullCheck(this.child).toDiagnosticsNode({name: "child", style: dart.test(this.offstage) ? diagnostics.DiagnosticsTreeStyle.offstage : diagnostics.DiagnosticsTreeStyle.sparse})]);
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Formulário Produto", {$creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), actions: T.JSArrayOfWidgetL().of([new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.save, {$creationLocationd_0dea112b090073317d4: C[24] || CT.C24}), onPressed: dart.fn(() => {
+                this[_saveForm]();
+              }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[27] || CT.C27})]), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), body: dart.test(this[_isLoading]) ? new basic.Center.new({child: new progress_indicator.CircularProgressIndicator.new({$creationLocationd_0dea112b090073317d4: C[35] || CT.C35}), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}) : new basic.Padding.new({padding: C[40] || CT.C40, child: new form.Form.new({key: this[_form], child: new scroll_view.ListView.new({children: T.JSArrayOfWidgetL().of([new text_form_field.TextFormField.new({initialValue: T.StringN().as(this[_formData][$_get]("Nome")), decoration: new input_decorator.InputDecoration.new({labelText: "Título"}), textInputAction: text_input.TextInputAction.next, onFieldSubmitted: dart.fn(_ => {
+                    focus_scope.FocusScope.of(context).requestFocus(this[_priceFocusNode]);
+                  }, T.StringLToNull()), onSaved: dart.fn(value => {
+                    let t3, t2, t1;
+                    t1 = this[_formData];
+                    t2 = "Nome";
+                    t3 = value;
+                    t1[$_set](t2, t3);
+                    return t3;
+                  }, T.StringLToStringL()), validator: dart.fn(value => {
+                    if (value[$trim]()[$isEmpty]) {
+                      return "Informe um título válido!";
+                    } else {
+                      return null;
+                    }
+                  }, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), new text_form_field.TextFormField.new({initialValue: dart.toString(this[_formData][$_get]("Preco")), decoration: new input_decorator.InputDecoration.new({labelText: "Preço"}), textInputAction: text_input.TextInputAction.next, focusNode: this[_priceFocusNode], keyboardType: new text_input.TextInputType.numberWithOptions({decimal: true}), onFieldSubmitted: dart.fn(_ => {
+                    focus_scope.FocusScope.of(context).requestFocus(this[_descriptionFocusNode]);
+                  }, T.StringLToNull()), onSaved: dart.fn(value => {
+                    let t3, t2, t1;
+                    t1 = this[_formData];
+                    t2 = "Preco";
+                    t3 = core.double.parse(value);
+                    t1[$_set](t2, t3);
+                    return t3;
+                  }, T.StringLTodoubleL()), validator: dart.fn(value => {
+                    let isEmpty = value[$trim]()[$isEmpty];
+                    let price = core.double.tryParse(value);
+                    let isInvalid = price == null || dart.notNull(price) <= 0;
+                    if (isEmpty || isInvalid) {
+                      return "Informe um preço válido!";
+                    } else {
+                      return null;
+                    }
+                  }, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), new basic.Row.new({crossAxisAlignment: flex.CrossAxisAlignment.end, children: T.JSArrayOfWidgetL().of([new basic.Expanded.new({child: new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({labelText: "URL da Imagem"}), keyboardType: text_input.TextInputType.url, textInputAction: text_input.TextInputAction.done, focusNode: this[_imageUrlFocusNode], controller: this[_imageUrlController], onFieldSubmitted: dart.fn(_ => {
+                          this[_saveForm]();
+                        }, T.StringLToNull()), onSaved: dart.fn(value => {
+                          let t3, t2, t1;
+                          t1 = this[_formData];
+                          t2 = "ImageUrl";
+                          t3 = value;
+                          t1[$_set](t2, t3);
+                          return t3;
+                        }, T.StringLToStringL()), validator: dart.fn(value => {
+                          let emptyUrl = value[$trim]()[$isEmpty];
+                          let invalidUrl = !dart.test(this.isValidImageUrl(value));
+                          if (emptyUrl || invalidUrl) {
+                            return "Informe uma URL válida!";
+                          } else {
+                            return null;
+                          }
+                        }, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[59] || CT.C59}), $creationLocationd_0dea112b090073317d4: C[69] || CT.C69}), new container.Container.new({height: 100.0, width: 100.0, margin: new edge_insets.EdgeInsets.only({top: 8.0, left: 10.0}), decoration: new box_decoration.BoxDecoration.new({border: box_border.Border.all({color: colors.Colors.grey, width: 1.0})}), alignment: alignment.Alignment.center, child: this[_imageUrlController].text[$isEmpty] ? new text.Text.new("Informe a URL", {$creationLocationd_0dea112b090073317d4: C[72] || CT.C72}) : new image.Image.network(this[_imageUrlController].text, {fit: box_fit.BoxFit.cover, $creationLocationd_0dea112b090073317d4: C[75] || CT.C75}), $creationLocationd_0dea112b090073317d4: C[79] || CT.C79})]), $creationLocationd_0dea112b090073317d4: C[87] || CT.C87})]), $creationLocationd_0dea112b090073317d4: C[91] || CT.C91}), $creationLocationd_0dea112b090073317d4: C[94] || CT.C94}), $creationLocationd_0dea112b090073317d4: C[98] || CT.C98}), $creationLocationd_0dea112b090073317d4: C[102] || CT.C102});
     }
   };
-  (proxy_sliver.RenderSliverOffstage.new = function(opts) {
-    let offstage = opts && 'offstage' in opts ? opts.offstage : true;
-    if (offstage == null) dart.nullFailed(I[0], 288, 10, "offstage");
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    if (!(offstage != null)) dart.assertFailed(null, I[0], 290, 15, "offstage != null");
-    this[_offstage] = offstage;
-    proxy_sliver.RenderSliverOffstage.__proto__.new.call(this);
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverOffstage.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverOffstage);
-  dart.addTypeCaches(proxy_sliver.RenderSliverOffstage);
-  dart.setGetterSignature(proxy_sliver.RenderSliverOffstage, () => ({
-    __proto__: dart.getGetters(proxy_sliver.RenderSliverOffstage.__proto__),
-    offstage: core.bool
+  (productFormScreen._ProductFormScreenState.new = function() {
+    this[_priceFocusNode] = new focus_manager.FocusNode.new();
+    this[_descriptionFocusNode] = new focus_manager.FocusNode.new();
+    this[_imageUrlFocusNode] = new focus_manager.FocusNode.new();
+    this[_imageUrlController] = new editable_text.TextEditingController.new();
+    this[_form] = T.GlobalKeyOfFormStateL().new();
+    this[_formData] = new (T.LinkedMapOfStringL$ObjectL()).new();
+    this[_isLoading] = false;
+    productFormScreen._ProductFormScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = productFormScreen._ProductFormScreenState.prototype;
+  dart.addTypeTests(productFormScreen._ProductFormScreenState);
+  dart.addTypeCaches(productFormScreen._ProductFormScreenState);
+  dart.setMethodSignature(productFormScreen._ProductFormScreenState, () => ({
+    __proto__: dart.getMethods(productFormScreen._ProductFormScreenState.__proto__),
+    [_updateImage]: dart.fnType(dart.void, []),
+    isValidImageUrl: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.String)]),
+    [_saveForm]: dart.fnType(dart.legacy(async.Future$(dart.void)), []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
   }));
-  dart.setSetterSignature(proxy_sliver.RenderSliverOffstage, () => ({
-    __proto__: dart.getSetters(proxy_sliver.RenderSliverOffstage.__proto__),
-    offstage: core.bool
+  dart.setLibraryUri(productFormScreen._ProductFormScreenState, I[0]);
+  dart.setFieldSignature(productFormScreen._ProductFormScreenState, () => ({
+    __proto__: dart.getFields(productFormScreen._ProductFormScreenState.__proto__),
+    [_priceFocusNode]: dart.finalFieldType(dart.legacy(focus_manager.FocusNode)),
+    [_descriptionFocusNode]: dart.finalFieldType(dart.legacy(focus_manager.FocusNode)),
+    [_imageUrlFocusNode]: dart.finalFieldType(dart.legacy(focus_manager.FocusNode)),
+    [_imageUrlController]: dart.finalFieldType(dart.legacy(editable_text.TextEditingController)),
+    [_form]: dart.finalFieldType(dart.legacy(framework.GlobalKey$(dart.legacy(form.FormState)))),
+    [_formData]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.Object)))),
+    [_isLoading]: dart.fieldType(dart.legacy(core.bool))
   }));
-  dart.setLibraryUri(proxy_sliver.RenderSliverOffstage, I[1]);
-  dart.setFieldSignature(proxy_sliver.RenderSliverOffstage, () => ({
-    __proto__: dart.getFields(proxy_sliver.RenderSliverOffstage.__proto__),
-    [_offstage]: dart.fieldType(core.bool)
-  }));
-  const RenderProxySliver_RenderAnimatedOpacityMixin$36 = class RenderProxySliver_RenderAnimatedOpacityMixin extends proxy_sliver.RenderProxySliver {};
-  (RenderProxySliver_RenderAnimatedOpacityMixin$36.new = function(child) {
-    proxy_box.RenderAnimatedOpacityMixin$(sliver.RenderSliver)[dart.mixinNew].call(this);
-    RenderProxySliver_RenderAnimatedOpacityMixin$36.__proto__.new.call(this, child);
-  }).prototype = RenderProxySliver_RenderAnimatedOpacityMixin$36.prototype;
-  dart.applyMixin(RenderProxySliver_RenderAnimatedOpacityMixin$36, proxy_box.RenderAnimatedOpacityMixin$(sliver.RenderSliver));
-  proxy_sliver.RenderSliverAnimatedOpacity = class RenderSliverAnimatedOpacity extends RenderProxySliver_RenderAnimatedOpacityMixin$36 {};
-  (proxy_sliver.RenderSliverAnimatedOpacity.new = function(opts) {
-    let opacity = opts && 'opacity' in opts ? opts.opacity : null;
-    if (opacity == null) dart.nullFailed(I[0], 386, 32, "opacity");
-    let alwaysIncludeSemantics = opts && 'alwaysIncludeSemantics' in opts ? opts.alwaysIncludeSemantics : false;
-    if (alwaysIncludeSemantics == null) dart.nullFailed(I[0], 387, 10, "alwaysIncludeSemantics");
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    if (!(opacity != null)) dart.assertFailed(null, I[0], 389, 15, "opacity != null");
-    if (!(alwaysIncludeSemantics != null)) dart.assertFailed(null, I[0], 390, 15, "alwaysIncludeSemantics != null");
-    proxy_sliver.RenderSliverAnimatedOpacity.__proto__.new.call(this);
-    this.opacity = opacity;
-    this.alwaysIncludeSemantics = alwaysIncludeSemantics;
-    this.child = sliver;
-  }).prototype = proxy_sliver.RenderSliverAnimatedOpacity.prototype;
-  dart.addTypeTests(proxy_sliver.RenderSliverAnimatedOpacity);
-  dart.addTypeCaches(proxy_sliver.RenderSliverAnimatedOpacity);
-  dart.setLibraryUri(proxy_sliver.RenderSliverAnimatedOpacity, I[1]);
-  dart.trackLibraries("packages/flutter/src/rendering/proxy_sliver.dart", {
-    "package:flutter/src/rendering/proxy_sliver.dart": proxy_sliver
+  dart.trackLibraries("packages/gameshop_supera/views/productFormScreen.dart", {
+    "package:gameshop_supera/views/productFormScreen.dart": productFormScreen
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["proxy_sliver.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/proxy_sliver.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["productFormScreen.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAO2C;IAAyB;;;;;;EACpE;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAaqB,MAAX;AACsC,MAA5C,AAAmB,+CAAY;IACjC;;AAI+B,MAAvB;AAEN,oBAAI,AAAU;AACN,sBAAoD,gBAA/B,AAAY,AAAS,kCAAlB;AAC9B,YAAI,AAAQ,OAAD;AACmB,UAA5B,AAAS,uBAAC,MAAQ,AAAQ,OAAD;AACS,UAAlC,AAAS,uBAAC,SAAW,AAAQ,OAAD;AACI,UAAhC,AAAS,uBAAC,QAAU,AAAQ,OAAD;AACU,UAArC,AAAS,uBAAC,YAAc,AAAQ,OAAD;AAEiB,UAAhD,AAAoB,iCAAA,eAAO,AAAS,uBAAC;;AAEd,UAAvB,AAAS,uBAAC,SAAW;;;IAG3B;;AAGE,oBAAI,qBAAgB,AAAoB;AACvB,QAAf,cAAS;;;IAEb;oBAE4B;AACrB,4BAAkB,AAAI,AAAc,GAAf,8BAA0B;AAEpD,YAAQ,gBAAe;IACzB;;AAEsB;AAChB,sBAAU,AAAM,AAAa;AACjC,uBAAK,OAAO;AACV;;AAGuB,QAAzB,AAAM,AAAa;AACb,yBAAa,4CACb,AAAS,uBAAC,6BACR,AAAS,uBAAC,gCACT,AAAS,uBAAC,iCACV,AAAS,uBAAC;AAKjB,QAFF,cAAS;AACU,UAAjB,mBAAa;;AAGT,uBAAoB,oCAAa,uBAAiB;AACxD;AACE,cAAI,AAAS,AAAO,uBAAN;AACyB,YAArC,MAAM,AAAS,QAAD,YAAY,UAAU;;AAEI,YAAxC,MAAM,AAAS,QAAD,eAAe,UAAU;;AAEd,UAAjB,AAAY,uBAAT;;cACN;AAiBN,UAhBD,MAAM,uCACK,uBACA,QAAC,OAAQ,mCACT,kBAAK,uFACH,6BAAc,yBACrB,kBAAK,kJAEE,yBACP,2CACa;AACkB,oBAAjB,AAAY,uBAAT;6CAER,kBAAK;;AAQlB,UAFF,cAAS;AACW,YAAlB,mBAAa;;;MAGnB;;;AAIiB,MAAT;AACmB,MAAzB,AAAgB;AACe,MAA/B,AAAsB;AACM,MAA5B,AAAmB;IACrB;UAG0B;AACxB,YAAO,oCACG,+BACC,kBAAK,2FACH,yBACP,sCACQ,kBAAW,yFACN;AACE,gBAAX;0KAKF,oBACA,6BACS,6KAET,wDAES,wBACA,oBACE,wCACK,yBACR,oEACgB,AAAS,uBAAC,sBACZ,oDAA2B,6BACN,mDACf,QAAC;AACmC,oBAAzC,AAAY,0BAAT,OAAO,eAAe;kDAE7B,QAAC;;AAAU;yBAAU;yBAAU,KAAK;oBAAhB;;uDAClB,QAAC;AACV,wBAAI,AAAM,AAAO,KAAR;AACP,4BAAO;;AAEP,4BAAO;;uGAIb,qDACmC,cAAnB,AAAS,uBAAC,uBACZ,oDAA2B,4BACN,4CACtB,qCAEO,yDAA2B,0BAC3B,QAAC;AAEuB,oBAD7B,AACN,0BADS,OAAO,eACH;kDAEX,QAAC;;AACN;yBAAU;yBAAkB,kBAAM,KAAK;oBAA9B;;uDACF,QAAC;AACL,kCAAU,AAAM,AAAO,KAAR;AAChB,gCAAe,qBAAS,KAAK;AAC5B,oCAAY,AAAM,AAAQ,KAAT,YAAkB,aAAN,KAAK,KAAI;AAE3C,wBAAI,OAAO,IAAI,SAAS;AACtB,4BAAO;;AAEP,4BAAO;;uGAIb,uCACyC,uCAC7B,yBACR,+BACS,mDAED,oDAA2B,iCACH,+CACK,4CACtB,sCACC,6CACM,QAAC;AACN,0BAAX;wDAEO,QAAC;;AAAU;+BAAU;+BAAc,KAAK;0BAApB;;6DAClB,QAAC;AACL,yCAAW,AAAM,AAAO,KAAR;AAChB,2CAAa,WAAC,qBAAgB,KAAK;AACxC,8BAAI,QAAQ,IAAI,UAAU;AACxB,kCAAO;;AAEP,kCAAO;;wKAKf,qCACU,cACD,eACY,sCACZ,WACC,oBAEI,8CACK,8BACC,2BACP,oBAGU,mCACd,AAAoB,AAAK,2CAC1B,kBAAK,8EACC,wBACJ,AAAoB,sCACR;IAU5C;;;IA/NM,wBAAkB;IAClB,8BAAwB;IACxB,2BAAqB;IACrB,4BAAsB;IACtB,cAAQ;IACR,kBAAY;IACb,mBAAa;;;EA0NpB","file":"../../../../../../../../packages/gameshop_supera/views/productFormScreen.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__proxy_sliver: proxy_sliver
+    views__productFormScreen: productFormScreen
   };
 }));
 
-//# sourceMappingURL=proxy_sliver.dart.lib.js.map
+//# sourceMappingURL=productFormScreen.dart.lib.js.map

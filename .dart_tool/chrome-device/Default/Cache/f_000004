@@ -1,4 +1,4 @@
-define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/src/listenable_provider.dart', 'packages/gameshop_supera/providers/cart.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/gameshop_supera/providers/orders.dart', 'packages/gameshop_supera/providers/products.dart', 'packages/nested/nested.dart', 'packages/flutter/src/material/app.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/gameshop_supera/views/productsOverviewScreen.dart', 'packages/gameshop_supera/views/productDetailScreen.dart', 'packages/gameshop_supera/views/cartScreen.dart', 'packages/gameshop_supera/views/ordersScreen.dart', 'packages/gameshop_supera/views/productsScreen.dart'], (function load__packages__gameshop_supera__main_dart(dart_sdk, packages__provider__src__provider$46dart, packages__provider__src__listenable_provider$46dart, packages__gameshop_supera__providers__cart$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__gameshop_supera__providers__orders$46dart, packages__gameshop_supera__providers__products$46dart, packages__nested__nested$46dart, packages__flutter__src__material__app$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__gameshop_supera__views__productsOverviewScreen$46dart, packages__gameshop_supera__views__productDetailScreen$46dart, packages__gameshop_supera__views__cartScreen$46dart, packages__gameshop_supera__views__ordersScreen$46dart, packages__gameshop_supera__views__productsScreen$46dart) {
+define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/src/listenable_provider.dart', 'packages/gameshop_supera/providers/cart.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/gameshop_supera/providers/orders.dart', 'packages/gameshop_supera/providers/products.dart', 'packages/nested/nested.dart', 'packages/flutter/src/material/app.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/colors.dart', 'packages/gameshop_supera/views/productsOverviewScreen.dart', 'packages/gameshop_supera/views/productDetailScreen.dart', 'packages/gameshop_supera/views/cartScreen.dart', 'packages/gameshop_supera/views/ordersScreen.dart', 'packages/gameshop_supera/views/productsScreen.dart', 'packages/gameshop_supera/views/productFormScreen.dart'], (function load__packages__gameshop_supera__main_dart(dart_sdk, packages__provider__src__provider$46dart, packages__provider__src__listenable_provider$46dart, packages__gameshop_supera__providers__cart$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__gameshop_supera__providers__orders$46dart, packages__gameshop_supera__providers__products$46dart, packages__nested__nested$46dart, packages__flutter__src__material__app$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__colors$46dart, packages__gameshop_supera__views__productsOverviewScreen$46dart, packages__gameshop_supera__views__productDetailScreen$46dart, packages__gameshop_supera__views__cartScreen$46dart, packages__gameshop_supera__views__ordersScreen$46dart, packages__gameshop_supera__views__productsScreen$46dart, packages__gameshop_supera__views__productFormScreen$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const _interceptors = dart_sdk._interceptors;
@@ -23,6 +23,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
   const cartScreen = packages__gameshop_supera__views__cartScreen$46dart.views__cartScreen;
   const ordersScreen = packages__gameshop_supera__views__ordersScreen$46dart.views__ordersScreen;
   const productsScreen = packages__gameshop_supera__views__productsScreen$46dart.views__productsScreen;
+  const productFormScreen = packages__gameshop_supera__views__productFormScreen$46dart.views__productFormScreen;
   var main = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
@@ -49,6 +50,8 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
     BuildContextLToOrderScreenL: () => (T.BuildContextLToOrderScreenL = dart.constFn(dart.fnType(T.OrderScreenL(), [T.BuildContextL()])))(),
     ProductsScreenL: () => (T.ProductsScreenL = dart.constFn(dart.legacy(productsScreen.ProductsScreen)))(),
     BuildContextLToProductsScreenL: () => (T.BuildContextLToProductsScreenL = dart.constFn(dart.fnType(T.ProductsScreenL(), [T.BuildContextL()])))(),
+    ProductFormScreenL: () => (T.ProductFormScreenL = dart.constFn(dart.legacy(productFormScreen.ProductFormScreen)))(),
+    BuildContextLToProductFormScreenL: () => (T.BuildContextLToProductFormScreenL = dart.constFn(dart.fnType(T.ProductFormScreenL(), [T.BuildContextL()])))(),
     StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
     WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
     BuildContextLToWidgetL: () => (T.BuildContextLToWidgetL = dart.constFn(dart.fnType(T.WidgetL(), [T.BuildContextL()])))(),
@@ -74,7 +77,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "create",
         [_Location_column]: 11,
-        [_Location_line]: 21,
+        [_Location_line]: 22,
         [_Location_file]: null
       });
     },
@@ -87,7 +90,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[1] || CT.C1,
         [_Location_name]: null,
         [_Location_column]: 9,
-        [_Location_line]: 20,
+        [_Location_line]: 21,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -97,7 +100,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "create",
         [_Location_column]: 11,
-        [_Location_line]: 24,
+        [_Location_line]: 25,
         [_Location_file]: null
       });
     },
@@ -110,7 +113,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[4] || CT.C4,
         [_Location_name]: null,
         [_Location_column]: 9,
-        [_Location_line]: 23,
+        [_Location_line]: 24,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -120,7 +123,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: null,
         [_Location_name]: "create",
         [_Location_column]: 11,
-        [_Location_line]: 27,
+        [_Location_line]: 28,
         [_Location_file]: null
       });
     },
@@ -133,7 +136,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[7] || CT.C7,
         [_Location_name]: null,
         [_Location_column]: 9,
-        [_Location_line]: 26,
+        [_Location_line]: 27,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -146,7 +149,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 36,
-        [_Location_line]: 41,
+        [_Location_line]: 42,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -156,7 +159,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 46,
-        [_Location_line]: 42,
+        [_Location_line]: 43,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -166,7 +169,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 36,
-        [_Location_line]: 43,
+        [_Location_line]: 44,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -176,7 +179,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 38,
-        [_Location_line]: 44,
+        [_Location_line]: 45,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
@@ -186,25 +189,25 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 40,
-        [_Location_line]: 45,
+        [_Location_line]: 46,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
-    get C17() {
-      return C[17] = dart.const({
+    get C15() {
+      return C[15] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "debugShowCheckedModeBanner",
-        [_Location_column]: 9,
-        [_Location_line]: 31,
-        [_Location_file]: null
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 43,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
     get C18() {
       return C[18] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "title",
+        [_Location_name]: "debugShowCheckedModeBanner",
         [_Location_column]: 9,
         [_Location_line]: 32,
         [_Location_file]: null
@@ -214,7 +217,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
       return C[19] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "theme",
+        [_Location_name]: "title",
         [_Location_column]: 9,
         [_Location_line]: 33,
         [_Location_file]: null
@@ -224,70 +227,80 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
       return C[20] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "routes",
+        [_Location_name]: "theme",
         [_Location_column]: 9,
-        [_Location_line]: 40,
+        [_Location_line]: 34,
         [_Location_file]: null
       });
     },
-    get C16() {
-      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[16] || CT.C16,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 30,
-        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
-      });
-    },
-    get C23() {
-      return C[23] = dart.const({
+    get C21() {
+      return C[21] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "providers",
-        [_Location_column]: 7,
-        [_Location_line]: 19,
+        [_Location_name]: "routes",
+        [_Location_column]: 9,
+        [_Location_line]: 41,
         [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21], T._LocationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 31,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
     get C24() {
       return C[24] = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
+        [_Location_name]: "providers",
         [_Location_column]: 7,
-        [_Location_line]: 30,
+        [_Location_line]: 20,
         [_Location_file]: null
-      });
-    },
-    get C22() {
-      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[22] || CT.C22,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 18,
-        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     },
     get C25() {
       return C[25] = dart.const({
         __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 19,
+        [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[10] || CT.C10,
         [_Location_name]: null,
         [_Location_column]: 23,
-        [_Location_line]: 13,
+        [_Location_line]: 14,
         [_Location_file]: "file:///C:/Users/notedell/OneDrive/Documentos/Programacao/gameshop_supera/lib/main.dart"
       });
     }
   }, false);
-  var C = Array(26).fill(void 0);
+  var C = Array(27).fill(void 0);
   var I = ["package:gameshop_supera/main.dart"];
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
@@ -296,7 +309,7 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
   var _Location_file = dart.privateName(widget_inspector, "_Location.file");
   main.MyApp = class MyApp extends framework.StatelessWidget {
     build(context) {
-      return new provider.MultiProvider.new({providers: T.JSArrayOfSingleChildWidgetL().of([new (T.ChangeNotifierProviderOfCartL()).new({create: dart.fn(_ => new cart.Cart.new(), T.BuildContextLToCartL()), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), new (T.ChangeNotifierProviderOfOrdersL()).new({create: dart.fn(_ => new orders.Orders.new(), T.BuildContextLToOrdersL()), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), new (T.ChangeNotifierProviderOfProductsL()).new({create: dart.fn(_ => new products.Products.new(), T.BuildContextLToProductsL()), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6})]), child: new app.MaterialApp.new({debugShowCheckedModeBanner: false, title: "Supera GameShop", theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.purple, primaryColor: colors.Colors.purple, accentColor: colors.Colors.green, brightness: ui.Brightness.dark, fontFamily: "Lato"}), routes: new (T.IdentityMapOfStringL$BuildContextLToLWidgetL()).from(["/", dart.fn(ctx => new productsOverviewScreen.ProductsOverviewScreen.new({$creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), T.BuildContextLToProductsOverviewScreenL()), "/product-detail", dart.fn(ctx => new productDetailScreen.ProductDetailScreen.new({$creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), T.BuildContextLToProductDetailScreenL()), "/cart", dart.fn(ctx => new cartScreen.CartScreen.new({$creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), T.BuildContextLToCartScreenL()), "/orders", dart.fn(ctx => new ordersScreen.OrderScreen.new({$creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), T.BuildContextLToOrderScreenL()), "/products", dart.fn(ctx => new productsScreen.ProductsScreen.new({$creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), T.BuildContextLToProductsScreenL())]), $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
+      return new provider.MultiProvider.new({providers: T.JSArrayOfSingleChildWidgetL().of([new (T.ChangeNotifierProviderOfCartL()).new({create: dart.fn(_ => new cart.Cart.new(), T.BuildContextLToCartL()), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), new (T.ChangeNotifierProviderOfOrdersL()).new({create: dart.fn(_ => new orders.Orders.new(), T.BuildContextLToOrdersL()), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), new (T.ChangeNotifierProviderOfProductsL()).new({create: dart.fn(_ => new products.Products.new(), T.BuildContextLToProductsL()), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6})]), child: new app.MaterialApp.new({debugShowCheckedModeBanner: false, title: "Supera GameShop", theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.purple, primaryColor: colors.Colors.purple, accentColor: colors.Colors.green, brightness: ui.Brightness.dark, fontFamily: "Lato"}), routes: new (T.IdentityMapOfStringL$BuildContextLToLWidgetL()).from(["/", dart.fn(ctx => new productsOverviewScreen.ProductsOverviewScreen.new({$creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), T.BuildContextLToProductsOverviewScreenL()), "/product-detail", dart.fn(ctx => new productDetailScreen.ProductDetailScreen.new({$creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), T.BuildContextLToProductDetailScreenL()), "/cart", dart.fn(ctx => new cartScreen.CartScreen.new({$creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), T.BuildContextLToCartScreenL()), "/orders", dart.fn(ctx => new ordersScreen.OrderScreen.new({$creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), T.BuildContextLToOrderScreenL()), "/products", dart.fn(ctx => new productsScreen.ProductsScreen.new({$creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), T.BuildContextLToProductsScreenL()), "/product-form", dart.fn(ctx => new productFormScreen.ProductFormScreen.new({$creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), T.BuildContextLToProductFormScreenL())]), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), $creationLocationd_0dea112b090073317d4: C[22] || CT.C22});
     }
   };
   (main.MyApp.new = function(opts) {
@@ -312,12 +325,12 @@ define(['dart_sdk', 'packages/provider/src/provider.dart', 'packages/provider/sr
   }));
   dart.setLibraryUri(main.MyApp, I[0]);
   main.main = function main$() {
-    return binding.runApp(new main.MyApp.new({$creationLocationd_0dea112b090073317d4: C[25] || CT.C25}));
+    return binding.runApp(new main.MyApp.new({$creationLocationd_0dea112b090073317d4: C[26] || CT.C26}));
   };
   dart.trackLibraries("packages/gameshop_supera/main.dart", {
     "package:gameshop_supera/main.dart": main
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["main.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAgB4B;AACxB,YAAO,4CACM,oCACT,qDACU,QAAC,KAAU,yGAErB,uDACU,QAAC,KAAU,+GAErB,yDACU,QAAC,KAAU,8HAGhB,qDACuB,cACrB,0BACA,yCACiB,oCACD,mCACD,iCACG,gCACX,kBAEN,kEACU,QAAC,OAAQ,gLACC,QAAC,OAAQ,+JACnB,QAAC,OAAQ,sIACP,QAAC,OAAQ,4IACP,QAAC,OAAQ;IAIrC;;;;;;EACF;;;;;;;;;AArCe,0BAAO;EAAQ","file":"../../../../../../../packages/gameshop_supera/main.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["main.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAiB4B;AACxB,YAAO,4CACM,oCACT,qDACU,QAAC,KAAU,yGAErB,uDACU,QAAC,KAAU,+GAErB,yDACU,QAAC,KAAU,8HAGhB,qDACuB,cACrB,0BACA,yCACiB,oCACD,mCACD,iCACG,gCACX,kBAEN,kEACU,QAAC,OAAQ,gLACC,QAAC,OAAQ,+JACnB,QAAC,OAAQ,sIACP,QAAC,OAAQ,4IACP,QAAC,OAAQ,wJACN,QAAC,OAAQ;IAIxC;;;;;;EACF;;;;;;;;;AAtCe,0BAAO;EAAQ","file":"../../../../../../../packages/gameshop_supera/main.dart.lib.js"}');
   // Exports:
   return {
     main: main

@@ -1,37 +1,24 @@
-define(['dart_sdk', 'packages/flutter_svg/src/utilities/numbers.dart'], (function load__packages__flutter_svg__src__svg__colors_dart(dart_sdk, packages__flutter_svg__src__utilities__numbers$46dart) {
+define(['dart_sdk'], (function load__packages__intl__date_symbols_dart(dart_sdk) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
-  const _interceptors = dart_sdk._interceptors;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const numbers = packages__flutter_svg__src__utilities__numbers$46dart.src__utilities__numbers;
-  var colors = Object.create(dart.library);
-  var $isEmpty = dartx.isEmpty;
+  var date_symbols = Object.create(dart.library);
   var $_get = dartx._get;
-  var $substring = dartx.substring;
-  var $toLowerCase = dartx.toLowerCase;
-  var $startsWith = dartx.startsWith;
-  var $indexOf = dartx.indexOf;
-  var $split = dartx.split;
-  var $trim = dartx.trim;
-  var $map = dartx.map;
-  var $toList = dartx.toList;
-  var $removeLast = dartx.removeLast;
-  var $endsWith = dartx.endsWith;
-  var $contains = dartx.contains;
-  var $round = dartx.round;
-  var $modulo = dartx['%'];
-  var $length = dartx.length;
   var $_set = dartx._set;
+  var $toString = dartx.toString;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    StringToString: () => (T.StringToString = dart.constFn(dart.fnType(core.String, [core.String])))(),
-    StringToint: () => (T.StringToint = dart.constFn(dart.fnType(core.int, [core.String])))(),
-    JSArrayOfdouble: () => (T.JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))(),
-    doubleTodouble: () => (T.doubleTodouble = dart.constFn(dart.fnType(core.double, [core.double])))(),
     StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
-    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))()
+    ListOfStringL: () => (T.ListOfStringL = dart.constFn(core.List$(T.StringL())))(),
+    ListLOfStringL: () => (T.ListLOfStringL = dart.constFn(dart.legacy(T.ListOfStringL())))(),
+    StringLToListLOfStringL: () => (T.StringLToListLOfStringL = dart.constFn(dart.fnType(T.ListLOfStringL(), [T.StringL()])))(),
+    LinkedHashMapOfStringL$StringL: () => (T.LinkedHashMapOfStringL$StringL = dart.constFn(collection.LinkedHashMap$(T.StringL(), T.StringL())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    ListOfintL: () => (T.ListOfintL = dart.constFn(core.List$(T.intL())))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -47,972 +34,426 @@ define(['dart_sdk', 'packages/flutter_svg/src/utilities/numbers.dart'], (functio
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190080.0
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293982463.0
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294634455.0
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278255615.0
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286578644.0
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293984255.0
-      });
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294309340.0
-      });
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294960324.0
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294962125.0
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190335.0
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287245282.0
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289014314.0
-      });
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292786311.0
-      });
-    },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4284456608.0
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286578432.0
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4291979550.0
-      });
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294934352.0
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4284782061.0
-      });
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294965468.0
-      });
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292613180.0
-      });
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190219.0
-      });
-    },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278225803.0
-      });
-    },
-    get C23() {
-      return C[23] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4290283019.0
-      });
-    },
-    get C24() {
-      return C[24] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289309097.0
-      });
-    },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278215680.0
-      });
-    },
-    get C26() {
-      return C[26] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4290623339.0
-      });
-    },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287299723.0
-      });
-    },
-    get C28() {
-      return C[28] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4283788079.0
-      });
-    },
-    get C29() {
-      return C[29] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294937600.0
-      });
-    },
-    get C30() {
-      return C[30] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4288230092.0
-      });
-    },
-    get C31() {
-      return C[31] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287299584.0
-      });
-    },
-    get C32() {
-      return C[32] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293498490.0
-      });
-    },
-    get C33() {
-      return C[33] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287609999.0
-      });
-    },
-    get C34() {
-      return C[34] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4282924427.0
-      });
-    },
-    get C35() {
-      return C[35] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4281290575.0
-      });
-    },
-    get C36() {
-      return C[36] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278243025.0
-      });
-    },
-    get C37() {
-      return C[37] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287889619.0
-      });
-    },
-    get C38() {
-      return C[38] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294907027.0
-      });
-    },
-    get C39() {
-      return C[39] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278239231.0
-      });
-    },
-    get C40() {
-      return C[40] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4285098345.0
-      });
-    },
-    get C41() {
-      return C[41] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4280193279.0
-      });
-    },
-    get C42() {
-      return C[42] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289864226.0
-      });
-    },
-    get C43() {
-      return C[43] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294966000.0
-      });
-    },
-    get C44() {
-      return C[44] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4280453922.0
-      });
-    },
-    get C45() {
-      return C[45] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294902015.0
-      });
-    },
-    get C46() {
-      return C[46] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292664540.0
-      });
-    },
-    get C47() {
-      return C[47] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294506751.0
-      });
-    },
-    get C48() {
-      return C[48] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294956800.0
-      });
-    },
-    get C49() {
-      return C[49] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292519200.0
-      });
-    },
-    get C50() {
-      return C[50] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286611584.0
-      });
-    },
-    get C51() {
-      return C[51] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278222848.0
-      });
-    },
-    get C52() {
-      return C[52] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289593135.0
-      });
-    },
-    get C53() {
-      return C[53] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293984240.0
-      });
-    },
-    get C54() {
-      return C[54] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294928820.0
-      });
-    },
-    get C55() {
-      return C[55] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4291648604.0
-      });
-    },
-    get C56() {
-      return C[56] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4283105410.0
-      });
-    },
-    get C57() {
-      return C[57] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294967280.0
-      });
-    },
-    get C58() {
-      return C[58] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293977740.0
-      });
-    },
-    get C59() {
-      return C[59] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293322490.0
-      });
-    },
-    get C60() {
-      return C[60] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294963445.0
-      });
-    },
-    get C61() {
-      return C[61] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286381056.0
-      });
-    },
-    get C62() {
-      return C[62] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294965965.0
-      });
-    },
-    get C63() {
-      return C[63] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289583334.0
-      });
-    },
-    get C64() {
-      return C[64] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293951616.0
-      });
-    },
-    get C65() {
-      return C[65] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292935679.0
-      });
-    },
-    get C66() {
-      return C[66] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294638290.0
-      });
-    },
-    get C67() {
-      return C[67] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292072403.0
-      });
-    },
-    get C68() {
-      return C[68] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287688336.0
-      });
-    },
-    get C69() {
-      return C[69] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294948545.0
-      });
-    },
-    get C70() {
-      return C[70] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294942842.0
-      });
-    },
-    get C71() {
-      return C[71] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4280332970.0
-      });
-    },
-    get C72() {
-      return C[72] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287090426.0
-      });
-    },
-    get C73() {
-      return C[73] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286023833.0
-      });
-    },
-    get C74() {
-      return C[74] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289774814.0
-      });
-    },
-    get C75() {
-      return C[75] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294967264.0
-      });
-    },
-    get C76() {
-      return C[76] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278255360.0
-      });
-    },
-    get C77() {
-      return C[77] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4281519410.0
-      });
-    },
-    get C78() {
-      return C[78] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294635750.0
-      });
-    },
-    get C79() {
-      return C[79] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286578688.0
-      });
-    },
-    get C80() {
-      return C[80] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4284927402.0
-      });
-    },
-    get C81() {
-      return C[81] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190285.0
-      });
-    },
-    get C82() {
-      return C[82] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4290401747.0
-      });
-    },
-    get C83() {
-      return C[83] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287852763.0
-      });
-    },
-    get C84() {
-      return C[84] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4282168177.0
-      });
-    },
-    get C85() {
-      return C[85] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286277870.0
-      });
-    },
-    get C86() {
-      return C[86] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278254234.0
-      });
-    },
-    get C87() {
-      return C[87] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4282962380.0
-      });
-    },
-    get C88() {
-      return C[88] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4291237253.0
-      });
-    },
-    get C89() {
-      return C[89] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4279834992.0
-      });
-    },
-    get C90() {
-      return C[90] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294311930.0
-      });
-    },
-    get C91() {
-      return C[91] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294960353.0
-      });
-    },
-    get C92() {
-      return C[92] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294960309.0
-      });
-    },
-    get C93() {
-      return C[93] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294958765.0
-      });
-    },
-    get C94() {
-      return C[94] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190208.0
-      });
-    },
-    get C95() {
-      return C[95] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294833638.0
-      });
-    },
-    get C96() {
-      return C[96] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286611456.0
-      });
-    },
-    get C97() {
-      return C[97] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4285238819.0
-      });
-    },
-    get C98() {
-      return C[98] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294944000.0
-      });
-    },
-    get C99() {
-      return C[99] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294919424.0
-      });
-    },
-    get C100() {
-      return C[100] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292505814.0
-      });
-    },
-    get C101() {
-      return C[101] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293847210.0
-      });
-    },
-    get C102() {
-      return C[102] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4288215960.0
-      });
-    },
-    get C103() {
-      return C[103] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289720046.0
-      });
-    },
-    get C104() {
-      return C[104] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292571283.0
-      });
-    },
-    get C105() {
-      return C[105] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294963157.0
-      });
-    },
-    get C106() {
-      return C[106] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294957753.0
-      });
-    },
-    get C107() {
-      return C[107] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4291659071.0
-      });
-    },
-    get C108() {
-      return C[108] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294951115.0
-      });
-    },
-    get C109() {
-      return C[109] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292714717.0
-      });
-    },
-    get C110() {
-      return C[110] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4289781990.0
-      });
-    },
-    get C111() {
-      return C[111] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4286578816.0
-      });
-    },
-    get C112() {
-      return C[112] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294901760.0
-      });
-    },
-    get C113() {
-      return C[113] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4290547599.0
-      });
-    },
-    get C114() {
-      return C[114] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4282477025.0
-      });
-    },
-    get C115() {
-      return C[115] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287317267.0
-      });
-    },
-    get C116() {
-      return C[116] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294606962.0
-      });
-    },
-    get C117() {
-      return C[117] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294222944.0
-      });
-    },
-    get C118() {
-      return C[118] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4281240407.0
-      });
-    },
-    get C119() {
-      return C[119] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294964718.0
-      });
-    },
-    get C120() {
-      return C[120] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4288696877.0
-      });
-    },
-    get C121() {
-      return C[121] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4290822336.0
-      });
-    },
-    get C122() {
-      return C[122] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4287090411.0
-      });
-    },
-    get C123() {
-      return C[123] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4285160141.0
-      });
-    },
-    get C124() {
-      return C[124] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4285563024.0
-      });
-    },
-    get C125() {
-      return C[125] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294966010.0
-      });
-    },
-    get C126() {
-      return C[126] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278255487.0
-      });
-    },
-    get C127() {
-      return C[127] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4282811060.0
-      });
-    },
-    get C128() {
-      return C[128] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4291998860.0
-      });
-    },
-    get C129() {
-      return C[129] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278222976.0
-      });
-    },
-    get C130() {
-      return C[130] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4292394968.0
-      });
-    },
-    get C131() {
-      return C[131] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294927175.0
-      });
-    },
-    get C132() {
-      return C[132] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 16777215
-      });
-    },
-    get C133() {
-      return C[133] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4282441936.0
-      });
-    },
-    get C134() {
-      return C[134] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293821166.0
-      });
-    },
-    get C135() {
-      return C[135] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294303411.0
-      });
-    },
-    get C136() {
-      return C[136] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294967295.0
-      });
-    },
-    get C137() {
-      return C[137] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294309365.0
-      });
-    },
-    get C138() {
-      return C[138] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4294967040.0
-      });
-    },
-    get C139() {
-      return C[139] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4288335154.0
-      });
+      return C[0] = dart.constList(["BC", "AD"], T.StringL());
     },
     get C1() {
-      return C[1] = dart.constMap(T.StringL(), T.ColorL(), ["aliceblue", C[2] || CT.C2, "antiquewhite", C[3] || CT.C3, "aqua", C[4] || CT.C4, "aquamarine", C[5] || CT.C5, "azure", C[6] || CT.C6, "beige", C[7] || CT.C7, "bisque", C[8] || CT.C8, "black", C[0] || CT.C0, "blanchedalmond", C[9] || CT.C9, "blue", C[10] || CT.C10, "blueviolet", C[11] || CT.C11, "brown", C[12] || CT.C12, "burlywood", C[13] || CT.C13, "cadetblue", C[14] || CT.C14, "chartreuse", C[15] || CT.C15, "chocolate", C[16] || CT.C16, "coral", C[17] || CT.C17, "cornflowerblue", C[18] || CT.C18, "cornsilk", C[19] || CT.C19, "crimson", C[20] || CT.C20, "cyan", C[4] || CT.C4, "darkblue", C[21] || CT.C21, "darkcyan", C[22] || CT.C22, "darkgoldenrod", C[23] || CT.C23, "darkgray", C[24] || CT.C24, "darkgreen", C[25] || CT.C25, "darkgrey", C[24] || CT.C24, "darkkhaki", C[26] || CT.C26, "darkmagenta", C[27] || CT.C27, "darkolivegreen", C[28] || CT.C28, "darkorange", C[29] || CT.C29, "darkorchid", C[30] || CT.C30, "darkred", C[31] || CT.C31, "darksalmon", C[32] || CT.C32, "darkseagreen", C[33] || CT.C33, "darkslateblue", C[34] || CT.C34, "darkslategray", C[35] || CT.C35, "darkslategrey", C[35] || CT.C35, "darkturquoise", C[36] || CT.C36, "darkviolet", C[37] || CT.C37, "deeppink", C[38] || CT.C38, "deepskyblue", C[39] || CT.C39, "dimgray", C[40] || CT.C40, "dimgrey", C[40] || CT.C40, "dodgerblue", C[41] || CT.C41, "firebrick", C[42] || CT.C42, "floralwhite", C[43] || CT.C43, "forestgreen", C[44] || CT.C44, "fuchsia", C[45] || CT.C45, "gainsboro", C[46] || CT.C46, "ghostwhite", C[47] || CT.C47, "gold", C[48] || CT.C48, "goldenrod", C[49] || CT.C49, "gray", C[50] || CT.C50, "grey", C[50] || CT.C50, "green", C[51] || CT.C51, "greenyellow", C[52] || CT.C52, "honeydew", C[53] || CT.C53, "hotpink", C[54] || CT.C54, "indianred", C[55] || CT.C55, "indigo", C[56] || CT.C56, "ivory", C[57] || CT.C57, "khaki", C[58] || CT.C58, "lavender", C[59] || CT.C59, "lavenderblush", C[60] || CT.C60, "lawngreen", C[61] || CT.C61, "lemonchiffon", C[62] || CT.C62, "lightblue", C[63] || CT.C63, "lightcoral", C[64] || CT.C64, "lightcyan", C[65] || CT.C65, "lightgoldenrodyellow", C[66] || CT.C66, "lightgray", C[67] || CT.C67, "lightgreen", C[68] || CT.C68, "lightgrey", C[67] || CT.C67, "lightpink", C[69] || CT.C69, "lightsalmon", C[70] || CT.C70, "lightseagreen", C[71] || CT.C71, "lightskyblue", C[72] || CT.C72, "lightslategray", C[73] || CT.C73, "lightslategrey", C[73] || CT.C73, "lightsteelblue", C[74] || CT.C74, "lightyellow", C[75] || CT.C75, "lime", C[76] || CT.C76, "limegreen", C[77] || CT.C77, "linen", C[78] || CT.C78, "magenta", C[45] || CT.C45, "maroon", C[79] || CT.C79, "mediumaquamarine", C[80] || CT.C80, "mediumblue", C[81] || CT.C81, "mediumorchid", C[82] || CT.C82, "mediumpurple", C[83] || CT.C83, "mediumseagreen", C[84] || CT.C84, "mediumslateblue", C[85] || CT.C85, "mediumspringgreen", C[86] || CT.C86, "mediumturquoise", C[87] || CT.C87, "mediumvioletred", C[88] || CT.C88, "midnightblue", C[89] || CT.C89, "mintcream", C[90] || CT.C90, "mistyrose", C[91] || CT.C91, "moccasin", C[92] || CT.C92, "navajowhite", C[93] || CT.C93, "navy", C[94] || CT.C94, "oldlace", C[95] || CT.C95, "olive", C[96] || CT.C96, "olivedrab", C[97] || CT.C97, "orange", C[98] || CT.C98, "orangered", C[99] || CT.C99, "orchid", C[100] || CT.C100, "palegoldenrod", C[101] || CT.C101, "palegreen", C[102] || CT.C102, "paleturquoise", C[103] || CT.C103, "palevioletred", C[104] || CT.C104, "papayawhip", C[105] || CT.C105, "peachpuff", C[106] || CT.C106, "peru", C[107] || CT.C107, "pink", C[108] || CT.C108, "plum", C[109] || CT.C109, "powderblue", C[110] || CT.C110, "purple", C[111] || CT.C111, "red", C[112] || CT.C112, "rosybrown", C[113] || CT.C113, "royalblue", C[114] || CT.C114, "saddlebrown", C[115] || CT.C115, "salmon", C[116] || CT.C116, "sandybrown", C[117] || CT.C117, "seagreen", C[118] || CT.C118, "seashell", C[119] || CT.C119, "sienna", C[120] || CT.C120, "silver", C[121] || CT.C121, "skyblue", C[122] || CT.C122, "slateblue", C[123] || CT.C123, "slategray", C[124] || CT.C124, "slategrey", C[124] || CT.C124, "snow", C[125] || CT.C125, "springgreen", C[126] || CT.C126, "steelblue", C[127] || CT.C127, "tan", C[128] || CT.C128, "teal", C[129] || CT.C129, "thistle", C[130] || CT.C130, "tomato", C[131] || CT.C131, "transparent", C[132] || CT.C132, "turquoise", C[133] || CT.C133, "violet", C[134] || CT.C134, "wheat", C[135] || CT.C135, "white", C[136] || CT.C136, "whitesmoke", C[137] || CT.C137, "yellow", C[138] || CT.C138, "yellowgreen", C[139] || CT.C139]);
-    }
-  }, false);
-  var C = Array(140).fill(void 0);
-  var I = ["file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.21.0+1/lib/src/svg/colors.dart"];
-  colors.parseColor = function parseColor(colorString) {
-    if (colorString == null || colorString[$isEmpty]) {
-      return null;
-    }
-    if (colorString === "none") {
-      return null;
-    }
-    if (colorString[$_get](0) === "#") {
-      if (colorString.length === 4) {
-        let r = colorString[$_get](1);
-        let g = colorString[$_get](2);
-        let b = colorString[$_get](3);
-        colorString = "#" + r + r + g + g + b + b;
-      }
-      let color = core.int.parse(colorString[$substring](1), {radix: 16});
-      if (colorString.length === 7) {
-        return new ui.Color.new(color = (dart.notNull(color) | 4278190080) >>> 0);
-      }
-      if (colorString.length === 9) {
-        return new ui.Color.new(color);
-      }
-    }
-    if (colorString[$toLowerCase]()[$startsWith]("rgba")) {
-      let rawColorElements = colorString[$substring](colorString[$indexOf]("(") + 1, colorString[$indexOf](")"))[$split](",")[$map](core.String, dart.fn(rawColor => {
-        if (rawColor == null) dart.nullFailed(I[0], 42, 22, "rawColor");
-        return rawColor[$trim]();
-      }, T.StringToString()))[$toList]();
-      let opacity = dart.nullCheck(numbers.parseDouble(rawColorElements[$removeLast]()));
-      let rgb = rawColorElements[$map](core.int, dart.fn(rawColor => {
-        if (rawColor == null) dart.nullFailed(I[0], 48, 38, "rawColor");
-        return core.int.parse(rawColor);
-      }, T.StringToint()))[$toList]();
-      return new ui.Color.fromRGBO(rgb[$_get](0), rgb[$_get](1), rgb[$_get](2), opacity);
-    }
-    if (colorString[$toLowerCase]()[$startsWith]("hsl")) {
-      let values = colorString[$substring](colorString[$indexOf]("(") + 1, colorString[$indexOf](")"))[$split](",")[$map](core.int, dart.fn(rawColor => {
-        if (rawColor == null) dart.nullFailed(I[0], 58, 22, "rawColor");
-        rawColor = rawColor[$trim]();
-        if (rawColor[$endsWith]("%")) {
-          rawColor = rawColor[$substring](0, rawColor.length - 1);
-        }
-        if (rawColor[$contains](".")) {
-          return (dart.nullCheck(numbers.parseDouble(rawColor)) * 2.55)[$round]();
-        }
-        return core.int.parse(rawColor);
-      }, T.StringToint()))[$toList]();
-      let hue = (dart.notNull(values[$_get](0)) / 360)[$modulo](1);
-      let saturation = dart.notNull(values[$_get](1)) / 100;
-      let luminance = dart.notNull(values[$_get](2)) / 100;
-      let alpha = dart.notNull(values[$length]) > 3 ? values[$_get](3) : 255;
-      let rgb = T.JSArrayOfdouble().of([0.0, 0.0, 0.0]);
-      if (hue < 1 / 6) {
-        rgb[$_set](0, 1.0);
-        rgb[$_set](1, hue * 6);
-      } else if (hue < 2 / 6) {
-        rgb[$_set](0, 2 - hue * 6);
-        rgb[$_set](1, 1.0);
-      } else if (hue < 3 / 6) {
-        rgb[$_set](1, 1.0);
-        rgb[$_set](2, hue * 6 - 2);
-      } else if (hue < 4 / 6) {
-        rgb[$_set](1, 4 - hue * 6);
-        rgb[$_set](2, 1.0);
-      } else if (hue < 5 / 6) {
-        rgb[$_set](0, hue * 6 - 4);
-        rgb[$_set](2, 1.0);
-      } else {
-        rgb[$_set](0, 1.0);
-        rgb[$_set](2, 6 - hue * 6);
-      }
-      rgb = rgb[$map](core.double, dart.fn(val => {
-        if (val == null) dart.nullFailed(I[0], 98, 25, "val");
-        return dart.notNull(val) + (1 - saturation) * (0.5 - dart.notNull(val));
-      }, T.doubleTodouble()))[$toList]();
-      if (luminance < 0.5) {
-        rgb = rgb[$map](core.double, dart.fn(val => {
-          if (val == null) dart.nullFailed(I[0], 101, 29, "val");
-          return luminance * 2 * dart.notNull(val);
-        }, T.doubleTodouble()))[$toList]();
-      } else {
-        rgb = rgb[$map](core.double, dart.fn(val => {
-          if (val == null) dart.nullFailed(I[0], 104, 24, "val");
-          return luminance * 2 * (1 - dart.notNull(val)) + 2 * dart.notNull(val) - 1;
-        }, T.doubleTodouble()))[$toList]();
-      }
-      rgb = rgb[$map](core.double, dart.fn(val => {
-        if (val == null) dart.nullFailed(I[0], 108, 27, "val");
-        return dart.notNull(val) * 255;
-      }, T.doubleTodouble()))[$toList]();
-      return new ui.Color.fromARGB(alpha, rgb[$_get](0)[$round](), rgb[$_get](1)[$round](), rgb[$_get](2)[$round]());
-    }
-    if (colorString[$toLowerCase]()[$startsWith]("rgb")) {
-      let rgb = colorString[$substring](colorString[$indexOf]("(") + 1, colorString[$indexOf](")"))[$split](",")[$map](core.int, dart.fn(rawColor => {
-        if (rawColor == null) dart.nullFailed(I[0], 119, 22, "rawColor");
-        rawColor = rawColor[$trim]();
-        if (rawColor[$endsWith]("%")) {
-          rawColor = rawColor[$substring](0, rawColor.length - 1);
-          return (dart.nullCheck(numbers.parseDouble(rawColor)) * 2.55)[$round]();
-        }
-        return core.int.parse(rawColor);
-      }, T.StringToint()))[$toList]();
-      let a = dart.notNull(rgb[$length]) > 3 ? rgb[$_get](3) : 255;
-      return new ui.Color.fromARGB(a, rgb[$_get](0), rgb[$_get](1), rgb[$_get](2));
-    }
-    let namedColor = colors._namedColors[$_get](colorString);
-    if (namedColor != null) {
-      return namedColor;
-    }
-    dart.throw(new core.StateError.new("Could not parse \"" + dart.str(colorString) + "\" as a color."));
-  };
-  var Color_value = dart.privateName(ui, "Color.value");
-  dart.defineLazy(colors, {
-    /*colors.colorBlack*/get colorBlack() {
-      return C[0] || CT.C0;
+      return C[1] = dart.constList(["Before Christ", "Anno Domini"], T.StringL());
     },
-    /*colors._namedColors*/get _namedColors() {
-      return C[1] || CT.C1;
+    get C2() {
+      return C[2] = dart.constList(["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"], T.StringL());
+    },
+    get C3() {
+      return C[3] = dart.constList(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], T.StringL());
+    },
+    get C4() {
+      return C[4] = dart.constList(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], T.StringL());
+    },
+    get C5() {
+      return C[5] = dart.constList(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], T.StringL());
+    },
+    get C6() {
+      return C[6] = dart.constList(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], T.StringL());
+    },
+    get C7() {
+      return C[7] = dart.constList(["S", "M", "T", "W", "T", "F", "S"], T.StringL());
+    },
+    get C8() {
+      return C[8] = dart.constList(["Q1", "Q2", "Q3", "Q4"], T.StringL());
+    },
+    get C9() {
+      return C[9] = dart.constList(["1st quarter", "2nd quarter", "3rd quarter", "4th quarter"], T.StringL());
+    },
+    get C10() {
+      return C[10] = dart.constList(["AM", "PM"], T.StringL());
+    },
+    get C11() {
+      return C[11] = dart.constList(["EEEE, MMMM d, y", "MMMM d, y", "MMM d, y", "M/d/yy"], T.StringL());
+    },
+    get C12() {
+      return C[12] = dart.constList(["h:mm:ss a zzzz", "h:mm:ss a z", "h:mm:ss a", "h:mm a"], T.StringL());
+    },
+    get C13() {
+      return C[13] = dart.constList([5, 6], T.intL());
+    },
+    get C14() {
+      return C[14] = dart.constList(["{1} 'at' {0}", "{1} 'at' {0}", "{1}, {0}", "{1}, {0}"], T.StringL());
+    },
+    get C15() {
+      return C[15] = dart.constMap(T.StringL(), T.StringL(), ["d", "d", "E", "EEE", "EEEE", "EEEE", "LLL", "LLL", "LLLL", "LLLL", "M", "L", "Md", "M/d", "MEd", "EEE, M/d", "MMM", "LLL", "MMMd", "MMM d", "MMMEd", "EEE, MMM d", "MMMM", "LLLL", "MMMMd", "MMMM d", "MMMMEEEEd", "EEEE, MMMM d", "QQQ", "QQQ", "QQQQ", "QQQQ", "y", "y", "yM", "M/y", "yMd", "M/d/y", "yMEd", "EEE, M/d/y", "yMMM", "MMM y", "yMMMd", "MMM d, y", "yMMMEd", "EEE, MMM d, y", "yMMMM", "MMMM y", "yMMMMd", "MMMM d, y", "yMMMMEEEEd", "EEEE, MMMM d, y", "yQQQ", "QQQ y", "yQQQQ", "QQQQ y", "H", "HH", "Hm", "HH:mm", "Hms", "HH:mm:ss", "j", "h a", "jm", "h:mm a", "jms", "h:mm:ss a", "jmv", "h:mm a v", "jmz", "h:mm a z", "jz", "h a z", "m", "m", "ms", "mm:ss", "s", "s", "v", "v", "z", "z", "zzzz", "zzzz", "ZZZZ", "ZZZZ"]);
     }
   }, false);
-  dart.trackLibraries("packages/flutter_svg/src/svg/colors.dart", {
-    "package:flutter_svg/src/svg/colors.dart": colors
+  var C = Array(16).fill(void 0);
+  var I = ["package:intl/date_symbols.dart"];
+  var NAME$ = dart.privateName(date_symbols, "DateSymbols.NAME");
+  var ERAS$ = dart.privateName(date_symbols, "DateSymbols.ERAS");
+  var ERANAMES$ = dart.privateName(date_symbols, "DateSymbols.ERANAMES");
+  var NARROWMONTHS$ = dart.privateName(date_symbols, "DateSymbols.NARROWMONTHS");
+  var STANDALONENARROWMONTHS$ = dart.privateName(date_symbols, "DateSymbols.STANDALONENARROWMONTHS");
+  var MONTHS$ = dart.privateName(date_symbols, "DateSymbols.MONTHS");
+  var STANDALONEMONTHS$ = dart.privateName(date_symbols, "DateSymbols.STANDALONEMONTHS");
+  var SHORTMONTHS$ = dart.privateName(date_symbols, "DateSymbols.SHORTMONTHS");
+  var STANDALONESHORTMONTHS$ = dart.privateName(date_symbols, "DateSymbols.STANDALONESHORTMONTHS");
+  var WEEKDAYS$ = dart.privateName(date_symbols, "DateSymbols.WEEKDAYS");
+  var STANDALONEWEEKDAYS$ = dart.privateName(date_symbols, "DateSymbols.STANDALONEWEEKDAYS");
+  var SHORTWEEKDAYS$ = dart.privateName(date_symbols, "DateSymbols.SHORTWEEKDAYS");
+  var STANDALONESHORTWEEKDAYS$ = dart.privateName(date_symbols, "DateSymbols.STANDALONESHORTWEEKDAYS");
+  var NARROWWEEKDAYS$ = dart.privateName(date_symbols, "DateSymbols.NARROWWEEKDAYS");
+  var STANDALONENARROWWEEKDAYS$ = dart.privateName(date_symbols, "DateSymbols.STANDALONENARROWWEEKDAYS");
+  var SHORTQUARTERS$ = dart.privateName(date_symbols, "DateSymbols.SHORTQUARTERS");
+  var QUARTERS$ = dart.privateName(date_symbols, "DateSymbols.QUARTERS");
+  var AMPMS$ = dart.privateName(date_symbols, "DateSymbols.AMPMS");
+  var DATEFORMATS$ = dart.privateName(date_symbols, "DateSymbols.DATEFORMATS");
+  var TIMEFORMATS$ = dart.privateName(date_symbols, "DateSymbols.TIMEFORMATS");
+  var DATETIMEFORMATS$ = dart.privateName(date_symbols, "DateSymbols.DATETIMEFORMATS");
+  var AVAILABLEFORMATS$ = dart.privateName(date_symbols, "DateSymbols.AVAILABLEFORMATS");
+  var FIRSTDAYOFWEEK$ = dart.privateName(date_symbols, "DateSymbols.FIRSTDAYOFWEEK");
+  var WEEKENDRANGE$ = dart.privateName(date_symbols, "DateSymbols.WEEKENDRANGE");
+  var FIRSTWEEKCUTOFFDAY$ = dart.privateName(date_symbols, "DateSymbols.FIRSTWEEKCUTOFFDAY");
+  var ZERODIGIT$ = dart.privateName(date_symbols, "DateSymbols.ZERODIGIT");
+  var _serializeToMap = dart.privateName(date_symbols, "_serializeToMap");
+  date_symbols.DateSymbols = class DateSymbols extends core.Object {
+    get NAME() {
+      return this[NAME$];
+    }
+    set NAME(value) {
+      this[NAME$] = value;
+    }
+    get ERAS() {
+      return this[ERAS$];
+    }
+    set ERAS(value) {
+      this[ERAS$] = value;
+    }
+    get ERANAMES() {
+      return this[ERANAMES$];
+    }
+    set ERANAMES(value) {
+      this[ERANAMES$] = value;
+    }
+    get NARROWMONTHS() {
+      return this[NARROWMONTHS$];
+    }
+    set NARROWMONTHS(value) {
+      this[NARROWMONTHS$] = value;
+    }
+    get STANDALONENARROWMONTHS() {
+      return this[STANDALONENARROWMONTHS$];
+    }
+    set STANDALONENARROWMONTHS(value) {
+      this[STANDALONENARROWMONTHS$] = value;
+    }
+    get MONTHS() {
+      return this[MONTHS$];
+    }
+    set MONTHS(value) {
+      this[MONTHS$] = value;
+    }
+    get STANDALONEMONTHS() {
+      return this[STANDALONEMONTHS$];
+    }
+    set STANDALONEMONTHS(value) {
+      this[STANDALONEMONTHS$] = value;
+    }
+    get SHORTMONTHS() {
+      return this[SHORTMONTHS$];
+    }
+    set SHORTMONTHS(value) {
+      this[SHORTMONTHS$] = value;
+    }
+    get STANDALONESHORTMONTHS() {
+      return this[STANDALONESHORTMONTHS$];
+    }
+    set STANDALONESHORTMONTHS(value) {
+      this[STANDALONESHORTMONTHS$] = value;
+    }
+    get WEEKDAYS() {
+      return this[WEEKDAYS$];
+    }
+    set WEEKDAYS(value) {
+      this[WEEKDAYS$] = value;
+    }
+    get STANDALONEWEEKDAYS() {
+      return this[STANDALONEWEEKDAYS$];
+    }
+    set STANDALONEWEEKDAYS(value) {
+      this[STANDALONEWEEKDAYS$] = value;
+    }
+    get SHORTWEEKDAYS() {
+      return this[SHORTWEEKDAYS$];
+    }
+    set SHORTWEEKDAYS(value) {
+      this[SHORTWEEKDAYS$] = value;
+    }
+    get STANDALONESHORTWEEKDAYS() {
+      return this[STANDALONESHORTWEEKDAYS$];
+    }
+    set STANDALONESHORTWEEKDAYS(value) {
+      this[STANDALONESHORTWEEKDAYS$] = value;
+    }
+    get NARROWWEEKDAYS() {
+      return this[NARROWWEEKDAYS$];
+    }
+    set NARROWWEEKDAYS(value) {
+      this[NARROWWEEKDAYS$] = value;
+    }
+    get STANDALONENARROWWEEKDAYS() {
+      return this[STANDALONENARROWWEEKDAYS$];
+    }
+    set STANDALONENARROWWEEKDAYS(value) {
+      this[STANDALONENARROWWEEKDAYS$] = value;
+    }
+    get SHORTQUARTERS() {
+      return this[SHORTQUARTERS$];
+    }
+    set SHORTQUARTERS(value) {
+      this[SHORTQUARTERS$] = value;
+    }
+    get QUARTERS() {
+      return this[QUARTERS$];
+    }
+    set QUARTERS(value) {
+      this[QUARTERS$] = value;
+    }
+    get AMPMS() {
+      return this[AMPMS$];
+    }
+    set AMPMS(value) {
+      this[AMPMS$] = value;
+    }
+    get DATEFORMATS() {
+      return this[DATEFORMATS$];
+    }
+    set DATEFORMATS(value) {
+      this[DATEFORMATS$] = value;
+    }
+    get TIMEFORMATS() {
+      return this[TIMEFORMATS$];
+    }
+    set TIMEFORMATS(value) {
+      this[TIMEFORMATS$] = value;
+    }
+    get DATETIMEFORMATS() {
+      return this[DATETIMEFORMATS$];
+    }
+    set DATETIMEFORMATS(value) {
+      this[DATETIMEFORMATS$] = value;
+    }
+    get AVAILABLEFORMATS() {
+      return this[AVAILABLEFORMATS$];
+    }
+    set AVAILABLEFORMATS(value) {
+      this[AVAILABLEFORMATS$] = value;
+    }
+    get FIRSTDAYOFWEEK() {
+      return this[FIRSTDAYOFWEEK$];
+    }
+    set FIRSTDAYOFWEEK(value) {
+      this[FIRSTDAYOFWEEK$] = value;
+    }
+    get WEEKENDRANGE() {
+      return this[WEEKENDRANGE$];
+    }
+    set WEEKENDRANGE(value) {
+      this[WEEKENDRANGE$] = value;
+    }
+    get FIRSTWEEKCUTOFFDAY() {
+      return this[FIRSTWEEKCUTOFFDAY$];
+    }
+    set FIRSTWEEKCUTOFFDAY(value) {
+      this[FIRSTWEEKCUTOFFDAY$] = value;
+    }
+    get ZERODIGIT() {
+      return this[ZERODIGIT$];
+    }
+    set ZERODIGIT(value) {
+      this[ZERODIGIT$] = value;
+    }
+    serializeToMap() {
+      let basicMap = this[_serializeToMap]();
+      if (this.ZERODIGIT != null && this.ZERODIGIT !== "") {
+        basicMap[$_set]("ZERODIGIT", this.ZERODIGIT);
+      }
+      return basicMap;
+    }
+    [_serializeToMap]() {
+      return new (T.IdentityMapOfStringL$dynamic()).from(["NAME", this.NAME, "ERAS", this.ERAS, "ERANAMES", this.ERANAMES, "NARROWMONTHS", this.NARROWMONTHS, "STANDALONENARROWMONTHS", this.STANDALONENARROWMONTHS, "MONTHS", this.MONTHS, "STANDALONEMONTHS", this.STANDALONEMONTHS, "SHORTMONTHS", this.SHORTMONTHS, "STANDALONESHORTMONTHS", this.STANDALONESHORTMONTHS, "WEEKDAYS", this.WEEKDAYS, "STANDALONEWEEKDAYS", this.STANDALONEWEEKDAYS, "SHORTWEEKDAYS", this.SHORTWEEKDAYS, "STANDALONESHORTWEEKDAYS", this.STANDALONESHORTWEEKDAYS, "NARROWWEEKDAYS", this.NARROWWEEKDAYS, "STANDALONENARROWWEEKDAYS", this.STANDALONENARROWWEEKDAYS, "SHORTQUARTERS", this.SHORTQUARTERS, "QUARTERS", this.QUARTERS, "AMPMS", this.AMPMS, "DATEFORMATS", this.DATEFORMATS, "TIMEFORMATS", this.TIMEFORMATS, "AVAILABLEFORMATS", this.AVAILABLEFORMATS, "FIRSTDAYOFWEEK", this.FIRSTDAYOFWEEK, "WEEKENDRANGE", this.WEEKENDRANGE, "FIRSTWEEKCUTOFFDAY", this.FIRSTWEEKCUTOFFDAY, "DATETIMEFORMATS", this.DATETIMEFORMATS]);
+    }
+    toString() {
+      return this.NAME;
+    }
+  };
+  (date_symbols.DateSymbols.new = function(opts) {
+    let NAME = opts && 'NAME' in opts ? opts.NAME : null;
+    let ERAS = opts && 'ERAS' in opts ? opts.ERAS : null;
+    let ERANAMES = opts && 'ERANAMES' in opts ? opts.ERANAMES : null;
+    let NARROWMONTHS = opts && 'NARROWMONTHS' in opts ? opts.NARROWMONTHS : null;
+    let STANDALONENARROWMONTHS = opts && 'STANDALONENARROWMONTHS' in opts ? opts.STANDALONENARROWMONTHS : null;
+    let MONTHS = opts && 'MONTHS' in opts ? opts.MONTHS : null;
+    let STANDALONEMONTHS = opts && 'STANDALONEMONTHS' in opts ? opts.STANDALONEMONTHS : null;
+    let SHORTMONTHS = opts && 'SHORTMONTHS' in opts ? opts.SHORTMONTHS : null;
+    let STANDALONESHORTMONTHS = opts && 'STANDALONESHORTMONTHS' in opts ? opts.STANDALONESHORTMONTHS : null;
+    let WEEKDAYS = opts && 'WEEKDAYS' in opts ? opts.WEEKDAYS : null;
+    let STANDALONEWEEKDAYS = opts && 'STANDALONEWEEKDAYS' in opts ? opts.STANDALONEWEEKDAYS : null;
+    let SHORTWEEKDAYS = opts && 'SHORTWEEKDAYS' in opts ? opts.SHORTWEEKDAYS : null;
+    let STANDALONESHORTWEEKDAYS = opts && 'STANDALONESHORTWEEKDAYS' in opts ? opts.STANDALONESHORTWEEKDAYS : null;
+    let NARROWWEEKDAYS = opts && 'NARROWWEEKDAYS' in opts ? opts.NARROWWEEKDAYS : null;
+    let STANDALONENARROWWEEKDAYS = opts && 'STANDALONENARROWWEEKDAYS' in opts ? opts.STANDALONENARROWWEEKDAYS : null;
+    let SHORTQUARTERS = opts && 'SHORTQUARTERS' in opts ? opts.SHORTQUARTERS : null;
+    let QUARTERS = opts && 'QUARTERS' in opts ? opts.QUARTERS : null;
+    let AMPMS = opts && 'AMPMS' in opts ? opts.AMPMS : null;
+    let ZERODIGIT = opts && 'ZERODIGIT' in opts ? opts.ZERODIGIT : null;
+    let DATEFORMATS = opts && 'DATEFORMATS' in opts ? opts.DATEFORMATS : null;
+    let TIMEFORMATS = opts && 'TIMEFORMATS' in opts ? opts.TIMEFORMATS : null;
+    let AVAILABLEFORMATS = opts && 'AVAILABLEFORMATS' in opts ? opts.AVAILABLEFORMATS : null;
+    let FIRSTDAYOFWEEK = opts && 'FIRSTDAYOFWEEK' in opts ? opts.FIRSTDAYOFWEEK : null;
+    let WEEKENDRANGE = opts && 'WEEKENDRANGE' in opts ? opts.WEEKENDRANGE : null;
+    let FIRSTWEEKCUTOFFDAY = opts && 'FIRSTWEEKCUTOFFDAY' in opts ? opts.FIRSTWEEKCUTOFFDAY : null;
+    let DATETIMEFORMATS = opts && 'DATETIMEFORMATS' in opts ? opts.DATETIMEFORMATS : null;
+    this[NAME$] = NAME;
+    this[ERAS$] = ERAS;
+    this[ERANAMES$] = ERANAMES;
+    this[NARROWMONTHS$] = NARROWMONTHS;
+    this[STANDALONENARROWMONTHS$] = STANDALONENARROWMONTHS;
+    this[MONTHS$] = MONTHS;
+    this[STANDALONEMONTHS$] = STANDALONEMONTHS;
+    this[SHORTMONTHS$] = SHORTMONTHS;
+    this[STANDALONESHORTMONTHS$] = STANDALONESHORTMONTHS;
+    this[WEEKDAYS$] = WEEKDAYS;
+    this[STANDALONEWEEKDAYS$] = STANDALONEWEEKDAYS;
+    this[SHORTWEEKDAYS$] = SHORTWEEKDAYS;
+    this[STANDALONESHORTWEEKDAYS$] = STANDALONESHORTWEEKDAYS;
+    this[NARROWWEEKDAYS$] = NARROWWEEKDAYS;
+    this[STANDALONENARROWWEEKDAYS$] = STANDALONENARROWWEEKDAYS;
+    this[SHORTQUARTERS$] = SHORTQUARTERS;
+    this[QUARTERS$] = QUARTERS;
+    this[AMPMS$] = AMPMS;
+    this[ZERODIGIT$] = ZERODIGIT;
+    this[DATEFORMATS$] = DATEFORMATS;
+    this[TIMEFORMATS$] = TIMEFORMATS;
+    this[AVAILABLEFORMATS$] = AVAILABLEFORMATS;
+    this[FIRSTDAYOFWEEK$] = FIRSTDAYOFWEEK;
+    this[WEEKENDRANGE$] = WEEKENDRANGE;
+    this[FIRSTWEEKCUTOFFDAY$] = FIRSTWEEKCUTOFFDAY;
+    this[DATETIMEFORMATS$] = DATETIMEFORMATS;
+    ;
+  }).prototype = date_symbols.DateSymbols.prototype;
+  (date_symbols.DateSymbols.deserializeFromMap = function(map) {
+    let t0;
+    this[DATETIMEFORMATS$] = null;
+    this[FIRSTWEEKCUTOFFDAY$] = null;
+    this[WEEKENDRANGE$] = null;
+    this[FIRSTDAYOFWEEK$] = null;
+    this[AVAILABLEFORMATS$] = null;
+    this[TIMEFORMATS$] = null;
+    this[DATEFORMATS$] = null;
+    this[ZERODIGIT$] = null;
+    this[AMPMS$] = null;
+    this[QUARTERS$] = null;
+    this[SHORTQUARTERS$] = null;
+    this[STANDALONENARROWWEEKDAYS$] = null;
+    this[NARROWWEEKDAYS$] = null;
+    this[STANDALONESHORTWEEKDAYS$] = null;
+    this[SHORTWEEKDAYS$] = null;
+    this[STANDALONEWEEKDAYS$] = null;
+    this[WEEKDAYS$] = null;
+    this[STANDALONESHORTMONTHS$] = null;
+    this[SHORTMONTHS$] = null;
+    this[STANDALONEMONTHS$] = null;
+    this[MONTHS$] = null;
+    this[STANDALONENARROWMONTHS$] = null;
+    this[NARROWMONTHS$] = null;
+    this[ERANAMES$] = null;
+    this[ERAS$] = null;
+    this[NAME$] = null;
+    function _getStringList(name) {
+      return T.ListOfStringL().from(core.Iterable.as(map[$_get](name)));
+    }
+    dart.fn(_getStringList, T.StringLToListLOfStringL());
+    this.NAME = T.StringL().as(map[$_get]("NAME"));
+    this.ERAS = _getStringList("ERAS");
+    this.ERANAMES = _getStringList("ERANAMES");
+    this.NARROWMONTHS = _getStringList("NARROWMONTHS");
+    this.STANDALONENARROWMONTHS = _getStringList("STANDALONENARROWMONTHS");
+    this.MONTHS = _getStringList("MONTHS");
+    this.STANDALONEMONTHS = _getStringList("STANDALONEMONTHS");
+    this.SHORTMONTHS = _getStringList("SHORTMONTHS");
+    this.STANDALONESHORTMONTHS = _getStringList("STANDALONESHORTMONTHS");
+    this.WEEKDAYS = _getStringList("WEEKDAYS");
+    this.STANDALONEWEEKDAYS = _getStringList("STANDALONEWEEKDAYS");
+    this.SHORTWEEKDAYS = _getStringList("SHORTWEEKDAYS");
+    this.STANDALONESHORTWEEKDAYS = _getStringList("STANDALONESHORTWEEKDAYS");
+    this.NARROWWEEKDAYS = _getStringList("NARROWWEEKDAYS");
+    this.STANDALONENARROWWEEKDAYS = _getStringList("STANDALONENARROWWEEKDAYS");
+    this.SHORTQUARTERS = _getStringList("SHORTQUARTERS");
+    this.QUARTERS = _getStringList("QUARTERS");
+    this.AMPMS = _getStringList("AMPMS");
+    this.ZERODIGIT = T.StringL().as(map[$_get]("ZERODIGIT"));
+    this.DATEFORMATS = _getStringList("DATEFORMATS");
+    this.TIMEFORMATS = _getStringList("TIMEFORMATS");
+    this.AVAILABLEFORMATS = T.LinkedHashMapOfStringL$StringL().from(core.Map.as((t0 = map[$_get]("AVAILABLEFORMATS"), t0 == null ? new _js_helper.LinkedMap.new() : t0)));
+    this.FIRSTDAYOFWEEK = T.intL().as(map[$_get]("FIRSTDAYOFWEEK"));
+    this.WEEKENDRANGE = T.ListOfintL().from(core.Iterable.as(map[$_get]("WEEKENDRANGE")));
+    this.FIRSTWEEKCUTOFFDAY = T.intL().as(map[$_get]("FIRSTWEEKCUTOFFDAY"));
+    this.DATETIMEFORMATS = _getStringList("DATETIMEFORMATS");
+  }).prototype = date_symbols.DateSymbols.prototype;
+  dart.addTypeTests(date_symbols.DateSymbols);
+  dart.addTypeCaches(date_symbols.DateSymbols);
+  dart.setMethodSignature(date_symbols.DateSymbols, () => ({
+    __proto__: dart.getMethods(date_symbols.DateSymbols.__proto__),
+    serializeToMap: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), []),
+    [_serializeToMap]: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), []),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(date_symbols.DateSymbols, I[0]);
+  dart.setFieldSignature(date_symbols.DateSymbols, () => ({
+    __proto__: dart.getFields(date_symbols.DateSymbols.__proto__),
+    NAME: dart.fieldType(dart.legacy(core.String)),
+    ERAS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    ERANAMES: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    NARROWMONTHS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    STANDALONENARROWMONTHS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    MONTHS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    STANDALONEMONTHS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    SHORTMONTHS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    STANDALONESHORTMONTHS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    WEEKDAYS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    STANDALONEWEEKDAYS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    SHORTWEEKDAYS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    STANDALONESHORTWEEKDAYS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    NARROWWEEKDAYS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    STANDALONENARROWWEEKDAYS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    SHORTQUARTERS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    QUARTERS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    AMPMS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    DATEFORMATS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    TIMEFORMATS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    DATETIMEFORMATS: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    AVAILABLEFORMATS: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(core.String)))),
+    FIRSTDAYOFWEEK: dart.fieldType(dart.legacy(core.int)),
+    WEEKENDRANGE: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
+    FIRSTWEEKCUTOFFDAY: dart.fieldType(dart.legacy(core.int)),
+    ZERODIGIT: dart.fieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(date_symbols.DateSymbols, ['toString']);
+  dart.defineLazy(date_symbols, {
+    /*date_symbols.en_USSymbols*/get en_USSymbols() {
+      return new date_symbols.DateSymbols.new({NAME: "en_US", ERAS: C[0] || CT.C0, ERANAMES: C[1] || CT.C1, NARROWMONTHS: C[2] || CT.C2, STANDALONENARROWMONTHS: C[2] || CT.C2, MONTHS: C[3] || CT.C3, STANDALONEMONTHS: C[3] || CT.C3, SHORTMONTHS: C[4] || CT.C4, STANDALONESHORTMONTHS: C[4] || CT.C4, WEEKDAYS: C[5] || CT.C5, STANDALONEWEEKDAYS: C[5] || CT.C5, SHORTWEEKDAYS: C[6] || CT.C6, STANDALONESHORTWEEKDAYS: C[6] || CT.C6, NARROWWEEKDAYS: C[7] || CT.C7, STANDALONENARROWWEEKDAYS: C[7] || CT.C7, SHORTQUARTERS: C[8] || CT.C8, QUARTERS: C[9] || CT.C9, AMPMS: C[10] || CT.C10, DATEFORMATS: C[11] || CT.C11, TIMEFORMATS: C[12] || CT.C12, FIRSTDAYOFWEEK: 6, WEEKENDRANGE: C[13] || CT.C13, FIRSTWEEKCUTOFFDAY: 5, DATETIMEFORMATS: C[14] || CT.C14});
+    },
+    set en_USSymbols(_) {},
+    /*date_symbols.en_USPatterns*/get en_USPatterns() {
+      return C[15] || CT.C15;
+    },
+    set en_USPatterns(_) {}
+  }, true);
+  dart.trackLibraries("packages/intl/date_symbols.dart", {
+    "package:intl/date_symbols.dart": date_symbols
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["colors.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/flutter_svg/src/svg/colors.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["date_symbols.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/intl/date_symbols.dart.lib.js"}');
   // Exports:
   return {
-    src__svg__colors: colors
+    date_symbols: date_symbols
   };
 }));
 
-//# sourceMappingURL=colors.dart.lib.js.map
+//# sourceMappingURL=date_symbols.dart.lib.js.map
