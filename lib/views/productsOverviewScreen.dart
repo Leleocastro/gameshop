@@ -46,7 +46,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Supera GameShop'),
+        title: Text('GameShop'),
         actions: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

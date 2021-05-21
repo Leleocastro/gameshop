@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Supera GameShop',
+        title: 'GameShop',
         theme: ThemeData(
           primarySwatch: Colors.purple,
           primaryColor: Colors.purple,
