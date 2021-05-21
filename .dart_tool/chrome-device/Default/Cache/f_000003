@@ -19,15 +19,15 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "fNcT0yoNzFWgvrqF33Ww2A==";
+    window.$dartAppId = "qg/4uPIBU42Jm+g3v0112A==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "7.1.1";
-window.$dwdsDevHandlerPath = "http://localhost:58246/gameshop/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:63481/gameshop/$dwdsSseHandler";
 window.$dartEntrypointPath = "gameshop/main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:58248/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:63483/$debug";
 
   } else {
     if(window.$dartMainExecuted){

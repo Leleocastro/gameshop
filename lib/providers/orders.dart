@@ -4,6 +4,8 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:gameshop_supera/providers/cart.dart';
+import 'package:gameshop_supera/utils/constants.dart';
+import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 class Order {
@@ -21,6 +23,8 @@ class Order {
 }
 
 class Orders with ChangeNotifier {
+  final String _url = Constants.BASE_API_URL;
+  final String _urlOrders = Constants.BASE_API_ORDERS;
   List<Order> _items = [];
 
   Orders([this._items = const []]);
@@ -61,8 +65,10 @@ class Orders with ChangeNotifier {
   Future<void> loadOrders() async {
     List<Order> loadedItems = [];
 
-    String jsonString = await _carregaOrderJson();
-    final data = json.decode(jsonString);
+    final jsonString = await http.get(Uri.https(_url, _urlOrders));
+    final data = json.decode(jsonString.body);
+
+    print(data);
 
     loadedItems.clear();
     if (data != null) {
@@ -72,14 +78,14 @@ class Orders with ChangeNotifier {
             id: orderData['id'],
             total: orderData['total'],
             date: DateTime.parse(orderData['date']),
-            products: (orderData['products'] as List<dynamic>).map((item) {
+            products: (orderData['jogos'] as List<dynamic>).map((item) {
               return CartItem(
                 id: item['id'],
-                productId: item['productId'],
-                name: item['name'],
-                image: item['image'],
-                quantity: item['quantity'],
-                price: item['price'].toDouble(),
+                productId: item['jogoId'],
+                name: item['nome'],
+                image: item['imageUrl'],
+                quantity: item['quantidade'],
+                price: item['preco'].toDouble(),
                 frete: item['frete'].toDouble(),
               );
             }).toList(),
@@ -94,37 +100,31 @@ class Orders with ChangeNotifier {
   }
 
   Future<void> addOrder(Cart cart) async {
-    final file = await _localFile;
     final date = DateTime.now();
-    final response = json.encode([
-      {
-        'id': Random().toString(),
+    final response = await http.post(
+      Uri.https(_url, _urlOrders),
+      headers: {
+        HttpHeaders.contentTypeHeader: "application/json",
+        HttpHeaders.acceptHeader: "*/*"
+      },
+      body: json.encode({
         'total': cart.totalAmount,
         'date': date.toIso8601String(),
-        'products': cart.items.values
+        'jogos': cart.items.values
             .map((cartItem) => {
                   'id': cartItem.id,
-                  'productId': cartItem.productId,
-                  'name': cartItem.name,
-                  'image': cartItem.image,
-                  'quantity': cartItem.quantity,
-                  'price': cartItem.price,
+                  'jogoId': cartItem.productId,
+                  'nome': cartItem.name,
+                  'imageUrl': cartItem.image,
+                  'quantidade': cartItem.quantity,
+                  'preco': cartItem.price,
                   'frete': cartItem.frete,
                 })
             .toList(),
-      }
-    ]);
-    String jsonString = await _carregaOrderJson();
-    String jsonStringFirst = "";
-    String responseSecond = "";
-    if (jsonString.isNotEmpty) {
-      jsonStringFirst = jsonString.substring(0, jsonString.length - 1);
-      responseSecond = response.substring(1, response.length - 1);
-    }
-
-    await file.writeAsString(jsonString.isNotEmpty
-        ? jsonStringFirst + ',' + responseSecond + ']'
-        : response);
+      }),
+    );
+    print(response.body);
+    print(_items);
 
     notifyListeners();
   }
