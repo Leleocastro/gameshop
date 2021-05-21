@@ -62776,7 +62776,7 @@ this.ba(0)},
 F:function(a,b){return this.a.c}}
 F.DZ.prototype={
 F:function(a,b){var s=H.c([T.acb(new F.W_(),t.kb),T.acb(new F.W0(),t.Iw),T.acb(new F.W1(),t.RR)],t.JD),r=X.a2A(C.AW,null,C.I,"Lato",C.tn,C.tn)
-return Y.api(new S.uC(P.aC(["/",new F.W2(),"/product-detail",new F.W3(),"/cart",new F.W4(),"/orders",new F.W5(),"/products",new F.W6(),"/product-form",new F.W7()],t.bD,t.sy),"Supera GameShop",r,!1,null),s)}}
+return Y.api(new S.uC(P.aC(["/",new F.W2(),"/product-detail",new F.W3(),"/cart",new F.W4(),"/orders",new F.W5(),"/products",new F.W6(),"/product-form",new F.W7()],t.bD,t.sy),"GameShop",r,!1,null),s)}}
 F.W_.prototype={
 $1:function(a){return new O.hB(P.y(t.bD,t.XY),new P.b0(t.V))},
 $S:370}
@@ -63258,7 +63258,7 @@ aJ:function(){this.bh()
 var s=this.c
 s.toString
 Y.dC(s,!1,t.RR).mL().c6(0,new M.a7w(this),t.P)},
-F:function(a,b){var s,r,q,p=this,o=null,n=L.aD("Supera GameShop",o,o,o,o,o,o),m=p.e
+F:function(a,b){var s,r,q,p=this,o=null,n=L.aD("GameShop",o,o,o,o,o,o),m=p.e
 if(m)s=L.aD(p.x?"\u2191":"\u2193",o,o,o,o,C.cN,o)
 else s=L.aD("",o,o,o,o,o,o)
 m=m?15:20
